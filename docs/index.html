@@ -258,7 +258,7 @@ Figure 1.2: The basic R-studio screen when you log on
 <p>One of the most useful new features in RStudio are R-Projects. We are going to use R-projects to store our lab data in. An R project is a place to store all your commands, data and output in the same place.</p>
 <p>Before R projects, we had to worry about where on your computer your data was saved in. Now, we can force R-Studio to immediately look inside your lab folder - making life much easier.</p>
 <p>Equally, projects allow you to have multiple versions of R-studio open. This is useful because say you have Lab-2 open, but want to re-open Lab-1 to check some code, clicking the “Lab 1 project file” will load a whole new version of R with Lab 1 ready to edit.</p>
-<p>It is <strong><em>really</em></strong> important that you stay organised in this course, for example making sure you know where you put your data and your labs.</p>
+<p>It is <strong><em>really</em></strong> important that you stay organized in this course, for example making sure you know where you put your data and your labs.</p>
 <p><strong>To encourage this, choose a place that makes sense on your computer, create a folder called STAT-462. can either do this outside R studio in your file explorer, or inside the “Files tab” in R studio. You should store all your 462 labs inside this folder</strong></p>
 <p>Now we will create our first project (also see the pic):</p>
 <ul>
@@ -287,7 +287,7 @@ Figure 1.3: Instructions to create an R project
 <h5>If you’re having issues at this point or haven’t managed to get to this step, STOP! Ask an instructor for help.</h5>
 <p>Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure <a href="#fig:projectout">1.4</a>, e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.</p>
 <ul>
-<li>To take a screenshot on a mac, press Command-3. The sreenshot will appear on your desktop</li>
+<li>To take a screenshot on a mac, press Command-3. The screenshot will appear on your desktop</li>
 <li>To take a screenshot on a PC, press Alt + PrtScn</li>
 </ul>
 <p>Rename the screenshot to your “username_Lab1_Fig1”(for example for me it will be hlg5155_Lab1_Fig1), then place it in your Lab 1 sub-folder inside STAT-462. This folder was created when you made the project.</p>
@@ -419,7 +419,7 @@ Figure 1.4: Your screen after running the project
 </ul>
 <p>Watch this short video to learn three important facts about functions:</p>
 <p><a href="http://vimeo.com/220490105" title="R functions"><img src="images/Fig_01_07VIDEO_Functions.png" alt="Function basics" /></a></p>
-<p>One example of a function is <code>file.choose()</code> (not how I put the parenthese in this lab book so you can see it is a command). This command will let you interactively select a file and print the address out onto the screen.</p>
+<p>One example of a function is <code>file.choose()</code> (not how I put the parentheses in this lab book so you can see it is a command). This command will let you interactively select a file and print the address out onto the screen.</p>
 <p>Try each of these out in your console for the file.choose() command, leaving the parentheses blank.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Typing this into the console will print out the underlying code</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>file.choose </span>
@@ -521,7 +521,7 @@ Figure 1.5: Tidyverse install messages
 <p>So far, we’ve been typing commands into the console, but these will all be lost once you close R. Equally, it’s hard to remember or reproduce the analysis you have done . So we will now move onto writing code commands that you can save and submit.</p>
 <p>There are several types of document that you can create and save in R-Studio.</p>
 <ul>
-<li><p>A basic script (the filetype is .r). This is simply just a blank document where you can save code commands (a script is shown in (Figure <a href="#fig:Rscreenshot"><strong>??</strong></a>)). When you “run” the commands in the script, R simply copy/pastes the commands over to the console.</p></li>
+<li><p>A basic script (the filetype is .r). This is simply just a blank document where you can save code commands. When you “run” the commands in the script, R simply copy/pastes the commands over to the console.</p></li>
 <li><p>An R-Notebook or R-Markdown document (the filetype is .Rmd). These are documents you can use to write a report with normal text/pictures, but and also include both your R code and output. You can turn these into reports, websites, blogs, presentations or applications. For example these instructions are created using a markdown document.</p></li>
 </ul>
 <p>In this course we are going to focus on the R-Markdown format and you are going to submit your labs as html files.</p>
@@ -576,7 +576,7 @@ Figure 1.8: You should see TWO new files appear in your lab 1 folder
 <p><img src="images/Fig_01_11CodeChunk.png" width="1052" /></p>
 <p>Type the lines of code below into the code chunk. Then run it by pressing the little green right arrow.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">skim</span>(mtcars)</span></code></pre></div>
-<p>This command compiles the summary statistics for the table you just saw. (you applied the <em>skim</em> command to the mtcars table).</p>
+<p>This command compiles the summary statistics for the table you just saw. (you applied the <em>skim</em> command to the mtcars table). If this doesn’t work, make sure you installed and loaded the <code>skimr</code> library - or try the <code>summary()</code> command.</p>
 <p>Below your code chunk,</p>
 <p>You should be able to see that we’re dealing with a table with 11 columns that each tell us something about cars in 1974. Now answer the following questions, making sure to label them clearly in your text as a full sentence e.g. <em>The median weight of the cars is…</em></p>
 <p><strong>Question A: </strong> <em>What is the maximum value of the Gross horsepower of the cars?</em></p>
@@ -607,7 +607,7 @@ Figure 1.8: You should see TWO new files appear in your lab 1 folder
 <p><strong>Question E:</strong> <em>In the text, in your own words, describe what a normal QQ-plot is and how to calculate one (if you’re not sure, do a google search - there are good videos!). In our case, why is it difficult for us to tell if the data comes from a population with a normal distribution?</em> =</p>
 <p><strong>Step 7:</strong></p>
 <p>Now we’re going to move onto some commands that allow us to calculate normal probabilities using R, rather than slowly by hand. Using the R functions <code>pnorm()</code> and <code>qnorm()</code>, we can find the cumulative probabilities and normal quantiles for any normal distribution.</p>
-<p>For example, Cat lifespans have a normal distributon with a mean of 15.4 and a standard deviation of 2.3. What’s the probability of a cat lifespan less than 14 years?</p>
+<p>For example, Cat lifespans have a normal distribution with a mean of 15.4 and a standard deviation of 2.3. What’s the probability of a cat lifespan less than 14 years?</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>?pnorm <span class="co"># use the help file of ?pnorm to see what lower.tail=TRUE/FALSE does</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="kw">pnorm</span>(<span class="dv">14</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>,<span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2798345</code></pre>
@@ -655,7 +655,7 @@ Figure 1.8: You should see TWO new files appear in your lab 1 folder
 <p>You understand basic R commands and can describe the dataset</p>
 <p><strong>QUESTIONS E: 10 MARKS</strong></p>
 <ul>
-<li>10/10 for a detaile explanation I could provide to the class as an example (in your own words)</li>
+<li>10/10 for a detailed explanation I could provide to the class as an example (in your own words)</li>
 <li>5/10 some attempt, but some clarification/tweaks would be needed</li>
 <li>2/10 any attempt</li>
 </ul>

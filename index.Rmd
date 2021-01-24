@@ -115,7 +115,7 @@ Before R projects, we had to worry about where on your computer your data was sa
 
 Equally, projects allow you to have multiple versions of R-studio open.  This is  useful because say you have Lab-2 open, but want to re-open Lab-1 to check some code, clicking the "Lab 1 project file" will load a whole new version of R with Lab 1 ready to edit.  
 
-It is ***really*** important that you stay organised in this course, for example making sure you know where you put your data and your labs. 
+It is ***really*** important that you stay organized in this course, for example making sure you know where you put your data and your labs. 
 
 **To encourage this, choose a place that makes sense on your computer, create a folder called STAT-462. can either do this outside R studio in your file explorer, or inside the "Files tab" in R studio.  You should store all your 462 labs inside this folder**
 
@@ -151,7 +151,7 @@ In the future, every time you want to work on Lab 1, rather than open R-studio d
 
 Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(fig:projectout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
 
- - To take a screenshot on a mac, press Command-3.  The sreenshot will appear on your desktop
+ - To take a screenshot on a mac, press Command-3.  The screenshot will appear on your desktop
  - To take a screenshot on a PC, press Alt + PrtScn  
 
 Rename the screenshot to your "username_Lab1_Fig1"(for example for me it will be hlg5155_Lab1_Fig1), then place it in your Lab 1 sub-folder inside STAT-462.  This folder was created when you made the project.
@@ -330,7 +330,7 @@ Watch this short video to learn three important facts about functions:
 
 [![Function basics](images/Fig_01_07VIDEO_Functions.png)](http://vimeo.com/220490105 "R functions")
 
-One example of a function is `file.choose()` (not how I put the parenthese in this lab book so you can see it is a command).  This command will let you interactively select a file and print the address out onto the screen. 
+One example of a function is `file.choose()` (not how I put the parentheses in this lab book so you can see it is a command).  This command will let you interactively select a file and print the address out onto the screen. 
 
 Try each of these out in your console for the file.choose() command, leaving the parentheses blank. 
 
@@ -464,7 +464,7 @@ So far, we've been typing commands into the console, but these will all be lost 
 
 There are several types of document that you can create and save in R-Studio.
 
- - A basic script (the filetype is .r).  This is simply just a blank document where you can save code commands (a script is shown in (Figure \@ref(fig:Rscreenshot))).  When you "run" the commands in the script, R simply copy/pastes the commands over to the console.
+ - A basic script (the filetype is .r).  This is simply just a blank document where you can save code commands.  When you "run" the commands in the script, R simply copy/pastes the commands over to the console.
  
  - An R-Notebook or R-Markdown document (the filetype is .Rmd).  These are documents you can use to write a report with normal text/pictures, but and also include both your R code and output. You can turn these into reports, websites, blogs, presentations or applications. For example these instructions are created using a markdown document.    
  
@@ -543,7 +543,7 @@ Type the lines of code below into the code chunk. Then run it by pressing the li
 skim(mtcars)
 ```
 
-This command compiles the summary statistics for the table you just saw. (you applied the *skim* command to the mtcars table).  
+This command compiles the summary statistics for the table you just saw. (you applied the *skim* command to the mtcars table).  If this doesn't work, make sure you installed and loaded the `skimr` library - or try the `summary()` command.
 
 Below your code chunk, 
 
@@ -603,7 +603,7 @@ hist(mtcars$mpg,br=10)
 
 Now we're going to move onto some commands that allow us to calculate normal probabilities using R, rather than slowly by hand. Using the R functions `pnorm()` and `qnorm()`, we can find the cumulative probabilities and normal quantiles for any normal distribution.  
 
-For example, Cat lifespans have a normal distributon with a mean of 15.4 and a standard deviation of 2.3. What's the probability of a cat lifespan less than 14 years?
+For example, Cat lifespans have a normal distribution with a mean of 15.4 and a standard deviation of 2.3. What's the probability of a cat lifespan less than 14 years?
 
 ```{r}
 ?pnorm # use the help file of ?pnorm to see what lower.tail=TRUE/FALSE does
@@ -685,7 +685,7 @@ You understand basic R commands and can describe the dataset
 
 **QUESTIONS E: 10 MARKS** 
 
- - 10/10 for a detaile explanation I could provide to the class as an example (in your own words)
+ - 10/10 for a detailed explanation I could provide to the class as an example (in your own words)
  - 5/10 some attempt, but some clarification/tweaks would be needed
  - 2/10 any attempt
  

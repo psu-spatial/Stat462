@@ -553,6 +553,8 @@ You should be able to see that we're dealing with a table with 11 columns that e
 
 **Question B: **  *What is the median weight of the cars.* 
 
+If you are stuck, remember to read the help file from Step 2.
+
 **Step 4:**
 
 Suppose I want to compare the mileage of the vehicle for Auto and Manual transmission vehicles. We can make the comparison by making a side-by-side boxplot. Create a new code chunk. Use the code below to create the plot .

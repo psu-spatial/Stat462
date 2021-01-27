@@ -708,7 +708,7 @@ You understand basic R commands and can describe the dataset
  - 5/10 some attempt, but some clarification/tweaks would be needed
  - 2/10 any attempt
  
- **QUESTIONS F: 20 MARKS** 
+ **QUESTIONS F: 10 MARKS** 
 
 You can make and interpret a histogram, QQplot and a Wilks test for the MILES PER GALLON data
 

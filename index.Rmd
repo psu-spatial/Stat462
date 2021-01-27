@@ -42,8 +42,8 @@ Welcome to STAT-462 labs.  The aim of this week is to:
  b. Learn about projects and libraries
  c. Start using R commands (known as functions)
  d. Understand R Markdown and the process for submitting assignments
- e. Do some exploratory analysis on a data-set of credit scores
- 
+ e. Do some basic data analysis
+
  **If the labs are causing major problems with your computer or your computer hardware is struggling (or you have any other software issue), Talk to Dr Greatrex**. We can  fix this and there are other options for "online R" that you can use. As these all have their own issues, getting it installed on your computer is likely easiest and the one I would like you to try first.
 
 In general, you can reach out to any of the teaching staff if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.  There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706473 
@@ -103,7 +103,7 @@ Now:
  - UNCLICK "Restore most recently opened project at startup"
  - Set "Save workspace to .RData on" exit to Never
 
-## Lab challenge 1 - R projects {#project}
+## Lab challenge 1
 
 ### What are projects?
 
@@ -149,7 +149,7 @@ In the future, every time you want to work on Lab 1, rather than open R-studio d
 
 ##### If you're having issues at this point or haven't managed to get to this step, STOP!  Ask an instructor for help. {-}
 
-Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(fig:projectout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
+Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(fig:finalout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
 
  - To take a screenshot on a mac, press Command-3.  The screenshot will appear on your desktop
  - To take a screenshot on a PC, press Alt + PrtScn  
@@ -376,23 +376,23 @@ So we have
  - Functions: Specific commands or actions written in the R language
  - Packages: Commands are grouped into bundles/apps called packages, which we download from the internet and load every time we need them.
 
-A close analogy is your phone.  There are millions of apps available from banking, to social media to camera filters.  You don't have every app in the world installed on your phone - and you don't have every the ones you *do* download running at the same time.  
+A close analogy is your phone.  There are millions of apps available from banking, to social media to camera filters.  You don't have every app in the world installed on your phone - and you don't have every app you *do* download running at the same time.  
 
 This is the same for R:
 
  - You *download and install* packages from the internet that you might need. This can be done by clicking the install button in the Packages tab.  Or you can use the `install.packages()` command. You only ever need to do this once.
- - To actually run the commands in the package you need to load them - just in the way you tap an app to start it. This can be done using the `library()` command.
+ - To actually run the commands in the package you need to load/run them - just in the way you tap an app to start it. This can be done using the `library()` command.
  
 ## Lab Challenge 2
 
 Now we are going to download some packages from the internet and install them.  You must be connected to the internet to make this happen!  In the console, type the following commands, or click the "Install" button in the packages tab (next to plots) and find the package name. If it asks if you want to install dependencies, say yes.
 
-If it gives you warnings about rtools, ignore them.
+If R gives you warnings about rtools, ignore them or follow the instructions at the top to install R-Tools.
 
 ```{r, eval=FALSE, echo=TRUE}
 
 # COPY/PASTE THESE INTO YOUR CONSOLE AND LET THEM RUN. 
-#(These are hopefully all the packages for the course, so it's a one off)
+#(These are hopefully all the packages for the course, so it's a one off download)
 
 install.packages("tidyverse") # Lots of data processing commands
 install.packages("knitr")     # Helps make good output files
@@ -410,6 +410,7 @@ install.packages("IMTest")    # Regression specific commands
 install.packages("MASS")      # Regression specific commands
 install.packages("moderndive")# Regression specific commands
 install.packages("corrplot")  # correlation plots
+install.packages("ggpubr")    # Nice regression plots
 install.packages("car")       # this one sometimes has problems, don't panic if you get errors
 
 ```
@@ -438,6 +439,7 @@ library("IMTest")    # Regression specific commands
 library("MASS")      # Regression specific commands
 library("moderndive")# Regression specific commands
 library("corrplot")  # correlation plots
+library("ggpubr")    # Nice regression plots
 library("car")       # this one sometimes has problems, don't panic if you get errors
 
 ```
@@ -456,7 +458,7 @@ knitr::include_graphics('images/Fig_1_15Tidyverse.png')
 
 Note - you don't need to submit anything for lab challenge 2 - it's here to make the rest of the semester run smoothly. Your only action is to reach out if there are errors.
 
-## R-Markdown and exploratory analysis
+## Markdown & Exploratory Analysis
 
 ### What is R-markdown?
 
@@ -588,18 +590,34 @@ Once you have calculated these, under the code chunk, write a summary of your re
 
 **Step 6:**
 
-We want to see if our data is normally distributed.  We can do this using the histogram and normal-qq plot.   The command to do a histogram is `hist()` and `qqnorm()`
+We want to see if our data is normally distributed.  We can do this using the histogram and normal-qq plot.    The code below makes a histogram and QQNorm plot for the car horsepower.  It also runs a Shapiro-Wilks test for the horsepower.  
 
-Create a new code chunk. Type or copy the following code into R.
 
 ```{r, results="hide",fig.keep = 'none' }
-qqnorm(mtcars$mpg, pch = 1, frame = FALSE)
-qqline(mtcars$mpg, col = "steelblue", lwd = 2)
-
-hist(mtcars$mpg,br=10)
+hist(mtcars$hp,br=10)
 ```
 
-**Question E:**   *In the text, in your own words, describe what a normal QQ-plot is and how to calculate one (if you're not sure, do a google search - there are good videos!).  In our case, why is it difficult for us to tell if the data comes from a population with a normal distribution?* =
+
+```{r, results="hide",fig.keep = 'none' }
+# The hash at the front of a line means I want R to ignore this code. It is invisible to R - a "comment"
+# These two lines were the original way to make a QQ-norm plot. Feel free to uncomment and run them
+# qqnorm(mtcars$mpg, pch = 1, frame = FALSE)
+# qqline(mtcars$mpg, col = "steelblue", lwd = 2)
+
+# Instead we are going to use a nicer format from the `ggpubr` library
+ggqqplot(mtcars$hp,col="red")
+```
+
+```{r}
+# Shapiro Wilks test
+shapiro.test(mtcars$hp)
+
+```
+
+
+**Question E:**   *In the text, in your own words, describe what a normal QQ-plot is and how to calculate one (if you're not sure, do a google search - there are good videos!).*
+
+**Question F:**  *Run a histogram,  Quantile-Quantile plot and a Shapiro-Wilks test for the MILES PER GALLON data.  In the text below the plot write your conclusions about whether you are satisifed that a normal distribution can represent the miles per gallon data column and explain your reasoning.*
 
 **Step 7:** 
 
@@ -619,8 +637,6 @@ What about the probability of a cat being older than 20?
 pnorm(20,mean=15.4,sd=2.4,lower.tail = FALSE)
 ```
  
-It's the same as we found by hand, about 0.27%.
- 
 Normal quantiles go the other way around - they tell you the z score for whatever probability you require.   For example, 80% of cats live to be what age?
 
 ```{r}
@@ -629,16 +645,17 @@ qnorm(.80,mean=15.4,sd=2.4)
 
 So the the answer is 17.42 years (remember the units!)
 
-**Question F:**  *Use R to find the probability below:*
+**Question F:**  
+
+*Use R to find the probability below:*
 
  - *If X ∼ N(5,2), then find P(X ≤ 4)* 
 
-**Question G:** *Use R to find the value of the normal quantiles:*
+*Then Use R to find the value of the normal quantiles:*
 
  - *If X ∼ N(5,2), then find the value a such that P(X < a) = 0.025* 
 
-**Question H.** *Records maintained by the your admin office indicate that amount of time elapsed between the submission of travel receipts and the final reimbursement of funds has approximately a normal distribution with a mean of 39 days and a standard deviation of 6 days.*  
-*If you submitted your travel claim 55 days ago, what is the probability that it should have been returned by now?  What might you conclude? You can do this either by hand or in R.* 
+**Question H.** *Records maintained by the your admin office indicate that amount of time elapsed between the submission of travel receipts and the final reimbursement of funds has approximately a normal distribution with a mean of 39 days and a standard deviation of 6 days.  If you submitted your travel claim 55 days ago, what is the probability that it should have been returned by now?  What might you conclude?* 
 
 **Step 9:**
 
@@ -646,7 +663,7 @@ So the the answer is 17.42 years (remember the units!)
 
 **Step 10:**
 
-**Question J.** *Finally, let's include that project screenshot to prove to me you are using projects*  
+**Question J.** *Finally, let's include that project screenshot to learn that element of RMarkdown*  
 
 Make sure the screenshot is in your Lab 1 folder. Now include a code chunk that looks similar to this, but with your user name/file name (note, it might be a .jpeg not a .png).  When you run it, the screenshot should appear below the code chunk.
 
@@ -656,7 +673,7 @@ knitr::include_graphics('images/Fig_01_12Picture.png')
 
 **Step 11 OPTIONAL:**
 
-**OPTIONAL Question K [BONUS 2%]**:  Finally, if you would like your histograms and plots to look more professional, take a look at ggplot and see if you can make a histogram the mpg data using this approach instead. This is a good tutorial: https://www.r-graph-gallery.com/220-basic-ggplot2-histogram.html]
+**OPTIONAL Question K [BONUS 2%, lab capped at 100%]**:  Finally, if you would like your histograms and plots to look more professional, take a look at ggplot and see if you can make a histogram the mpg data using this approach instead. This is a good tutorial: https://www.r-graph-gallery.com/220-basic-ggplot2-histogram.html]
 
 
 ## Submitting Lab 1
@@ -681,7 +698,7 @@ Your code and document is neat and easy to read. LOOK AT YOUR HTML FILE IN YOUR 
 
 You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade.
     
-**QUESTIONS A-D: 20 MARKS** 
+**QUESTIONS A-D: 10 MARKS** 
 
 You understand basic R commands and can describe the dataset
 
@@ -691,7 +708,12 @@ You understand basic R commands and can describe the dataset
  - 5/10 some attempt, but some clarification/tweaks would be needed
  - 2/10 any attempt
  
- **QUESTIONS F-G: 10 MARKS**
+ **QUESTIONS F: 20 MARKS** 
+
+You can make and interpret a histogram, QQplot and a Wilks test for the MILES PER GALLON data
+
+ 
+ **QUESTIONS G: 10 MARKS**
  
 You can calculate basic probabilities in R
 

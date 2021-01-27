@@ -692,7 +692,7 @@ Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 1.
 
 **MARKDOWN/CODE STYLE - 5 MARKS**
 
-Your code and document is neat and easy to read. LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSWER BEFORE YOU SUBMIT.  There is also a spell check next to the save button.  
+Your code and document is neat and easy to read. LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT.  There is also a spell check next to the save button.  
 
 **WRITING STYLE - 5 MARKS**
 
@@ -730,6 +730,7 @@ You engaged with the lab and can articulate your learning
 You can include a screenshot and are using projects correctly
 
 **HTML FILE SUBMISSION - 5 marks**
+
 **RMD CODE SUBMISSION - 5 marks**
 
 

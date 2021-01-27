@@ -11,7 +11,7 @@ description: "Lab Book for STAT-462 2021"
 ---
 
 
-# 
+# Lab 1
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE}
 
@@ -135,7 +135,7 @@ knitr::include_graphics('images/Fig_01_04Project.png')
 
 Your output should look something like this:
 
-```{r,finalout, echo=FALSE}
+```{r,finalout, echo=FALSE, fig.cap = "What you should see"}
 knitr::include_graphics('images/Fig_01_05FinalOutput.png')
 ```
 
@@ -146,10 +146,10 @@ getwd()
 ```
  
 In the future, every time you want to work on Lab 1, rather than open R-studio directly, double click the R project file inside Lab 1 and you will get back to your work.
-
+ 
 ##### If you're having issues at this point or haven't managed to get to this step, STOP!  Ask an instructor for help. {-}
 
-Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(finalout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
+Now you have opened your project, take a screenshot of your R-studio page. It should look like the figure above, e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
 
  - To take a screenshot on a mac, press Command-3.  The screenshot will appear on your desktop
  - To take a screenshot on a PC, press Alt + PrtScn  

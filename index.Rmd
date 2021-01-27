@@ -135,7 +135,7 @@ knitr::include_graphics('images/Fig_01_04Project.png')
 
 Your output should look something like this:
 
-```{r, finalout, echo=FALSE}
+```{r,finalout, echo=FALSE}
 knitr::include_graphics('images/Fig_01_05FinalOutput.png')
 ```
 
@@ -149,7 +149,7 @@ In the future, every time you want to work on Lab 1, rather than open R-studio d
 
 ##### If you're having issues at this point or haven't managed to get to this step, STOP!  Ask an instructor for help. {-}
 
-Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(fig:finalout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
+Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(finalout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
 
  - To take a screenshot on a mac, press Command-3.  The screenshot will appear on your desktop
  - To take a screenshot on a PC, press Alt + PrtScn  

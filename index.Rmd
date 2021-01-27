@@ -11,7 +11,7 @@ description: "Lab Book for STAT-462 2021"
 ---
 
 
-# Lab 1
+# 
 
 ```{r, echo=FALSE,message=FALSE,warning=FALSE}
 

@@ -32,7 +32,7 @@ library("MASS")      # Regression specific commands
 library("moderndive")# Regression specific commands
 library("corrplot")  # correlation plots
 library("car")       # this one sometimes has problems, don't panic if you get errors
-
+library("ggpubr")    # QQplots
 ```
 
 

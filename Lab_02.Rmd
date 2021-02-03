@@ -23,6 +23,7 @@ library("ggpubr")    # QQplots
 
 ```
 
+## General information
 
 Welcome to STAT-462 lab 2.  The aim of this week is to:
 
@@ -30,499 +31,23 @@ Welcome to STAT-462 lab 2.  The aim of this week is to:
  b. Create more professional markdown files
  c. Run some more statistical tests
  d. Conduct a more free ranging exploratory data analysis
+ 
+*The support you need to understand Lab 2 is in the Tutorials - READ THE TUTORIALS 2A,2B,2C,2D.*
 
 ##### General comments {-}
 
  - You do not have to submit things you try from the tutorials, you will just be graded on the lab 2 assignment.  
-
- - If running the labs is causing major problems for your computer or you have any other computer issue, talk to Dr Greatrex. We can fix this and there are other options for to access R online. In general, please reach out to Dr Greatrex if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.
+ 
+ - Future labs will be less prescriptive about the formatting - but this is a detailed tutorial so that you learn how to set it all up well. Note, your answers should be written up in full sentences. 
+ - If running the labs is causing major problems for your computer or you have any other computer issue, talk to Dr Greatrex. We can fix this and there are other options for you to access R online. In general, please reach out to Dr Greatrex if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.
 
  - There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706472 
 
+## Tutorials
 
-## Tutorial 1: Getting help in R
+This lab contains questions on markdown formats, hypothesis test and on exploratory data analysis. I encourage you to go and look at Tutorial 2A, 2B, 2C and 2D.  All the answers are in there (for a different dataset).
 
-There are going to be many occasions when either you are not sure what to do in R or something is not working. Here are some of the places I get help:
-  
-### Help on a specific command
-
-You can type `?function_name` into the console where [name] is the CASE SENSITIVE name of the command.  For example, you can find help on the boxplot command by typing `?boxplot` or `help(boxplot)`.  
-
- - The top part of each help file will show you a list of the parameters that you can use to modify the command. For example in the boxplot help file you can see that the col parameter can be used to change the boxplot colour.
-
- - The middle part of the help file contains details about the command for example the background or further reading
-
- - The last part of the help file contains worked examples that you can literally copy/paste into the console too see how they work.
- 
-If you're *sure* you typed the name correct but it can't find the help-file, then you probably first need to load the package containing the command.  For example `?ggqqplot` will not work before you use `library("ggpubr")` to load the `ggpubr` package. 
- 
- 
-### Finding a command name
-
-Let's say that you want to run a Wilks Shapiro test but you cannot remember what the command is called. In the console try typing `??"search_text"` or `help.search("search_text")` e.g. try `??"shapiro"` or `help.search("shapiro")`.
-
-Note, there are now quote marks around the text you are searching for. To seek help on special operators, use quotes or back-ticks e.g. `?"<-"`.
-
-`help.search("shapiro")` will search through every R help file on your computer that includes the word "shapiro".  
-
-```{r, helpfile, echo=FALSE}
-knitr::include_graphics('images/Fig_02_01HelpFile.png')
-```
-
-You can see that there are a three commands I can choose from (I might have more than you here).  For each command you can see the package containing the command, followed by :: then the command name.  Clicking on it brings up the help file.
-
-Remember to actually use any command in R, you first need to load the relevant package. For example,  if I wanted to use the nortest version of sf.test, then I would first need to include the command `library(nortest)` in order for it to be available.
-
-### Asking the internet: 
-
-```{r, xkcd, echo=FALSE,fig.cap="This may be a cartoon but it's genuinely how I debug my code!"}
-knitr::include_graphics('images/Fig_02_02XKCD.png')
-```
-
-If your code isn't working.  Google is a great tool and you have full permission to search google to debug your code - I guarantee someone will have seen your error code before.  I often literally copy/paste an error code into google and see what comes up.  Or search google for things like "how to add an image R markdown".
-
-One good place to search is Stack Overflow.  To go directly to R-related topics, visit http://stackoverflow.com/questions/tagged/r. Here's how to ask a good question: https://stackoverflow.com/help/how-to-ask 
-
-When asking for help, typing the command `sessionInfo()` into the console will print out the version of R and the packages you have loaded. This can be useful for debugging any issues.
-
-You also always have lab sessions to ask questions or the discussion boards at any time.
-
-### General help & cheatsheets 
-
-Within R, try running `help.start()` in the console (remember to include the empty parentheses or R won't realise it's a command).  This brings up all the manuals R has available on your computer.  An introduction to R is particularly useful. Click on it and have a look around.
-
-There are also some really good cheat-sheets out there:
-
-  - MARKDOWN cheat-sheet: go to the help menu at the very top of your screen. Click `Markdown Quick Reference`.
-  - Loads more cheatsheets: https://rstudio.com/resources/cheatsheets/
-  - The R graph gallery https://www.r-graph-gallery.com/  contains code for many beautiful plots that you can make.
-  - Googling the name of a package often leads to a website with nice tutorials. For example, I found this for the paletteer package https://emilhvitfeldt.github.io/paletteer/.
-  - A nice markdown summary - https://ourcodingclub.github.io/tutorials/rmarkdown/ with answers to things like preview vs knit. 
- 
-
-## Tutorial 2: Markdown formats
-
-The aim of this tutorial is to make your markdown reports more professional and easy to read. In future weeks we will continue to expand this work so that by the end of the course, you can make highly professional interactive reports.  For example, [click here](https://rmarkdown.rstudio.com/formats.html) for all the types of document you could easily turn your report into. 
-
-
-### Editing YAML code
-
-This is the code at the top of your file (Figure 1.8 & 1.9).  It controls how your final output looks and which type of output it becomes.  When you create a markdown file, your code will look like one of these two options (one created using notebook and one markdown - either are fine)
-
-```{r, yaml, echo=FALSE,fig.cap="One created using a notebook and one using a markdown"}
-knitr::include_graphics('images/Fig02_03YAMLCode.png')
-```
-
-No matter what you have, it is useful to change the YAML code so that it looks like this, but with your name & Lab 2.
-
-Note, if you copy/paste this and it doesn't work, sometimes the quote marks copy weirdly from the internet - try deleting and retyping the quotes.  
-
-```{r,eval=FALSE}
----
-title: "STAT-462: Lab 2"
-author: "Helen Greatrex"
-date: "`r Sys.Date()`"
-output:
-  html_document:
-    toc: true
-    toc_float: yes
-    number_sections: yes
-    theme: lumen
-    df_print: paged
-  html_notebook:
-    toc: true
-    toc_float: yes
-    number_sections: yes
-    theme: lumen    
----
-```
-
-Now, save your file, or click "preview" at the top of the script.  See if it works. 
-
-There is a reasonable chance this won't work first time around, as editing the YAML code can be a pain.  It is very case and space sensitive.  For example, the spaces at the start of some lines are important and are created using the TAB KEY, not the space bar.  There is one TAB key before html_notebook (which is now on a new line). There are two TAB KEYS before toc, toc_float, number_sections and theme.
-
-*Don't continue until you can make and view your html or nb.html file. If it doesn't work, ask for help before moving on*
-
-The elements we just added are:
-
- - The title
- - The author
- - Today's date
- - A floating table of contents and numbered sections (this won't appear until you start typing section headings)
- - The document is now in the lumen theme. **You can choose other themes for markdown documents here.  https://www.datadreaming.org/post/r-markdown-theme-gallery/**
-
-There are many more details about different options you can add here: https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
-
-If you want to get really fancy, there is an interesting package to help you design YAML code here: https://education.rstudio.com/blog/2019/10/tools-for-teaching-yaml-with-ymlthis/
-
-
-### Text formats
-
-R-Markdown uses text formatting a bit like LateX rather than word where you format the text as you write.  First off - there are many cheat-sheets out there, but I particularly like this one https://www.markdownguide.org/basic-syntax/.  
-
-One important way to make your R Markdown documents look more professional is to add in headings, sub-headings and text formats.  Today we will look at headings and bold/italic text.
-
-
-```{r, formats, echo=FALSE,fig.cap="A typical Rmd file (right) and its output (left) - note you need to click on the contents bar to expand it"}
-knitr::include_graphics('images/Fig02_04Markdownformat.png')
-```
-
-First, go to the help menu at the very top of your screen (might be hidden) and click Markdown quick reference.  This will bring up a cheat-sheet.  
-
-```{r, quickref, echo=FALSE,fig.cap="The top menu might be hidden"}
-knitr::include_graphics('images/Fig02_05markdownref.png')
-```
-
-
-**Paragraphs and white space - READ THIS:**
-
-R is very sensitive to blank white lines.  Put them everywhere.  Put a blank line between paragraphs, before/after headings, before lists, before/after code chunks....  If your formatting isn't working well, chances are there isn't a blank line before or after it.
-
-**Headings:**
-
-*Inside* a code chunk, the # symbol allows you to write mini comments that help explain the command e.g. 
-
-```{r,collapse=TRUE}
-# calculate 1+1 and 2+2
-1+1
-2+2
-```
-
-
-*Outside* a code chunk, the # symbol makes a heading, AS LONG AS YOU HAVE A WHITE LINE ABOVE AND BELOW.  Have a look at the figure above for an example.  Including headings this way allows automatic section numbering and will allow the table of contents to automatically be created.  In the script itself the headings won't show up - you will only see them when you press knit.
-
-**Bold and italic:**
-
-Putting stars or _ around your text will make it bold or italic (or both).  Again have a look at the figure above and the cheat-sheet. Interestingly (and annoyingly), there is no simple way to underline text. In the script itself the text formatting won't show up, you will only see them when you press knit.
-
-
-## Tutorial 3: Selecting & summarising data 
-
-### Data.frame introduction
-
-Most of the data we will look at is in "data.frame" format.  This is a table, just like an excel spreadsheet, with one row for each observation and one column for each variable. Each column has a column name.
-
-Next week we will work on loading our own data into R.  This week we will focus on in-built R datasets. 
-
-Let's choose one now. I'm going to work with the pirates dataset from the `yarrr` package. We can choose the data here.
-
-```{r, echo=FALSE,message=FALSE,warning=FALSE}
-dataset <- pirates
-```
-
-```{r, eval=FALSE, echo=TRUE}
-library(yarrr)
-library(tidyverse)
-?pirates
-dataset <- pirates
-```
-
-To have a look at the data there are many options. You can either:
-
- - click on its name in the environment tab
- - Type its name into the console or into a code chunk (e.g. for our table, type `dataset` into the console or a code chunk)
- - Run the command `View(variable_name)` (View is a command from the tidyverse package)
- - Run the command `print(variable_name)` 
- - Run the command `head(variable_name)` to see the first 6 lines or so (good for quick checks)
- 
- For example
- 
-```{r}
-# Note, there are more columns to the right, use the arrow to see
-head(dataset)
-```
-
-To see what the column names are, you can use the `names(dataset)` command
-
-```{r}
-names(dataset)
-```
-
-Or look at the summary
-
-```{r}
-summary(dataset) 
-# You can also use the skimr package and skim command here
-# skim(pirates)
-```
-
-To see how many columns and rows there are, you can use the `nrow()` and `ncol()` commands
-
-```{r}
-# there are 1000
-nrow(dataset)
-ncol(dataset)
-```
-
-
-### Selecting individual values
-
-You can select rows and columns using SQUARE brackets and [rows,columns].  For example
-
-```{r}
-#select row 2 and columns 4,5 & 6 (that's what the : does, counts from 4 to 6)
-dataset[2 , 4:6]
-
-#select rows 1,3 and 5 - plus the height and eyepatch columns
-# the c() command lets you choose whatever values you want and sticks (concatenates) them together
-dataset[c(1,3,5),c("height","eyepatch")]
-
-# Leave the right side empty for all the columns
-# e.g this prints all columns of rows 2,3 and 4
-dataset[2:4, ]
-
-# or all the values in a column - I leave the left side blank to select all rows
-# Here I assigned the answer to a new variable called b, That's why it didn't print out.
-b <- dataset[ ,c("college","tattoos")]
-
-
-```
-
-
-### Selecting a single column 
-
-The easiest way to do this is with the $ symbol.  LEARN THIS!  It is incredibly useful
-
-For example, to view the age column of the pirates table, I would type `pirates$age` - so to make a histogram of the pirates ages, I would type
-
-```{r}
-hist(dataset$age,xlab="Pirates ages")
-```
-
-### Selecting mulitple columns
-
-Sometimes your table is very large and you might only care about a few of the variables.  So we could make a new table where we only keep the columns we care about.  For example, as described in the R cheatsheet
-
-```{r, select, echo=FALSE,fig.cap="picture from the tidyverse cheatsheet"}
-knitr::include_graphics('images/Fig02_06SelectColumns.png')
-```
-
-Inside the tidyverse packages, there are some easy functions for selecting columns or rows.  To choose specific columns, we can use the `dplyr::select()` function from the tidyverse package or square brackets. Whatever makes you more comfortable.
-
-Let's select only the "age","height","sex","weight","favorite.pirate" and "beard.length" columns:
-
-```{r}
-# print the column names, so its easier to write the command
-names(dataset)
-
-# The "traditional R way"
-newdata <- dataset[,c("age","height","sex","weight","favorite.pirate",
-                      "beard.length")]
-
-# The "tidyverse way"
-# Note, i'm telling it that I want select from the dplyr package because 
-#        R wanted to choose a different "select" function
-identicalnewdata <- dplyr::select(as_tibble(dataset),c(age,height,weight,
-                                                       favorite.pirate,beard.length))
-
-# have a look at what we did
-head(newdata)
-
-```
-
-### Selecting subsets of rows/observations
-
-Very commonly, we want to select only *some* rows in our table.  For example, let's say I want to look at the distribution of men's beard lengths.  This  means that I only want to select the men in the pirates dataset.  
-
-Again there are two ways of doing this:
-
-```{r}
-# e.g. select rows have the column sex set equal to male
-
-# The "traditional R way". You can use either == or %in% for your selection
-malepirates <- newdata[which(newdata$sex %in% "male"),]
-malepirates <- newdata[which(newdata$sex  ==  "male"),]
-
-# The "tidyverse way". 
-malepirates <- dplyr::filter(newdata, sex == "male")
-
-# have a look at what we did
-head(malepirates)
-
-```
-
-You can also use other symbols to select data
-
- - `>=` greater than or equal to
- - `>`  greater than
- - `==` equal to
- - `!=` NOT equal to
- - `<`  less than
- - `<=` less than or equal to
-
-```{r, collapse=TRUE}
-# What is the average weight of pirates who are over 150cm tall?
-tallpirates <- dplyr::filter(dataset, height > 180)
-mean(tallpirates$weight)
-```
-
-
-Or you could use multiple conditions using the & symbol or | symbol
-
-```{r,collapse=TRUE}
-# What is the average weight of MALE pirates who are over 150cm tall?
-tall.male.pirates <- dplyr::filter(dataset, height > 180 & sex == "male")
-mean(tall.male.pirates$weight)
-```
-
-```{r,collapse=TRUE}
-# What is the maximum number of tattoos on tall pirates who have at least 1 parrot OR an eyepatch
-tall.parrot.eye <- dplyr::filter(dataset, height > 180 & (parrots >= 1 |eyepatch == 1 ))
-max(tall.parrot.eye$tattoos)
-```
-
-
-### Looking at summary tables
-
-We often want to see summary statistics of our data. We covered the `summary` command last week and above.  But what about categorical data?  Just how many pirates liked Monsters Inc.?   We can look at this using the `table()` command.
-
-This counts the number of rows containing each category.  For example, we can see here that 50 pirates out of the 1000 chose Monsters Inc as their favourite film
-
-```{r}
-table(dataset$fav.pixar)
-```
-
-We can also go beyond this. For example, let's break it up by gender - where we can see that 2 non-binary pirates liked the film.
-
-```{r}
-table(dataset$fav.pixar,dataset$sex )
-```
-
-Going one step further, we can see that both of our two non-binary pirates who chose Monsters Inc., both use cutlasses.
-
-```{r}
-table(dataset$fav.pixar,dataset$sex,dataset$sword.type)
-```
-
-### Basic plots (one variable)
-
-In general, there are two very good websites for making professional graphics in R. I regularly browse both of them along with stack overflow to generate plots to be proud of, or to ask questions like "how do I change the axis size?".
-
- - Stat-Methods
-    - https://www.statmethods.net/graphs/index.html 
-    - https://www.statmethods.net/advgraphs/index.html 
- - R Graph gallery
-    - https://www.r-graph-gallery.com/index.html
-
-
-#### Histograms {-}
-
-We discussed the basic histogram command last week: `hist(variable)`.  For example `hist(malepirates$age)` makes a histogram of the age column in the data.frame we created earlier on male pirates.
-
- - To make it look prettier, have a look at ?hist - or this article: https://www.statmethods.net/graphs/density.html
- - Or.. you can make any one of these histograms using the ggplot package (https://www.r-graph-gallery.com/histogram.html)
-
-
-#### Boxplots {-}
-
-We discussed the basic boxplot command last week: `boxplot(variable)`.  For example `boxplot(malepirates$age)` makes a boxplot of the age column in the data.frame we created earlier on male pirates.  To be more fancy:
-
-```{r,eval=FALSE}
-boxplot(age~sex,         
-        data=dataset,                       
-        xlab="Gender",ylab="Age") 
-        #names=c("Male","Female","Non-binary"))
-```
-
- - To make it look prettier, have a look at ?boxplot - or this article: https://www.statmethods.net/graphs/boxplot.html
- - Or.. you can make any one of these boxplots (https://www.r-graph-gallery.com/boxplot.html)
-
-#### QQ-Norm plots {-}
-
-We discussed the basic qqnorm command last week: `qqplot(variable)`.  For example `qqplot(malepirates$age)` makes a qq-norm plot of the age column in the data.frame we created earlier on male pirates.  There is a nicer version inside the ggpubr package.
-
-```{r, eval=FALSE}
-library(ggpubr)
-ggqqplot(malepirates$age,col="blue")
-```
-
-
-## Tutorial 3: Distributions and tests
-
-We have talked about several distributions and tests so far in the lab.  To see the help files for most of them, see `?Distributions`
-
-### Normal distribution
-
-To see the help file for all these:
-```{r,eval=FALSE}
-?Normal
-```
-
-To generate a random sample from a normal distribution: 
-```{r}
-sample.normal <- rnorm(n=100,mean=4,sd=2)
-```
-
-To calculate a z score from your sample/population, you can use R as a calculator. 
-
-To calculate the probability of greater/lesser than a value in a given normal distribution (e.g. you can use this as an interactive table)
-```{r}
-# probability of less than 1.7 in a normal distribution of N(4,2^2)
-pnorm(1.7,mean=4,sd=2,lower.tail = TRUE)
-
-# probability of greater than 1.8 in a normal distribution of N(4,2^2)
-1 - pnorm(1,mean=4,sd=2,lower.tail = TRUE)
-# or
-pnorm(1,mean=4,sd=2,lower.tail = FALSE)
-```
-
-To calculate the value for a given probability
-```{r}
-# what value is less than 60% of the data?
-qnorm(0.6,mean=4,sd=2,lower.tail = TRUE)
-
-# what value is greater than 80% of the data?
-qnorm(0.8,mean=4,sd=2,lower.tail = FALSE)
-```
-
-
-### Student's t-distribution
-
-To see the help file for all these:
-```{r,eval=FALSE}
-?TDist
-```
-
-To calculate a t-statistic from your sample/population, you can use R as a calculator.  To calculate the probability of greater/lesser than a value in a given t-distribution (e.f. you can use this as an interactive t-table)
-
-```{r}
-# probability of seeing less than 1.7 in a  t-distribution 
-# with 20 degrees of freedom
-pt(1.55,df=20,lower.tail = TRUE)
-
-```
-
-To calculate the value for a given probability
-```{r}
-# what value is greater than 90% of the data in a t-distribution with df=25
-qt(0.9,df=25,lower.tail = TRUE)
-```
-
-To conduct a full t-test on some data:
-```{r}
-# Conduct a one sided t-test where we think that H0: mu(age)=30 on our pirates data (e.g. H1: mu(age) != 30 )
-t.test(dataset$age,mu=30,alternative="two.sided")
-```
-
-or see the detailed tutorial here: http://www.sthda.com/english/wiki/one-sample-t-test-in-r for one-sample
-
-and here for comparing two samples: http://www.sthda.com/english/wiki/unpaired-two-samples-t-test-in-r
-
-
-### Wilks Shapiro test for normality
-
-To test for normality: 
-
-```{r}
-# Conduct a W-S test for normality on the ages of pirates
-shapiro.test(dataset$age)
-```
-
-## Lab 2 Assignment
-
-OK - now it's your turn.  Future labs will be less prescriptive about the formatting - but this is a detailed tutorial so that you learn how to set it all up well. Note, your answers should be written up in full sentences. 
-
-### Setting up your code
+## Setting up your code
 
  - Save all your work and if you haven't already, create a Lab 2 folder in your STAT-462 folder
 
@@ -530,13 +55,15 @@ OK - now it's your turn.  Future labs will be less prescriptive about the format
 
  - Create a new Markdown file called "username_Lab2" (for me it will be hlg5155_Lab2)
 
- - Remove the "friendly text" (see 1.5.3 if you have no idea what I mean)
+ - Remove the "friendly text" (see Tutorial 1E, section 1.5.3 if you have no idea what I mean)
 
-### Your YAML code (work through Tutorial 2 first)
+## Markdown formatting and YAML 
 
- - Follow the instructions to edit your YAML code to look like my example in Section 2.2.1. 
+ - Read through tutorial 2B
 
- - Choose a new theme for your lab script!  Tutorial 2.2.1 includes a link to different themes. 
+ - Follow the instructions to edit your YAML code to look like my example in Section 1.7.1. 
+
+ - Choose a new theme for your lab script!  Section 1.7.1 includes a link to different themes. 
   
  - Leave a blank line under your YAML code, then create a level-1 Heading called "Introduction". Save and make sure that it will preview/knit.
 
@@ -554,8 +81,10 @@ library(ISLR)
 ```
 
 
-### Confidence intervals (Tutorial 4 might be helpful)
+## Confidence intervals 
 
+ - Tutorial 2D will be helpful here & your lecture notes. Along with the tutorial, this is a good example using R to calculate confidence intervals: https://www.cyclismo.org/tutorial/R/confidence.html
+ 
  - Leave a blank line after the code chunk, then make a new level-1 heading called "Confidence Intervals". 
 
  - Leave a blank space (I'll stop now but you get the idea), and make a Level 2 heading called "Question A".
@@ -566,18 +95,16 @@ library(ISLR)
 
 <span style="color: navy;">*Either by hand or in R, calculate the 99% confidence interval for the true mean weight reduction.  Make sure to show your workings or R code.*<span>
 
-<span style="color: navy;">*(Note, along with tutorial 4, this is a good tutorial on confidence intervals in R: https://www.cyclismo.org/tutorial/R/confidence.html)*<span>
-
  - Make a Level-2 heading called Question B and answer question B below.
 
 <span style="color: navy;">***Question B:*** *Based on the interval you calculate above, do you have sufficient evidence at your 99% level of significance to believe that the weight-loss programme is working and the penguins are losing weight?  The average penguin actually weighs about 3Kg. Is this diet something you would recommend for meaningful weight loss?*<span>
 
 
+## Hypothesis testing 
 
+ - Tutorial 2D will be helpful here along with your lecture notes.
 
-### Hypothesis testing (Tutorial 4 might be helpful)
-
- - Make a new level-1 heading called Hypothesis Testing, then make a Level 2 heading called Question C - and answer..
+ - Make a new level-1 heading called Hypothesis Testing, then make a Level 2 heading called Question C - and answer:
 
 <span style="color: navy;">***Question C:*** *Tests are being carried out on a new drug designed to relieve the symptoms of the flu, specifically on the number of hours people can sleep.  The new drug is given in tablet form one evening to a random sample of 16 people who have colds. The number of hours they sleep may be assumed to be Normally distributed and is recorded below.*</span> 
 
@@ -604,7 +131,7 @@ sleep <- c(8.1,6.7,2.3,7.2,8.1,9.7,6.0,7.4,6.4,6.9,5.0,7.8,6.7,7.2,7.6,7.9)
  f. <span style="color: navy;">*The calculated test statistic*</span>
  g. <span style="color: navy;">*and your conclusions*</span>
 
-<span style="color: navy;">***Use the tutorial from last week (step 10 in Part 1.6 of Lab 1) to include a screenshot of your [neat] workings in this report***</span>
+<span style="color: navy;">***Include a screenshot of your [neat] workings in this report.*** *If you can't remember how to do this, see step 10 in section 2.6 (Lab-1 Challege 3)*</span>
 
 
  - Make a Level 2 heading called Question D and answer question B below
@@ -612,7 +139,9 @@ sleep <- c(8.1,6.7,2.3,7.2,8.1,9.7,6.0,7.4,6.4,6.9,5.0,7.8,6.7,7.2,7.6,7.9)
 <span style="color: navy;">***Question D: Use R and the t.test command to calculate the t-test for the data above. Comment on whether your two results agree (e.g. did you make a mistake anywhere)***.</span>
 
 
-### Exploratory data analysis
+## Exploratory data analysis
+
+ - Tutorial 2C will be useful here.
 
  - Make a new level-1 heading called Exploratory Data Analysis.  You are now going to explore the Credit dataset, which is a simulated dataset used for educational purposes. To start out, make a new code chunk and include following commands.
 

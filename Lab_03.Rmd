@@ -173,6 +173,10 @@ house <- read_excel("Lab03_house.xlsx")
 # Make a spatial version of the data using the Longitide and Latitude columns
 house.spatial <- st_as_sf(house,coords=c("Longitude","Latitude"),crs = 4326)
 
+# make interactive, for static set as "plot"
+tmap_mode("view")
+
+
 # Command from the tmap library
 # and plot
 tm_basemap("Esri.WorldTopoMap") + 

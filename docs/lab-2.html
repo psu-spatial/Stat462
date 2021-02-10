@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="lab-1.html"/>
-
+<link rel="next" href="lab-3.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -176,6 +176,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9.2" data-path="index.html"><a href="index.html#students-t-distribution"><i class="fa fa-check"></i><b>1.9.2</b> Student’s t-distribution</a></li>
 <li class="chapter" data-level="1.9.3" data-path="index.html"><a href="index.html#wilks-shapiro-test-for-normality"><i class="fa fa-check"></i><b>1.9.3</b> Wilks Shapiro test for normality</a></li>
 </ul></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#tutorial-3a---editing-code-chunks"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#tutorial-3b---regression-models"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -213,6 +215,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7" data-path="lab-2.html"><a href="lab-2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.7</b> Exploratory data analysis</a></li>
 <li class="chapter" data-level="3.8" data-path="lab-2.html"><a href="lab-2.html#submitting-lab-2"><i class="fa fa-check"></i><b>3.8</b> Submitting Lab 2</a><ul>
 <li class="chapter" data-level="3.8.1" data-path="lab-2.html"><a href="lab-2.html#lab-2-submission-check"><i class="fa fa-check"></i><b>3.8.1</b> Lab 2 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lab-3.html"><a href="lab-3.html"><i class="fa fa-check"></i><b>4</b> Lab 3</a><ul>
+<li class="chapter" data-level="4.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-general-information"><i class="fa fa-check"></i><b>4.1</b> Lab 3 General information</a></li>
+<li class="chapter" data-level="4.2" data-path="lab-3.html"><a href="lab-3.html#installing-new-packages"><i class="fa fa-check"></i><b>4.2</b> Installing new packages</a></li>
+<li class="chapter" data-level="4.3" data-path="lab-3.html"><a href="lab-3.html#lab-3-setup-markdown"><i class="fa fa-check"></i><b>4.3</b> Lab 3 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="4.4" data-path="lab-3.html"><a href="lab-3.html#regression-basics"><i class="fa fa-check"></i><b>4.4</b> Regression basics</a></li>
+<li class="chapter" data-level="4.5" data-path="lab-3.html"><a href="lab-3.html#taiwan-housing-challenge."><i class="fa fa-check"></i><b>4.5</b> Taiwan housing challenge.</a></li>
+<li class="chapter" data-level="4.6" data-path="lab-3.html"><a href="lab-3.html#submitting-lab-3"><i class="fa fa-check"></i><b>4.6</b> Submitting Lab 3</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -280,11 +292,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><span style="color: navy;"><em>Leave a blank line under that then write something new you learned about R or statistics this week. Use bold and italic fonts in your answers.</em></p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="lab-2.html#cb141-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb141-2"><a href="lab-2.html#cb141-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb141-3"><a href="lab-2.html#cb141-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb141-4"><a href="lab-2.html#cb141-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb141-5"><a href="lab-2.html#cb141-5"></a><span class="kw">library</span>(ISLR)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="lab-2.html#cb150-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb150-2"><a href="lab-2.html#cb150-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb150-3"><a href="lab-2.html#cb150-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb150-4"><a href="lab-2.html#cb150-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb150-5"><a href="lab-2.html#cb150-5"></a><span class="kw">library</span>(ISLR)</span></code></pre></div>
 </div>
 <div id="confidence-intervals" class="section level2">
 <h2><span class="header-section-number">3.5</span> Confidence intervals</h2>
@@ -327,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 8.1
 ## [1] 9.7</code></pre>
 <p><span style="color: navy;"><em>You can enter the sleep data into R using this code.</em></span></p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="lab-2.html#cb144-1"></a>sleep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.1</span>,<span class="fl">6.7</span>,<span class="fl">2.3</span>,<span class="fl">7.2</span>,<span class="fl">8.1</span>,<span class="fl">9.7</span>,<span class="fl">6.0</span>,<span class="fl">7.4</span>,<span class="fl">6.4</span>,<span class="fl">6.9</span>,<span class="fl">5.0</span>,<span class="fl">7.8</span>,<span class="fl">6.7</span>,<span class="fl">7.2</span>,<span class="fl">7.6</span>,<span class="fl">7.9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="lab-2.html#cb153-1"></a>sleep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.1</span>,<span class="fl">6.7</span>,<span class="fl">2.3</span>,<span class="fl">7.2</span>,<span class="fl">8.1</span>,<span class="fl">9.7</span>,<span class="fl">6.0</span>,<span class="fl">7.4</span>,<span class="fl">6.4</span>,<span class="fl">6.9</span>,<span class="fl">5.0</span>,<span class="fl">7.8</span>,<span class="fl">6.7</span>,<span class="fl">7.2</span>,<span class="fl">7.6</span>,<span class="fl">7.9</span>)</span></code></pre></div>
 <p><span style="color: navy;"><em>By hand, carry out a hypothesis test at the 1% significance level that the drug has any impact on the length of time people sleep. You can use R as a calculator to get things like the mean. Make sure to include:</em></span></p>
 <ol style="list-style-type: lower-alpha">
 <li><span style="color: navy;"><em>Your H<sub>0</sub> and H<sub>1</sub></em></span></li>
@@ -350,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Tutorial 2C will be useful here.</p></li>
 <li><p>Make a new level-1 heading called Exploratory Data Analysis. You are now going to explore the Credit dataset, which is a simulated dataset used for educational purposes. To start out, make a new code chunk and include following commands.</p></li>
 </ul>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="lab-2.html#cb145-1"></a>dataset &lt;-<span class="st"> </span>ISLR<span class="op">::</span>Credit</span>
-<span id="cb145-2"><a href="lab-2.html#cb145-2"></a>?Credit</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="lab-2.html#cb154-1"></a>dataset &lt;-<span class="st"> </span>ISLR<span class="op">::</span>Credit</span>
+<span id="cb154-2"><a href="lab-2.html#cb154-2"></a>?Credit</span></code></pre></div>
 <p><span style="color: navy;"><strong><em>Question E:</em></strong> <em>Use &amp; interpret the output of R to describe the dataset to me. How much data is there and what does the dataset show? What variable names are there?</em></p>
 <p><em>Note, the help file is incorrect for this dataset. There are not 10,000 rows of data so you’ll need to work out how big the dataset really is</em>.</span></p>
 <p><span style="color: navy;"><strong><em>Question F:</em></strong> <em>Create a table of the number of students vs not students (e.g. a table of the Student column - Section 2.3.6) </em>**.</span></p>
@@ -395,8 +407,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="lab-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lab-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -446,6 +458,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

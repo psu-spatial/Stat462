@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,6 +176,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9.2" data-path="index.html"><a href="index.html#students-t-distribution"><i class="fa fa-check"></i><b>1.9.2</b> Student’s t-distribution</a></li>
 <li class="chapter" data-level="1.9.3" data-path="index.html"><a href="index.html#wilks-shapiro-test-for-normality"><i class="fa fa-check"></i><b>1.9.3</b> Wilks Shapiro test for normality</a></li>
 </ul></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#tutorial-3a---editing-code-chunks"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#tutorial-3b---regression-models"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -215,6 +217,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8.1" data-path="lab-2.html"><a href="lab-2.html#lab-2-submission-check"><i class="fa fa-check"></i><b>3.8.1</b> Lab 2 submission check</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="lab-3.html"><a href="lab-3.html"><i class="fa fa-check"></i><b>4</b> Lab 3</a><ul>
+<li class="chapter" data-level="4.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-general-information"><i class="fa fa-check"></i><b>4.1</b> Lab 3 General information</a></li>
+<li class="chapter" data-level="4.2" data-path="lab-3.html"><a href="lab-3.html#installing-new-packages"><i class="fa fa-check"></i><b>4.2</b> Installing new packages</a></li>
+<li class="chapter" data-level="4.3" data-path="lab-3.html"><a href="lab-3.html#lab-3-setup-markdown"><i class="fa fa-check"></i><b>4.3</b> Lab 3 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="4.4" data-path="lab-3.html"><a href="lab-3.html#regression-basics"><i class="fa fa-check"></i><b>4.4</b> Regression basics</a></li>
+<li class="chapter" data-level="4.5" data-path="lab-3.html"><a href="lab-3.html#taiwan-housing-challenge."><i class="fa fa-check"></i><b>4.5</b> Taiwan housing challenge.</a></li>
+<li class="chapter" data-level="4.6" data-path="lab-3.html"><a href="lab-3.html#submitting-lab-3"><i class="fa fa-check"></i><b>4.6</b> Submitting Lab 3</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -238,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">STAT-462 Lab book</h1>
 <p class="author"><em>Helen Greatrex</em></p>
-<p class="date"><em>2021-02-03</em></p>
+<p class="date"><em>2021-02-10</em></p>
 </div>
 <div id="tutorials" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Tutorials</h1>
@@ -744,72 +756,49 @@ Figure 1.13: The top menu might be hidden
 <p>For example</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="index.html#cb38-1"></a><span class="co"># Note, there are more columns to the right, use the arrow to see</span></span>
 <span id="cb38-2"><a href="index.html#cb38-2"></a><span class="kw">head</span>(dataset)</span></code></pre></div>
-<pre><code>##   id    sex age height weight headband college tattoos tchests parrots
-## 1  1   male  28 173.11   70.5      yes   JSSFP       9       0       0
-## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0
-## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1
-## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2
-## 5  5 female  41 157.85   58.4      yes   JSSFP       9       6       4
-## 6  6   male  26 190.20   85.4      yes    CCCC       7      19       0
-##   favorite.pirate sword.type eyepatch sword.time beard.length
-## 1    Jack Sparrow    cutlass        1       0.58           16
-## 2    Jack Sparrow    cutlass        0       1.11           21
-## 3    Jack Sparrow    cutlass        1       1.44           19
-## 4    Jack Sparrow   scimitar        1      36.11            2
-## 5            Hook    cutlass        1       0.11            0
-## 6    Jack Sparrow    cutlass        1       0.59           17
-##             fav.pixar grogg
-## 1      Monsters, Inc.    11
-## 2              WALL-E     9
-## 3          Inside Out     7
-## 4          Inside Out     9
-## 5          Inside Out    14
-## 6 Monsters University     7</code></pre>
+<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate sword.type eyepatch
+## 1  1   male  28 173.11   70.5      yes   JSSFP       9       0       0    Jack Sparrow    cutlass        1
+## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow    cutlass        0
+## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow    cutlass        1
+## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow   scimitar        1
+## 5  5 female  41 157.85   58.4      yes   JSSFP       9       6       4            Hook    cutlass        1
+## 6  6   male  26 190.20   85.4      yes    CCCC       7      19       0    Jack Sparrow    cutlass        1
+##   sword.time beard.length           fav.pixar grogg
+## 1       0.58           16      Monsters, Inc.    11
+## 2       1.11           21              WALL-E     9
+## 3       1.44           19          Inside Out     7
+## 4      36.11            2          Inside Out     9
+## 5       0.11            0          Inside Out    14
+## 6       0.59           17 Monsters University     7</code></pre>
 <p>To see what the column names are, you can use the <code>names(dataset)</code> command</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="index.html#cb40-1"></a><span class="kw">names</span>(dataset)</span></code></pre></div>
-<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;            
-##  [4] &quot;height&quot;          &quot;weight&quot;          &quot;headband&quot;       
-##  [7] &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;        
-## [10] &quot;parrots&quot;         &quot;favorite.pirate&quot; &quot;sword.type&quot;     
-## [13] &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
+<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;          &quot;weight&quot;         
+##  [6] &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;         &quot;parrots&quot;        
+## [11] &quot;favorite.pirate&quot; &quot;sword.type&quot;      &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
 ## [16] &quot;fav.pixar&quot;       &quot;grogg&quot;</code></pre>
 <p>Or look at the summary</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="index.html#cb42-1"></a><span class="kw">summary</span>(dataset) </span></code></pre></div>
-<pre><code>##        id             sex                 age            height     
-##  Min.   :   1.0   Length:1000        Min.   :11.00   Min.   :129.8  
-##  1st Qu.: 250.8   Class :character   1st Qu.:24.00   1st Qu.:161.4  
-##  Median : 500.5   Mode  :character   Median :27.00   Median :169.9  
-##  Mean   : 500.5                      Mean   :27.36   Mean   :170.2  
-##  3rd Qu.: 750.2                      3rd Qu.:31.00   3rd Qu.:178.5  
-##  Max.   :1000.0                      Max.   :46.00   Max.   :209.2  
-##      weight         headband           college         
-##  Min.   : 33.00   Length:1000        Length:1000       
-##  1st Qu.: 62.08   Class :character   Class :character  
-##  Median : 69.55   Mode  :character   Mode  :character  
-##  Mean   : 69.74                                        
-##  3rd Qu.: 76.90                                        
-##  Max.   :105.60                                        
-##     tattoos          tchests          parrots       favorite.pirate   
-##  Min.   : 0.000   Min.   :  0.00   Min.   : 0.000   Length:1000       
-##  1st Qu.: 7.000   1st Qu.:  6.00   1st Qu.: 1.000   Class :character  
-##  Median :10.000   Median : 15.00   Median : 2.000   Mode  :character  
-##  Mean   : 9.429   Mean   : 22.69   Mean   : 2.819                     
-##  3rd Qu.:12.000   3rd Qu.: 30.00   3rd Qu.: 4.000                     
-##  Max.   :19.000   Max.   :147.00   Max.   :27.000                     
-##   sword.type           eyepatch       sword.time        beard.length  
-##  Length:1000        Min.   :0.000   Min.   :  0.0000   Min.   : 0.00  
-##  Class :character   1st Qu.:0.000   1st Qu.:  0.2175   1st Qu.: 0.00  
-##  Mode  :character   Median :1.000   Median :  0.5850   Median : 9.00  
-##                     Mean   :0.658   Mean   :  2.5427   Mean   :10.38  
-##                     3rd Qu.:1.000   3rd Qu.:  1.3300   3rd Qu.:20.00  
-##                     Max.   :1.000   Max.   :169.8800   Max.   :40.00  
-##   fav.pixar             grogg      
-##  Length:1000        Min.   : 0.00  
-##  Class :character   1st Qu.: 8.00  
-##  Mode  :character   Median :10.00  
-##                     Mean   :10.14  
-##                     3rd Qu.:12.00  
-##                     Max.   :21.00</code></pre>
+<pre><code>##        id             sex                 age            height          weight         headband        
+##  Min.   :   1.0   Length:1000        Min.   :11.00   Min.   :129.8   Min.   : 33.00   Length:1000       
+##  1st Qu.: 250.8   Class :character   1st Qu.:24.00   1st Qu.:161.4   1st Qu.: 62.08   Class :character  
+##  Median : 500.5   Mode  :character   Median :27.00   Median :169.9   Median : 69.55   Mode  :character  
+##  Mean   : 500.5                      Mean   :27.36   Mean   :170.2   Mean   : 69.74                     
+##  3rd Qu.: 750.2                      3rd Qu.:31.00   3rd Qu.:178.5   3rd Qu.: 76.90                     
+##  Max.   :1000.0                      Max.   :46.00   Max.   :209.2   Max.   :105.60                     
+##    college             tattoos          tchests          parrots       favorite.pirate     sword.type       
+##  Length:1000        Min.   : 0.000   Min.   :  0.00   Min.   : 0.000   Length:1000        Length:1000       
+##  Class :character   1st Qu.: 7.000   1st Qu.:  6.00   1st Qu.: 1.000   Class :character   Class :character  
+##  Mode  :character   Median :10.000   Median : 15.00   Median : 2.000   Mode  :character   Mode  :character  
+##                     Mean   : 9.429   Mean   : 22.69   Mean   : 2.819                                        
+##                     3rd Qu.:12.000   3rd Qu.: 30.00   3rd Qu.: 4.000                                        
+##                     Max.   :19.000   Max.   :147.00   Max.   :27.000                                        
+##     eyepatch       sword.time        beard.length    fav.pixar             grogg      
+##  Min.   :0.000   Min.   :  0.0000   Min.   : 0.00   Length:1000        Min.   : 0.00  
+##  1st Qu.:0.000   1st Qu.:  0.2175   1st Qu.: 0.00   Class :character   1st Qu.: 8.00  
+##  Median :1.000   Median :  0.5850   Median : 9.00   Mode  :character   Median :10.00  
+##  Mean   :0.658   Mean   :  2.5427   Mean   :10.38                      Mean   :10.14  
+##  3rd Qu.:1.000   3rd Qu.:  1.3300   3rd Qu.:20.00                      3rd Qu.:12.00  
+##  Max.   :1.000   Max.   :169.8800   Max.   :40.00                      Max.   :21.00</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="index.html#cb44-1"></a><span class="co"># You can also use the skimr package and skim command here</span></span>
 <span id="cb44-2"><a href="index.html#cb44-2"></a><span class="co"># skim(pirates)</span></span></code></pre></div>
 <p>To see how many columns and rows there are, you can use the <code>nrow()</code> and <code>ncol()</code> commands</p>
@@ -836,18 +825,14 @@ Figure 1.13: The top menu might be hidden
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="index.html#cb53-1"></a><span class="co"># Leave the right side empty for all the columns</span></span>
 <span id="cb53-2"><a href="index.html#cb53-2"></a><span class="co"># e.g this prints all columns of rows 2,3 and 4</span></span>
 <span id="cb53-3"><a href="index.html#cb53-3"></a>dataset[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, ]</span></code></pre></div>
-<pre><code>##   id    sex age height weight headband college tattoos tchests parrots
-## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0
-## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1
-## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2
-##   favorite.pirate sword.type eyepatch sword.time beard.length
-## 2    Jack Sparrow    cutlass        0       1.11           21
-## 3    Jack Sparrow    cutlass        1       1.44           19
-## 4    Jack Sparrow   scimitar        1      36.11            2
-##    fav.pixar grogg
-## 2     WALL-E     9
-## 3 Inside Out     7
-## 4 Inside Out     9</code></pre>
+<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate sword.type eyepatch
+## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow    cutlass        0
+## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow    cutlass        1
+## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow   scimitar        1
+##   sword.time beard.length  fav.pixar grogg
+## 2       1.11           21     WALL-E     9
+## 3       1.44           19 Inside Out     7
+## 4      36.11            2 Inside Out     9</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="index.html#cb55-1"></a><span class="co"># or all the values in a column - I leave the left side blank to select all rows</span></span>
 <span id="cb55-2"><a href="index.html#cb55-2"></a><span class="co"># Here I assigned the answer to a new variable called b, That&#39;s why it didn&#39;t print out.</span></span>
 <span id="cb55-3"><a href="index.html#cb55-3"></a>b &lt;-<span class="st"> </span>dataset[ ,<span class="kw">c</span>(<span class="st">&quot;college&quot;</span>,<span class="st">&quot;tattoos&quot;</span>)]</span></code></pre></div>
@@ -872,11 +857,9 @@ Figure 1.14: picture from the tidyverse cheatsheet
 <p>Let’s select only the “age”,“height”,“sex”,“weight”,“favorite.pirate” and “beard.length” columns:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="index.html#cb57-1"></a><span class="co"># print the column names, so its easier to write the command</span></span>
 <span id="cb57-2"><a href="index.html#cb57-2"></a><span class="kw">names</span>(dataset)</span></code></pre></div>
-<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;            
-##  [4] &quot;height&quot;          &quot;weight&quot;          &quot;headband&quot;       
-##  [7] &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;        
-## [10] &quot;parrots&quot;         &quot;favorite.pirate&quot; &quot;sword.type&quot;     
-## [13] &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
+<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;          &quot;weight&quot;         
+##  [6] &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;         &quot;parrots&quot;        
+## [11] &quot;favorite.pirate&quot; &quot;sword.type&quot;      &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
 ## [16] &quot;fav.pixar&quot;       &quot;grogg&quot;</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="index.html#cb59-1"></a><span class="co"># The &quot;traditional R way&quot;</span></span>
 <span id="cb59-2"><a href="index.html#cb59-2"></a>newdata &lt;-<span class="st"> </span>dataset[,<span class="kw">c</span>(<span class="st">&quot;age&quot;</span>,<span class="st">&quot;height&quot;</span>,<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;weight&quot;</span>,<span class="st">&quot;favorite.pirate&quot;</span>,</span>
@@ -949,16 +932,12 @@ Figure 1.14: picture from the tidyverse cheatsheet
 <p>This counts the number of rows containing each category. For example, we can see here that 50 pirates out of the 1000 chose Monsters Inc as their favourite film</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="index.html#cb66-1"></a><span class="kw">table</span>(dataset<span class="op">$</span>fav.pixar)</span></code></pre></div>
 <pre><code>## 
-##        A Bug&#39;s Life               Brave                Cars 
-##                  28                  21                  21 
-##              Cars 2        Finding Nemo          Inside Out 
-##                  14                 162                 304 
-## Monsters University      Monsters, Inc.         Ratatouille 
-##                  94                  50                   3 
-##     The Incredibles           Toy Story         Toy Story 2 
-##                  66                  16                  25 
-##         Toy Story 3                  Up              WALL-E 
-##                  13                 118                  65</code></pre>
+##        A Bug&#39;s Life               Brave                Cars              Cars 2        Finding Nemo 
+##                  28                  21                  21                  14                 162 
+##          Inside Out Monsters University      Monsters, Inc.         Ratatouille     The Incredibles 
+##                 304                  94                  50                   3                  66 
+##           Toy Story         Toy Story 2         Toy Story 3                  Up              WALL-E 
+##                  16                  25                  13                 118                  65</code></pre>
 <p>We can also go beyond this. For example, let’s break it up by gender - where we can see that 2 non-binary pirates liked the film.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="index.html#cb68-1"></a><span class="kw">table</span>(dataset<span class="op">$</span>fav.pixar,dataset<span class="op">$</span>sex )</span></code></pre></div>
 <pre><code>##                      
@@ -1170,6 +1149,121 @@ Figure 1.14: picture from the tidyverse cheatsheet
 ## 
 ## data:  dataset$age
 ## W = 0.99617, p-value = 0.01456</code></pre>
+</div>
+</div>
+<div id="tutorial-3a---editing-code-chunks" class="section level2">
+<h2><span class="header-section-number">1.10</span> Tutorial 3A - Editing code chunks</h2>
+<p>R code chunks are really useful as you can completely control the output seen in your final report. To edit these, we edit the bit INSIDE the curly brackets at the top of the code chunk.</p>
+<p>For example,</p>
+<div class="figure"><span id="fig:chunkoptions"></span>
+<img src="images/Fig03_02ChunkOptions.png" alt="Replace option1, option2 etc with the things you want the chunk to do" width="792" />
+<p class="caption">
+Figure 1.15: Replace option1, option2 etc with the things you want the chunk to do
+</p>
+</div>
+<p>There are a huge number of options available as described here: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html</a></p>
+<p>For now, we will focus on some basics:</p>
+<p><strong>Q: How can I stop all the friendly “loading library” text coming up when I load a library?</strong></p>
+<p>Ans: we include message=FALSE and warnings=FALSE at the top of the code chunk e.g.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="index.html#cb95-1"></a><span class="kw">library</span>(<span class="st">&quot;yarrr&quot;</span>)</span></code></pre></div>
+<p><strong>Q: How can I add a figure caption?</strong></p>
+<p>Ans. Using the fig.cap argument e.g. ```{r,fig.cap=“my caption”}</p>
+<p><strong>Q: How can I make the code invisible?</strong></p>
+<p>Ans: Unless specifically asked, I don’t recommend doing this in STAT-462 because we are grading you on your ability to code! But it is a useful skill. Here is how to do it for a figure insert (the most common request). I also gave my code chunk a name (chipmunk.pic), so that I can refer to it later in the text.</p>
+<p>For example, this code:</p>
+<p><img src="images/Fig03_03Chipnunkcode.png" width="810" /></p>
+<p>Will lead to this output (the caption only shows up when you knit)</p>
+<div class="figure">
+<img src="images/Fig03_04Chipmunk.png" alt="Summer!" width="950" />
+<p class="caption">
+(#fig:chipmunk.pic)Summer!
+</p>
+</div>
+</div>
+<div id="tutorial-3b---regression-models" class="section level2">
+<h2><span class="header-section-number">1.11</span> Tutorial 3B - Regression Models</h2>
+<p>Now we will fit our first regression model. The command to do this is <code>lm()</code> e.g. linear model.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="index.html#cb96-1"></a>output &lt;-<span class="st"> </span><span class="kw">lm</span>(y_column <span class="op">~</span><span class="st"> </span>x_column,<span class="dt">data=</span>tablename)</span>
+<span id="cb96-2"><a href="index.html#cb96-2"></a>output</span></code></pre></div>
+<p>NOTE, THE WEIRD ~ SYMBOL. This means “depends on” and it’s how we tell R what the response variable is. E.g. y depends on x, or y=mx+c. </p>
+<p>For example for the starwars data, it would be</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="index.html#cb97-1"></a><span class="co"># response = mass, predictor = height</span></span>
+<span id="cb97-2"><a href="index.html#cb97-2"></a>star.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(mass <span class="op">~</span><span class="st"> </span>height,<span class="dt">data=</span>starwars)</span>
+<span id="cb97-3"><a href="index.html#cb97-3"></a>star.lm</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mass ~ height, data = starwars)
+## 
+## Coefficients:
+## (Intercept)       height  
+##    -13.8103       0.6386</code></pre>
+<p>You can also look at the summary by looking at the summary command:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="index.html#cb99-1"></a><span class="kw">summary</span>(star.lm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mass ~ height, data = starwars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+##  -61.43  -30.03  -21.13  -17.73 1260.06 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) -13.8103   111.1545  -0.124    0.902
+## height        0.6386     0.6261   1.020    0.312
+## 
+## Residual standard error: 169.4 on 57 degrees of freedom
+##   (28 observations deleted due to missingness)
+## Multiple R-squared:  0.01792,	Adjusted R-squared:  0.0006956 
+## F-statistic:  1.04 on 1 and 57 DF,  p-value: 0.312</code></pre>
+<p>In both cases, we have an estimate of the intercept (0.6386) and of the gradient (-13.8103). We will discuss the other values in later labs/lectures.</p>
+<p>Now let’s see how to add the regression line to our scatterplot. We can do this using <code>abline(REGRESSION_VARIABLE)</code>, where regression_variable is the name of the variable you saved the output of lm to. For example.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="index.html#cb101-1"></a><span class="kw">plot</span>(starwars<span class="op">$</span>height,starwars<span class="op">$</span>mass)</span>
+<span id="cb101-2"><a href="index.html#cb101-2"></a><span class="kw">abline</span>(star.lm)</span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div id="fancy-regression-output" class="section level4">
+<h4><span class="header-section-number">1.11.0.1</span> Fancy regression output</h4>
+<p>If you want a different way of seeing the same output, you can use the <code>ols_regress()</code> command inside the <code>olsrr</code> package.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="index.html#cb102-1"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb102-2"><a href="index.html#cb102-2"></a>star.ols.lm &lt;-<span class="st"> </span><span class="kw">ols_regress</span>(mass <span class="op">~</span><span class="st"> </span>height,<span class="dt">data=</span>starwars)</span>
+<span id="cb102-3"><a href="index.html#cb102-3"></a>star.ols.lm</span></code></pre></div>
+<pre><code>##                           Model Summary                            
+## ------------------------------------------------------------------
+## R                        0.134       RMSE                 166.502 
+## R-Squared                0.018       Coef. Var            174.078 
+## Adj. R-Squared           0.001       MSE                28695.756 
+## Pred R-Squared          -0.017       MAE                   46.669 
+## ------------------------------------------------------------------
+##  RMSE: Root Mean Square Error 
+##  MSE: Mean Square Error 
+##  MAE: Mean Absolute Error 
+## 
+##                                 ANOVA                                  
+## ----------------------------------------------------------------------
+##                    Sum of                                             
+##                   Squares        DF    Mean Square      F        Sig. 
+## ----------------------------------------------------------------------
+## Regression      29854.272         1      29854.272     1.04    0.3120 
+## Residual      1635658.069        57      28695.756                    
+## Total         1665512.342        58                                   
+## ----------------------------------------------------------------------
+## 
+##                                     Parameter Estimates                                      
+## --------------------------------------------------------------------------------------------
+##       model       Beta    Std. Error    Std. Beta      t        Sig        lower      upper 
+## --------------------------------------------------------------------------------------------
+## (Intercept)    -13.810       111.155                 -0.124    0.902    -236.393    208.773 
+##      height      0.639         0.626        0.134     1.020    0.312      -0.615      1.892 
+## --------------------------------------------------------------------------------------------</code></pre>
+<p>The ols_regress command produces beautiful output, but sometimes it doesn’t work well with other commands. So I tend to run a lm command at the same time to have both available.</p>
+<p>Sometimes, this command can produce a weird error:</p>
+<div class="figure">
+<img src="images/Fig03_05OLSRR.png" alt="This is probably because you loaded the moderndive package" width="776" />
+<p class="caption">
+(#fig:olsrr.error)This is probably because you loaded the moderndive package
+</p>
+</div>
+<p>This is probably because you loaded the moderndive package. They do not play nicely together. Save your work, restart R and <strong>do not run any line that says library(moderndive)!</strong>.</p>
 
 </div>
 </div>
@@ -1230,6 +1324,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

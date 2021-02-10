@@ -28,7 +28,7 @@ library("nortest")   # Regression specific commands
 library("lmtest")    # Regression specific commands
 library("IMTest")    # Regression specific commands 
 library("MASS")      # Regression specific commands
-library("moderndive")# Regression specific commands
+#library("moderndive")# Regression specific commands
 library("corrplot")  # correlation plots
 library("car")       # this one sometimes has problems, don't panic if you get errors
 library("ggpubr")    # QQplots
@@ -966,4 +966,100 @@ To test for normality:
 shapiro.test(dataset$age)
 ```
 
+## Tutorial 3A - Editing code chunks
 
+R code chunks are really useful as you can completely control the output seen in your final report.  To edit these, we edit the bit INSIDE the curly brackets at the top of the code chunk.  
+
+For example,
+
+```{r, chunkoptions, echo=FALSE,fig.cap="Replace option1, option2 etc with the things you want the chunk to do"}
+knitr::include_graphics('images/Fig03_02ChunkOptions.png')
+```
+
+There are a huge number of options available as described here: https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html
+
+For now, we will focus on some basics:
+
+**Q: How can I stop all the friendly "loading library" text coming up when I load a library?**
+
+Ans:  we include message=FALSE and warnings=FALSE at the top of the code chunk e.g.
+
+```{r,message=FALSE,warnings=FALSE}
+library("yarrr")
+```
+
+**Q: How can I add a figure caption?**
+
+Ans. Using the fig.cap argument e.g.  ```{r,fig.cap="my caption"}
+
+**Q: How can I make the code invisible?**
+
+Ans: Unless specifically asked, I don't recommend doing this in STAT-462 because we are grading you on your ability to code!  But it is a useful skill.  Here is how to do it for a figure insert (the most common request).  I also gave my code chunk a name (chipmunk.pic), so that I can refer to it later in the text.
+
+For example, this code:
+
+```{r, chipcode, echo=FALSE}
+knitr::include_graphics('images/Fig03_03Chipnunkcode.png')
+```
+
+Will lead to this output (the caption only shows up when you knit)
+
+```{r, chipmunk.pic, echo=FALSE,fig.cap="Summer!"}
+knitr::include_graphics('images/Fig03_04Chipmunk.png')
+```
+
+
+## Tutorial 3B - Regression Models
+
+Now we will fit our first regression model.  The command to do this is `lm()` e.g. linear model.
+
+```{r,eval=FALSE}
+output <- lm(y_column ~ x_column,data=tablename)
+output
+```
+
+NOTE, THE WEIRD ~ SYMBOL. This means "depends on" and it's how we tell R what the response variable is.  E.g. y depends on x, or y=mx+c.  
+
+For example for the starwars data, it would be
+
+```{r}
+# response = mass, predictor = height
+star.lm <- lm(mass ~ height,data=starwars)
+star.lm
+```
+
+You can also look at the summary by looking at the summary command:
+
+```{r}
+summary(star.lm)
+```
+
+In both cases, we have an estimate of the intercept (0.6386) and of the gradient (-13.8103).  We will discuss the other values in later labs/lectures.
+
+Now let's see how to add the regression line to our scatterplot.  We can do this using `abline(REGRESSION_VARIABLE)`, where regression_variable is the name of the variable you saved the output of lm to.  For example.
+
+```{r}
+plot(starwars$height,starwars$mass)
+abline(star.lm)
+```
+
+
+#### Fancy regression output
+
+If you want a different way of seeing the same output, you can use the `ols_regress()` command inside the `olsrr` package.  
+
+```{r}
+library(olsrr)
+star.ols.lm <- ols_regress(mass ~ height,data=starwars)
+star.ols.lm
+```
+
+The ols_regress command produces beautiful output, but sometimes it doesn't work well with other commands.  So I tend to run a lm command at the same time to have both available.
+
+Sometimes, this command can produce a weird error:
+
+```{r, olsrr.error, echo=FALSE,fig.cap="This is probably because you loaded the moderndive package"}
+knitr::include_graphics('images/Fig03_05OLSRR.png')
+```
+
+This is probably because you loaded the moderndive package. They do not play nicely together. Save your work, restart R and **do not run any line that says library(moderndive)!**.

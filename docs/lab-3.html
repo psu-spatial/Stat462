@@ -297,17 +297,17 @@ Figure 4.1: How to manually install a package
 <li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-3.html#cb1-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="lab-3.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="lab-3.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="lab-3.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb1-5"><a href="lab-3.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
-<span id="cb1-6"><a href="lab-3.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
-<span id="cb1-7"><a href="lab-3.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
-<span id="cb1-8"><a href="lab-3.html#cb1-8"></a><span class="kw">library</span>(sf)     <span class="co"># you have to have installed this first..</span></span>
-<span id="cb1-9"><a href="lab-3.html#cb1-9"></a><span class="kw">library</span>(tmap)   <span class="co"># you have to have installed this first..</span></span>
-<span id="cb1-10"><a href="lab-3.html#cb1-10"></a><span class="kw">library</span>(readxl) <span class="co"># you have to have installed this first..</span></span>
-<span id="cb1-11"><a href="lab-3.html#cb1-11"></a><span class="kw">library</span>(plotly) <span class="co"># you have to have installed this first..</span></span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="lab-3.html#cb155-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb155-2"><a href="lab-3.html#cb155-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb155-3"><a href="lab-3.html#cb155-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb155-4"><a href="lab-3.html#cb155-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb155-5"><a href="lab-3.html#cb155-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb155-6"><a href="lab-3.html#cb155-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb155-7"><a href="lab-3.html#cb155-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb155-8"><a href="lab-3.html#cb155-8"></a><span class="kw">library</span>(sf)     <span class="co"># you have to have installed this first..</span></span>
+<span id="cb155-9"><a href="lab-3.html#cb155-9"></a><span class="kw">library</span>(tmap)   <span class="co"># you have to have installed this first..</span></span>
+<span id="cb155-10"><a href="lab-3.html#cb155-10"></a><span class="kw">library</span>(readxl) <span class="co"># you have to have installed this first..</span></span>
+<span id="cb155-11"><a href="lab-3.html#cb155-11"></a><span class="kw">library</span>(plotly) <span class="co"># you have to have installed this first..</span></span></code></pre></div>
 <ul>
 <li><p>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</p></li>
 <li><p>Choose any picture/screenshot that you like (of anything at all).</p></li>
@@ -320,16 +320,16 @@ Figure 4.1: How to manually install a package
 <li>Leave a blank line under your YAML code, then create a level-1 Heading called “Regression basics”. Save and make sure that it will preview/knit. For the questions below, using sub-headings for each question makes it 100 times easier to grade (please do!)</li>
 </ul>
 <p>First use the code below to load the dataset <code>TextPrices</code> from the Stat2Data package. Remember that you will have to load the package by running the “library” code chunk before anything will work.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lab-3.html#cb2-1"></a><span class="co"># This will only work after running library(Stat2Data) from your 1st code chunk</span></span>
-<span id="cb2-2"><a href="lab-3.html#cb2-2"></a><span class="kw">data</span>(TextPrices)</span>
-<span id="cb2-3"><a href="lab-3.html#cb2-3"></a><span class="kw">View</span>(TextPrices) <span class="co"># opens data in a new tab</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="lab-3.html#cb156-1"></a><span class="co"># This will only work after running library(Stat2Data) from your 1st code chunk</span></span>
+<span id="cb156-2"><a href="lab-3.html#cb156-2"></a><span class="kw">data</span>(TextPrices)</span>
+<span id="cb156-3"><a href="lab-3.html#cb156-3"></a><span class="kw">View</span>(TextPrices) <span class="co"># opens data in a new tab</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Describe the dataset, using the commands you learned in Labs 1 and 2, along with the help file: (<code>?TextPrices</code>). How much data is there? What are the columns describing? Summarise each variable</p></li>
 <li><p>Decide on a response variable for this dataset and justify your decision</p></li>
 <li><p>Decide on a predictor variable for this dataset and justify your decision</p></li>
 <li><p>Create a professional scatterplot. We can create a basic scatterplot using:</p></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="lab-3.html#cb3-1"></a><span class="kw">plot</span>(TextPrices<span class="op">$</span>Pages,TextPrices<span class="op">$</span>Price)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="lab-3.html#cb157-1"></a><span class="kw">plot</span>(TextPrices<span class="op">$</span>Pages,TextPrices<span class="op">$</span>Price)</span></code></pre></div>
 <p>Make your plot look more professional than this (do not use ggplot2, this is to teach “base R”). Give the plot better axis titles, change the point type and color and add anything else you would like.</p>
 <p>These tutorials should help you answer this question
 - <a href="https://www.r-graph-gallery.com/13-scatter-plot.html" class="uri">https://www.r-graph-gallery.com/13-scatter-plot.html</a>
@@ -349,10 +349,10 @@ Figure 4.1: How to manually install a package
 <ol style="list-style-type: decimal">
 <li>Download the “Lab03_house.xlsx” dataset from the Lab page on canvas and put it into your Lab 3 folder. Use the read_excel() command to read it in and save it to a variable called house:</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lab-3.html#cb4-1"></a><span class="co"># This only works if you are running your project</span></span>
-<span id="cb4-2"><a href="lab-3.html#cb4-2"></a><span class="co"># If it can&#39;t find the file, use file.choose() to locate it, as described in homework 3</span></span>
-<span id="cb4-3"><a href="lab-3.html#cb4-3"></a><span class="co"># Then add in the full location rather than just the file name.</span></span>
-<span id="cb4-4"><a href="lab-3.html#cb4-4"></a>house &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Lab03_house.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="lab-3.html#cb158-1"></a><span class="co"># This only works if you are running your project</span></span>
+<span id="cb158-2"><a href="lab-3.html#cb158-2"></a><span class="co"># If it can&#39;t find the file, use file.choose() to locate it, as described in homework 3</span></span>
+<span id="cb158-3"><a href="lab-3.html#cb158-3"></a><span class="co"># Then add in the full location rather than just the file name.</span></span>
+<span id="cb158-4"><a href="lab-3.html#cb158-4"></a>house &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;Lab03_house.xlsx&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Explore the dataset (using summaries etc (lab 1 &amp; 2), and by reading more about the data here: <a href="https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set" class="uri">https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set</a>). Describe the dataset to your friend. What columns does the dataset contains and how much data there is? Are there any limitations using this data?</p></li>
 <li><p>Use R to explore the summary statistics and distribution of the House.Price column. What range of costs are “most” of the prices between? (say 68% or the interquartile range..) Is the house price data normally distributed?</p></li>
@@ -367,39 +367,43 @@ Figure 4.1: How to manually install a package
 </ul></li>
 <li><p>Why might this be misleading as an analysis? or why might this model be flawed? What confounding variable could there be? To help you answer this question, try running this code to further explore the data on a map.</p></li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="lab-3.html#cb5-1"></a><span class="co"># Command from the sf library</span></span>
-<span id="cb5-2"><a href="lab-3.html#cb5-2"></a><span class="co"># Make a spatial version of the data using the Longitide and Latitude columns</span></span>
-<span id="cb5-3"><a href="lab-3.html#cb5-3"></a>house.spatial &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(house,<span class="dt">coords=</span><span class="kw">c</span>(<span class="st">&quot;Longitude&quot;</span>,<span class="st">&quot;Latitude&quot;</span>),<span class="dt">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb5-4"><a href="lab-3.html#cb5-4"></a></span>
-<span id="cb5-5"><a href="lab-3.html#cb5-5"></a><span class="co"># Command from the tmap library</span></span>
-<span id="cb5-6"><a href="lab-3.html#cb5-6"></a><span class="co"># and plot</span></span>
-<span id="cb5-7"><a href="lab-3.html#cb5-7"></a><span class="kw">tm_basemap</span>(<span class="st">&quot;Esri.WorldTopoMap&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb5-8"><a href="lab-3.html#cb5-8"></a><span class="st">     </span><span class="kw">qtm</span>(house.spatial, <span class="co"># data</span></span>
-<span id="cb5-9"><a href="lab-3.html#cb5-9"></a>         <span class="dt">symbols.col=</span><span class="st">&quot;House.Price&quot;</span>, <span class="co"># which column for the symbols</span></span>
-<span id="cb5-10"><a href="lab-3.html#cb5-10"></a>         <span class="dt">symbols.alpha=</span><span class="fl">0.9</span>, <span class="co"># transparency</span></span>
-<span id="cb5-11"><a href="lab-3.html#cb5-11"></a>         <span class="dt">symbols.size=</span>.<span class="dv">2</span>, <span class="co"># how big</span></span>
-<span id="cb5-12"><a href="lab-3.html#cb5-12"></a>         <span class="dt">symbols.palette=</span><span class="st">&quot;Spectral&quot;</span>, <span class="co">#colors from https://colorbrewer2.org</span></span>
-<span id="cb5-13"><a href="lab-3.html#cb5-13"></a>         <span class="dt">symbols.style=</span><span class="st">&quot;fisher&quot;</span>) <span class="co"># color breaks</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="lab-3.html#cb159-1"></a><span class="co"># Command from the sf library</span></span>
+<span id="cb159-2"><a href="lab-3.html#cb159-2"></a><span class="co"># Make a spatial version of the data using the Longitide and Latitude columns</span></span>
+<span id="cb159-3"><a href="lab-3.html#cb159-3"></a>house.spatial &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(house,<span class="dt">coords=</span><span class="kw">c</span>(<span class="st">&quot;Longitude&quot;</span>,<span class="st">&quot;Latitude&quot;</span>),<span class="dt">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb159-4"><a href="lab-3.html#cb159-4"></a></span>
+<span id="cb159-5"><a href="lab-3.html#cb159-5"></a><span class="co"># make interactive, for static set as &quot;plot&quot;</span></span>
+<span id="cb159-6"><a href="lab-3.html#cb159-6"></a><span class="kw">tmap_mode</span>(<span class="st">&quot;view&quot;</span>)</span>
+<span id="cb159-7"><a href="lab-3.html#cb159-7"></a></span>
+<span id="cb159-8"><a href="lab-3.html#cb159-8"></a></span>
+<span id="cb159-9"><a href="lab-3.html#cb159-9"></a><span class="co"># Command from the tmap library</span></span>
+<span id="cb159-10"><a href="lab-3.html#cb159-10"></a><span class="co"># and plot</span></span>
+<span id="cb159-11"><a href="lab-3.html#cb159-11"></a><span class="kw">tm_basemap</span>(<span class="st">&quot;Esri.WorldTopoMap&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb159-12"><a href="lab-3.html#cb159-12"></a><span class="st">     </span><span class="kw">qtm</span>(house.spatial, <span class="co"># data</span></span>
+<span id="cb159-13"><a href="lab-3.html#cb159-13"></a>         <span class="dt">symbols.col=</span><span class="st">&quot;House.Price&quot;</span>, <span class="co"># which column for the symbols</span></span>
+<span id="cb159-14"><a href="lab-3.html#cb159-14"></a>         <span class="dt">symbols.alpha=</span><span class="fl">0.9</span>, <span class="co"># transparency</span></span>
+<span id="cb159-15"><a href="lab-3.html#cb159-15"></a>         <span class="dt">symbols.size=</span>.<span class="dv">2</span>, <span class="co"># how big</span></span>
+<span id="cb159-16"><a href="lab-3.html#cb159-16"></a>         <span class="dt">symbols.palette=</span><span class="st">&quot;Spectral&quot;</span>, <span class="co">#colors from https://colorbrewer2.org</span></span>
+<span id="cb159-17"><a href="lab-3.html#cb159-17"></a>         <span class="dt">symbols.style=</span><span class="st">&quot;fisher&quot;</span>) <span class="co"># color breaks</span></span></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>What other confounding variables are there? Is there a variable that is more important than latitude in predicting house prices? Provide evidence to justify your answer. To help you answer this data and answer this question, some useful code includes:</li>
 </ol>
 <ul>
 <li>[A] corrplot(). A quick look at the correlation coefficient between all the variables. We will discuss it more next week.</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lab-3.html#cb6-1"></a><span class="kw">corrplot</span>(<span class="kw">cor</span>(house),<span class="dt">method=</span><span class="st">&quot;number&quot;</span>,<span class="dt">type=</span><span class="st">&quot;lower&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="lab-3.html#cb160-1"></a><span class="kw">corrplot</span>(<span class="kw">cor</span>(house),<span class="dt">method=</span><span class="st">&quot;number&quot;</span>,<span class="dt">type=</span><span class="st">&quot;lower&quot;</span>)</span></code></pre></div>
 <ul>
 <li>[B] If you then want to look at three variables together, you can use an interactive plot
 e.g you can use this code and change the response, y (currently house price), the predictor x (currently latitude) and the colour (currently distance from the metro station). Have a play and see what variables stand out.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="lab-3.html#cb7-1"></a><span class="co"># Create a plot</span></span>
-<span id="cb7-2"><a href="lab-3.html#cb7-2"></a>p &lt;-<span class="st"> </span>house <span class="op">%&gt;%</span><span class="st">                  </span></span>
-<span id="cb7-3"><a href="lab-3.html#cb7-3"></a><span class="st">  </span><span class="kw">ggplot</span>( <span class="kw">aes</span>(Latitude,House.Price, <span class="dt">col=</span> House.Age)) <span class="op">+</span></span>
-<span id="cb7-4"><a href="lab-3.html#cb7-4"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb7-5"><a href="lab-3.html#cb7-5"></a><span class="st">  </span><span class="kw">theme_classic</span>()<span class="op">+</span></span>
-<span id="cb7-6"><a href="lab-3.html#cb7-6"></a><span class="st">  </span><span class="kw">scale_color_gradient</span>(<span class="dt">low=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">high=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb7-7"><a href="lab-3.html#cb7-7"></a></span>
-<span id="cb7-8"><a href="lab-3.html#cb7-8"></a><span class="co"># and actually plot it</span></span>
-<span id="cb7-9"><a href="lab-3.html#cb7-9"></a><span class="kw">ggplotly</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="lab-3.html#cb161-1"></a><span class="co"># Create a plot</span></span>
+<span id="cb161-2"><a href="lab-3.html#cb161-2"></a>p &lt;-<span class="st"> </span>house <span class="op">%&gt;%</span><span class="st">                  </span></span>
+<span id="cb161-3"><a href="lab-3.html#cb161-3"></a><span class="st">  </span><span class="kw">ggplot</span>( <span class="kw">aes</span>(Latitude,House.Price, <span class="dt">col=</span> House.Age)) <span class="op">+</span></span>
+<span id="cb161-4"><a href="lab-3.html#cb161-4"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb161-5"><a href="lab-3.html#cb161-5"></a><span class="st">  </span><span class="kw">theme_classic</span>()<span class="op">+</span></span>
+<span id="cb161-6"><a href="lab-3.html#cb161-6"></a><span class="st">  </span><span class="kw">scale_color_gradient</span>(<span class="dt">low=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">high=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb161-7"><a href="lab-3.html#cb161-7"></a></span>
+<span id="cb161-8"><a href="lab-3.html#cb161-8"></a><span class="co"># and actually plot it</span></span>
+<span id="cb161-9"><a href="lab-3.html#cb161-9"></a><span class="kw">ggplotly</span>(p)</span></code></pre></div>
 <ul>
 <li>You can also use standard scatterplots and regression models if that is easier. Or even excel and screenshots embedded in your report if it is all going wrong!</li>
 </ul>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Lab 2 | STAT-462 Lab book</title>
+  <title>Chapter 5 Lab 4 | STAT-462 Lab book</title>
   <meta name="description" content="Lab Book for STAT-462 2021" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Lab 2 | STAT-462 Lab book" />
+  <meta property="og:title" content="Chapter 5 Lab 4 | STAT-462 Lab book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Lab 2 | STAT-462 Lab book" />
+  <meta name="twitter:title" content="Chapter 5 Lab 4 | STAT-462 Lab book" />
   
   <meta name="twitter:description" content="Lab Book for STAT-462 2021" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lab-1.html"/>
-<link rel="next" href="lab-3.html"/>
+<link rel="prev" href="lab-3.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="lab-4.html"><a href="lab-4.html#public-safety-spending"><i class="fa fa-check"></i><b>5.3</b> Public safety spending</a><ul>
 <li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#checking-folder-names"><i class="fa fa-check"></i>Checking folder names</a></li>
 <li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#reading-in-the-data"><i class="fa fa-check"></i>Reading in the data</a></li>
-<li class="chapter" data-level="5.3.1" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i><b>5.3.1</b> Analysis</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="lab-4.html"><a href="lab-4.html#submitting-lab-4"><i class="fa fa-check"></i><b>5.4</b> Submitting Lab 4</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-submission-check"><i class="fa fa-check"></i><b>5.4.1</b> Lab 4 submission check</a></li>
@@ -262,156 +262,181 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-2" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Lab 2</h1>
-<div id="general-information" class="section level2">
-<h2><span class="header-section-number">3.1</span> General information</h2>
-<p>Welcome to STAT-462 lab 2. The aim of this week is to:</p>
-<ol style="list-style-type: lower-alpha">
-<li>Learn how to get help</li>
-<li>Create more professional markdown files</li>
-<li>Run some more statistical tests</li>
-<li>Conduct a more free ranging exploratory data analysis</li>
-</ol>
-<p><em>The support you need to understand Lab 2 is in the Tutorials - READ THE TUTORIALS 2A,2B,2C,2D.</em></p>
+<div id="lab-4" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Lab 4</h1>
+<div id="lab-4-general-information" class="section level2">
+<h2><span class="header-section-number">5.1</span> Lab 4 General information</h2>
+<p>Welcome to STAT-462 lab 4. The aim of this week is to:</p>
+<ul>
+<li>Finalise the basic R markdown tools (ggplot2, equations)</li>
+<li>Interpret some regression output</li>
+<li>Identify and remove outliers.</li>
+</ul>
 <div id="general-comments" class="section level5 unnumbered">
 <h5>General comments</h5>
 <ul>
-<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab 2 assignment.</p></li>
-<li><p>Future labs will be less prescriptive about the formatting - but this is a detailed tutorial so that you learn how to set it all up well. Note, your answers should be written up in full sentences.</p></li>
-<li><p>If running the labs is causing major problems for your computer or you have any other computer issue, talk to Dr Greatrex. We can fix this and there are other options for you to access R online. In general, please reach out to Dr Greatrex if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.</p></li>
-<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706472" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706472</a></p></li>
+<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab4 assignment.</p></li>
+<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706463" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706463</a></p></li>
 </ul>
 </div>
+<div id="lab-4-tutorials" class="section level5 unnumbered">
+<h5>Lab 4 Tutorials</h5>
+<p>There are three new tutorials, 4A - 4C. Tutorial 4A covers how to plot things in ggplot2. Tutorial 4B covers finding, selecting and potentially removing outliers. Tutorial 4C covers including equations.</p>
 </div>
-<div id="tutorials" class="section level2">
-<h2><span class="header-section-number">3.2</span> Tutorials</h2>
-<p>This lab contains questions on markdown formats, hypothesis test and on exploratory data analysis. I encourage you to go and look at Tutorial 2A, 2B, 2C and 2D. All the answers are in there (for a different dataset).</p>
 </div>
-<div id="setting-up-your-code" class="section level2">
-<h2><span class="header-section-number">3.3</span> Setting up your code</h2>
+<div id="lab-4-setup-markdown" class="section level2">
+<h2><span class="header-section-number">5.2</span> Lab 4 Setup &amp; Markdown</h2>
 <ul>
-<li><p>Save all your work and if you haven’t already, create a Lab 2 folder in your STAT-462 folder</p></li>
-<li><p>Create a new R-project called Lab 2 that is linked to your Lab 2 folder (instructions in section 1.2, “Lab Challenge 1”). It will probably open a new version of R-Studio.</p></li>
-<li><p>Create a new Markdown file called “username_Lab2” (for me it will be hlg5155_Lab2)</p></li>
+<li><p>Save all your work and if you haven’t already, create a Lab 4 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 4 that is linked to your Lab 4 folder (instructions in section 1.2, “Lab Challenge 1”). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab4” (for me it will be hlg5155_Lab3)</p></li>
 <li><p>Remove the “friendly text” (see Tutorial 1E, section 1.5.3 if you have no idea what I mean)</p></li>
-</ul>
-</div>
-<div id="markdown-formatting-and-yaml" class="section level2">
-<h2><span class="header-section-number">3.4</span> Markdown formatting and YAML</h2>
-<ul>
-<li><p>Read through tutorial 2B</p></li>
-<li><p>Follow the instructions to edit your YAML code to look like my example in Section 1.7.1.</p></li>
-<li><p>Choose a new theme for your lab script! Section 1.7.1 includes a link to different themes.</p></li>
-<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Introduction”. Save and make sure that it will preview/knit.</p></li>
-<li><p><span style="color: navy;"><em>Leave a blank line under that then write something new you learned about R or statistics this week. Use bold and italic fonts in your answers.</em></p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in Section 1.7.1. (tutorial 2B). Choose any theme that you like.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="lab-2.html#cb163-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb163-2"><a href="lab-2.html#cb163-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb163-3"><a href="lab-2.html#cb163-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb163-4"><a href="lab-2.html#cb163-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb163-5"><a href="lab-2.html#cb163-5"></a><span class="kw">library</span>(ISLR)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-4.html#cb1-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="lab-4.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="lab-4.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="lab-4.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb1-5"><a href="lab-4.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb1-6"><a href="lab-4.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb1-7"><a href="lab-4.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb1-8"><a href="lab-4.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb1-9"><a href="lab-4.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb1-10"><a href="lab-4.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb1-11"><a href="lab-4.html#cb1-11"></a><span class="kw">library</span>(plotly) </span></code></pre></div>
+<ul>
+<li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
+</ul>
+<p>Throughout your lab, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.</p>
 </div>
-<div id="confidence-intervals" class="section level2">
-<h2><span class="header-section-number">3.5</span> Confidence intervals</h2>
-<ul>
-<li><p>Tutorial 2D will be helpful here &amp; your lecture notes. Along with the tutorial, this is a good example using R to calculate confidence intervals: <a href="https://www.cyclismo.org/tutorial/R/confidence.html" class="uri">https://www.cyclismo.org/tutorial/R/confidence.html</a></p></li>
-<li><p>Leave a blank line after the code chunk, then make a new level-1 heading called “Confidence Intervals”.</p></li>
-<li><p>Leave a blank space (I’ll stop now but you get the idea), and make a Level 2 heading called “Question A”.</p></li>
-<li><p>Answer question A below, making sure to use full sentences in your conclusions. If it helps to make your report easier to read, feel free to include the question text.</p></li>
-</ul>
-<p><span style="color: navy;"><strong><em>Question A:</em></strong> <em>A sample of 36 obese rock-hopper penguins in a zoo were put on a special diet for a year. The average weight loss was 11oz and the standard deviation of the weight loss was 19oz. (note, that a positive weight loss implies reduced weight over time).</em><span></p>
-<p><span style="color: navy;"><em>Either by hand or in R, calculate the 99% confidence interval for the true mean weight reduction. Make sure to show your workings or R code.</em><span></p>
-<ul>
-<li>Make a Level-2 heading called Question B and answer question B below.</li>
-</ul>
-<p><span style="color: navy;"><strong><em>Question B:</em></strong> <em>Based on the interval you calculate above, do you have sufficient evidence at your 99% level of significance to believe that the weight-loss programme is working and the penguins are losing weight? The average penguin actually weighs about 3Kg. Is this diet something you would recommend for meaningful weight loss?</em><span></p>
+<div id="public-safety-spending" class="section level2">
+<h2><span class="header-section-number">5.3</span> Public safety spending</h2>
+<p>Suburban towns often spend a large fraction of their municipal budgets on public safety services (police, fire, and ambulance). A taxpayers’ group felt that tiny towns were likely to spend large amounts per person because they have such small financial bases. The group obtained data on the per-capita spending on public safety for 29 suburban towns in a metropolitan area, as well as the population of each town in units of 10,000 people.</p>
+<p>The data are given in the file <code>expenditure.xslx</code>. Download this from the lab page and put it into your lab 4 folder.</p>
+<div id="checking-folder-names" class="section level3 unnumbered">
+<h3>Checking folder names</h3>
+<p>One of the most frustrating things in R is when the headings of your data tables have spaces, special characters or anything else that is difficult to type. It makes it very hard to refer to a column/variable by name, so it’s always something we want to check for and fix.</p>
+<p>We can check this without doing anything fancy in R (you can if you want, it’s the <code>names()</code> command). Instead, simply open <code>expenditure.xlsx</code> in Excel and take a look!.</p>
+<p>Rename the column titles so that any given column name contains no spaces &amp; check you are happy with the data. Save and close.</p>
+<p>[THIS IS A TOP HINT FOR WORKING WITH YOUR OWN DATA - I check every file that’s small enough to be opened into excel].</p>
 </div>
-<div id="hypothesis-testing" class="section level2">
-<h2><span class="header-section-number">3.6</span> Hypothesis testing</h2>
-<ul>
-<li><p>Tutorial 2D will be helpful here along with your lecture notes.</p></li>
-<li><p>Make a new level-1 heading called Hypothesis Testing, then make a Level 2 heading called Question C - and answer:</p></li>
-</ul>
-<p><span style="color: navy;"><strong><em>Question C:</em></strong> <em>Tests are being carried out on a new drug designed to relieve the symptoms of the flu, specifically on the number of hours people can sleep. The new drug is given in tablet form one evening to a random sample of 16 people who have colds. The number of hours they sleep may be assumed to be Normally distributed and is recorded below.</em></span></p>
-<p><span style="color: navy;"><em>There is also a very large control group of people who have colds but are not given the drug. The mean number of hours they sleep is 6.6 hrs.</em></span></p>
-<pre><code>## [1] Hours slept by people given the new drug</code></pre>
-<pre><code>## [1] 2.3
-## [1] 5
-## [1] 6
-## [1] 6.4
-## [1] 6.7
-## [1] 6.7
-## [1] 6.9
-## [1] 7.2
-## [1] 7.2
-## [1] 7.4
-## [1] 7.6
-## [1] 7.8
-## [1] 7.9
-## [1] 8.1
-## [1] 8.1
-## [1] 9.7</code></pre>
-<p><span style="color: navy;"><em>You can enter the sleep data into R using this code.</em></span></p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="lab-2.html#cb166-1"></a>sleep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.1</span>,<span class="fl">6.7</span>,<span class="fl">2.3</span>,<span class="fl">7.2</span>,<span class="fl">8.1</span>,<span class="fl">9.7</span>,<span class="fl">6.0</span>,<span class="fl">7.4</span>,<span class="fl">6.4</span>,<span class="fl">6.9</span>,<span class="fl">5.0</span>,<span class="fl">7.8</span>,<span class="fl">6.7</span>,<span class="fl">7.2</span>,<span class="fl">7.6</span>,<span class="fl">7.9</span>)</span></code></pre></div>
-<p><span style="color: navy;"><em>By hand, carry out a hypothesis test at the 1% significance level that the drug has any impact on the length of time people sleep. You can use R as a calculator to get things like the mean. Make sure to include:</em></span></p>
-<ol style="list-style-type: lower-alpha">
-<li><span style="color: navy;"><em>Your H<sub>0</sub> and H<sub>1</sub></em></span></li>
-<li><span style="color: navy;"><em>The critical threshold</em></span></li>
-<li><span style="color: navy;"><em>Whether it is one sided or two sided</em></span></li>
-<li><span style="color: navy;"><em>Whether you choose to use the normal or t-distribution</em></span></li>
-<li><span style="color: navy;"><em>A diagram of the distribution split into the acceptance and critical/rejection zones</em></span></li>
-<li><span style="color: navy;"><em>The calculated test statistic</em></span></li>
-<li><span style="color: navy;"><em>and your conclusions</em></span></li>
-</ol>
-<p><span style="color: navy;"><strong><em>Include a screenshot of your [neat] workings in this report.</em></strong> <em>If you can’t remember how to do this, see step 10 in section 2.6 (Lab-1 Challege 3)</em></span></p>
-<ul>
-<li>Make a Level 2 heading called Question D and answer question B below</li>
-</ul>
-<p><span style="color: navy;"><strong><em>Question D: Use R and the t.test command to calculate the t-test for the data above. Comment on whether your two results agree (e.g. did you make a mistake anywhere)</em></strong>.</span></p>
+<div id="reading-in-the-data" class="section level3 unnumbered">
+<h3>Reading in the data</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lab-4.html#cb2-1"></a>spending &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;expenditure.xlsx&quot;</span>)</span></code></pre></div>
+<p>[Step 5]. The <code>paste()</code> command allows you to stick together R output like text or the output of code. For example, rather than just printing out the number of rows, I can put the output into a sentence:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="lab-4.html#cb3-1"></a><span class="co">## So this command says</span></span>
+<span id="cb3-2"><a href="lab-4.html#cb3-2"></a><span class="co"># [1] I am going to print something</span></span>
+<span id="cb3-3"><a href="lab-4.html#cb3-3"></a><span class="co"># [2] The thing I am going to print is the output of the paste command</span></span>
+<span id="cb3-4"><a href="lab-4.html#cb3-4"></a><span class="co"># [3] The things I am pasting together are the sentence &quot;Number of Rows:&quot; and the output of the</span></span>
+<span id="cb3-5"><a href="lab-4.html#cb3-5"></a><span class="co">#     nrow(mlb) command</span></span>
+<span id="cb3-6"><a href="lab-4.html#cb3-6"></a><span class="co"># [4] The output of the nrow(mlb) command is 150 e.g. there are 150 rows</span></span>
+<span id="cb3-7"><a href="lab-4.html#cb3-7"></a></span>
+<span id="cb3-8"><a href="lab-4.html#cb3-8"></a><span class="kw">print</span>( <span class="kw">paste</span>(<span class="st">&quot;Number of Rows:&quot;</span>,<span class="kw">nrow</span>(spending))  )</span></code></pre></div>
+<pre><code>## [1] &quot;Number of Rows: 29&quot;</code></pre>
+<p>Now it’s your turn. Create a sentence which says “Number of Columns:” and then tells me how many columns the data has. Hint, see eariler labs, use google or read <code>?base::nrow</code> for to hunt for the command itself.</p>
 </div>
-<div id="exploratory-data-analysis" class="section level2">
-<h2><span class="header-section-number">3.7</span> Exploratory data analysis</h2>
-<ul>
-<li><p>Tutorial 2C will be useful here.</p></li>
-<li><p>Make a new level-1 heading called Exploratory Data Analysis. You are now going to explore the Credit dataset, which is a simulated dataset used for educational purposes. To start out, make a new code chunk and include following commands.</p></li>
-</ul>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="lab-2.html#cb167-1"></a>dataset &lt;-<span class="st"> </span>ISLR<span class="op">::</span>Credit</span>
-<span id="cb167-2"><a href="lab-2.html#cb167-2"></a>?Credit</span></code></pre></div>
-<p><span style="color: navy;"><strong><em>Question E:</em></strong> <em>Use &amp; interpret the output of R to describe the dataset to me. How much data is there and what does the dataset show? What variable names are there?</em></p>
-<p><em>Note, the help file is incorrect for this dataset. There are not 10,000 rows of data so you’ll need to work out how big the dataset really is</em>.</span></p>
-<p><span style="color: navy;"><strong><em>Question F:</em></strong> <em>Create a table of the number of students vs not students (e.g. a table of the Student column - Section 2.3.6) </em>**.</span></p>
-<p><span style="color: navy;"><strong><em>Question G:</em></strong> <em>Choose a single numeric variable/column in the dataset (your choice). Tell me its summary statistics &amp; units and include a professional looking plot of its distribution. Via this and via a Wilks Shapiro test (including your H0,H1, conclusions etc) assess whether that variable is normally distributed</em>.</span></p>
-<p><span style="color: navy;"><strong><em>Question H (OPTIONAL):[BONUS 2%, lab capped at 100%]</em></strong> <em>Subset/filter the data to select only rows containing students. (Section 2.3.5). Find how the mean of your variable has changed</em>.</span></p>
+<div id="analysis" class="section level3 unnumbered">
+<h3>Analysis</h3>
+<div id="question-1" class="section level4 unnumbered">
+<h4>Question 1:</h4>
+<p>Use the tools you learned in previous labs to explore the data. Identify the explanatory and response variable in the problem.</p>
 </div>
-<div id="submitting-lab-2" class="section level2">
-<h2><span class="header-section-number">3.8</span> Submitting Lab 2</h2>
-<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 2 folder (see Section 1.7 for where)</p>
+<div id="question-2" class="section level4 unnumbered">
+<h4>Question 2:</h4>
+<p>If the taxpayer’s group is correct, what sign should the slope of the regression model have?</p>
+</div>
+<div id="question-3" class="section level4 unnumbered">
+<h4>Question 3:</h4>
+<p>If the taxpayer’s group is correct, what sign should the slope of the regression model have?</p>
+</div>
+<div id="question-4" class="section level4 unnumbered">
+<h4>Question 4:</h4>
+<p>Use tutorial 3B to fit a regession model to the data and save it as a variable called <code>model1</code>. Examine the coefficients and the summary of the model fit.</p>
+<p>Does the slope in the output confirms the opinion of the community group? Explain.</p>
+</div>
+<div id="question-5" class="section level4 unnumbered">
+<h4>Question 5:</h4>
+<p>Last week we used “base R code” to visualise data (eg commands like plot that just come with the R installation). We are now going to use a specifics graphics package from the tidyverse, ggplot2, to create a scatterplot of the data.</p>
+<p>Use these tutorials to create a scatterplot of the data using ggplot2 and to add a regression line.</p>
+<ul>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization</a> [recommended]</li>
+<li><a href="https://www.r-graph-gallery.com/50-51-52-scatter-plot-with-ggplot2.html" class="uri">https://www.r-graph-gallery.com/50-51-52-scatter-plot-with-ggplot2.html</a></li>
+<li><a href="https://r4ds.had.co.nz/data-visualisation.html" class="uri">https://r4ds.had.co.nz/data-visualisation.html</a></li>
+</ul>
+<p>You can make it as fancy as you like</p>
+</div>
+<div id="question-6" class="section level4 unnumbered">
+<h4>Question 6:</h4>
+<p>Does the scatter plot in part (d) suggest that the regression line estimated in part (c) is misleading? Explain.</p>
+</div>
+<div id="question-7" class="section level4 unnumbered">
+<h4>Question 7:</h4>
+<p>Use Tutorial 4B to find and remove the unusual point from the dataset. (<em>For a full study, we will be much more careful about whether to remove an outlier or not as discussed later in the semester</em>)</p>
+<p>Repeat the linear regression and scatterplot with the new data and save it as a variable called <code>model2</code>. Explain how this has changed your assessment of the relationship between the variables.</p>
+</div>
+<div id="question-8" class="section level4 unnumbered">
+<h4>Question 8:</h4>
+<p>Normally, to calculate the correlation coefficient between two variables, we use the <code>cor()</code> command or we could look at the output from <code>ols_regress()</code>. Let’s imagine that these have mysteriously broken</p>
+<p>From the command <code>summary(model2)</code>, how could you quickly calculate the correlation coefficient? What is it?</p>
+</div>
+<div id="question-9" class="section level4 unnumbered">
+<h4>Question 9:</h4>
+<p>We often want to write the equations for our regression lines more professionally. Use Tutorial 4C to create a professional equation showing the linear model, hiding any code chunk you (might) have used to do it.</p>
+<p>Make sure to define any terms &amp; units you might have used.</p>
+</div>
+<div id="question-10" class="section level4 unnumbered">
+<h4>Question 10:</h4>
+<p>Interpret the slope of the regression line in part 9 in the context of the problem.</p>
+</div>
+<div id="question-11" class="section level4 unnumbered">
+<h4>Question 11:</h4>
+<p>What is the Mean Squared Error of the new model? Why is this not a good measure to compare two models with?</p>
+</div>
+<div id="question-12" class="section level4 unnumbered">
+<h4>Question 12:</h4>
+<p>Test if the slope is significantly differnet to 1. Show all your workings and ideally use the equation editor for any equations.</p>
+</div>
+<div id="question-13-optional-bonus-2" class="section level4 unnumbered">
+<h4>Question 13 [OPTIONAL BONUS 2%] :</h4>
+<p>Bonus. We are starting an interesting discussion about degrees of freedom.<br />
+- Read this blog article: <a href="https://statisticsbyjim.com/hypothesis-testing/degrees-freedom-statistics/" class="uri">https://statisticsbyjim.com/hypothesis-testing/degrees-freedom-statistics/</a>
+- and this summary of Monday’s class. <a href="https://online.stat.psu.edu/stat501/lesson/1/1.4" class="uri">https://online.stat.psu.edu/stat501/lesson/1/1.4</a></p>
+<p>Now go to this discussion board - <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706478" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706478</a> and try to either explain what you have learned or try to clarify some of the confusion that many many students feel when they discuss degrees of freedom. You get the 2% for a meaningful comment (more than 1 sentence).</p>
+<p>Essentially, I think you might be able to find better words than I can!</p>
+</div>
+</div>
+</div>
+<div id="submitting-lab-4" class="section level2">
+<h2><span class="header-section-number">5.4</span> Submitting Lab 4</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 4 folder and have a .html ending.</p>
 <p>Check your html is complete by double clicking on to open it in your web-browser.</p>
-<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 2.</p>
-<div id="lab-2-submission-check" class="section level3">
-<h3><span class="header-section-number">3.8.1</span> Lab 2 submission check</h3>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 4. (see the end of lab 1 for a screenshot)</p>
+<div id="lab-4-submission-check" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Lab 4 submission check</h3>
 <p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
 <p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
 <p><strong>MARKDOWN/CODE STYLE - 5 MARKS</strong></p>
 <p>LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT. You included the headings/sub-headings as requested. Your code and document is neat and easy to read. There is also a spell check next to the save button.</p>
-<p><strong>WRITING STYLE - 5 MARKS</strong></p>
-<p>You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You included the bold/italic R fact.</p>
-<p><strong>QUESTION A - 10 MARKS</strong> <em>Penguin confidence interval</em></p>
-<p>You answered the questions correctly either by hand or in R, but you also showed your workings/code</p>
-<p><strong>QUESTION B - 10 MARKS</strong> <em>Penguin confidence interval interpretation</em></p>
-<p>You interpreted the questions correctly</p>
-<p><strong>QUESTION C - 20 MARKS</strong></p>
-<p>You accurately conducted the hypothesis test with all the requested steps included and managed to upload the screenshot.</p>
-<p><strong>QUESTION D - 5 MARKS</strong></p>
-<p>You reproduced your t-statistic, p-value &amp; conclusion in R.</p>
-<p><strong>QUESTION E - 5 MARKS</strong></p>
-<p>You described the data in a way that someone who had never seen the data before would be able to understand what it shows and how big it is</p>
-<p><strong>QUESTION F - 5 MARKS</strong></p>
-<p>You created the summary table and interpreted the output</p>
-<p><strong>QUESTION G - 20 MARKS</strong></p>
-<p>You summarised a variable of your choice and included all the requested statistics/plots.</p>
+<p><strong>WRITING STYLE - 5 marks</strong></p>
+<p>You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You included a figure caption (not just writing a sentence under your plot)</p>
+<p><strong>QUESTIONS 1-4 - 15 marks </strong></p>
+<p>You have clearly explored the data and understand its properties and what it is showing. You have correctly identified the explanatory &amp; response variables &amp; the sign that the slope should have. You have correctly fitted an R model to the data</p>
+<p><strong>QUESTIONS 5 - 10 marks </strong></p>
+<p>You have used ggplot2 to make a professional looking plot of the data.</p>
+<p><strong>QUESTIONS 6&amp;7 - 10 marks </strong></p>
+<p>You have correctly identified the unusual feature and successfully removed the point from the dataset.</p>
+<p><strong>QUESTIONS 8 - 5 marks </strong></p>
+<p>You have calculated the correlation coefficient AND SHOWED HOW YOU DID IT.</p>
+<p><strong>QUESTIONS 9 &amp; 10 - 10 marks </strong></p>
+<p>You have made a professional looking equation using an equation editor in Tutorial 4C. You have defined all terms and units. You have interpreted the slope within the context of the graph.</p>
+<p><strong>QUESTION 11 - 10 marks </strong></p>
+<p>You have found the Mean Squared Error and explained why it is not great for comparing models.</p>
+<p><strong>QUESTION 12 - 20 marks </strong></p>
+<p>You have conducted a full hypothesis test showing your workings.</p>
+<p><strong>QUESTION 13 - 2 marks </strong>
+BONUS - meaningful comment on degrees of freedom,</p>
 <p>[100 marks total]</p>
 
 </div>
@@ -422,8 +447,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="lab-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -473,20 +498,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

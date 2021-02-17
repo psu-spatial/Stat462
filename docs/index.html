@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-02-10" />
+<meta name="date" content="2021-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,6 +178,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#tutorial-3a---editing-code-chunks"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
 <li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#tutorial-3b---regression-models"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a></li>
+<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#tutorial-4a-plotting-in-ggplot2"><i class="fa fa-check"></i><b>1.12</b> Tutorial 4A: Plotting in ggplot2</a></li>
+<li class="chapter" data-level="1.13" data-path="index.html"><a href="index.html#tutorial-4b-identifyingremoving-outliers"><i class="fa fa-check"></i><b>1.13</b> Tutorial 4B: Identifying/removing outliers</a></li>
+<li class="chapter" data-level="1.14" data-path="index.html"><a href="index.html#tutorial-4c-writing-equations-in-r-studio"><i class="fa fa-check"></i><b>1.14</b> Tutorial 4C Writing equations in R-Studio</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -227,6 +230,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="lab-4.html"><a href="lab-4.html"><i class="fa fa-check"></i><b>5</b> Lab 4</a><ul>
+<li class="chapter" data-level="5.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-general-information"><i class="fa fa-check"></i><b>5.1</b> Lab 4 General information</a></li>
+<li class="chapter" data-level="5.2" data-path="lab-4.html"><a href="lab-4.html#lab-4-setup-markdown"><i class="fa fa-check"></i><b>5.2</b> Lab 4 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="lab-4.html"><a href="lab-4.html#public-safety-spending"><i class="fa fa-check"></i><b>5.3</b> Public safety spending</a><ul>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#checking-folder-names"><i class="fa fa-check"></i>Checking folder names</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#reading-in-the-data"><i class="fa fa-check"></i>Reading in the data</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lab-4.html"><a href="lab-4.html#submitting-lab-4"><i class="fa fa-check"></i><b>5.4</b> Submitting Lab 4</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-submission-check"><i class="fa fa-check"></i><b>5.4.1</b> Lab 4 submission check</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -250,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">STAT-462 Lab book</h1>
 <p class="author"><em>Helen Greatrex</em></p>
-<p class="date"><em>2021-02-10</em></p>
+<p class="date"><em>2021-02-17</em></p>
 </div>
 <div id="tutorials" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Tutorials</h1>
@@ -350,7 +365,7 @@ Figure 1.4: What you should see
 <p>So now we FINALLY get to do some R-coding. First things first, first watch the 5 min video above for some pointers. Will will also go through this below:</p>
 <div id="using-r-as-a-calculator" class="section level4">
 <h4><span class="header-section-number">1.3.0.1</span> Using R as a calculator</h4>
-<p>Remember that the aim of R is to type in commands to get your computer to analyse data. The console (see Figure <a href="lab-1.html#fig:basicStudio">2.2</a>) is a space where you can type in those commands and it will directly print out the answer. You’re essentially talking to the computer.</p>
+<p>Remember that the aim of R is to type in commands to get your computer to analyse data. The console (see Figure <a href="#fig:basicStudio"><strong>??</strong></a>) is a space where you can type in those commands and it will directly print out the answer. You’re essentially talking to the computer.</p>
 <p>The little “&gt;” symbol in the console means that the computer is waiting for your command.</p>
 <p>Let’s start by the simplest command possible. Try typing each of the following commands into your R console and pressing Enter as you work through this.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code></pre></div>
@@ -756,49 +771,57 @@ Figure 1.13: The top menu might be hidden
 <p>For example</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="index.html#cb38-1"></a><span class="co"># Note, there are more columns to the right, use the arrow to see</span></span>
 <span id="cb38-2"><a href="index.html#cb38-2"></a><span class="kw">head</span>(dataset)</span></code></pre></div>
-<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate sword.type eyepatch
-## 1  1   male  28 173.11   70.5      yes   JSSFP       9       0       0    Jack Sparrow    cutlass        1
-## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow    cutlass        0
-## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow    cutlass        1
-## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow   scimitar        1
-## 5  5 female  41 157.85   58.4      yes   JSSFP       9       6       4            Hook    cutlass        1
-## 6  6   male  26 190.20   85.4      yes    CCCC       7      19       0    Jack Sparrow    cutlass        1
-##   sword.time beard.length           fav.pixar grogg
-## 1       0.58           16      Monsters, Inc.    11
-## 2       1.11           21              WALL-E     9
-## 3       1.44           19          Inside Out     7
-## 4      36.11            2          Inside Out     9
-## 5       0.11            0          Inside Out    14
-## 6       0.59           17 Monsters University     7</code></pre>
+<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate
+## 1  1   male  28 173.11   70.5      yes   JSSFP       9       0       0    Jack Sparrow
+## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow
+## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow
+## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow
+## 5  5 female  41 157.85   58.4      yes   JSSFP       9       6       4            Hook
+## 6  6   male  26 190.20   85.4      yes    CCCC       7      19       0    Jack Sparrow
+##   sword.type eyepatch sword.time beard.length           fav.pixar grogg
+## 1    cutlass        1       0.58           16      Monsters, Inc.    11
+## 2    cutlass        0       1.11           21              WALL-E     9
+## 3    cutlass        1       1.44           19          Inside Out     7
+## 4   scimitar        1      36.11            2          Inside Out     9
+## 5    cutlass        1       0.11            0          Inside Out    14
+## 6    cutlass        1       0.59           17 Monsters University     7</code></pre>
 <p>To see what the column names are, you can use the <code>names(dataset)</code> command</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="index.html#cb40-1"></a><span class="kw">names</span>(dataset)</span></code></pre></div>
-<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;          &quot;weight&quot;         
-##  [6] &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;         &quot;parrots&quot;        
-## [11] &quot;favorite.pirate&quot; &quot;sword.type&quot;      &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
-## [16] &quot;fav.pixar&quot;       &quot;grogg&quot;</code></pre>
+<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;         
+##  [5] &quot;weight&quot;          &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;        
+##  [9] &quot;tchests&quot;         &quot;parrots&quot;         &quot;favorite.pirate&quot; &quot;sword.type&quot;     
+## [13] &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;    &quot;fav.pixar&quot;      
+## [17] &quot;grogg&quot;</code></pre>
 <p>Or look at the summary</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="index.html#cb42-1"></a><span class="kw">summary</span>(dataset) </span></code></pre></div>
-<pre><code>##        id             sex                 age            height          weight         headband        
-##  Min.   :   1.0   Length:1000        Min.   :11.00   Min.   :129.8   Min.   : 33.00   Length:1000       
-##  1st Qu.: 250.8   Class :character   1st Qu.:24.00   1st Qu.:161.4   1st Qu.: 62.08   Class :character  
-##  Median : 500.5   Mode  :character   Median :27.00   Median :169.9   Median : 69.55   Mode  :character  
-##  Mean   : 500.5                      Mean   :27.36   Mean   :170.2   Mean   : 69.74                     
-##  3rd Qu.: 750.2                      3rd Qu.:31.00   3rd Qu.:178.5   3rd Qu.: 76.90                     
-##  Max.   :1000.0                      Max.   :46.00   Max.   :209.2   Max.   :105.60                     
-##    college             tattoos          tchests          parrots       favorite.pirate     sword.type       
-##  Length:1000        Min.   : 0.000   Min.   :  0.00   Min.   : 0.000   Length:1000        Length:1000       
-##  Class :character   1st Qu.: 7.000   1st Qu.:  6.00   1st Qu.: 1.000   Class :character   Class :character  
-##  Mode  :character   Median :10.000   Median : 15.00   Median : 2.000   Mode  :character   Mode  :character  
-##                     Mean   : 9.429   Mean   : 22.69   Mean   : 2.819                                        
-##                     3rd Qu.:12.000   3rd Qu.: 30.00   3rd Qu.: 4.000                                        
-##                     Max.   :19.000   Max.   :147.00   Max.   :27.000                                        
-##     eyepatch       sword.time        beard.length    fav.pixar             grogg      
-##  Min.   :0.000   Min.   :  0.0000   Min.   : 0.00   Length:1000        Min.   : 0.00  
-##  1st Qu.:0.000   1st Qu.:  0.2175   1st Qu.: 0.00   Class :character   1st Qu.: 8.00  
-##  Median :1.000   Median :  0.5850   Median : 9.00   Mode  :character   Median :10.00  
-##  Mean   :0.658   Mean   :  2.5427   Mean   :10.38                      Mean   :10.14  
-##  3rd Qu.:1.000   3rd Qu.:  1.3300   3rd Qu.:20.00                      3rd Qu.:12.00  
-##  Max.   :1.000   Max.   :169.8800   Max.   :40.00                      Max.   :21.00</code></pre>
+<pre><code>##        id             sex                 age            height          weight      
+##  Min.   :   1.0   Length:1000        Min.   :11.00   Min.   :129.8   Min.   : 33.00  
+##  1st Qu.: 250.8   Class :character   1st Qu.:24.00   1st Qu.:161.4   1st Qu.: 62.08  
+##  Median : 500.5   Mode  :character   Median :27.00   Median :169.9   Median : 69.55  
+##  Mean   : 500.5                      Mean   :27.36   Mean   :170.2   Mean   : 69.74  
+##  3rd Qu.: 750.2                      3rd Qu.:31.00   3rd Qu.:178.5   3rd Qu.: 76.90  
+##  Max.   :1000.0                      Max.   :46.00   Max.   :209.2   Max.   :105.60  
+##    headband           college             tattoos          tchests          parrots      
+##  Length:1000        Length:1000        Min.   : 0.000   Min.   :  0.00   Min.   : 0.000  
+##  Class :character   Class :character   1st Qu.: 7.000   1st Qu.:  6.00   1st Qu.: 1.000  
+##  Mode  :character   Mode  :character   Median :10.000   Median : 15.00   Median : 2.000  
+##                                        Mean   : 9.429   Mean   : 22.69   Mean   : 2.819  
+##                                        3rd Qu.:12.000   3rd Qu.: 30.00   3rd Qu.: 4.000  
+##                                        Max.   :19.000   Max.   :147.00   Max.   :27.000  
+##  favorite.pirate     sword.type           eyepatch       sword.time        beard.length  
+##  Length:1000        Length:1000        Min.   :0.000   Min.   :  0.0000   Min.   : 0.00  
+##  Class :character   Class :character   1st Qu.:0.000   1st Qu.:  0.2175   1st Qu.: 0.00  
+##  Mode  :character   Mode  :character   Median :1.000   Median :  0.5850   Median : 9.00  
+##                                        Mean   :0.658   Mean   :  2.5427   Mean   :10.38  
+##                                        3rd Qu.:1.000   3rd Qu.:  1.3300   3rd Qu.:20.00  
+##                                        Max.   :1.000   Max.   :169.8800   Max.   :40.00  
+##   fav.pixar             grogg      
+##  Length:1000        Min.   : 0.00  
+##  Class :character   1st Qu.: 8.00  
+##  Mode  :character   Median :10.00  
+##                     Mean   :10.14  
+##                     3rd Qu.:12.00  
+##                     Max.   :21.00</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="index.html#cb44-1"></a><span class="co"># You can also use the skimr package and skim command here</span></span>
 <span id="cb44-2"><a href="index.html#cb44-2"></a><span class="co"># skim(pirates)</span></span></code></pre></div>
 <p>To see how many columns and rows there are, you can use the <code>nrow()</code> and <code>ncol()</code> commands</p>
@@ -825,14 +848,14 @@ Figure 1.13: The top menu might be hidden
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="index.html#cb53-1"></a><span class="co"># Leave the right side empty for all the columns</span></span>
 <span id="cb53-2"><a href="index.html#cb53-2"></a><span class="co"># e.g this prints all columns of rows 2,3 and 4</span></span>
 <span id="cb53-3"><a href="index.html#cb53-3"></a>dataset[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>, ]</span></code></pre></div>
-<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate sword.type eyepatch
-## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow    cutlass        0
-## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow    cutlass        1
-## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow   scimitar        1
-##   sword.time beard.length  fav.pixar grogg
-## 2       1.11           21     WALL-E     9
-## 3       1.44           19 Inside Out     7
-## 4      36.11            2 Inside Out     9</code></pre>
+<pre><code>##   id    sex age height weight headband college tattoos tchests parrots favorite.pirate
+## 2  2   male  31 209.25  105.6      yes   JSSFP       9      11       0    Jack Sparrow
+## 3  3   male  26 169.95   77.1      yes    CCCC      10      10       1    Jack Sparrow
+## 4  4 female  31 144.29   58.5       no   JSSFP       2       0       2    Jack Sparrow
+##   sword.type eyepatch sword.time beard.length  fav.pixar grogg
+## 2    cutlass        0       1.11           21     WALL-E     9
+## 3    cutlass        1       1.44           19 Inside Out     7
+## 4   scimitar        1      36.11            2 Inside Out     9</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="index.html#cb55-1"></a><span class="co"># or all the values in a column - I leave the left side blank to select all rows</span></span>
 <span id="cb55-2"><a href="index.html#cb55-2"></a><span class="co"># Here I assigned the answer to a new variable called b, That&#39;s why it didn&#39;t print out.</span></span>
 <span id="cb55-3"><a href="index.html#cb55-3"></a>b &lt;-<span class="st"> </span>dataset[ ,<span class="kw">c</span>(<span class="st">&quot;college&quot;</span>,<span class="st">&quot;tattoos&quot;</span>)]</span></code></pre></div>
@@ -857,10 +880,11 @@ Figure 1.14: picture from the tidyverse cheatsheet
 <p>Let’s select only the “age”,“height”,“sex”,“weight”,“favorite.pirate” and “beard.length” columns:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="index.html#cb57-1"></a><span class="co"># print the column names, so its easier to write the command</span></span>
 <span id="cb57-2"><a href="index.html#cb57-2"></a><span class="kw">names</span>(dataset)</span></code></pre></div>
-<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;          &quot;weight&quot;         
-##  [6] &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;         &quot;tchests&quot;         &quot;parrots&quot;        
-## [11] &quot;favorite.pirate&quot; &quot;sword.type&quot;      &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;   
-## [16] &quot;fav.pixar&quot;       &quot;grogg&quot;</code></pre>
+<pre><code>##  [1] &quot;id&quot;              &quot;sex&quot;             &quot;age&quot;             &quot;height&quot;         
+##  [5] &quot;weight&quot;          &quot;headband&quot;        &quot;college&quot;         &quot;tattoos&quot;        
+##  [9] &quot;tchests&quot;         &quot;parrots&quot;         &quot;favorite.pirate&quot; &quot;sword.type&quot;     
+## [13] &quot;eyepatch&quot;        &quot;sword.time&quot;      &quot;beard.length&quot;    &quot;fav.pixar&quot;      
+## [17] &quot;grogg&quot;</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="index.html#cb59-1"></a><span class="co"># The &quot;traditional R way&quot;</span></span>
 <span id="cb59-2"><a href="index.html#cb59-2"></a>newdata &lt;-<span class="st"> </span>dataset[,<span class="kw">c</span>(<span class="st">&quot;age&quot;</span>,<span class="st">&quot;height&quot;</span>,<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;weight&quot;</span>,<span class="st">&quot;favorite.pirate&quot;</span>,</span>
 <span id="cb59-3"><a href="index.html#cb59-3"></a>                      <span class="st">&quot;beard.length&quot;</span>)]</span>
@@ -932,12 +956,14 @@ Figure 1.14: picture from the tidyverse cheatsheet
 <p>This counts the number of rows containing each category. For example, we can see here that 50 pirates out of the 1000 chose Monsters Inc as their favourite film</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="index.html#cb66-1"></a><span class="kw">table</span>(dataset<span class="op">$</span>fav.pixar)</span></code></pre></div>
 <pre><code>## 
-##        A Bug&#39;s Life               Brave                Cars              Cars 2        Finding Nemo 
-##                  28                  21                  21                  14                 162 
-##          Inside Out Monsters University      Monsters, Inc.         Ratatouille     The Incredibles 
-##                 304                  94                  50                   3                  66 
-##           Toy Story         Toy Story 2         Toy Story 3                  Up              WALL-E 
-##                  16                  25                  13                 118                  65</code></pre>
+##        A Bug&#39;s Life               Brave                Cars              Cars 2 
+##                  28                  21                  21                  14 
+##        Finding Nemo          Inside Out Monsters University      Monsters, Inc. 
+##                 162                 304                  94                  50 
+##         Ratatouille     The Incredibles           Toy Story         Toy Story 2 
+##                   3                  66                  16                  25 
+##         Toy Story 3                  Up              WALL-E 
+##                  13                 118                  65</code></pre>
 <p>We can also go beyond this. For example, let’s break it up by gender - where we can see that 2 non-binary pirates liked the film.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="index.html#cb68-1"></a><span class="kw">table</span>(dataset<span class="op">$</span>fav.pixar,dataset<span class="op">$</span>sex )</span></code></pre></div>
 <pre><code>##                      
@@ -1264,6 +1290,135 @@ Figure 1.15: Replace option1, option2 etc with the things you want the chunk to 
 </p>
 </div>
 <p>This is probably because you loaded the moderndive package. They do not play nicely together. Save your work, restart R and <strong>do not run any line that says library(moderndive)!</strong>.</p>
+</div>
+</div>
+<div id="tutorial-4a-plotting-in-ggplot2" class="section level2">
+<h2><span class="header-section-number">1.12</span> Tutorial 4A: Plotting in ggplot2</h2>
+<p>There are <em>many</em> tutorials out there, so I don’t want to spam you with my additional instructions.</p>
+<p>Here are my top resources for learning how to plot in ggplot2.</p>
+<ol style="list-style-type: decimal">
+<li>There is a data camp course on it! <a href="https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2" class="uri">https://learn.datacamp.com/courses/introduction-to-data-visualization-with-ggplot2</a></li>
+<li>Modifiable examples: <a href="https://www.r-graph-gallery.com" class="uri">https://www.r-graph-gallery.com</a></li>
+<li>For basic plotting, I like this: <a href="http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization</a></li>
+<li>Another nice tutorial to work through: <a href="https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html" class="uri">https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html</a></li>
+<li>More details: <a href="https://r4ds.had.co.nz/data-visualisation.html" class="uri">https://r4ds.had.co.nz/data-visualisation.html</a></li>
+<li>Every detail you could ever want. I use this as a reference. <a href="https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/" class="uri">https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/</a></li>
+</ol>
+</div>
+<div id="tutorial-4b-identifyingremoving-outliers" class="section level2">
+<h2><span class="header-section-number">1.13</span> Tutorial 4B: Identifying/removing outliers</h2>
+<p>Note this tutorial is not about whether you SHOULD remove an outlier or any other value, it’s simply about the mechanics of how to do so if you choose.</p>
+<p>OK, let’s make a test dataset. I can do this using the data.frame() command.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="index.html#cb104-1"></a>test &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">VarA=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">10</span>),<span class="dt">VarB=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">30</span>))</span>
+<span id="cb104-2"><a href="index.html#cb104-2"></a>test</span></code></pre></div>
+<pre><code>##    VarA VarB
+## 1     2    1
+## 2     5    4
+## 3     3    3
+## 4     4    4
+## 5     5    5
+## 6     6    6
+## 7     7    7
+## 8     2    5
+## 9     6    2
+## 10    2    5
+## 11   10  -30</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="index.html#cb106-1"></a><span class="kw">plot</span>(test<span class="op">$</span>VarA,test<span class="op">$</span>VarB,<span class="dt">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>There is a point that looks very suspicious and we want to identify it.</p>
+<div id="method-1filter" class="section level5 unnumbered">
+<h5>Method 1:Filter</h5>
+<p>We can look at the plot, then use the filter command to identify it and print it out onto the screen.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="index.html#cb107-1"></a><span class="kw">filter</span>(test,VarB <span class="op">&lt;</span><span class="st"> </span><span class="dv">-20</span> <span class="op">&amp;</span><span class="st"> </span>VarA <span class="op">&gt;</span><span class="dv">9</span>)</span></code></pre></div>
+<pre><code>##   VarA VarB
+## 1   10  -30</code></pre>
+<p>or similarly:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="index.html#cb109-1"></a><span class="co"># This version shows the row number</span></span>
+<span id="cb109-2"><a href="index.html#cb109-2"></a>test[(test<span class="op">$</span>VarB <span class="op">&lt;</span><span class="st"> </span><span class="dv">-20</span>)<span class="op">&amp;</span>(test<span class="op">$</span>VarA <span class="op">&gt;</span><span class="dv">9</span>),]</span></code></pre></div>
+<pre><code>##    VarA VarB
+## 11   10  -30</code></pre>
+<p>We can check the outlier by recoloring it on our plot using the <code>lines()</code> command: (NOTE YOU NEED BOTH PLOT AND LINES IN THE SAME CODE CHUNK FOR THIS TO WORK)</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="index.html#cb111-1"></a>outlier &lt;-<span class="st"> </span><span class="kw">filter</span>(test,VarB <span class="op">&lt;</span><span class="st"> </span><span class="dv">-20</span> <span class="op">&amp;</span><span class="st"> </span>VarA <span class="op">&gt;</span><span class="dv">9</span>)</span>
+<span id="cb111-2"><a href="index.html#cb111-2"></a></span>
+<span id="cb111-3"><a href="index.html#cb111-3"></a><span class="co"># Make the initial plot</span></span>
+<span id="cb111-4"><a href="index.html#cb111-4"></a><span class="co"># Add the outlier as type=&quot;p&quot; for points.</span></span>
+<span id="cb111-5"><a href="index.html#cb111-5"></a><span class="kw">plot</span>(test<span class="op">$</span>VarA,test<span class="op">$</span>VarB, <span class="dt">pch=</span><span class="dv">16</span>)</span>
+<span id="cb111-6"><a href="index.html#cb111-6"></a><span class="kw">lines</span>(outlier<span class="op">$</span>VarA,outlier<span class="op">$</span>VarB,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">type=</span><span class="st">&quot;p&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p>To remove it, we simply use filter the other way, e.g. use it to select everything else..</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="index.html#cb112-1"></a>newtest &lt;-<span class="st"> </span><span class="kw">filter</span>(test,VarB <span class="op">&gt;</span><span class="st"> </span><span class="dv">-20</span>)</span>
+<span id="cb112-2"><a href="index.html#cb112-2"></a><span class="kw">plot</span>(newtest<span class="op">$</span>VarA,newtest<span class="op">$</span>VarB,<span class="dt">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+</div>
+<div id="method-2-identify-command" class="section level5 unnumbered">
+<h5>Method 2: Identify Command</h5>
+<p>Although R is mostly not interactive, there is one interactive tool you can use to click on a point and identify it, the <code>identify()</code> command.</p>
+<p>THIS ONLY WORKS IN THE CONSOLE, DON’T RUN IN A CODE CHUNK</p>
+<ol style="list-style-type: decimal">
+<li><p>First, make sure that you can clearly see the plot quadrant of your screen (between Files &amp; Packages).</p></li>
+<li><p>In the console, plot the data e.g. run <code>plot(test$VarA,test$VarB)</code>. You should see the plot clearly</p></li>
+<li><p>Now, in the console, type <code>identify(test$VarA,test$VarB)</code>. When you press enter, your mouse will turn into a little cross. Click on all the points you want to identify THEN PRESS ESCAPE. The row number of the points you clicked on will appear in the plot</p></li>
+</ol>
+<p><img src="images/Fig04_01Identify.png" width="580" /></p>
+<p>So now we know it is row 11 that is causing the problem. We can take a look at it by typing</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="index.html#cb113-1"></a><span class="co"># E.g. JUST row 11 and all the columns</span></span>
+<span id="cb113-2"><a href="index.html#cb113-2"></a>test[<span class="dv">11</span>, ]</span></code></pre></div>
+<pre><code>##    VarA VarB
+## 11   10  -30</code></pre>
+<p>and we can remove it with the minus sign</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="index.html#cb115-1"></a>newtest &lt;-<span class="st"> </span>test[<span class="op">-</span><span class="dv">11</span>, ]</span>
+<span id="cb115-2"><a href="index.html#cb115-2"></a><span class="kw">plot</span>(newtest<span class="op">$</span>VarA,newtest<span class="op">$</span>VarB,<span class="dt">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p>Remember that if you do this more than once, all the row numbers will move around, so I am a fan of using identify to take a look at the data, but using filter to remove it.</p>
+</div>
+</div>
+<div id="tutorial-4c-writing-equations-in-r-studio" class="section level2">
+<h2><span class="header-section-number">1.14</span> Tutorial 4C Writing equations in R-Studio</h2>
+<div id="in-markdown" class="section level4 unnumbered">
+<h4>In Markdown</h4>
+<div id="double-dollar-signs" class="section level5 unnumbered">
+<h5>Double dollar signs</h5>
+<p>It is relatively easy to write equations in R markdown. They use the “LaTeX” format and you put them between double dollar signs.</p>
+<p>For example, try typing <code>$$x=2$$</code> on a new line of the white text area in your script ( NOT INTO A CODE CHUNK), then pressing knit. You should see:</p>
+<p><span class="math display">\[x=2\]</span></p>
+<p>But how do you write all the fancy equation stuff? We cheat.</p>
+<p>Create the equation you want in one of these generators, then copy the code into your script and put it between double dollar signs:</p>
+<ul>
+<li><a href="https://latex.codecogs.com/eqneditor/editor.php" class="uri">https://latex.codecogs.com/eqneditor/editor.php</a></li>
+<li><a href="https://www.tutorialspoint.com/latex_equation_editor.htm" class="uri">https://www.tutorialspoint.com/latex_equation_editor.htm</a></li>
+</ul>
+<p>For example</p>
+<p><code>$$\widehat{y} = b_{0}+b_{1}x$$</code></p>
+<p>Shows up as <span class="math display">\[\widehat{y} = b_{0}+b_{1}x\]</span></p>
+<div id="single-dollar-signs" class="section level6 unnumbered">
+<h6>Single dollar signs</h6>
+<p>Essentially this is the same, but the equation is part of the text and you only see the output when you press knit. For example including <code>$x=2$</code> in this sentence shows <span class="math inline">\(x=2\)</span> as an output.</p>
+</div>
+</div>
+</div>
+<div id="using-equatiomatic" class="section level4 unnumbered">
+<h4>Using Equatiomatic</h4>
+<p>There is a really neat package called <code>equatiomatic</code> that we can use to directly make equations from our linear models.</p>
+<p>Tutorial here: <a href="https://cran.r-project.org/web/packages/equatiomatic/vignettes/intro-equatiomatic.html" class="uri">https://cran.r-project.org/web/packages/equatiomatic/vignettes/intro-equatiomatic.html</a></p>
+<p>Install this package (e.g. using <code>install.packages("equatiomatic")</code>) and load it by putting <code>library(equatiomatic)</code> inside your “libraries” code chunk and re-running.</p>
+<p>We can now extract an equation from any linear model variable. For example,</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="index.html#cb116-1"></a><span class="kw">data</span>(starwars)</span>
+<span id="cb116-2"><a href="index.html#cb116-2"></a>mymodel &lt;-<span class="st"> </span><span class="kw">lm</span>(mass<span class="op">~</span>height,<span class="dt">data=</span>starwars)</span>
+<span id="cb116-3"><a href="index.html#cb116-3"></a><span class="kw">extract_eq</span>(mymodel)</span></code></pre></div>
+<p><span class="math display">\[
+\operatorname{mass} = \alpha + \beta_{1}(\operatorname{height}) + \epsilon
+\]</span></p>
+<p>If you run it in the console, the command returns the LaTeX code you need to add it into the text yourself.</p>
+<p>Let’s say our data is a sample, not the population, then we want to use lower case names for our sample statistics (b0 &amp; b1). There is no easy way to do this in the command, so I literally run the command in the console, then copy the command over to the TEXT part of the report and change the betas to ’b’s</p>
+<p>If you want to use the actual numbers, simply turn on use_coefs=TRUE.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="index.html#cb117-1"></a><span class="kw">extract_eq</span>(mymodel, <span class="dt">use_coefs =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><span class="math display">\[
+\operatorname{\widehat{mass}} = -13.81 + 0.64(\operatorname{height})
+\]</span></p>
+<p>Finally, you probably don’t want the code chunk showing up, so you can use the “echo=FALSE” argument inside the {r} part to stop the code chunk from being visible (see Tutorial 3A). For example, I ran exactly the same code chunk with echo=FALSE activated and got this:</p>
+<p><span class="math display">\[
+\operatorname{\widehat{mass}} = -13.81 + 0.64(\operatorname{height})
+\]</span></p>
 
 </div>
 </div>

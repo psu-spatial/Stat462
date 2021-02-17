@@ -1,0 +1,259 @@
+# Lab 4
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+
+library("tidyverse") # Lots of data processing commands
+library("knitr")     # Helps make good output files
+library("rmarkdown") # Helps make good output files
+library("lattice")   # Makes nice plots
+library("RColorBrewer") # Makes nice color-scales
+library("ISLR")      # contains a credit dataset
+library("yarrr")     # contains a toy dataset about pirates
+library("skimr")     # Summary statistics
+library("Stat2Data") # Regression specific commands
+library("nortest")   # Regression specific commands
+library("lmtest")    # Regression specific commands
+library("IMTest")    # Regression specific commands 
+library("MASS")      # Regression specific commands
+#library("moderndive")# Regression specific commands
+library("corrplot")  # correlation plots
+library("car")       # this one sometimes has problems, don't panic if you get errors
+library("ggpubr")    # QQplots
+library("olsrr")     # Regression specific commands
+library("plotly")
+
+```
+
+## Lab 4 General information
+
+Welcome to STAT-462 lab 4.  The aim of this week is to:
+
+ - Finalise the basic R markdown tools (ggplot2, equations)
+ - Interpret some regression output
+ - Identify and remove outliers.
+
+
+##### General comments {-}
+
+ - You do not have to submit things you try from the tutorials, you will just be graded on the lab4 assignment.  
+ 
+ - There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706463  
+
+##### Lab 4 Tutorials {-}
+
+There are three new tutorials, 4A - 4C.  Tutorial 4A covers how to plot things in ggplot2.  Tutorial 4B covers finding, selecting and potentially removing outliers. Tutorial 4C covers including equations.
+
+## Lab 4 Setup & Markdown
+
+ - Save all your work and if you haven't already, create a Lab 4 folder in your STAT-462 folder
+
+ - Create a new R-project called Lab 4 that is linked to your Lab 4 folder (instructions in section 1.2, "Lab Challenge 1"). It will probably open a new version of R-Studio.
+
+ - Create a new Markdown file called "username_Lab4" (for me it will be hlg5155_Lab3)
+
+ - Remove the "friendly text" (see Tutorial 1E, section 1.5.3 if you have no idea what I mean)
+
+ - Follow the instructions to edit your YAML code to look like my example in Section 1.7.1. (tutorial 2B).  Choose any theme that you like.
+
+ - Leave a blank line under your YAML code, then create a level-1 Heading called "Markdown". Save and make sure that it will preview/knit.
+
+ - Make a new code chunk.  Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.
+ 
+
+```{r, message=FALSE,warning=FALSE}
+# Load libraries
+library(tidyverse)
+library(dplyr)
+library(ggpubr)
+library(Stat2Data)
+library(corrplot)
+library(olsrr)
+library(sf)    
+library(tmap)  
+library(readxl) 
+library(plotly) 
+```
+
+ - Edit the "code chunk code" at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).
+
+Throughout your lab, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.
+
+## Public safety spending  
+
+Suburban towns often spend a large fraction of their municipal budgets on public safety services (police, fire, and ambulance). A taxpayers’ group felt that tiny towns were likely to spend large amounts per person because they have such small financial bases. The group obtained data on the per-capita spending on public safety for 29 suburban towns in a metropolitan area, as well as the population of each town in units of 10,000 people. 
+
+The data are given in the file `expenditure.xslx`.  Download this from the lab page and put it into your lab 4 folder.
+
+### Checking folder names {-}
+
+One of the most frustrating things in R is when the headings of your data tables have spaces, special characters or anything else that is difficult to type.  It makes it very hard to refer to a column/variable by name, so it's always something we want to check for and fix.
+
+We can check this without doing anything fancy in R (you can if you want, it's the `names()` command).  Instead, simply open `expenditure.xlsx` in Excel and take a look!.  
+
+Rename the column titles so that any given column name contains no spaces & check you are happy with the data. Save and close.  
+
+[THIS IS A TOP HINT FOR WORKING WITH YOUR OWN DATA - I check every file that's small enough to be opened into excel]. 
+
+### Reading in the data {-}
+
+```{r,eval=FALSE}
+spending <- read_excel("expenditure.xlsx")
+```
+
+[Step 5].  The `paste()` command allows you to stick together R output like text or the output of code. For example, rather than just printing out the number of rows, I can put the output into a sentence:
+
+```{r}
+## So this command says
+# [1] I am going to print something
+# [2] The thing I am going to print is the output of the paste command
+# [3] The things I am pasting together are the sentence "Number of Rows:" and the output of the
+#     nrow(mlb) command
+# [4] The output of the nrow(mlb) command is 150 e.g. there are 150 rows
+
+print( paste("Number of Rows:",nrow(spending))  )
+```
+
+Now it's your turn.  Create a sentence which says "Number of Columns:" and then tells me how many columns the data has. Hint, see eariler labs, use google or read `?base::nrow` for to hunt for the command itself.
+
+
+### Analysis {-}
+
+#### Question 1: {-}
+
+ Use the tools you learned in previous labs to explore the data. Identify the explanatory and response variable in the problem.
+ 
+ 
+#### Question 2: {-}
+
+ If the taxpayer’s group is correct, what sign should the slope of the regression model have?
+ 
+ 
+#### Question 3: {-}
+
+ If the taxpayer’s group is correct, what sign should the slope of the regression model have?
+ 
+#### Question 4: {-}
+
+Use tutorial 3B to fit a regession model to the data and save it as a variable called `model1`.  Examine the coefficients and the summary of the model fit. 
+
+Does the slope in the output confirms the opinion of the community group? Explain.
+ 
+#### Question 5: {-}
+
+Last week we used "base R code" to visualise data (eg commands like plot that just come with the R installation).  We are now going to use a specifics graphics package from the tidyverse, ggplot2, to create a scatterplot of the data. 
+
+Use these tutorials to create a scatterplot of the data using ggplot2 and to add a regression line.
+
+ - http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization [recommended]
+ - https://www.r-graph-gallery.com/50-51-52-scatter-plot-with-ggplot2.html
+ - https://r4ds.had.co.nz/data-visualisation.html
+
+You can make it as fancy as you like
+
+#### Question 6: {-}
+
+Does the scatter plot in part (d) suggest that the regression line estimated in part (c) is misleading? Explain.
+
+
+#### Question 7: {-}
+
+Use Tutorial 4B to find and remove the unusual point from the dataset. (*For a full study, we will be much more careful about whether to remove an outlier or not as discussed later in the semester*)
+
+Repeat the linear regression and scatterplot with the new data and save it as a variable called `model2`.  Explain how this has changed your assessment of the relationship between the variables.
+
+#### Question 8: {-}
+
+Normally, to calculate the correlation coefficient between two variables, we use the `cor()` command or we could look at the output from `ols_regress()`. Let's imagine that these have mysteriously broken
+
+From the command `summary(model2)`, how could you quickly calculate the correlation coefficient?  What is it?
+
+#### Question 9: {-}
+
+We often want to write the equations for our regression lines more professionally.  Use Tutorial 4C to create a professional equation showing the linear model, hiding any code chunk you (might) have used to do it.  
+
+Make sure to define any terms & units you might have used.  
+
+#### Question 10: {-}
+
+Interpret the slope of the regression line in part 9 in the context of the problem.
+
+
+#### Question 11: {-}
+
+What is the Mean Squared Error of the new model?  Why is this not a good measure to compare two models with?
+
+
+#### Question 12: {-}
+
+Test if the slope is significantly differnet to 1.  Show all your workings and ideally use the equation editor for any equations.
+
+
+#### Question 13 [OPTIONAL BONUS 2%] :  {-}
+
+Bonus.  We are starting an interesting discussion about degrees of freedom.  
+  - Read this blog article: https://statisticsbyjim.com/hypothesis-testing/degrees-freedom-statistics/
+  - and this summary of Monday's class. https://online.stat.psu.edu/stat501/lesson/1/1.4 
+  
+Now go to this discussion board - https://psu.instructure.com/courses/2115020/discussion_topics/13706478 and try to either explain what you have learned or try to clarify some of the confusion that many many students feel when they discuss degrees of freedom.  You get the 2% for a meaningful comment (more than 1 sentence).
+
+Essentially, I think you might be able to find better words than I can!
+  
+
+## Submitting Lab 4
+
+Remember to save your work throughout and to spell check your writing (next to the save button).  Now, press the knit button again.  If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 4 folder and have a .html ending.
+
+Check your html is complete by double clicking on to open it in your web-browser.
+
+Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 4. (see the end of lab 1 for a screenshot)
+
+
+### Lab 4 submission check
+
+**HTML FILE SUBMISSION - 5 marks**
+
+**RMD CODE SUBMISSION - 5 marks**
+
+**MARKDOWN/CODE STYLE - 5 MARKS**
+
+LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT.  You included the headings/sub-headings as requested. Your code and document is neat and easy to read.  There is also a spell check next to the save button.  
+
+**WRITING STYLE - 5 marks**
+
+You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You included a figure caption (not just writing a sentence under your plot)
+
+**QUESTIONS 1-4 - 15 marks **
+
+You have clearly explored the data  and understand its properties and what it is showing.  You have correctly identified the explanatory & response variables & the sign that the slope should have. You have correctly fitted an R model to the data
+
+**QUESTIONS 5 - 10 marks **
+
+You have used ggplot2 to make a professional looking plot of the data. 
+
+**QUESTIONS 6&7 - 10 marks **
+
+You have correctly identified the unusual feature and successfully removed the point from the dataset.
+
+**QUESTIONS 8 - 5 marks **
+
+You have calculated the correlation coefficient AND SHOWED HOW YOU DID IT.
+
+**QUESTIONS 9 & 10 - 10 marks **
+
+You have made a professional looking equation using an equation editor in Tutorial 4C. You have defined all terms and units. You have interpreted the slope within the context of the graph.
+
+**QUESTION 11 - 10 marks **
+
+You have found the Mean Squared Error and explained why it is not great for comparing models.
+
+**QUESTION 12 - 20 marks **
+
+You have conducted a full hypothesis test showing your workings.
+
+**QUESTION 13 - 2 marks **
+BONUS - meaningful comment on degrees of freedom,
+
+
+[100 marks total]
+
+

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Lab 2 | STAT-462 Lab book</title>
+  <meta name="description" content="Lab Book for STAT-462 2021" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Lab 2 | STAT-462 Lab book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lab Book for STAT-462 2021" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Lab 2 | STAT-462 Lab book" />
+  
+  <meta name="twitter:description" content="Lab Book for STAT-462 2021" />
+  
+
+<meta name="author" content="Helen Greatrex" />
+
+
+<meta name="date" content="2021-02-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lab-1.html"/>
+<link rel="next" href="lab-3.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Penn State STAT-462 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Tutorials</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tutorial-1a-installing-r-and-r-studio"><i class="fa fa-check"></i><b>1.1</b> Tutorial 1A: Installing R and R-studio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#open-r-studio"><i class="fa fa-check"></i><b>1.1.1</b> Open R-studio</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#change-a-few-settings"><i class="fa fa-check"></i><b>1.1.2</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tutorial-1b-creating-and-loading-r-projects"><i class="fa fa-check"></i><b>1.2</b> Tutorial 1B: Creating and loading R projects</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#what-are-projects"><i class="fa fa-check"></i><b>1.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#tutorial-1c-r-coding-basics"><i class="fa fa-check"></i><b>1.3</b> Tutorial 1C: R coding basics</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#variables-and-assignment"><i class="fa fa-check"></i><b>1.3.1</b> Variables and assignment</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#functions"><i class="fa fa-check"></i><b>1.3.2</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#tutorial-1d-packages"><i class="fa fa-check"></i><b>1.4</b> Tutorial 1D: Packages</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tutorial-1e-r-markdown-basics"><i class="fa fa-check"></i><b>1.5</b> Tutorial 1E: R Markdown basics</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#what-is-r-markdown"><i class="fa fa-check"></i><b>1.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#creating-a-markdown-document"><i class="fa fa-check"></i><b>1.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#friend"><i class="fa fa-check"></i><b>1.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#tutorial-2a-getting-help-in-r"><i class="fa fa-check"></i><b>1.6</b> Tutorial 2A: Getting help in R</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#help-on-a-specific-command"><i class="fa fa-check"></i><b>1.6.1</b> Help on a specific command</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#finding-a-command-name"><i class="fa fa-check"></i><b>1.6.2</b> Finding a command name</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#asking-the-internet"><i class="fa fa-check"></i><b>1.6.3</b> Asking the internet:</a></li>
+<li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#general-help-cheatsheets"><i class="fa fa-check"></i><b>1.6.4</b> General help &amp; cheatsheets</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#tutorial-2b-markdown-formats"><i class="fa fa-check"></i><b>1.7</b> Tutorial 2B: Markdown formats</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#editing-yaml-code"><i class="fa fa-check"></i><b>1.7.1</b> Editing YAML code</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#text-formats"><i class="fa fa-check"></i><b>1.7.2</b> Text formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#tutorial-2c-selecting-summarising-data"><i class="fa fa-check"></i><b>1.8</b> Tutorial 2C: Selecting &amp; summarising data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#data.frame-introduction"><i class="fa fa-check"></i><b>1.8.1</b> Data.frame introduction</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#selecting-individual-values"><i class="fa fa-check"></i><b>1.8.2</b> Selecting individual values</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#selecting-a-single-column"><i class="fa fa-check"></i><b>1.8.3</b> Selecting a single column</a></li>
+<li class="chapter" data-level="1.8.4" data-path="index.html"><a href="index.html#selecting-mulitple-columns"><i class="fa fa-check"></i><b>1.8.4</b> Selecting mulitple columns</a></li>
+<li class="chapter" data-level="1.8.5" data-path="index.html"><a href="index.html#selecting-subsets-of-rowsobservations"><i class="fa fa-check"></i><b>1.8.5</b> Selecting subsets of rows/observations</a></li>
+<li class="chapter" data-level="1.8.6" data-path="index.html"><a href="index.html#looking-at-summary-tables"><i class="fa fa-check"></i><b>1.8.6</b> Looking at summary tables</a></li>
+<li class="chapter" data-level="1.8.7" data-path="index.html"><a href="index.html#basic-plots-one-variable"><i class="fa fa-check"></i><b>1.8.7</b> Basic plots (one variable)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#tutorial-2d-distributions-and-tests"><i class="fa fa-check"></i><b>1.9</b> Tutorial 2D: Distributions and tests</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="index.html#normal-distribution"><i class="fa fa-check"></i><b>1.9.1</b> Normal distribution</a></li>
+<li class="chapter" data-level="1.9.2" data-path="index.html"><a href="index.html#students-t-distribution"><i class="fa fa-check"></i><b>1.9.2</b> Student’s t-distribution</a></li>
+<li class="chapter" data-level="1.9.3" data-path="index.html"><a href="index.html#wilks-shapiro-test-for-normality"><i class="fa fa-check"></i><b>1.9.3</b> Wilks Shapiro test for normality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#tutorial-3a---editing-code-chunks"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#tutorial-3b---regression-models"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a></li>
+<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#tutorial-4a-plotting-in-ggplot2"><i class="fa fa-check"></i><b>1.12</b> Tutorial 4A: Plotting in ggplot2</a></li>
+<li class="chapter" data-level="1.13" data-path="index.html"><a href="index.html#tutorial-4b-identifyingremoving-outliers"><i class="fa fa-check"></i><b>1.13</b> Tutorial 4B: Identifying/removing outliers</a></li>
+<li class="chapter" data-level="1.14" data-path="index.html"><a href="index.html#tutorial-4c-writing-equations-in-r-studio"><i class="fa fa-check"></i><b>1.14</b> Tutorial 4C Writing equations in R-Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
+<li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="lab-1.html"><a href="lab-1.html#why-is-this-class-in-r"><i class="fa fa-check"></i><b>2.1.1</b> Why is this class in R?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lab-1.html"><a href="lab-1.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>2.1.2</b> Installing R and R-studio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="index.html"><a href="index.html#open-r-studio"><i class="fa fa-check"></i><b>2.1.3</b> Open R-studio</a></li>
+<li class="chapter" data-level="2.1.4" data-path="index.html"><a href="index.html#change-a-few-settings"><i class="fa fa-check"></i><b>2.1.4</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-1"><i class="fa fa-check"></i><b>2.2</b> Lab challenge 1</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="index.html"><a href="index.html#what-are-projects"><i class="fa fa-check"></i><b>2.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="lab-1.html"><a href="lab-1.html#r-coding-basics"><i class="fa fa-check"></i><b>2.3</b> R coding basics</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="index.html"><a href="index.html#variables-and-assignment"><i class="fa fa-check"></i><b>2.3.1</b> Variables and assignment</a></li>
+<li class="chapter" data-level="2.3.2" data-path="index.html"><a href="index.html#functions"><i class="fa fa-check"></i><b>2.3.2</b> Functions</a></li>
+<li class="chapter" data-level="2.3.3" data-path="lab-1.html"><a href="lab-1.html#packages"><i class="fa fa-check"></i><b>2.3.3</b> Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-2"><i class="fa fa-check"></i><b>2.4</b> Lab Challenge 2</a></li>
+<li class="chapter" data-level="2.5" data-path="lab-1.html"><a href="lab-1.html#markdown-exploratory-analysis"><i class="fa fa-check"></i><b>2.5</b> Markdown &amp; Exploratory Analysis</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="index.html"><a href="index.html#what-is-r-markdown"><i class="fa fa-check"></i><b>2.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="2.5.2" data-path="index.html"><a href="index.html#creating-a-markdown-document"><i class="fa fa-check"></i><b>2.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="2.5.3" data-path="index.html"><a href="index.html#friend"><i class="fa fa-check"></i><b>2.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-3"><i class="fa fa-check"></i><b>2.6</b> Lab Challenge 3</a></li>
+<li class="chapter" data-level="2.7" data-path="lab-1.html"><a href="lab-1.html#submitting-lab-1"><i class="fa fa-check"></i><b>2.7</b> Submitting Lab 1</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="lab-1.html"><a href="lab-1.html#lab-1-submission-check"><i class="fa fa-check"></i><b>2.7.1</b> Lab 1 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lab-2.html"><a href="lab-2.html"><i class="fa fa-check"></i><b>3</b> Lab 2</a><ul>
+<li class="chapter" data-level="3.1" data-path="lab-2.html"><a href="lab-2.html#general-information"><i class="fa fa-check"></i><b>3.1</b> General information</a></li>
+<li class="chapter" data-level="3.2" data-path="index.html"><a href="index.html#tutorials"><i class="fa fa-check"></i><b>3.2</b> Tutorials</a></li>
+<li class="chapter" data-level="3.3" data-path="lab-2.html"><a href="lab-2.html#setting-up-your-code"><i class="fa fa-check"></i><b>3.3</b> Setting up your code</a></li>
+<li class="chapter" data-level="3.4" data-path="lab-2.html"><a href="lab-2.html#markdown-formatting-and-yaml"><i class="fa fa-check"></i><b>3.4</b> Markdown formatting and YAML</a></li>
+<li class="chapter" data-level="3.5" data-path="lab-2.html"><a href="lab-2.html#confidence-intervals"><i class="fa fa-check"></i><b>3.5</b> Confidence intervals</a></li>
+<li class="chapter" data-level="3.6" data-path="lab-2.html"><a href="lab-2.html#hypothesis-testing"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing</a></li>
+<li class="chapter" data-level="3.7" data-path="lab-2.html"><a href="lab-2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.7</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="3.8" data-path="lab-2.html"><a href="lab-2.html#submitting-lab-2"><i class="fa fa-check"></i><b>3.8</b> Submitting Lab 2</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="lab-2.html"><a href="lab-2.html#lab-2-submission-check"><i class="fa fa-check"></i><b>3.8.1</b> Lab 2 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lab-3.html"><a href="lab-3.html"><i class="fa fa-check"></i><b>4</b> Lab 3</a><ul>
+<li class="chapter" data-level="4.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-general-information"><i class="fa fa-check"></i><b>4.1</b> Lab 3 General information</a></li>
+<li class="chapter" data-level="4.2" data-path="lab-3.html"><a href="lab-3.html#installing-new-packages"><i class="fa fa-check"></i><b>4.2</b> Installing new packages</a></li>
+<li class="chapter" data-level="4.3" data-path="lab-3.html"><a href="lab-3.html#lab-3-setup-markdown"><i class="fa fa-check"></i><b>4.3</b> Lab 3 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="4.4" data-path="lab-3.html"><a href="lab-3.html#regression-basics"><i class="fa fa-check"></i><b>4.4</b> Regression basics</a></li>
+<li class="chapter" data-level="4.5" data-path="lab-3.html"><a href="lab-3.html#taiwan-housing-challenge."><i class="fa fa-check"></i><b>4.5</b> Taiwan housing challenge.</a></li>
+<li class="chapter" data-level="4.6" data-path="lab-3.html"><a href="lab-3.html#submitting-lab-3"><i class="fa fa-check"></i><b>4.6</b> Submitting Lab 3</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lab-4.html"><a href="lab-4.html"><i class="fa fa-check"></i><b>5</b> Lab 4</a><ul>
+<li class="chapter" data-level="5.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-general-information"><i class="fa fa-check"></i><b>5.1</b> Lab 4 General information</a></li>
+<li class="chapter" data-level="5.2" data-path="lab-4.html"><a href="lab-4.html#lab-4-setup-markdown"><i class="fa fa-check"></i><b>5.2</b> Lab 4 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="lab-4.html"><a href="lab-4.html#public-safety-spending"><i class="fa fa-check"></i><b>5.3</b> Public safety spending</a><ul>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#checking-folder-names"><i class="fa fa-check"></i>Checking folder names</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#reading-in-the-data"><i class="fa fa-check"></i>Reading in the data</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lab-4.html"><a href="lab-4.html#submitting-lab-4"><i class="fa fa-check"></i><b>5.4</b> Submitting Lab 4</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-submission-check"><i class="fa fa-check"></i><b>5.4.1</b> Lab 4 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STAT-462 Lab book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lab-2" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Lab 2</h1>
+<div id="general-information" class="section level2">
+<h2><span class="header-section-number">3.1</span> General information</h2>
+<p>Welcome to STAT-462 lab 2. The aim of this week is to:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Learn how to get help</li>
+<li>Create more professional markdown files</li>
+<li>Run some more statistical tests</li>
+<li>Conduct a more free ranging exploratory data analysis</li>
+</ol>
+<p><em>The support you need to understand Lab 2 is in the Tutorials - READ THE TUTORIALS 2A,2B,2C,2D.</em></p>
+<div id="general-comments" class="section level5 unnumbered">
+<h5>General comments</h5>
+<ul>
+<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab 2 assignment.</p></li>
+<li><p>Future labs will be less prescriptive about the formatting - but this is a detailed tutorial so that you learn how to set it all up well. Note, your answers should be written up in full sentences.</p></li>
+<li><p>If running the labs is causing major problems for your computer or you have any other computer issue, talk to Dr Greatrex. We can fix this and there are other options for you to access R online. In general, please reach out to Dr Greatrex if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.</p></li>
+<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706472" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706472</a></p></li>
+</ul>
+</div>
+</div>
+<div id="tutorials" class="section level2">
+<h2><span class="header-section-number">3.2</span> Tutorials</h2>
+<p>This lab contains questions on markdown formats, hypothesis test and on exploratory data analysis. I encourage you to go and look at Tutorial 2A, 2B, 2C and 2D. All the answers are in there (for a different dataset).</p>
+</div>
+<div id="setting-up-your-code" class="section level2">
+<h2><span class="header-section-number">3.3</span> Setting up your code</h2>
+<ul>
+<li><p>Save all your work and if you haven’t already, create a Lab 2 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 2 that is linked to your Lab 2 folder (instructions in section 1.2, “Lab Challenge 1”). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab2” (for me it will be hlg5155_Lab2)</p></li>
+<li><p>Remove the “friendly text” (see Tutorial 1E, section 1.5.3 if you have no idea what I mean)</p></li>
+</ul>
+</div>
+<div id="markdown-formatting-and-yaml" class="section level2">
+<h2><span class="header-section-number">3.4</span> Markdown formatting and YAML</h2>
+<ul>
+<li><p>Read through tutorial 2B</p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in Section 1.7.1.</p></li>
+<li><p>Choose a new theme for your lab script! Section 1.7.1 includes a link to different themes.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Introduction”. Save and make sure that it will preview/knit.</p></li>
+<li><p><span style="color: navy;"><em>Leave a blank line under that then write something new you learned about R or statistics this week. Use bold and italic fonts in your answers.</em></p></li>
+<li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
+</ul>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="lab-2.html#cb164-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb164-2"><a href="lab-2.html#cb164-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb164-3"><a href="lab-2.html#cb164-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb164-4"><a href="lab-2.html#cb164-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb164-5"><a href="lab-2.html#cb164-5"></a><span class="kw">library</span>(ISLR)</span></code></pre></div>
+</div>
+<div id="confidence-intervals" class="section level2">
+<h2><span class="header-section-number">3.5</span> Confidence intervals</h2>
+<ul>
+<li><p>Tutorial 2D will be helpful here &amp; your lecture notes. Along with the tutorial, this is a good example using R to calculate confidence intervals: <a href="https://www.cyclismo.org/tutorial/R/confidence.html" class="uri">https://www.cyclismo.org/tutorial/R/confidence.html</a></p></li>
+<li><p>Leave a blank line after the code chunk, then make a new level-1 heading called “Confidence Intervals”.</p></li>
+<li><p>Leave a blank space (I’ll stop now but you get the idea), and make a Level 2 heading called “Question A”.</p></li>
+<li><p>Answer question A below, making sure to use full sentences in your conclusions. If it helps to make your report easier to read, feel free to include the question text.</p></li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question A:</em></strong> <em>A sample of 36 obese rock-hopper penguins in a zoo were put on a special diet for a year. The average weight loss was 11oz and the standard deviation of the weight loss was 19oz. (note, that a positive weight loss implies reduced weight over time).</em><span></p>
+<p><span style="color: navy;"><em>Either by hand or in R, calculate the 99% confidence interval for the true mean weight reduction. Make sure to show your workings or R code.</em><span></p>
+<ul>
+<li>Make a Level-2 heading called Question B and answer question B below.</li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question B:</em></strong> <em>Based on the interval you calculate above, do you have sufficient evidence at your 99% level of significance to believe that the weight-loss programme is working and the penguins are losing weight? The average penguin actually weighs about 3Kg. Is this diet something you would recommend for meaningful weight loss?</em><span></p>
+</div>
+<div id="hypothesis-testing" class="section level2">
+<h2><span class="header-section-number">3.6</span> Hypothesis testing</h2>
+<ul>
+<li><p>Tutorial 2D will be helpful here along with your lecture notes.</p></li>
+<li><p>Make a new level-1 heading called Hypothesis Testing, then make a Level 2 heading called Question C - and answer:</p></li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question C:</em></strong> <em>Tests are being carried out on a new drug designed to relieve the symptoms of the flu, specifically on the number of hours people can sleep. The new drug is given in tablet form one evening to a random sample of 16 people who have colds. The number of hours they sleep may be assumed to be Normally distributed and is recorded below.</em></span></p>
+<p><span style="color: navy;"><em>There is also a very large control group of people who have colds but are not given the drug. The mean number of hours they sleep is 6.6 hrs.</em></span></p>
+<pre><code>## [1] Hours slept by people given the new drug</code></pre>
+<pre><code>## [1] 2.3
+## [1] 5
+## [1] 6
+## [1] 6.4
+## [1] 6.7
+## [1] 6.7
+## [1] 6.9
+## [1] 7.2
+## [1] 7.2
+## [1] 7.4
+## [1] 7.6
+## [1] 7.8
+## [1] 7.9
+## [1] 8.1
+## [1] 8.1
+## [1] 9.7</code></pre>
+<p><span style="color: navy;"><em>You can enter the sleep data into R using this code.</em></span></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="lab-2.html#cb167-1"></a>sleep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.1</span>,<span class="fl">6.7</span>,<span class="fl">2.3</span>,<span class="fl">7.2</span>,<span class="fl">8.1</span>,<span class="fl">9.7</span>,<span class="fl">6.0</span>,<span class="fl">7.4</span>,<span class="fl">6.4</span>,<span class="fl">6.9</span>,<span class="fl">5.0</span>,<span class="fl">7.8</span>,<span class="fl">6.7</span>,<span class="fl">7.2</span>,<span class="fl">7.6</span>,<span class="fl">7.9</span>)</span></code></pre></div>
+<p><span style="color: navy;"><em>By hand, carry out a hypothesis test at the 1% significance level that the drug has any impact on the length of time people sleep. You can use R as a calculator to get things like the mean. Make sure to include:</em></span></p>
+<ol style="list-style-type: lower-alpha">
+<li><span style="color: navy;"><em>Your H<sub>0</sub> and H<sub>1</sub></em></span></li>
+<li><span style="color: navy;"><em>The critical threshold</em></span></li>
+<li><span style="color: navy;"><em>Whether it is one sided or two sided</em></span></li>
+<li><span style="color: navy;"><em>Whether you choose to use the normal or t-distribution</em></span></li>
+<li><span style="color: navy;"><em>A diagram of the distribution split into the acceptance and critical/rejection zones</em></span></li>
+<li><span style="color: navy;"><em>The calculated test statistic</em></span></li>
+<li><span style="color: navy;"><em>and your conclusions</em></span></li>
+</ol>
+<p><span style="color: navy;"><strong><em>Include a screenshot of your [neat] workings in this report.</em></strong> <em>If you can’t remember how to do this, see step 10 in section 2.6 (Lab-1 Challege 3)</em></span></p>
+<ul>
+<li>Make a Level 2 heading called Question D and answer question B below</li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question D: Use R and the t.test command to calculate the t-test for the data above. Comment on whether your two results agree (e.g. did you make a mistake anywhere)</em></strong>.</span></p>
+</div>
+<div id="exploratory-data-analysis" class="section level2">
+<h2><span class="header-section-number">3.7</span> Exploratory data analysis</h2>
+<ul>
+<li><p>Tutorial 2C will be useful here.</p></li>
+<li><p>Make a new level-1 heading called Exploratory Data Analysis. You are now going to explore the Credit dataset, which is a simulated dataset used for educational purposes. To start out, make a new code chunk and include following commands.</p></li>
+</ul>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="lab-2.html#cb168-1"></a>dataset &lt;-<span class="st"> </span>ISLR<span class="op">::</span>Credit</span>
+<span id="cb168-2"><a href="lab-2.html#cb168-2"></a>?Credit</span></code></pre></div>
+<p><span style="color: navy;"><strong><em>Question E:</em></strong> <em>Use &amp; interpret the output of R to describe the dataset to me. How much data is there and what does the dataset show? What variable names are there?</em></p>
+<p><em>Note, the help file is incorrect for this dataset. There are not 10,000 rows of data so you’ll need to work out how big the dataset really is</em>.</span></p>
+<p><span style="color: navy;"><strong><em>Question F:</em></strong> <em>Create a table of the number of students vs not students (e.g. a table of the Student column - Section 2.3.6) </em>**.</span></p>
+<p><span style="color: navy;"><strong><em>Question G:</em></strong> <em>Choose a single numeric variable/column in the dataset (your choice). Tell me its summary statistics &amp; units and include a professional looking plot of its distribution. Via this and via a Wilks Shapiro test (including your H0,H1, conclusions etc) assess whether that variable is normally distributed</em>.</span></p>
+<p><span style="color: navy;"><strong><em>Question H (OPTIONAL):[BONUS 2%, lab capped at 100%]</em></strong> <em>Subset/filter the data to select only rows containing students. (Section 2.3.5). Find how the mean of your variable has changed</em>.</span></p>
+</div>
+<div id="submitting-lab-2" class="section level2">
+<h2><span class="header-section-number">3.8</span> Submitting Lab 2</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 2 folder (see Section 1.7 for where)</p>
+<p>Check your html is complete by double clicking on to open it in your web-browser.</p>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 2.</p>
+<div id="lab-2-submission-check" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> Lab 2 submission check</h3>
+<p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
+<p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
+<p><strong>MARKDOWN/CODE STYLE - 5 MARKS</strong></p>
+<p>LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT. You included the headings/sub-headings as requested. Your code and document is neat and easy to read. There is also a spell check next to the save button.</p>
+<p><strong>WRITING STYLE - 5 MARKS</strong></p>
+<p>You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You included the bold/italic R fact.</p>
+<p><strong>QUESTION A - 10 MARKS</strong> <em>Penguin confidence interval</em></p>
+<p>You answered the questions correctly either by hand or in R, but you also showed your workings/code</p>
+<p><strong>QUESTION B - 10 MARKS</strong> <em>Penguin confidence interval interpretation</em></p>
+<p>You interpreted the questions correctly</p>
+<p><strong>QUESTION C - 20 MARKS</strong></p>
+<p>You accurately conducted the hypothesis test with all the requested steps included and managed to upload the screenshot.</p>
+<p><strong>QUESTION D - 5 MARKS</strong></p>
+<p>You reproduced your t-statistic, p-value &amp; conclusion in R.</p>
+<p><strong>QUESTION E - 5 MARKS</strong></p>
+<p>You described the data in a way that someone who had never seen the data before would be able to understand what it shows and how big it is</p>
+<p><strong>QUESTION F - 5 MARKS</strong></p>
+<p>You created the summary table and interpreted the output</p>
+<p><strong>QUESTION G - 20 MARKS</strong></p>
+<p>You summarised a variable of your choice and included all the requested statistics/plots.</p>
+<p>[100 marks total]</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lab-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+# Lab 5
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+
+library("tidyverse") # Lots of data processing commands
+library("knitr")     # Helps make good output files
+library("rmarkdown") # Helps make good output files
+library("lattice")   # Makes nice plots
+library("RColorBrewer") # Makes nice color-scales
+library("ISLR")      # contains a credit dataset
+library("yarrr")     # contains a toy dataset about pirates
+library("skimr")     # Summary statistics
+library("Stat2Data") # Regression specific commands
+library("nortest")   # Regression specific commands
+library("lmtest")    # Regression specific commands
+library("IMTest")    # Regression specific commands 
+library("MASS")      # Regression specific commands
+#library("moderndive")# Regression specific commands
+library("corrplot")  # correlation plots
+library("car")       # this one sometimes has problems, don't panic if you get errors
+library("ggpubr")    # QQplots
+library("olsrr")     # Regression specific commands
+library("plotly")
+
+```
+
+## Lab 5 General information
+
+Welcome to STAT-462 lab 5.  The aim of this week is to:
+
+ - Solidify your knowledge of regression with less handholding
+ - ANOVA and confidence/prediction intervals.
+ - Examining linear regression assumptions
+
+
+##### General comments {-}
+
+ - You do not have to submit things you try from the tutorials, you will just be graded on the lab 5 assignment.  
+ 
+ - There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706462  
+
+##### Lab 5 Tutorials {-}
+
+It is worth reading the Lab 5 tutorials.  [Tutorial 5A](#S.Tutorial.5A)) discusses ANOVA.   [Tutorial 5B](#S.Tutorial.5B)) goes into detail on how to check model regression assumptions.  [Tutorial 5C](#S.Tutorial.5C)) discusses confidence and prediction intervals.
+
+## Lab 5 Setup
+
+ - Save all your work and if you haven't already, create a Lab 5 folder in your STAT-462 folder
+
+ - Create a new R-project called Lab 5 that is linked to your Lab 5 folder (instructions in [Tutorial 1B](#S.Tutorial.1B)). It will probably open a new version of R-Studio.
+
+ - Create a new Markdown file called "username_Lab5" (for me it will be hlg5155_Lab5)
+
+ - Remove the "friendly text" (see [Tutorial 1E](#S.Tutorial.1E.3) if you have no idea what I mean)
+
+ - Follow the instructions to edit your YAML code to look like my example in [Tutorial 2B](#S.Tutorial.2B.1).  Choose any theme that you like.
+
+ - Leave a blank line under your YAML code, then create a level-1 Heading called "Markdown". Save and make sure that it will preview/knit.
+
+ - Make a new code chunk.  Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.
+ 
+
+```{r, message=FALSE,warning=FALSE}
+# Load libraries
+library(tidyverse)
+library(dplyr)
+library(ggpubr)
+library(Stat2Data)
+library(corrplot)
+library(olsrr)
+library(sf)    
+library(tmap)  
+library(readxl) 
+library(plotly) 
+
+## you may need additional libraries.  Just add them to the list as you use them.
+
+```
+
+ - Edit the "code chunk code" at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).
+
+
+## Advertising challenge
+
+Houseplants are the new big thing and you are going to make the world want to buy them!  Youa are a top advertising executive and you have been collecting data on how well your marketing campaigns have been running.
+
+You have run 200 marketing campaigns over the last few year.  For each one, you recorded:
+
+ - how much you spent (in units of thousands of dollars) on 
+     + TV, 
+     + radio 
+     + and newspaper adverts  
+ - How many houseplants were sold (in thousands of plants).  
+ - You also know the "X-Factor" of how popular that plant was at the time (percentage popularity), 
+ - And typically how tall that type plant was in inches.
+
+Your job now is to explore the data work out which type of advertising campaign is the most effective out of.
+
+ - Model1 - Plant Sales vs Newspaper adverts
+ - Model2 - Plant Sales vs TV adverts
+
+In all of your answers below, I expect good formatting, appropriate units and full sentences to explain your answers. Imagine this is a real report in an advertising company.
+
+For example, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.  You are welcome to use any/all of equations, text formatting, pictures, code-chunk options or anything else that makes your report look more professional.  You will be graded on this.
+
+
+```{r,echo=FALSE}
+adverts <- read.csv("Advertising.csv")
+```
+
+All the methods to answer these questions are either things you have done in previous labs or they are in the Lab 5 Tutorials.
+
+### Question 1: Read in data {-}
+
+ - Read the data into R (hint, always look at it in excel first to see if your column names and the data make sense)
+ - Explore and describe the dataset along with the distributions of your individual predictors.  
+
+### Question 2: Make models {-}
+
+ - Create & summarise each of your your linear models, along with 
+ - along with some high quality scatterplots & the lines of besf fit, 
+ - the equations of each model (e.g. within the context of the problem), 
+ - and good explanations of what is going on. 
+ 
+ Hint, think about what I have asked you to do in past labs to answer this.
+
+### Question 3: Favourite model {-}
+
+ - Out of model 1 and model 2, where do you see the greatest increase in sales if you increase the advertising budget?   
+ - Provide evidence to justify your answer (thinking about uncertainties on your estimate).
+ 
+ - Which model explains the most variability in the sales data? Provide evidence to justify your answer.
+ 
+### Question 4: Peace lilies {-}
+
+ - You have a new client who needs to sell 8000 peace lilies but hates newspapers. Conduct an hypothesis test to assess whether you typically sell less than 8000 plants in a situation where you spend zero-money on newspaper advertising. You are happy to be wrong one time in 25.  Can you advise your client it is OK to not advertise in newspapers? 
+ 
+### Question 5: TV fears {-}
+
+ - Another client is skeptical of TV.  Use the ANOVA tqble output to conduct a hypothesis test to examine if there is evidence to suggest a relationship between TV advertising and plant sales at a significance of 1%.
+ 
+### Question 6: Best day ever {-}
+
+ - A new client has approached you with a brand new plant!!! (the lesser-variated-monstera-fig) This is *very* popular.  The magazine "plants daily" rates its popularity at 90%!  
+ - Thinking about the plant popularity independently of advertising type, what is the predicted range of sales for your new campaign? (at a 99% confidence level) 
+ 
+### Question 7: Testing SLR Assumptions {-}
+ 
+ - Let's return to your two models (e.g. Model1 and Model2), do either/both of them meet the requirements for simple linear regression? Provide evidence to support your answers (Use [Tutorial 5B](#S.Tutorial.5B)).
+ 
+ 
+### Question 8 [OPTIONAL BONUS 2%] :  {-}
+
+How can multiple regression help us do a better job in answering this week's lab?
+
+
+## Submitting Lab 5
+
+Remember to save your work throughout and to spell check your writing (next to the save button).  Now, press the knit button again.  If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 5 folder and have a .html ending.
+
+Check your html is complete by double clicking on to open it in your web-browser.
+
+Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 5. (See the end of Lab 1 for a screenshot)
+
+### Lab 5 submission check
+
+**HTML FILE SUBMISSION - 5 marks**
+
+**RMD CODE SUBMISSION - 5 marks**
+
+**MARKDOWN/CODE/WRITING STYLE - 10 MARKS**
+
+10/10 - your report is very professional.  There are tables of contents, headings/subheadings, your plots look great, you answer in full sentences and have used the spell check. You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade.  It's clear you put thought and effort into writing a good markdown document.  I could use this as a class example. You would be comfortable showing it in a job interview.
+
+8/10 - your report is fine on the basics, but not quite as snazzy & is clearly a homework.
+less - as your report becomes harder to read.
+
+**QUESTION 1&2 - 15 marks**
+
+You have described the data & models well, including all relevant information. Your scatterplots and model are professional and correct.
+
+**QUESTION 3 - 10 marks**
+
+Correct answers, correct method and it's clear how you got there. You have written the answer up in full sentences.
+
+**QUESTION 4 - 10 marks**
+
+Correct answer, correct method and and it's clear how you got there. You have written the answer up in full sentences.
+
+**QUESTION 5 - 10 marks**
+
+Correct answer, correct method and and it's clear how you got there. You have written the answer up in full sentences.
+
+**QUESTION 6 - 10 marks**
+
+Correct answer, correct method and and it's clear how you got there. You have written the answer up in full sentences.
+
+**QUESTION 7 - 25 marks**
+
+You have eloquently assessed the four aspects of inter
+
+**QUESTION 8 - 2 marks** BONUS (capped at 100%)
+
+Meaningful attempt at commenting (e.g. more than just a sentence)
+
+
+[100 marks total]
+
+

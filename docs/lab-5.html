@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Lab 5 | STAT-462 Lab book</title>
+  <meta name="description" content="Lab Book for STAT-462 2021" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Lab 5 | STAT-462 Lab book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lab Book for STAT-462 2021" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Lab 5 | STAT-462 Lab book" />
+  
+  <meta name="twitter:description" content="Lab Book for STAT-462 2021" />
+  
+
+<meta name="author" content="Helen Greatrex" />
+
+
+<meta name="date" content="2021-03-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lab-4.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Penn State STAT-462 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Tutorials</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#S.Tutorial.1A"><i class="fa fa-check"></i><b>1.1</b> Tutorial 1A: Installing R and R-studio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#S.Tutorial.1A.1"><i class="fa fa-check"></i><b>1.1.1</b> Open R-studio</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#S.Tutorial.1A.2"><i class="fa fa-check"></i><b>1.1.2</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#S.Tutorial.1B"><i class="fa fa-check"></i><b>1.2</b> Tutorial 1B: Creating and loading R projects</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#S.Tutorial.1B.1"><i class="fa fa-check"></i><b>1.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#S.Tutorial.1C"><i class="fa fa-check"></i><b>1.3</b> Tutorial 1C: R coding basics</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#S.Tutorial.1C.1"><i class="fa fa-check"></i><b>1.3.1</b> Using R as a calculator</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#S.Tutorial.1C.2"><i class="fa fa-check"></i><b>1.3.2</b> Adding text</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#S.Tutorial.1C.3"><i class="fa fa-check"></i><b>1.3.3</b> Comparisons</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#S.Tutorial.1C.4"><i class="fa fa-check"></i><b>1.3.4</b> What if I press Enter too soon?</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#S.Tutorial.1C.5"><i class="fa fa-check"></i><b>1.3.5</b> Variables and assignment</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#S.Tutorial.1C.7"><i class="fa fa-check"></i><b>1.3.6</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#S.Tutorial.1D"><i class="fa fa-check"></i><b>1.4</b> Tutorial 1D: Packages</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#S.Tutorial.1E"><i class="fa fa-check"></i><b>1.5</b> Tutorial 1E: R Markdown basics</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#S.Tutorial.1E.1"><i class="fa fa-check"></i><b>1.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#S.Tutorial.1E.2"><i class="fa fa-check"></i><b>1.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#S.Tutorial.1E.3"><i class="fa fa-check"></i><b>1.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#S.Tutorial.2A"><i class="fa fa-check"></i><b>1.6</b> Tutorial 2A: Getting help in R</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#S.Tutorial.2A.1"><i class="fa fa-check"></i><b>1.6.1</b> Help on a specific command</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#S.Tutorial.2A.2"><i class="fa fa-check"></i><b>1.6.2</b> Finding a command name</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#S.Tutorial.2A.3"><i class="fa fa-check"></i><b>1.6.3</b> Asking the internet:</a></li>
+<li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#S.Tutorial.2A.4"><i class="fa fa-check"></i><b>1.6.4</b> General help &amp; cheatsheets</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#S.Tutorial.2B"><i class="fa fa-check"></i><b>1.7</b> Tutorial 2B: Markdown formats</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#S.Tutorial.2B.1"><i class="fa fa-check"></i><b>1.7.1</b> Editing YAML code</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#S.Tutorial.2B.2"><i class="fa fa-check"></i><b>1.7.2</b> Text formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#S.Tutorial.2C"><i class="fa fa-check"></i><b>1.8</b> Tutorial 2C: Selecting &amp; summarising data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#S.Tutorial.2C.1"><i class="fa fa-check"></i><b>1.8.1</b> Data.frame introduction</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#S.Tutorial.2C.2"><i class="fa fa-check"></i><b>1.8.2</b> Selecting individual values</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#S.Tutorial.2C.3"><i class="fa fa-check"></i><b>1.8.3</b> Selecting a single column</a></li>
+<li class="chapter" data-level="1.8.4" data-path="index.html"><a href="index.html#S.Tutorial.2C.4"><i class="fa fa-check"></i><b>1.8.4</b> Selecting mulitple columns</a></li>
+<li class="chapter" data-level="1.8.5" data-path="index.html"><a href="index.html#S.Tutorial.2C.5"><i class="fa fa-check"></i><b>1.8.5</b> Selecting subsets of rows/observations</a></li>
+<li class="chapter" data-level="1.8.6" data-path="index.html"><a href="index.html#S.Tutorial.2C.6"><i class="fa fa-check"></i><b>1.8.6</b> Looking at summary tables</a></li>
+<li class="chapter" data-level="1.8.7" data-path="index.html"><a href="index.html#S.Tutorial.2C.7"><i class="fa fa-check"></i><b>1.8.7</b> Basic plots (one variable)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#S.Tutorial.2D"><i class="fa fa-check"></i><b>1.9</b> Tutorial 2D: Distributions and tests</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="index.html#S.Tutorial.2D.1"><i class="fa fa-check"></i><b>1.9.1</b> Normal distribution</a></li>
+<li class="chapter" data-level="1.9.2" data-path="index.html"><a href="index.html#S.Tutorial.2D.2"><i class="fa fa-check"></i><b>1.9.2</b> Student’s t-distribution</a></li>
+<li class="chapter" data-level="1.9.3" data-path="index.html"><a href="index.html#S.Tutorial.2D.3"><i class="fa fa-check"></i><b>1.9.3</b> Wilks Shapiro test for normality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#S.Tutorial.3A"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#S.Tutorial.3B"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="index.html"><a href="index.html#S.Tutorial.3B.1"><i class="fa fa-check"></i><b>1.11.1</b> “Standard” regression output</a></li>
+<li class="chapter" data-level="1.11.2" data-path="index.html"><a href="index.html#S.Tutorial.3B.2"><i class="fa fa-check"></i><b>1.11.2</b> “Fancy” OLSRR regression output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#S.Tutorial.4A"><i class="fa fa-check"></i><b>1.12</b> Tutorial 4A: Plotting in ggplot2</a></li>
+<li class="chapter" data-level="1.13" data-path="index.html"><a href="index.html#S.Tutorial.4B"><i class="fa fa-check"></i><b>1.13</b> Tutorial 4B: Identifying/removing outliers</a></li>
+<li class="chapter" data-level="1.14" data-path="index.html"><a href="index.html#S.Tutorial.4C"><i class="fa fa-check"></i><b>1.14</b> Tutorial 4C Writing equations in R-Studio</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="index.html"><a href="index.html#S.Tutorial.4C.1"><i class="fa fa-check"></i><b>1.14.1</b> In Markdown</a></li>
+<li class="chapter" data-level="1.14.2" data-path="index.html"><a href="index.html#S.Tutorial.4C.2"><i class="fa fa-check"></i><b>1.14.2</b> Using Equatiomatic</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="index.html"><a href="index.html#S.Tutorial.5A"><i class="fa fa-check"></i><b>1.15</b> Tutorial 5A ANOVA</a><ul>
+<li class="chapter" data-level="1.15.1" data-path="index.html"><a href="index.html#S.Tutorial.5A.1"><i class="fa fa-check"></i><b>1.15.1</b> Base R</a></li>
+<li class="chapter" data-level="1.15.2" data-path="index.html"><a href="index.html#S.Tutorial.5A.2"><i class="fa fa-check"></i><b>1.15.2</b> Using OLSRR</a></li>
+</ul></li>
+<li class="chapter" data-level="1.16" data-path="index.html"><a href="index.html#S.Tutorial.5B"><i class="fa fa-check"></i><b>1.16</b> Tutorial 5B Diagnostics part A</a><ul>
+<li class="chapter" data-level="1.16.1" data-path="index.html"><a href="index.html#S.Tutorial.5B.1"><i class="fa fa-check"></i><b>1.16.1</b> Residual plots</a></li>
+<li class="chapter" data-level="1.16.2" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.16.2</b> Checking Linearity</a></li>
+<li class="chapter" data-level="1.16.3" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.16.3</b> Checking Independence</a></li>
+<li class="chapter" data-level="1.16.4" data-path="index.html"><a href="index.html#S.Tutorial.5B.4"><i class="fa fa-check"></i><b>1.16.4</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.16.5" data-path="index.html"><a href="index.html#S.Tutorial.5B.5"><i class="fa fa-check"></i><b>1.16.5</b> Checking Equal Variance/homoskadisity</a></li>
+</ul></li>
+<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5C"><i class="fa fa-check"></i><b>1.17</b> Tutorial 5C Confidence and Prediction Intervals</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
+<li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="lab-1.html"><a href="lab-1.html#why-is-this-class-in-r"><i class="fa fa-check"></i><b>2.1.1</b> Why is this class in R?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lab-1.html"><a href="lab-1.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>2.1.2</b> Installing R and R-studio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lab-1.html"><a href="lab-1.html#open-r-studio"><i class="fa fa-check"></i><b>2.1.3</b> Open R-studio</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lab-1.html"><a href="lab-1.html#change-a-few-settings"><i class="fa fa-check"></i><b>2.1.4</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-1"><i class="fa fa-check"></i><b>2.2</b> Lab challenge 1</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="lab-1.html"><a href="lab-1.html#what-are-projects"><i class="fa fa-check"></i><b>2.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="lab-1.html"><a href="lab-1.html#r-coding-basics"><i class="fa fa-check"></i><b>2.3</b> R coding basics</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="lab-1.html"><a href="lab-1.html#variables-and-assignment"><i class="fa fa-check"></i><b>2.3.1</b> Variables and assignment</a></li>
+<li class="chapter" data-level="2.3.2" data-path="lab-1.html"><a href="lab-1.html#functions"><i class="fa fa-check"></i><b>2.3.2</b> Functions</a></li>
+<li class="chapter" data-level="2.3.3" data-path="lab-1.html"><a href="lab-1.html#packages"><i class="fa fa-check"></i><b>2.3.3</b> Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-2"><i class="fa fa-check"></i><b>2.4</b> Lab Challenge 2</a></li>
+<li class="chapter" data-level="2.5" data-path="lab-1.html"><a href="lab-1.html#markdown-exploratory-analysis"><i class="fa fa-check"></i><b>2.5</b> Markdown &amp; Exploratory Analysis</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="lab-1.html"><a href="lab-1.html#what-is-r-markdown"><i class="fa fa-check"></i><b>2.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="2.5.2" data-path="lab-1.html"><a href="lab-1.html#creating-a-markdown-document"><i class="fa fa-check"></i><b>2.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="2.5.3" data-path="lab-1.html"><a href="lab-1.html#friend"><i class="fa fa-check"></i><b>2.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-3"><i class="fa fa-check"></i><b>2.6</b> Lab Challenge 3</a></li>
+<li class="chapter" data-level="2.7" data-path="lab-1.html"><a href="lab-1.html#submitting-lab-1-section.l1.7"><i class="fa fa-check"></i><b>2.7</b> Submitting Lab 1 {Section.L1.7}</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="lab-1.html"><a href="lab-1.html#lab-1-submission-check"><i class="fa fa-check"></i><b>2.7.1</b> Lab 1 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lab-2.html"><a href="lab-2.html"><i class="fa fa-check"></i><b>3</b> Lab 2</a><ul>
+<li class="chapter" data-level="3.1" data-path="lab-2.html"><a href="lab-2.html#general-information"><i class="fa fa-check"></i><b>3.1</b> General information</a></li>
+<li class="chapter" data-level="3.2" data-path="lab-2.html"><a href="lab-2.html#tutorials"><i class="fa fa-check"></i><b>3.2</b> Tutorials</a></li>
+<li class="chapter" data-level="3.3" data-path="lab-2.html"><a href="lab-2.html#setting-up-your-code"><i class="fa fa-check"></i><b>3.3</b> Setting up your code</a></li>
+<li class="chapter" data-level="3.4" data-path="lab-2.html"><a href="lab-2.html#markdown-formatting-and-yaml"><i class="fa fa-check"></i><b>3.4</b> Markdown formatting and YAML</a></li>
+<li class="chapter" data-level="3.5" data-path="lab-2.html"><a href="lab-2.html#confidence-intervals"><i class="fa fa-check"></i><b>3.5</b> Confidence intervals</a></li>
+<li class="chapter" data-level="3.6" data-path="lab-2.html"><a href="lab-2.html#hypothesis-testing"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing</a></li>
+<li class="chapter" data-level="3.7" data-path="lab-2.html"><a href="lab-2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.7</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="3.8" data-path="lab-2.html"><a href="lab-2.html#submitting-lab-2"><i class="fa fa-check"></i><b>3.8</b> Submitting Lab 2</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="lab-2.html"><a href="lab-2.html#lab-2-submission-check"><i class="fa fa-check"></i><b>3.8.1</b> Lab 2 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lab-3.html"><a href="lab-3.html"><i class="fa fa-check"></i><b>4</b> Lab 3</a><ul>
+<li class="chapter" data-level="4.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-general-information"><i class="fa fa-check"></i><b>4.1</b> Lab 3 General information</a></li>
+<li class="chapter" data-level="4.2" data-path="lab-3.html"><a href="lab-3.html#installing-new-packages"><i class="fa fa-check"></i><b>4.2</b> Installing new packages</a></li>
+<li class="chapter" data-level="4.3" data-path="lab-3.html"><a href="lab-3.html#lab-3-setup-markdown"><i class="fa fa-check"></i><b>4.3</b> Lab 3 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="4.4" data-path="lab-3.html"><a href="lab-3.html#regression-basics"><i class="fa fa-check"></i><b>4.4</b> Regression basics</a></li>
+<li class="chapter" data-level="4.5" data-path="lab-3.html"><a href="lab-3.html#taiwan-housing-challenge."><i class="fa fa-check"></i><b>4.5</b> Taiwan housing challenge.</a></li>
+<li class="chapter" data-level="4.6" data-path="lab-3.html"><a href="lab-3.html#submitting-lab-3"><i class="fa fa-check"></i><b>4.6</b> Submitting Lab 3</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lab-4.html"><a href="lab-4.html"><i class="fa fa-check"></i><b>5</b> Lab 4</a><ul>
+<li class="chapter" data-level="5.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-general-information"><i class="fa fa-check"></i><b>5.1</b> Lab 4 General information</a></li>
+<li class="chapter" data-level="5.2" data-path="lab-4.html"><a href="lab-4.html#lab-4-setup-markdown"><i class="fa fa-check"></i><b>5.2</b> Lab 4 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="lab-4.html"><a href="lab-4.html#public-safety-spending"><i class="fa fa-check"></i><b>5.3</b> Public safety spending</a><ul>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#checking-folder-names"><i class="fa fa-check"></i>Checking folder names</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#reading-in-the-data"><i class="fa fa-check"></i>Reading in the data</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lab-4.html"><a href="lab-4.html#submitting-lab-4"><i class="fa fa-check"></i><b>5.4</b> Submitting Lab 4</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-submission-check"><i class="fa fa-check"></i><b>5.4.1</b> Lab 4 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lab-5.html"><a href="lab-5.html"><i class="fa fa-check"></i><b>6</b> Lab 5</a><ul>
+<li class="chapter" data-level="6.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-general-information"><i class="fa fa-check"></i><b>6.1</b> Lab 5 General information</a></li>
+<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup</a></li>
+<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#advertising-challenge"><i class="fa fa-check"></i><b>6.3</b> Advertising challenge</a><ul>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-1-read-in-data"><i class="fa fa-check"></i>Question 1: Read in data</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-2-make-models"><i class="fa fa-check"></i>Question 2: Make models</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-3-favourite-model"><i class="fa fa-check"></i>Question 3: Favourite model</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-4-peace-lilies"><i class="fa fa-check"></i>Question 4: Peace lilies</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-5-tv-fears"><i class="fa fa-check"></i>Question 5: TV fears</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-6-best-day-ever"><i class="fa fa-check"></i>Question 6: Best day ever</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-7-testing-slr-assumptions"><i class="fa fa-check"></i>Question 7: Testing SLR Assumptions</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-8-optional-bonus-2"><i class="fa fa-check"></i>Question 8 [OPTIONAL BONUS 2%] :</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.4</b> Submitting Lab 5</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.4.1</b> Lab 5 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STAT-462 Lab book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lab-5" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Lab 5</h1>
+<div id="lab-5-general-information" class="section level2">
+<h2><span class="header-section-number">6.1</span> Lab 5 General information</h2>
+<p>Welcome to STAT-462 lab 5. The aim of this week is to:</p>
+<ul>
+<li>Solidify your knowledge of regression with less handholding</li>
+<li>ANOVA and confidence/prediction intervals.</li>
+<li>Examining linear regression assumptions</li>
+</ul>
+<div id="general-comments" class="section level5 unnumbered">
+<h5>General comments</h5>
+<ul>
+<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab 5 assignment.</p></li>
+<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706462" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706462</a></p></li>
+</ul>
+</div>
+<div id="lab-5-tutorials" class="section level5 unnumbered">
+<h5>Lab 5 Tutorials</h5>
+<p>It is worth reading the Lab 5 tutorials. <a href="index.html#S.Tutorial.5A">Tutorial 5A</a>) discusses ANOVA. <a href="index.html#S.Tutorial.5B">Tutorial 5B</a>) goes into detail on how to check model regression assumptions. <a href="index.html#S.Tutorial.5C">Tutorial 5C</a>) discusses confidence and prediction intervals.</p>
+</div>
+</div>
+<div id="lab-5-setup" class="section level2">
+<h2><span class="header-section-number">6.2</span> Lab 5 Setup</h2>
+<ul>
+<li><p>Save all your work and if you haven’t already, create a Lab 5 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 5 that is linked to your Lab 5 folder (instructions in <a href="index.html#S.Tutorial.1B">Tutorial 1B</a>). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab5” (for me it will be hlg5155_Lab5)</p></li>
+<li><p>Remove the “friendly text” (see <a href="index.html#S.Tutorial.1E.3">Tutorial 1E</a> if you have no idea what I mean)</p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in <a href="index.html#S.Tutorial.2B.1">Tutorial 2B</a>. Choose any theme that you like.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
+<li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-5.html#cb1-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="lab-5.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="lab-5.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="lab-5.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb1-5"><a href="lab-5.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb1-6"><a href="lab-5.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb1-7"><a href="lab-5.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb1-8"><a href="lab-5.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb1-9"><a href="lab-5.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb1-10"><a href="lab-5.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb1-11"><a href="lab-5.html#cb1-11"></a><span class="kw">library</span>(plotly) </span>
+<span id="cb1-12"><a href="lab-5.html#cb1-12"></a></span>
+<span id="cb1-13"><a href="lab-5.html#cb1-13"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
+<ul>
+<li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
+</ul>
+</div>
+<div id="advertising-challenge" class="section level2">
+<h2><span class="header-section-number">6.3</span> Advertising challenge</h2>
+<p>Houseplants are the new big thing and you are going to make the world want to buy them! Youa are a top advertising executive and you have been collecting data on how well your marketing campaigns have been running.</p>
+<p>You have run 200 marketing campaigns over the last few year. For each one, you recorded:</p>
+<ul>
+<li>how much you spent (in units of thousands of dollars) on
+<ul>
+<li>TV,</li>
+<li>radio</li>
+<li>and newspaper adverts<br />
+</li>
+</ul></li>
+<li>How many houseplants were sold (in thousands of plants).<br />
+</li>
+<li>You also know the “X-Factor” of how popular that plant was at the time (percentage popularity),</li>
+<li>And typically how tall that type plant was in inches.</li>
+</ul>
+<p>Your job now is to explore the data work out which type of advertising campaign is the most effective out of.</p>
+<ul>
+<li>Model1 - Plant Sales vs Newspaper adverts</li>
+<li>Model2 - Plant Sales vs TV adverts</li>
+</ul>
+<p>In all of your answers below, I expect good formatting, appropriate units and full sentences to explain your answers. Imagine this is a real report in an advertising company.</p>
+<p>For example, please make sure that you use headings and sub-headings to make your lab easier to follow and grade. You are welcome to use any/all of equations, text formatting, pictures, code-chunk options or anything else that makes your report look more professional. You will be graded on this.</p>
+<p>All the methods to answer these questions are either things you have done in previous labs or they are in the Lab 5 Tutorials.</p>
+<div id="question-1-read-in-data" class="section level3 unnumbered">
+<h3>Question 1: Read in data</h3>
+<ul>
+<li>Read the data into R (hint, always look at it in excel first to see if your column names and the data make sense)</li>
+<li>Explore and describe the dataset along with the distributions of your individual predictors.</li>
+</ul>
+</div>
+<div id="question-2-make-models" class="section level3 unnumbered">
+<h3>Question 2: Make models</h3>
+<ul>
+<li>Create &amp; summarise each of your your linear models, along with</li>
+<li>along with some high quality scatterplots &amp; the lines of besf fit,</li>
+<li>the equations of each model (e.g. within the context of the problem),</li>
+<li>and good explanations of what is going on.</li>
+</ul>
+<p>Hint, think about what I have asked you to do in past labs to answer this.</p>
+</div>
+<div id="question-3-favourite-model" class="section level3 unnumbered">
+<h3>Question 3: Favourite model</h3>
+<ul>
+<li><p>Out of model 1 and model 2, where do you see the greatest increase in sales if you increase the advertising budget?<br />
+</p></li>
+<li><p>Provide evidence to justify your answer (thinking about uncertainties on your estimate).</p></li>
+<li><p>Which model explains the most variability in the sales data? Provide evidence to justify your answer.</p></li>
+</ul>
+</div>
+<div id="question-4-peace-lilies" class="section level3 unnumbered">
+<h3>Question 4: Peace lilies</h3>
+<ul>
+<li>You have a new client who needs to sell 8000 peace lilies but hates newspapers. Conduct an hypothesis test to assess whether you typically sell less than 8000 plants in a situation where you spend zero-money on newspaper advertising. You are happy to be wrong one time in 25. Can you advise your client it is OK to not advertise in newspapers?</li>
+</ul>
+</div>
+<div id="question-5-tv-fears" class="section level3 unnumbered">
+<h3>Question 5: TV fears</h3>
+<ul>
+<li>Another client is skeptical of TV. Use the ANOVA tqble output to conduct a hypothesis test to examine if there is evidence to suggest a relationship between TV advertising and plant sales at a significance of 1%.</li>
+</ul>
+</div>
+<div id="question-6-best-day-ever" class="section level3 unnumbered">
+<h3>Question 6: Best day ever</h3>
+<ul>
+<li>A new client has approached you with a brand new plant!!! (the lesser-variated-monstera-fig) This is <em>very</em> popular. The magazine “plants daily” rates its popularity at 90%!<br />
+</li>
+<li>Thinking about the plant popularity independently of advertising type, what is the predicted range of sales for your new campaign? (at a 99% confidence level)</li>
+</ul>
+</div>
+<div id="question-7-testing-slr-assumptions" class="section level3 unnumbered">
+<h3>Question 7: Testing SLR Assumptions</h3>
+<ul>
+<li>Let’s return to your two models (e.g. Model1 and Model2), do either/both of them meet the requirements for simple linear regression? Provide evidence to support your answers (Use <a href="index.html#S.Tutorial.5B">Tutorial 5B</a>).</li>
+</ul>
+</div>
+<div id="question-8-optional-bonus-2" class="section level3 unnumbered">
+<h3>Question 8 [OPTIONAL BONUS 2%] :</h3>
+<p>How can multiple regression help us do a better job in answering this week’s lab?</p>
+</div>
+</div>
+<div id="submitting-lab-5" class="section level2">
+<h2><span class="header-section-number">6.4</span> Submitting Lab 5</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 5 folder and have a .html ending.</p>
+<p>Check your html is complete by double clicking on to open it in your web-browser.</p>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 5. (See the end of Lab 1 for a screenshot)</p>
+<div id="lab-5-submission-check" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Lab 5 submission check</h3>
+<p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
+<p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
+<p><strong>MARKDOWN/CODE/WRITING STYLE - 10 MARKS</strong></p>
+<p>10/10 - your report is very professional. There are tables of contents, headings/subheadings, your plots look great, you answer in full sentences and have used the spell check. You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. It’s clear you put thought and effort into writing a good markdown document. I could use this as a class example. You would be comfortable showing it in a job interview.</p>
+<p>8/10 - your report is fine on the basics, but not quite as snazzy &amp; is clearly a homework.
+less - as your report becomes harder to read.</p>
+<p><strong>QUESTION 1&amp;2 - 15 marks</strong></p>
+<p>You have described the data &amp; models well, including all relevant information. Your scatterplots and model are professional and correct.</p>
+<p><strong>QUESTION 3 - 10 marks</strong></p>
+<p>Correct answers, correct method and it’s clear how you got there. You have written the answer up in full sentences.</p>
+<p><strong>QUESTION 4 - 10 marks</strong></p>
+<p>Correct answer, correct method and and it’s clear how you got there. You have written the answer up in full sentences.</p>
+<p><strong>QUESTION 5 - 10 marks</strong></p>
+<p>Correct answer, correct method and and it’s clear how you got there. You have written the answer up in full sentences.</p>
+<p><strong>QUESTION 6 - 10 marks</strong></p>
+<p>Correct answer, correct method and and it’s clear how you got there. You have written the answer up in full sentences.</p>
+<p><strong>QUESTION 7 - 25 marks</strong></p>
+<p>You have eloquently assessed the four aspects of inter</p>
+<p><strong>QUESTION 8 - 2 marks</strong> BONUS (capped at 100%)</p>
+<p>Meaningful attempt at commenting (e.g. more than just a sentence)</p>
+<p>[100 marks total]</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lab-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

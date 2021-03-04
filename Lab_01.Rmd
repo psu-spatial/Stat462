@@ -137,7 +137,7 @@ In the future, every time you want to work on Lab 1, rather than open R-studio d
  
 ##### If you're having issues at this point or haven't managed to get to this step, STOP!  Ask an instructor for help. {-}
 
-Now you have opened your project, take a screenshot of your R-studio page. It should look like the figure above, e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
+Now you have opened your project, take a screenshot of your R-studio page. It should look like Figure \@ref(fig:finalout), e.g. with at least R version 4.0.3, with the Lab 1 project and the project stored in your STAT-462 folder.
 
  - To take a screenshot on a mac, press Command-3.  The screenshot will appear on your desktop
  - To take a screenshot on a PC, press Alt + PrtScn  
@@ -664,11 +664,12 @@ knitr::include_graphics('images/Fig_01_12Picture.png')
 **OPTIONAL Question K [BONUS 2%, lab capped at 100%]**:  Finally, if you would like your histograms and plots to look more professional, take a look at ggplot and see if you can make a histogram the mpg data using this approach instead. This is a good tutorial: https://www.r-graph-gallery.com/220-basic-ggplot2-histogram.html]
 
 
-## Submitting Lab 1
+
+## Submitting Lab 1 {Section.L1.7}
 
 Remember to save your work throughout and to spell check your writing (next to the save button).  Now, press the knit button again.  If you have not made any mistakes in the code then R should create a new html file which includes your answers.
 
-```{r, submit, echo=FALSE}
+```{r, submitlab, echo=FALSE,fig.cap="What you need to submit"}
 knitr::include_graphics('images/Fig_01_13Rmd.png')
 ```
 

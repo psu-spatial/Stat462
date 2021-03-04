@@ -1411,11 +1411,11 @@ Feel free to choose a favourite.
 Importantly, remember back to this website - https://www.tylervigen.com/spurious-correlations.  Just because another variable is correlated with our response does not mean it HAS to be in the model.  It simply means that you might want to consider whether there is a reason for that correlation.
 
 
-#### Scatterplots and residual plots {-}
+#### Scatterplots and residual plots with a suspected confounding variable {-}
 
-A second way we looked at in a previous lab was to add colour to our scatterplot and see if we can see any influence.  
+A second way we looked at in a previous lab was to add colour to our scatterplot and see if we can see any influence from a suspected confounding variable.  
 
-```{r, eval=FALSE}
+```{r}
 # Create a plot
 p <- house %>%                  
   ggplot( aes(Latitude,House.Price, col= Distance.Station)) +
@@ -1427,9 +1427,9 @@ p <- house %>%
 ggplotly(p)
 ```
 
-However, this can be hard to see - so instead we can PLOT OUR RESIDUALS according to the variable we think is affecting independence.  For example
+However, this can be hard to see - so instead we can plot the residuals, but have the x-axis as the the variable we think is affecting independence.  For example
 
-```{r}
+```{r, fig.cap="These residuals do not look randomly distributed on the page.."}
 housemodel            <- lm(House.Price~Latitude,data=house)
 house$price_predicted <- housemodel$fitted.values
 house$residuals       <- housemodel$residuals
@@ -1471,9 +1471,9 @@ qtm("Esri.WorldTopoMap") +
          symbols.palette="RdBu",
          midpoint=0) # color breaks
 ```
-There definitely LOOKS like the residuals are not randomly distributed in space, making me think there is spatial autocorrelation (e.g. correlation with itself - the location of a point impacts the residual).  
+There definitely looks like the residuals are not randomly distributed in space, which makes me suspicious that there is spatial autocorrelation (e.g. correlation with itself - the location of a point impacts the residual).  
 
-We can test this through a statistic called Moran's I - which plots the residual at each point against its residuals for surrounding points.  In my spatial statistics course, we spend about 3 weeks just on this statistics, so there is a lot of nuance we are skipping over here.  For more, see https://mgimond.github.io/Spatial/spatial-autocorrelation.html 
+We can test this through a statistic called Moran's I - which compares the residual at each point against its residuals for surrounding points.  In my spatial statistics course, we spend about 3 weeks on Moran's I, so there is a lot of nuance we are skipping over here.  For more, see https://mgimond.github.io/Spatial/spatial-autocorrelation.html 
  
 ```{r}
 library(moranfast)

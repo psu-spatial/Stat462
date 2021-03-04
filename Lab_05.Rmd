@@ -82,7 +82,7 @@ library(plotly)
 
 ## Advertising challenge
 
-Houseplants are the new big thing and you are going to make the world want to buy them!  Youa are a top advertising executive and you have been collecting data on how well your marketing campaigns have been running.
+Houseplants are the new big thing and you are going to make the world want to buy them!  You are a top advertising executive and you have been collecting data on how well your marketing campaigns have been running.
 
 You have run 200 marketing campaigns over the last few year.  For each one, you recorded:
 
@@ -99,9 +99,15 @@ Your job now is to explore the data work out which type of advertising campaign 
  - Model1 - Plant Sales vs Newspaper adverts
  - Model2 - Plant Sales vs TV adverts
 
-In all of your answers below, I expect good formatting, appropriate units and full sentences to explain your answers. Imagine this is a real report in an advertising company.
+#### Markdown answer format {-}
 
-For example, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.  You are welcome to use any/all of equations, text formatting, pictures, code-chunk options or anything else that makes your report look more professional.  You will be graded on this.
+Imagine this is a real report in an advertising company. You will be graded on the professionality of your final report.
+
+In all of your answers below, I expect good formatting, appropriate units and full sentences to explain your answers. 
+
+For example, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.  
+
+You are welcome to use any/all of the markdown features we have learned so far, for example equations, text formatting, pictures, code-chunk options or anything else that makes your report look more professional.  
 
 
 ```{r,echo=FALSE}

@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-03" />
+<meta name="date" content="2021-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -197,9 +204,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.16" data-path="index.html"><a href="index.html#S.Tutorial.5B"><i class="fa fa-check"></i><b>1.16</b> Tutorial 5B Diagnostics part A</a><ul>
 <li class="chapter" data-level="1.16.1" data-path="index.html"><a href="index.html#S.Tutorial.5B.1"><i class="fa fa-check"></i><b>1.16.1</b> Residual plots</a></li>
+<li class="chapter" data-level="1.16.2" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.16.2</b> Checking Linearity</a></li>
+<li class="chapter" data-level="1.16.3" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.16.3</b> Checking Independence</a></li>
+<li class="chapter" data-level="1.16.4" data-path="index.html"><a href="index.html#S.Tutorial.5B.4"><i class="fa fa-check"></i><b>1.16.4</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.16.5" data-path="index.html"><a href="index.html#S.Tutorial.5B.5"><i class="fa fa-check"></i><b>1.16.5</b> Checking Equal Variance/homoskadisity</a></li>
 </ul></li>
-<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.17</b> Checking Linearity</a></li>
-<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.18</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5C"><i class="fa fa-check"></i><b>1.17</b> Tutorial 5C Confidence and Prediction Intervals</a></li>
+<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.6A"><i class="fa fa-check"></i><b>1.18</b> Tutorial 6A Diagnostics part B: Outliers</a><ul>
+<li class="chapter" data-level="1.18.1" data-path="index.html"><a href="index.html#Tutorial.6A0"><i class="fa fa-check"></i><b>1.18.1</b> Visual inspection</a></li>
+<li class="chapter" data-level="1.18.2" data-path="index.html"><a href="index.html#Tutorial.6A1"><i class="fa fa-check"></i><b>1.18.2</b> Detecting leverage</a></li>
+<li class="chapter" data-level="1.18.3" data-path="index.html"><a href="index.html#Tutorial.6A2"><i class="fa fa-check"></i><b>1.18.3</b> Detecting outliers</a></li>
+<li class="chapter" data-level="1.18.4" data-path="index.html"><a href="index.html#Tutorial.6AC"><i class="fa fa-check"></i><b>1.18.4</b> Detecting influential points</a></li>
+</ul></li>
+<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#test"><i class="fa fa-check"></i><b>1.19</b> test</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -263,9 +280,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="lab-5.html"><a href="lab-5.html"><i class="fa fa-check"></i><b>6</b> Lab 5</a><ul>
 <li class="chapter" data-level="6.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-general-information"><i class="fa fa-check"></i><b>6.1</b> Lab 5 General information</a></li>
-<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup-markdown"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup &amp; Markdown</a></li>
-<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.3</b> Submitting Lab 5</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.3.1</b> Lab 5 submission check</a></li>
+<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup</a></li>
+<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#advertising-challenge"><i class="fa fa-check"></i><b>6.3</b> Advertising challenge</a><ul>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-1-read-in-data"><i class="fa fa-check"></i>Question 1: Read in data</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-2-make-models"><i class="fa fa-check"></i>Question 2: Make models</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-3-favourite-model"><i class="fa fa-check"></i>Question 3: Favourite model</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-4-peace-lilies"><i class="fa fa-check"></i>Question 4: Peace lilies</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-5-tv-fears"><i class="fa fa-check"></i>Question 5: TV fears</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-6-best-day-ever"><i class="fa fa-check"></i>Question 6: Best day ever</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-7-testing-slr-assumptions"><i class="fa fa-check"></i>Question 7: Testing SLR Assumptions</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-8-optional-bonus-2"><i class="fa fa-check"></i>Question 8 [OPTIONAL BONUS 2%] :</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.4</b> Submitting Lab 5</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.4.1</b> Lab 5 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lab-6.html"><a href="lab-6.html"><i class="fa fa-check"></i><b>7</b> Lab 6</a><ul>
+<li class="chapter" data-level="7.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-general-information"><i class="fa fa-check"></i><b>7.1</b> Lab 6 General information</a></li>
+<li class="chapter" data-level="7.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-setup"><i class="fa fa-check"></i><b>7.2</b> Lab 6 Setup</a></li>
+<li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.3</b> Submitting Lab 6</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.3.1</b> Lab 6 submission check</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -389,7 +423,7 @@ Figure 2.4: What you should see
 </p>
 </div>
 <p>Equally, R should now be “looking” inside your Lab 1 folder, making it easier to find your data and output your results. Try typing this into the console (INCLUDING THE EMPTY PARANTHESES/BRACKETS) and see if it prints out the location of Lab 1 on your computer. If not, talk to an instructor.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-1.html#cb1-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="lab-1.html#cb180-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
 <p>In the future, every time you want to work on Lab 1, rather than open R-studio directly, double click the R project file inside Lab 1 and you will get back to your work.</p>
 <div id="if-youre-having-issues-at-this-point-or-havent-managed-to-get-to-this-step-stop-ask-an-instructor-for-help." class="section level5 unnumbered">
 <h5>If you’re having issues at this point or haven’t managed to get to this step, STOP! Ask an instructor for help.</h5>
@@ -412,14 +446,14 @@ Figure 2.4: What you should see
 <p>Remember that the aim of R is to type in commands to get your computer to analyse data. The console (see Figure <a href="lab-1.html#fig:basicStudio">2.2</a>) is a space where you can type in those commands and it will directly print out the answer. You’re essentially talking to the computer.</p>
 <p>The little “&gt;” symbol in the console means that the computer is waiting for your command.</p>
 <p>Let’s start by the simplest command possible. Try typing each of the following commands into your R console and pressing Enter as you work through this.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lab-1.html#cb2-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="lab-1.html#cb181-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Note that spacing does not matter: <code>1+1</code> will generate the same answer as <code>1      +       1</code>.</p>
 <p>When using R as a calculator, the order of operations is the same as you would have learned back in school, so use brackets to force a different order. For example,</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="lab-1.html#cb4-1"></a><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="lab-1.html#cb183-1"></a><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 13</code></pre>
 <p>will give a different result to</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="lab-1.html#cb6-1"></a>(<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="lab-1.html#cb185-1"></a>(<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 16</code></pre>
 </div>
 <div id="adding-text" class="section level4">
@@ -432,15 +466,15 @@ Figure 2.5: Your screen after running the project
 </p>
 </div>
 <p>Nope, there is an error! To make R understand text, it is important to use quote marks.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="lab-1.html#cb8-1"></a><span class="kw">print</span>(<span class="st">&quot;Hello World&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="lab-1.html#cb187-1"></a><span class="kw">print</span>(<span class="st">&quot;Hello World&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello World&quot;</code></pre>
 </div>
 <div id="comparisons" class="section level4">
 <h4><span class="header-section-number">2.3.0.3</span> Comparisons</h4>
 <p>We can also do comparisons in R - using the special symbols TRUE or FALSE (no quote marks, they are special).</p>
 <p>Here we are asking R whether 1 is equal to 1.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="lab-1.html#cb10-1"></a><span class="co"># note two equals signs is read as &quot;is equal to&quot;</span></span>
-<span id="cb10-2"><a href="lab-1.html#cb10-2"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="lab-1.html#cb189-1"></a><span class="co"># note two equals signs is read as &quot;is equal to&quot;</span></span>
+<span id="cb189-2"><a href="lab-1.html#cb189-2"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span>  </span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>We could also have used</p>
 <ul>
@@ -462,21 +496,21 @@ Figure 2.5: Your screen after running the project
 <h3><span class="header-section-number">2.3.1</span> Variables and assignment</h3>
 <p>It’s great to be able to do maths easily on the screen, but really we want to be able to save our results, or load in data so we can run more complex commands. In R, we can give our data a name e.g. we save our data as a variable. So then, instead of typing the whole command, we can simply type the variable’s name and R will recall the answer.</p>
 <p>The symbol to store data into a variable is using the assignment arrow <code>&lt;-</code>, which is made up of the left arrow and a dash. You can also use the equals sign, but it can cause complications later on. Try typing this command into the console:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lab-1.html#cb12-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">50</span></span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="lab-1.html#cb191-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">50</span></span></code></pre></div>
 <p>Notice that pressing enter did not print a value onto your screen as it did earlier. Instead, we stored it for later in something called a variable, with the name ‘x’.</p>
 <p>So our variable <code>x</code> is now associated with the value 0.02, or 1/50. You can print a variable on screen by typing its name, no quotes, or by using the print command. Try printing out your variable.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="lab-1.html#cb13-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="lab-1.html#cb192-1"></a>x</span></code></pre></div>
 <pre><code>## [1] 0.02</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="lab-1.html#cb15-1"></a><span class="co"># or</span></span>
-<span id="cb15-2"><a href="lab-1.html#cb15-2"></a></span>
-<span id="cb15-3"><a href="lab-1.html#cb15-3"></a><span class="kw">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="lab-1.html#cb194-1"></a><span class="co"># or</span></span>
+<span id="cb194-2"><a href="lab-1.html#cb194-2"></a></span>
+<span id="cb194-3"><a href="lab-1.html#cb194-3"></a><span class="kw">print</span>(x)</span></code></pre></div>
 <pre><code>## [1] 0.02</code></pre>
 <p>Look for the Environment tab in one of the panes of RStudio, and you will see that ‘x’ and its value have appeared. This ‘x’ variable can be used in place of a number in any calculation that expects a number. Try typing</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="lab-1.html#cb17-1"></a><span class="kw">log</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="lab-1.html#cb196-1"></a><span class="kw">log</span>(x)</span></code></pre></div>
 <pre><code>## [1] -3.912023</code></pre>
 <p>Notice also that variables can be reassigned:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="lab-1.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb19-2"><a href="lab-1.html#cb19-2"></a><span class="kw">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="lab-1.html#cb198-1"></a>x &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb198-2"><a href="lab-1.html#cb198-2"></a><span class="kw">print</span>(x)</span></code></pre></div>
 <pre><code>## [1] 100</code></pre>
 <p>x used to contain the value 0.025 and and now it has the value 100.</p>
 <p><em>Note, the letter x isn’t special in any way, it’s just a variable name. You can replace it with any word you like as long as it contains no spaces and doesn’t begin with a number</em>. Different people use different conventions for long variable names, these include</p>
@@ -487,26 +521,26 @@ Figure 2.5: Your screen after running the project
 </ul>
 <p>What you use is up to you, but be consistent.</p>
 <p>Finally, R IS CASE SENSITIVE. X and x are different variables!</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="lab-1.html#cb21-1"></a>h &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb21-2"><a href="lab-1.html#cb21-2"></a>H &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb21-3"><a href="lab-1.html#cb21-3"></a></span>
-<span id="cb21-4"><a href="lab-1.html#cb21-4"></a>ans &lt;-<span class="st"> </span>h<span class="op">+</span>H</span>
-<span id="cb21-5"><a href="lab-1.html#cb21-5"></a><span class="kw">print</span>(ans)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="lab-1.html#cb200-1"></a>h &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb200-2"><a href="lab-1.html#cb200-2"></a>H &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb200-3"><a href="lab-1.html#cb200-3"></a></span>
+<span id="cb200-4"><a href="lab-1.html#cb200-4"></a>ans &lt;-<span class="st"> </span>h<span class="op">+</span>H</span>
+<span id="cb200-5"><a href="lab-1.html#cb200-5"></a><span class="kw">print</span>(ans)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <div id="combining-variables" class="section level5 unnumbered">
 <h5>Combining variables</h5>
 <p>As I showed above, you can now use multiple variables together in more complex commands. For example, try these commands:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="lab-1.html#cb23-1"></a><span class="co">#Take the variable x, add 1 then save it to a new variable called y</span></span>
-<span id="cb23-2"><a href="lab-1.html#cb23-2"></a>y &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </span>
-<span id="cb23-3"><a href="lab-1.html#cb23-3"></a><span class="co"># print the multiple of 2yx onto the screen</span></span>
-<span id="cb23-4"><a href="lab-1.html#cb23-4"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="lab-1.html#cb202-1"></a><span class="co">#Take the variable x, add 1 then save it to a new variable called y</span></span>
+<span id="cb202-2"><a href="lab-1.html#cb202-2"></a>y &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </span>
+<span id="cb202-3"><a href="lab-1.html#cb202-3"></a><span class="co"># print the multiple of 2yx onto the screen</span></span>
+<span id="cb202-4"><a href="lab-1.html#cb202-4"></a>y</span></code></pre></div>
 <pre><code>## [1] 101</code></pre>
 <p>Now you can see that there are two variables in your environment tab, x and y. Where y is the sum of the contents of x plus 1.</p>
 <p>The way R works is that first it looks for the commands on the right of the arrow. It runs all of them, calculates the result, then saves that result with the name on the left of the arrow. <strong>It does not save the command itself, just the answer.</strong> For example, in this case, R has no idea that y was created using a sum, it just knows that it is equal to the number 3.</p>
 <p>You can even use this to change your original variable . Try typing the code below in a few times into the console and see what happens.</p>
 <p><strong>A short cut to do this is to type the commands the first time, then use the up-arrow on your keyboard to cycle back through previous commands you have typed</strong></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="lab-1.html#cb25-1"></a>x &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="co"># notice how RStudio updates its description of x in the environment tab</span></span>
-<span id="cb25-2"><a href="lab-1.html#cb25-2"></a>x          <span class="co"># print the contents of &quot;x&quot; onto the screen</span></span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="lab-1.html#cb204-1"></a>x &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="co"># notice how RStudio updates its description of x in the environment tab</span></span>
+<span id="cb204-2"><a href="lab-1.html#cb204-2"></a>x          <span class="co"># print the contents of &quot;x&quot; onto the screen</span></span></code></pre></div>
 <pre><code>## [1] 101</code></pre>
 <p>Our variables don’t have to be numbers. They could refer to tables of data, or a spatial map, or any other complex thing. We will cover this more in future labs.</p>
 </div>
@@ -529,23 +563,23 @@ Figure 2.5: Your screen after running the project
 <p><a href="http://vimeo.com/220490105" title="R functions"><img src="images/Fig_01_07VIDEO_Functions.png" alt="Function basics" /></a></p>
 <p>One example of a function is <code>file.choose()</code> (not how I put the parentheses in this lab book so you can see it is a command). This command will let you interactively select a file and print the address out onto the screen.</p>
 <p>Try each of these out in your console for the file.choose() command, leaving the parentheses blank.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="lab-1.html#cb27-1"></a><span class="co"># Typing this into the console will print out the underlying code</span></span>
-<span id="cb27-2"><a href="lab-1.html#cb27-2"></a>file.choose </span>
-<span id="cb27-3"><a href="lab-1.html#cb27-3"></a></span>
-<span id="cb27-4"><a href="lab-1.html#cb27-4"></a><span class="co"># Typing it WITH parentheses will run the command.  </span></span>
-<span id="cb27-5"><a href="lab-1.html#cb27-5"></a><span class="kw">file.choose</span>()</span>
-<span id="cb27-6"><a href="lab-1.html#cb27-6"></a></span>
-<span id="cb27-7"><a href="lab-1.html#cb27-7"></a><span class="co"># Typing a ? in front will open the help file for that command</span></span>
-<span id="cb27-8"><a href="lab-1.html#cb27-8"></a>?file.choose</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="lab-1.html#cb206-1"></a><span class="co"># Typing this into the console will print out the underlying code</span></span>
+<span id="cb206-2"><a href="lab-1.html#cb206-2"></a>file.choose </span>
+<span id="cb206-3"><a href="lab-1.html#cb206-3"></a></span>
+<span id="cb206-4"><a href="lab-1.html#cb206-4"></a><span class="co"># Typing it WITH parentheses will run the command.  </span></span>
+<span id="cb206-5"><a href="lab-1.html#cb206-5"></a><span class="kw">file.choose</span>()</span>
+<span id="cb206-6"><a href="lab-1.html#cb206-6"></a></span>
+<span id="cb206-7"><a href="lab-1.html#cb206-7"></a><span class="co"># Typing a ? in front will open the help file for that command</span></span>
+<span id="cb206-8"><a href="lab-1.html#cb206-8"></a>?file.choose</span></code></pre></div>
 <p>Sometimes we need to give the command some additional information. Anything we wish to tell the command should be included inside the inside the parentheses (separated by commas). The command will literally only know about the stuff inside the parentheses.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="lab-1.html#cb28-1"></a><span class="kw">sin</span>(<span class="dv">1</span>) <span class="co"># trigonometry functions.  Apply the sine function to the number 1. </span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="lab-1.html#cb207-1"></a><span class="kw">sin</span>(<span class="dv">1</span>) <span class="co"># trigonometry functions.  Apply the sine function to the number 1. </span></span></code></pre></div>
 <pre><code>## [1] 0.841471</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="lab-1.html#cb30-1"></a><span class="kw">log</span>(<span class="dv">10</span>) <span class="co"># natural logarithm.  Take the natural logarithm of the number 10. </span></span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="lab-1.html#cb209-1"></a><span class="kw">log</span>(<span class="dv">10</span>) <span class="co"># natural logarithm.  Take the natural logarithm of the number 10. </span></span></code></pre></div>
 <pre><code>## [1] 2.302585</code></pre>
 <p>This following command will plot the number 1 to 10 against the numbers 12 to 20, along with some axis labels. When you run this, the plot will show up in the plots tab.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="lab-1.html#cb32-1"></a><span class="co"># plot the numbers 1 to 10 against the numbers 11 to 20</span></span>
-<span id="cb32-2"><a href="lab-1.html#cb32-2"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">11</span><span class="op">:</span><span class="dv">20</span>,<span class="dt">col=</span><span class="st">&quot;dark blue&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;x values&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;STAT-462 is the best&quot;</span>) </span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="lab-1.html#cb211-1"></a><span class="co"># plot the numbers 1 to 10 against the numbers 11 to 20</span></span>
+<span id="cb211-2"><a href="lab-1.html#cb211-2"></a><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">11</span><span class="op">:</span><span class="dv">20</span>,<span class="dt">col=</span><span class="st">&quot;dark blue&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;x values&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;STAT-462 is the best&quot;</span>) </span></code></pre></div>
+<p><img src="Stat462_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 <p>If you are feeling lost, <a href="https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/" class="uri">https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/</a>
 is a really good website which goes over a lot of this in more detail. A lot of this is based on their work.</p>
 </div>
@@ -570,48 +604,48 @@ is a really good website which goes over a lot of this in more detail. A lot of 
 <h2><span class="header-section-number">2.4</span> Lab Challenge 2</h2>
 <p>Now we are going to download some packages from the internet and install them. You must be connected to the internet to make this happen! In the console, type the following commands, or click the “Install” button in the packages tab (next to plots) and find the package name. If it asks if you want to install dependencies, say yes.</p>
 <p>If R gives you warnings about rtools, ignore them or follow the instructions at the top to install R-Tools.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="lab-1.html#cb33-1"></a><span class="co"># COPY/PASTE THESE INTO YOUR CONSOLE AND LET THEM RUN. </span></span>
-<span id="cb33-2"><a href="lab-1.html#cb33-2"></a><span class="co">#(These are hopefully all the packages for the course, so it&#39;s a one off download)</span></span>
-<span id="cb33-3"><a href="lab-1.html#cb33-3"></a></span>
-<span id="cb33-4"><a href="lab-1.html#cb33-4"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co"># Lots of data processing commands</span></span>
-<span id="cb33-5"><a href="lab-1.html#cb33-5"></a><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)     <span class="co"># Helps make good output files</span></span>
-<span id="cb33-6"><a href="lab-1.html#cb33-6"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="co"># Helps make good output files</span></span>
-<span id="cb33-7"><a href="lab-1.html#cb33-7"></a><span class="kw">install.packages</span>(<span class="st">&quot;lattice&quot;</span>)   <span class="co"># Makes nice plots</span></span>
-<span id="cb33-8"><a href="lab-1.html#cb33-8"></a><span class="kw">install.packages</span>(<span class="st">&quot;RColorBrewer&quot;</span>) <span class="co"># Makes nice color-scales</span></span>
-<span id="cb33-9"><a href="lab-1.html#cb33-9"></a><span class="kw">install.packages</span>(<span class="st">&quot;ISLR&quot;</span>)      <span class="co"># contains a credit dataset</span></span>
-<span id="cb33-10"><a href="lab-1.html#cb33-10"></a><span class="kw">install.packages</span>(<span class="st">&quot;yarrr&quot;</span>)     <span class="co"># contains a toy dataset about pirates</span></span>
-<span id="cb33-11"><a href="lab-1.html#cb33-11"></a><span class="kw">install.packages</span>(<span class="st">&quot;skimr&quot;</span>)     <span class="co"># Summary statistics</span></span>
-<span id="cb33-12"><a href="lab-1.html#cb33-12"></a><span class="kw">install.packages</span>(<span class="st">&quot;Stat2Data&quot;</span>) <span class="co"># Regression specific commands</span></span>
-<span id="cb33-13"><a href="lab-1.html#cb33-13"></a><span class="kw">install.packages</span>(<span class="st">&quot;olsrr&quot;</span>)     <span class="co"># Regression specific commands</span></span>
-<span id="cb33-14"><a href="lab-1.html#cb33-14"></a><span class="kw">install.packages</span>(<span class="st">&quot;nortest&quot;</span>)   <span class="co"># Regression specific commands</span></span>
-<span id="cb33-15"><a href="lab-1.html#cb33-15"></a><span class="kw">install.packages</span>(<span class="st">&quot;lmtest&quot;</span>)    <span class="co"># Regression specific commands</span></span>
-<span id="cb33-16"><a href="lab-1.html#cb33-16"></a><span class="kw">install.packages</span>(<span class="st">&quot;IMTest&quot;</span>)    <span class="co"># Regression specific commands </span></span>
-<span id="cb33-17"><a href="lab-1.html#cb33-17"></a><span class="kw">install.packages</span>(<span class="st">&quot;MASS&quot;</span>)      <span class="co"># Regression specific commands</span></span>
-<span id="cb33-18"><a href="lab-1.html#cb33-18"></a><span class="kw">install.packages</span>(<span class="st">&quot;moderndive&quot;</span>)<span class="co"># Regression specific commands</span></span>
-<span id="cb33-19"><a href="lab-1.html#cb33-19"></a><span class="kw">install.packages</span>(<span class="st">&quot;corrplot&quot;</span>)  <span class="co"># correlation plots</span></span>
-<span id="cb33-20"><a href="lab-1.html#cb33-20"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggpubr&quot;</span>)    <span class="co"># Nice regression plots</span></span>
-<span id="cb33-21"><a href="lab-1.html#cb33-21"></a><span class="kw">install.packages</span>(<span class="st">&quot;car&quot;</span>)       <span class="co"># this one sometimes has problems, don&#39;t panic if you get errors</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="lab-1.html#cb212-1"></a><span class="co"># COPY/PASTE THESE INTO YOUR CONSOLE AND LET THEM RUN. </span></span>
+<span id="cb212-2"><a href="lab-1.html#cb212-2"></a><span class="co">#(These are hopefully all the packages for the course, so it&#39;s a one off download)</span></span>
+<span id="cb212-3"><a href="lab-1.html#cb212-3"></a></span>
+<span id="cb212-4"><a href="lab-1.html#cb212-4"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co"># Lots of data processing commands</span></span>
+<span id="cb212-5"><a href="lab-1.html#cb212-5"></a><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)     <span class="co"># Helps make good output files</span></span>
+<span id="cb212-6"><a href="lab-1.html#cb212-6"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="co"># Helps make good output files</span></span>
+<span id="cb212-7"><a href="lab-1.html#cb212-7"></a><span class="kw">install.packages</span>(<span class="st">&quot;lattice&quot;</span>)   <span class="co"># Makes nice plots</span></span>
+<span id="cb212-8"><a href="lab-1.html#cb212-8"></a><span class="kw">install.packages</span>(<span class="st">&quot;RColorBrewer&quot;</span>) <span class="co"># Makes nice color-scales</span></span>
+<span id="cb212-9"><a href="lab-1.html#cb212-9"></a><span class="kw">install.packages</span>(<span class="st">&quot;ISLR&quot;</span>)      <span class="co"># contains a credit dataset</span></span>
+<span id="cb212-10"><a href="lab-1.html#cb212-10"></a><span class="kw">install.packages</span>(<span class="st">&quot;yarrr&quot;</span>)     <span class="co"># contains a toy dataset about pirates</span></span>
+<span id="cb212-11"><a href="lab-1.html#cb212-11"></a><span class="kw">install.packages</span>(<span class="st">&quot;skimr&quot;</span>)     <span class="co"># Summary statistics</span></span>
+<span id="cb212-12"><a href="lab-1.html#cb212-12"></a><span class="kw">install.packages</span>(<span class="st">&quot;Stat2Data&quot;</span>) <span class="co"># Regression specific commands</span></span>
+<span id="cb212-13"><a href="lab-1.html#cb212-13"></a><span class="kw">install.packages</span>(<span class="st">&quot;olsrr&quot;</span>)     <span class="co"># Regression specific commands</span></span>
+<span id="cb212-14"><a href="lab-1.html#cb212-14"></a><span class="kw">install.packages</span>(<span class="st">&quot;nortest&quot;</span>)   <span class="co"># Regression specific commands</span></span>
+<span id="cb212-15"><a href="lab-1.html#cb212-15"></a><span class="kw">install.packages</span>(<span class="st">&quot;lmtest&quot;</span>)    <span class="co"># Regression specific commands</span></span>
+<span id="cb212-16"><a href="lab-1.html#cb212-16"></a><span class="kw">install.packages</span>(<span class="st">&quot;IMTest&quot;</span>)    <span class="co"># Regression specific commands </span></span>
+<span id="cb212-17"><a href="lab-1.html#cb212-17"></a><span class="kw">install.packages</span>(<span class="st">&quot;MASS&quot;</span>)      <span class="co"># Regression specific commands</span></span>
+<span id="cb212-18"><a href="lab-1.html#cb212-18"></a><span class="kw">install.packages</span>(<span class="st">&quot;moderndive&quot;</span>)<span class="co"># Regression specific commands</span></span>
+<span id="cb212-19"><a href="lab-1.html#cb212-19"></a><span class="kw">install.packages</span>(<span class="st">&quot;corrplot&quot;</span>)  <span class="co"># correlation plots</span></span>
+<span id="cb212-20"><a href="lab-1.html#cb212-20"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggpubr&quot;</span>)    <span class="co"># Nice regression plots</span></span>
+<span id="cb212-21"><a href="lab-1.html#cb212-21"></a><span class="kw">install.packages</span>(<span class="st">&quot;car&quot;</span>)       <span class="co"># this one sometimes has problems, don&#39;t panic if you get errors</span></span></code></pre></div>
 <p>You will see a load of red text appear in the console as it tells you its very detailed status of how it’s downloading and installing. Don’t panic! It might also take several minutes to do this, longer on a bad internet connection. We are doing this as a one off at the start of the course.</p>
 <p>When you have run all the commands and waited until they have finished running (remember, when it is done, you should see the little “&gt;” symbol in the console waiting for your next command), we want to check if they have installed successfully onto your computer.</p>
 <p>To do this we are going to load them using the library command:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="lab-1.html#cb34-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co"># Lots of data processing commands</span></span>
-<span id="cb34-2"><a href="lab-1.html#cb34-2"></a><span class="kw">library</span>(<span class="st">&quot;knitr&quot;</span>)     <span class="co"># Helps make good output files</span></span>
-<span id="cb34-3"><a href="lab-1.html#cb34-3"></a><span class="kw">library</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="co"># Helps make good output files</span></span>
-<span id="cb34-4"><a href="lab-1.html#cb34-4"></a><span class="kw">library</span>(<span class="st">&quot;lattice&quot;</span>)   <span class="co"># Makes nice plots</span></span>
-<span id="cb34-5"><a href="lab-1.html#cb34-5"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>) <span class="co"># Makes nice color-scales</span></span>
-<span id="cb34-6"><a href="lab-1.html#cb34-6"></a><span class="kw">library</span>(<span class="st">&quot;ISLR&quot;</span>)      <span class="co"># contains a credit dataset</span></span>
-<span id="cb34-7"><a href="lab-1.html#cb34-7"></a><span class="kw">library</span>(<span class="st">&quot;yarrr&quot;</span>)     <span class="co"># contains a toy dataset about pirates</span></span>
-<span id="cb34-8"><a href="lab-1.html#cb34-8"></a><span class="kw">library</span>(<span class="st">&quot;skimr&quot;</span>)     <span class="co"># Summary statistics</span></span>
-<span id="cb34-9"><a href="lab-1.html#cb34-9"></a><span class="kw">library</span>(<span class="st">&quot;Stat2Data&quot;</span>) <span class="co"># Regression specific commands</span></span>
-<span id="cb34-10"><a href="lab-1.html#cb34-10"></a><span class="kw">library</span>(<span class="st">&quot;olsrr&quot;</span>)     <span class="co"># Regression specific commands</span></span>
-<span id="cb34-11"><a href="lab-1.html#cb34-11"></a><span class="kw">library</span>(<span class="st">&quot;nortest&quot;</span>)   <span class="co"># Regression specific commands</span></span>
-<span id="cb34-12"><a href="lab-1.html#cb34-12"></a><span class="kw">library</span>(<span class="st">&quot;lmtest&quot;</span>)    <span class="co"># Regression specific commands</span></span>
-<span id="cb34-13"><a href="lab-1.html#cb34-13"></a><span class="kw">library</span>(<span class="st">&quot;IMTest&quot;</span>)    <span class="co"># Regression specific commands </span></span>
-<span id="cb34-14"><a href="lab-1.html#cb34-14"></a><span class="kw">library</span>(<span class="st">&quot;MASS&quot;</span>)      <span class="co"># Regression specific commands</span></span>
-<span id="cb34-15"><a href="lab-1.html#cb34-15"></a><span class="kw">library</span>(<span class="st">&quot;moderndive&quot;</span>)<span class="co"># Regression specific commands</span></span>
-<span id="cb34-16"><a href="lab-1.html#cb34-16"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)  <span class="co"># correlation plots</span></span>
-<span id="cb34-17"><a href="lab-1.html#cb34-17"></a><span class="kw">library</span>(<span class="st">&quot;ggpubr&quot;</span>)    <span class="co"># Nice regression plots</span></span>
-<span id="cb34-18"><a href="lab-1.html#cb34-18"></a><span class="kw">library</span>(<span class="st">&quot;car&quot;</span>)       <span class="co"># this one sometimes has problems, don&#39;t panic if you get errors</span></span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="lab-1.html#cb213-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co"># Lots of data processing commands</span></span>
+<span id="cb213-2"><a href="lab-1.html#cb213-2"></a><span class="kw">library</span>(<span class="st">&quot;knitr&quot;</span>)     <span class="co"># Helps make good output files</span></span>
+<span id="cb213-3"><a href="lab-1.html#cb213-3"></a><span class="kw">library</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="co"># Helps make good output files</span></span>
+<span id="cb213-4"><a href="lab-1.html#cb213-4"></a><span class="kw">library</span>(<span class="st">&quot;lattice&quot;</span>)   <span class="co"># Makes nice plots</span></span>
+<span id="cb213-5"><a href="lab-1.html#cb213-5"></a><span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>) <span class="co"># Makes nice color-scales</span></span>
+<span id="cb213-6"><a href="lab-1.html#cb213-6"></a><span class="kw">library</span>(<span class="st">&quot;ISLR&quot;</span>)      <span class="co"># contains a credit dataset</span></span>
+<span id="cb213-7"><a href="lab-1.html#cb213-7"></a><span class="kw">library</span>(<span class="st">&quot;yarrr&quot;</span>)     <span class="co"># contains a toy dataset about pirates</span></span>
+<span id="cb213-8"><a href="lab-1.html#cb213-8"></a><span class="kw">library</span>(<span class="st">&quot;skimr&quot;</span>)     <span class="co"># Summary statistics</span></span>
+<span id="cb213-9"><a href="lab-1.html#cb213-9"></a><span class="kw">library</span>(<span class="st">&quot;Stat2Data&quot;</span>) <span class="co"># Regression specific commands</span></span>
+<span id="cb213-10"><a href="lab-1.html#cb213-10"></a><span class="kw">library</span>(<span class="st">&quot;olsrr&quot;</span>)     <span class="co"># Regression specific commands</span></span>
+<span id="cb213-11"><a href="lab-1.html#cb213-11"></a><span class="kw">library</span>(<span class="st">&quot;nortest&quot;</span>)   <span class="co"># Regression specific commands</span></span>
+<span id="cb213-12"><a href="lab-1.html#cb213-12"></a><span class="kw">library</span>(<span class="st">&quot;lmtest&quot;</span>)    <span class="co"># Regression specific commands</span></span>
+<span id="cb213-13"><a href="lab-1.html#cb213-13"></a><span class="kw">library</span>(<span class="st">&quot;IMTest&quot;</span>)    <span class="co"># Regression specific commands </span></span>
+<span id="cb213-14"><a href="lab-1.html#cb213-14"></a><span class="kw">library</span>(<span class="st">&quot;MASS&quot;</span>)      <span class="co"># Regression specific commands</span></span>
+<span id="cb213-15"><a href="lab-1.html#cb213-15"></a><span class="kw">library</span>(<span class="st">&quot;moderndive&quot;</span>)<span class="co"># Regression specific commands</span></span>
+<span id="cb213-16"><a href="lab-1.html#cb213-16"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)  <span class="co"># correlation plots</span></span>
+<span id="cb213-17"><a href="lab-1.html#cb213-17"></a><span class="kw">library</span>(<span class="st">&quot;ggpubr&quot;</span>)    <span class="co"># Nice regression plots</span></span>
+<span id="cb213-18"><a href="lab-1.html#cb213-18"></a><span class="kw">library</span>(<span class="st">&quot;car&quot;</span>)       <span class="co"># this one sometimes has problems, don&#39;t panic if you get errors</span></span></code></pre></div>
 <p>If you have managed to install them successfully, often nothing happens - this is great! It means it loaded the package without errors.</p>
 <p>Sometimes, it will tell you friendly messages. For example, this is what shows up when you install the tidyverse package. It is telling you the sub-packages that it downloaded and also that some commands, like filter - now have a different meaning. E.g. originally the filter command did one thing, but now the tidyverse package has made filter do something else.</p>
 <div class="figure"><span id="fig:tidyverse"></span>
@@ -685,7 +719,7 @@ Figure 2.9: You should see TWO new files appear in your lab 1 folder
 <p>Now, create a code chunk by clicking on the Insert R-code button on the top right.</p>
 <p><img src="images/Fig_01_11CodeChunk.png" width="1052" /></p>
 <p>Type the lines of code below into the code chunk. Then run it by pressing the little green right arrow.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="lab-1.html#cb35-1"></a><span class="kw">skim</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="lab-1.html#cb214-1"></a><span class="kw">skim</span>(mtcars)</span></code></pre></div>
 <p>This command compiles the summary statistics for the table you just saw. (you applied the <em>skim</em> command to the mtcars table). If this doesn’t work, make sure you installed and loaded the <code>skimr</code> library - or try the <code>summary()</code> command.</p>
 <p>Below your code chunk,</p>
 <p>You should be able to see that we’re dealing with a table with 11 columns that each tell us something about cars in 1974. Now answer the following questions, making sure to label them clearly in your text as a full sentence e.g. <em>The median weight of the cars is…</em></p>
@@ -694,13 +728,13 @@ Figure 2.9: You should see TWO new files appear in your lab 1 folder
 <p>If you are stuck, remember to read the help file from Step 2.</p>
 <p><strong>Step 4:</strong></p>
 <p>Suppose I want to compare the mileage of the vehicle for Auto and Manual transmission vehicles. We can make the comparison by making a side-by-side boxplot. Create a new code chunk. Use the code below to create the plot .</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="lab-1.html#cb36-1"></a><span class="co"># boxplot is the command.  You can have a command on several lines.</span></span>
-<span id="cb36-2"><a href="lab-1.html#cb36-2"></a></span>
-<span id="cb36-3"><a href="lab-1.html#cb36-3"></a><span class="kw">boxplot</span>(mpg<span class="op">~</span>am,          <span class="co"># the miles per gallon column vs each level of transmission</span></span>
-<span id="cb36-4"><a href="lab-1.html#cb36-4"></a>        <span class="dt">data=</span>mtcars,                         <span class="co"># from the mtcars table</span></span>
-<span id="cb36-5"><a href="lab-1.html#cb36-5"></a>        <span class="dt">xlab=</span><span class="st">&quot;Transmission&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;mpg&quot;</span>, </span>
-<span id="cb36-6"><a href="lab-1.html#cb36-6"></a>        <span class="dt">names=</span><span class="kw">c</span>(<span class="st">&quot;Auto&quot;</span>,<span class="st">&quot;Manual&quot;</span>),            <span class="co"># make nice labels</span></span>
-<span id="cb36-7"><a href="lab-1.html#cb36-7"></a>        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;deepskyblue4&quot;</span>,<span class="st">&quot;deepskyblue&quot;</span>)) <span class="co"># and colours</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="lab-1.html#cb215-1"></a><span class="co"># boxplot is the command.  You can have a command on several lines.</span></span>
+<span id="cb215-2"><a href="lab-1.html#cb215-2"></a></span>
+<span id="cb215-3"><a href="lab-1.html#cb215-3"></a><span class="kw">boxplot</span>(mpg<span class="op">~</span>am,          <span class="co"># the miles per gallon column vs each level of transmission</span></span>
+<span id="cb215-4"><a href="lab-1.html#cb215-4"></a>        <span class="dt">data=</span>mtcars,                         <span class="co"># from the mtcars table</span></span>
+<span id="cb215-5"><a href="lab-1.html#cb215-5"></a>        <span class="dt">xlab=</span><span class="st">&quot;Transmission&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;mpg&quot;</span>, </span>
+<span id="cb215-6"><a href="lab-1.html#cb215-6"></a>        <span class="dt">names=</span><span class="kw">c</span>(<span class="st">&quot;Auto&quot;</span>,<span class="st">&quot;Manual&quot;</span>),            <span class="co"># make nice labels</span></span>
+<span id="cb215-7"><a href="lab-1.html#cb215-7"></a>        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;deepskyblue4&quot;</span>,<span class="st">&quot;deepskyblue&quot;</span>)) <span class="co"># and colours</span></span></code></pre></div>
 <p><strong>Question C:</strong> <em>Briefly comment on what you can tell about the cars dataset from this plot.</em></p>
 <p><strong>Step 5:</strong></p>
 <p>As we discussed above, the mtcars table is loaded into R and we can look at it either by typing its name or by using commands like <code>head()</code> to show the first few lines.</p>
@@ -710,16 +744,16 @@ Figure 2.9: You should see TWO new files appear in your lab 1 folder
 <p>Once you have calculated these, under the code chunk, write a summary of your results as a full sentence e.g. <em>The average miles-per-gallon of 1973-1974 car models was found to be…</em></p>
 <p><strong>Step 6:</strong></p>
 <p>We want to see if our data is normally distributed. We can do this using the histogram and normal-qq plot. The code below makes a histogram and QQNorm plot for the car horsepower. It also runs a Shapiro-Wilks test for the horsepower.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="lab-1.html#cb37-1"></a><span class="kw">hist</span>(mtcars<span class="op">$</span>hp,<span class="dt">br=</span><span class="dv">10</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="lab-1.html#cb38-1"></a><span class="co"># The hash at the front of a line means I want R to ignore this code. It is invisible to R - a &quot;comment&quot;</span></span>
-<span id="cb38-2"><a href="lab-1.html#cb38-2"></a><span class="co"># These two lines were the original way to make a QQ-norm plot. Feel free to uncomment and run them</span></span>
-<span id="cb38-3"><a href="lab-1.html#cb38-3"></a><span class="co"># qqnorm(mtcars$mpg, pch = 1, frame = FALSE)</span></span>
-<span id="cb38-4"><a href="lab-1.html#cb38-4"></a><span class="co"># qqline(mtcars$mpg, col = &quot;steelblue&quot;, lwd = 2)</span></span>
-<span id="cb38-5"><a href="lab-1.html#cb38-5"></a></span>
-<span id="cb38-6"><a href="lab-1.html#cb38-6"></a><span class="co"># Instead we are going to use a nicer format from the `ggpubr` library</span></span>
-<span id="cb38-7"><a href="lab-1.html#cb38-7"></a><span class="kw">ggqqplot</span>(mtcars<span class="op">$</span>hp,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="lab-1.html#cb39-1"></a><span class="co"># Shapiro Wilks test</span></span>
-<span id="cb39-2"><a href="lab-1.html#cb39-2"></a><span class="kw">shapiro.test</span>(mtcars<span class="op">$</span>hp)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="lab-1.html#cb216-1"></a><span class="kw">hist</span>(mtcars<span class="op">$</span>hp,<span class="dt">br=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="lab-1.html#cb217-1"></a><span class="co"># The hash at the front of a line means I want R to ignore this code. It is invisible to R - a &quot;comment&quot;</span></span>
+<span id="cb217-2"><a href="lab-1.html#cb217-2"></a><span class="co"># These two lines were the original way to make a QQ-norm plot. Feel free to uncomment and run them</span></span>
+<span id="cb217-3"><a href="lab-1.html#cb217-3"></a><span class="co"># qqnorm(mtcars$mpg, pch = 1, frame = FALSE)</span></span>
+<span id="cb217-4"><a href="lab-1.html#cb217-4"></a><span class="co"># qqline(mtcars$mpg, col = &quot;steelblue&quot;, lwd = 2)</span></span>
+<span id="cb217-5"><a href="lab-1.html#cb217-5"></a></span>
+<span id="cb217-6"><a href="lab-1.html#cb217-6"></a><span class="co"># Instead we are going to use a nicer format from the `ggpubr` library</span></span>
+<span id="cb217-7"><a href="lab-1.html#cb217-7"></a><span class="kw">ggqqplot</span>(mtcars<span class="op">$</span>hp,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="lab-1.html#cb218-1"></a><span class="co"># Shapiro Wilks test</span></span>
+<span id="cb218-2"><a href="lab-1.html#cb218-2"></a><span class="kw">shapiro.test</span>(mtcars<span class="op">$</span>hp)</span></code></pre></div>
 <pre><code>## 
 ## 	Shapiro-Wilk normality test
 ## 
@@ -730,15 +764,15 @@ Figure 2.9: You should see TWO new files appear in your lab 1 folder
 <p><strong>Step 7:</strong></p>
 <p>Now we’re going to move onto some commands that allow us to calculate normal probabilities using R, rather than slowly by hand. Using the R functions <code>pnorm()</code> and <code>qnorm()</code>, we can find the cumulative probabilities and normal quantiles for any normal distribution.</p>
 <p>For example, Cat lifespans have a normal distribution with a mean of 15.4 and a standard deviation of 2.3. What’s the probability of a cat lifespan less than 14 years?</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="lab-1.html#cb41-1"></a>?pnorm <span class="co"># use the help file of ?pnorm to see what lower.tail=TRUE/FALSE does</span></span>
-<span id="cb41-2"><a href="lab-1.html#cb41-2"></a><span class="kw">pnorm</span>(<span class="dv">14</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>,<span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="lab-1.html#cb220-1"></a>?pnorm <span class="co"># use the help file of ?pnorm to see what lower.tail=TRUE/FALSE does</span></span>
+<span id="cb220-2"><a href="lab-1.html#cb220-2"></a><span class="kw">pnorm</span>(<span class="dv">14</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>,<span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2798345</code></pre>
 <p>So, it’s 0.2798 - or ~28%</p>
 <p>What about the probability of a cat being older than 20?</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="lab-1.html#cb43-1"></a><span class="kw">pnorm</span>(<span class="dv">20</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>,<span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="lab-1.html#cb222-1"></a><span class="kw">pnorm</span>(<span class="dv">20</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>,<span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02764015</code></pre>
 <p>Normal quantiles go the other way around - they tell you the z score for whatever probability you require. For example, 80% of cats live to be what age?</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="lab-1.html#cb45-1"></a><span class="kw">qnorm</span>(.<span class="dv">80</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="lab-1.html#cb224-1"></a><span class="kw">qnorm</span>(.<span class="dv">80</span>,<span class="dt">mean=</span><span class="fl">15.4</span>,<span class="dt">sd=</span><span class="fl">2.4</span>)</span></code></pre></div>
 <pre><code>## [1] 17.41989</code></pre>
 <p>So the the answer is 17.42 years (remember the units!)</p>
 <p><strong>Question F:</strong></p>
@@ -858,6 +892,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

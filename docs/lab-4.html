@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-03" />
+<meta name="date" content="2021-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -197,9 +204,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.16" data-path="index.html"><a href="index.html#S.Tutorial.5B"><i class="fa fa-check"></i><b>1.16</b> Tutorial 5B Diagnostics part A</a><ul>
 <li class="chapter" data-level="1.16.1" data-path="index.html"><a href="index.html#S.Tutorial.5B.1"><i class="fa fa-check"></i><b>1.16.1</b> Residual plots</a></li>
+<li class="chapter" data-level="1.16.2" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.16.2</b> Checking Linearity</a></li>
+<li class="chapter" data-level="1.16.3" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.16.3</b> Checking Independence</a></li>
+<li class="chapter" data-level="1.16.4" data-path="index.html"><a href="index.html#S.Tutorial.5B.4"><i class="fa fa-check"></i><b>1.16.4</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.16.5" data-path="index.html"><a href="index.html#S.Tutorial.5B.5"><i class="fa fa-check"></i><b>1.16.5</b> Checking Equal Variance/homoskadisity</a></li>
 </ul></li>
-<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.17</b> Checking Linearity</a></li>
-<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.18</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5C"><i class="fa fa-check"></i><b>1.17</b> Tutorial 5C Confidence and Prediction Intervals</a></li>
+<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.6A"><i class="fa fa-check"></i><b>1.18</b> Tutorial 6A Diagnostics part B: Outliers</a><ul>
+<li class="chapter" data-level="1.18.1" data-path="index.html"><a href="index.html#Tutorial.6A0"><i class="fa fa-check"></i><b>1.18.1</b> Visual inspection</a></li>
+<li class="chapter" data-level="1.18.2" data-path="index.html"><a href="index.html#Tutorial.6A1"><i class="fa fa-check"></i><b>1.18.2</b> Detecting leverage</a></li>
+<li class="chapter" data-level="1.18.3" data-path="index.html"><a href="index.html#Tutorial.6A2"><i class="fa fa-check"></i><b>1.18.3</b> Detecting outliers</a></li>
+<li class="chapter" data-level="1.18.4" data-path="index.html"><a href="index.html#Tutorial.6AC"><i class="fa fa-check"></i><b>1.18.4</b> Detecting influential points</a></li>
+</ul></li>
+<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#test"><i class="fa fa-check"></i><b>1.19</b> test</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -223,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.3" data-path="lab-1.html"><a href="lab-1.html#friend"><i class="fa fa-check"></i><b>2.5.3</b> “Friendly text”</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-3"><i class="fa fa-check"></i><b>2.6</b> Lab Challenge 3</a></li>
-<li class="chapter" data-level="2.7" data-path="lab-1.html"><a href="lab-1.html#submitting-lab-1"><i class="fa fa-check"></i><b>2.7</b> Submitting Lab 1</a><ul>
+<li class="chapter" data-level="2.7" data-path="lab-1.html"><a href="lab-1.html#submitting-lab-1-section.l1.7"><i class="fa fa-check"></i><b>2.7</b> Submitting Lab 1 {Section.L1.7}</a><ul>
 <li class="chapter" data-level="2.7.1" data-path="lab-1.html"><a href="lab-1.html#lab-1-submission-check"><i class="fa fa-check"></i><b>2.7.1</b> Lab 1 submission check</a></li>
 </ul></li>
 </ul></li>
@@ -263,9 +280,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="lab-5.html"><a href="lab-5.html"><i class="fa fa-check"></i><b>6</b> Lab 5</a><ul>
 <li class="chapter" data-level="6.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-general-information"><i class="fa fa-check"></i><b>6.1</b> Lab 5 General information</a></li>
-<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup-markdown"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup &amp; Markdown</a></li>
-<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.3</b> Submitting Lab 5</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.3.1</b> Lab 5 submission check</a></li>
+<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup</a></li>
+<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#advertising-challenge"><i class="fa fa-check"></i><b>6.3</b> Advertising challenge</a><ul>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-1-read-in-data"><i class="fa fa-check"></i>Question 1: Read in data</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-2-make-models"><i class="fa fa-check"></i>Question 2: Make models</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-3-favourite-model"><i class="fa fa-check"></i>Question 3: Favourite model</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-4-peace-lilies"><i class="fa fa-check"></i>Question 4: Peace lilies</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-5-tv-fears"><i class="fa fa-check"></i>Question 5: TV fears</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-6-best-day-ever"><i class="fa fa-check"></i>Question 6: Best day ever</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-7-testing-slr-assumptions"><i class="fa fa-check"></i>Question 7: Testing SLR Assumptions</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-8-optional-bonus-2"><i class="fa fa-check"></i>Question 8 [OPTIONAL BONUS 2%] :</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.4</b> Submitting Lab 5</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.4.1</b> Lab 5 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lab-6.html"><a href="lab-6.html"><i class="fa fa-check"></i><b>7</b> Lab 6</a><ul>
+<li class="chapter" data-level="7.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-general-information"><i class="fa fa-check"></i><b>7.1</b> Lab 6 General information</a></li>
+<li class="chapter" data-level="7.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-setup"><i class="fa fa-check"></i><b>7.2</b> Lab 6 Setup</a></li>
+<li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.3</b> Submitting Lab 6</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.3.1</b> Lab 6 submission check</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -321,17 +355,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-4.html#cb1-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="lab-4.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="lab-4.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="lab-4.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb1-5"><a href="lab-4.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
-<span id="cb1-6"><a href="lab-4.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
-<span id="cb1-7"><a href="lab-4.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
-<span id="cb1-8"><a href="lab-4.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
-<span id="cb1-9"><a href="lab-4.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
-<span id="cb1-10"><a href="lab-4.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
-<span id="cb1-11"><a href="lab-4.html#cb1-11"></a><span class="kw">library</span>(plotly) </span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="lab-4.html#cb238-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb238-2"><a href="lab-4.html#cb238-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb238-3"><a href="lab-4.html#cb238-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb238-4"><a href="lab-4.html#cb238-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb238-5"><a href="lab-4.html#cb238-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb238-6"><a href="lab-4.html#cb238-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb238-7"><a href="lab-4.html#cb238-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb238-8"><a href="lab-4.html#cb238-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb238-9"><a href="lab-4.html#cb238-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb238-10"><a href="lab-4.html#cb238-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb238-11"><a href="lab-4.html#cb238-11"></a><span class="kw">library</span>(plotly) </span></code></pre></div>
 <ul>
 <li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
 </ul>
@@ -350,16 +384,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="reading-in-the-data" class="section level3 unnumbered">
 <h3>Reading in the data</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="lab-4.html#cb2-1"></a>spending &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;expenditure.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="lab-4.html#cb239-1"></a>spending &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;expenditure.xlsx&quot;</span>)</span></code></pre></div>
 <p>[Step 5]. The <code>paste()</code> command allows you to stick together R output like text or the output of code. For example, rather than just printing out the number of rows, I can put the output into a sentence:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="lab-4.html#cb3-1"></a><span class="co">## So this command says</span></span>
-<span id="cb3-2"><a href="lab-4.html#cb3-2"></a><span class="co"># [1] I am going to print something</span></span>
-<span id="cb3-3"><a href="lab-4.html#cb3-3"></a><span class="co"># [2] The thing I am going to print is the output of the paste command</span></span>
-<span id="cb3-4"><a href="lab-4.html#cb3-4"></a><span class="co"># [3] The things I am pasting together are the sentence &quot;Number of Rows:&quot; and the output of the</span></span>
-<span id="cb3-5"><a href="lab-4.html#cb3-5"></a><span class="co">#     nrow(mlb) command</span></span>
-<span id="cb3-6"><a href="lab-4.html#cb3-6"></a><span class="co"># [4] The output of the nrow(mlb) command is 150 e.g. there are 150 rows</span></span>
-<span id="cb3-7"><a href="lab-4.html#cb3-7"></a></span>
-<span id="cb3-8"><a href="lab-4.html#cb3-8"></a><span class="kw">print</span>( <span class="kw">paste</span>(<span class="st">&quot;Number of Rows:&quot;</span>,<span class="kw">nrow</span>(spending))  )</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="lab-4.html#cb240-1"></a><span class="co">## So this command says</span></span>
+<span id="cb240-2"><a href="lab-4.html#cb240-2"></a><span class="co"># [1] I am going to print something</span></span>
+<span id="cb240-3"><a href="lab-4.html#cb240-3"></a><span class="co"># [2] The thing I am going to print is the output of the paste command</span></span>
+<span id="cb240-4"><a href="lab-4.html#cb240-4"></a><span class="co"># [3] The things I am pasting together are the sentence &quot;Number of Rows:&quot; and the output of the</span></span>
+<span id="cb240-5"><a href="lab-4.html#cb240-5"></a><span class="co">#     nrow(mlb) command</span></span>
+<span id="cb240-6"><a href="lab-4.html#cb240-6"></a><span class="co"># [4] The output of the nrow(mlb) command is 150 e.g. there are 150 rows</span></span>
+<span id="cb240-7"><a href="lab-4.html#cb240-7"></a></span>
+<span id="cb240-8"><a href="lab-4.html#cb240-8"></a><span class="kw">print</span>( <span class="kw">paste</span>(<span class="st">&quot;Number of Rows:&quot;</span>,<span class="kw">nrow</span>(spending))  )</span></code></pre></div>
 <pre><code>## [1] &quot;Number of Rows: 29&quot;</code></pre>
 <p>Now it’s your turn. Create a sentence which says “Number of Columns:” and then tells me how many columns the data has. Hint, see eariler labs, use google or read <code>?base::nrow</code> for to hunt for the command itself.</p>
 </div>
@@ -520,6 +554,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

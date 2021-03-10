@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-04" />
+<meta name="date" content="2021-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="lab-4.html"/>
-
+<link rel="next" href="lab-6.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -203,6 +210,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.16.5" data-path="index.html"><a href="index.html#S.Tutorial.5B.5"><i class="fa fa-check"></i><b>1.16.5</b> Checking Equal Variance/homoskadisity</a></li>
 </ul></li>
 <li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5C"><i class="fa fa-check"></i><b>1.17</b> Tutorial 5C Confidence and Prediction Intervals</a></li>
+<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.6A"><i class="fa fa-check"></i><b>1.18</b> Tutorial 6A Diagnostics part B: Outliers</a><ul>
+<li class="chapter" data-level="1.18.1" data-path="index.html"><a href="index.html#Tutorial.6A0"><i class="fa fa-check"></i><b>1.18.1</b> Visual inspection</a></li>
+<li class="chapter" data-level="1.18.2" data-path="index.html"><a href="index.html#Tutorial.6A1"><i class="fa fa-check"></i><b>1.18.2</b> Detecting leverage</a></li>
+<li class="chapter" data-level="1.18.3" data-path="index.html"><a href="index.html#Tutorial.6A2"><i class="fa fa-check"></i><b>1.18.3</b> Detecting outliers</a></li>
+<li class="chapter" data-level="1.18.4" data-path="index.html"><a href="index.html#Tutorial.6AC"><i class="fa fa-check"></i><b>1.18.4</b> Detecting influential points</a></li>
+</ul></li>
+<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#test"><i class="fa fa-check"></i><b>1.19</b> test</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -281,6 +295,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.4.1</b> Lab 5 submission check</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="lab-6.html"><a href="lab-6.html"><i class="fa fa-check"></i><b>7</b> Lab 6</a><ul>
+<li class="chapter" data-level="7.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-general-information"><i class="fa fa-check"></i><b>7.1</b> Lab 6 General information</a></li>
+<li class="chapter" data-level="7.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-setup"><i class="fa fa-check"></i><b>7.2</b> Lab 6 Setup</a></li>
+<li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.3</b> Submitting Lab 6</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.3.1</b> Lab 6 submission check</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -334,19 +355,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-5.html#cb1-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="lab-5.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="lab-5.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="lab-5.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb1-5"><a href="lab-5.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
-<span id="cb1-6"><a href="lab-5.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
-<span id="cb1-7"><a href="lab-5.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
-<span id="cb1-8"><a href="lab-5.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
-<span id="cb1-9"><a href="lab-5.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
-<span id="cb1-10"><a href="lab-5.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
-<span id="cb1-11"><a href="lab-5.html#cb1-11"></a><span class="kw">library</span>(plotly) </span>
-<span id="cb1-12"><a href="lab-5.html#cb1-12"></a></span>
-<span id="cb1-13"><a href="lab-5.html#cb1-13"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="lab-5.html#cb242-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb242-2"><a href="lab-5.html#cb242-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb242-3"><a href="lab-5.html#cb242-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb242-4"><a href="lab-5.html#cb242-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb242-5"><a href="lab-5.html#cb242-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb242-6"><a href="lab-5.html#cb242-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb242-7"><a href="lab-5.html#cb242-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb242-8"><a href="lab-5.html#cb242-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb242-9"><a href="lab-5.html#cb242-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb242-10"><a href="lab-5.html#cb242-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb242-11"><a href="lab-5.html#cb242-11"></a><span class="kw">library</span>(plotly) </span>
+<span id="cb242-12"><a href="lab-5.html#cb242-12"></a></span>
+<span id="cb242-13"><a href="lab-5.html#cb242-13"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
 <ul>
 <li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
 </ul>
@@ -475,8 +496,8 @@ less - as your report becomes harder to read.</p>
           </div>
         </div>
       </div>
-<a href="lab-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lab-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -526,6 +547,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

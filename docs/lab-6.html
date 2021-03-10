@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Lab 6 | STAT-462 Lab book</title>
+  <meta name="description" content="Lab Book for STAT-462 2021" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Lab 6 | STAT-462 Lab book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lab Book for STAT-462 2021" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Lab 6 | STAT-462 Lab book" />
+  
+  <meta name="twitter:description" content="Lab Book for STAT-462 2021" />
+  
+
+<meta name="author" content="Helen Greatrex" />
+
+
+<meta name="date" content="2021-03-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lab-5.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Penn State STAT-462 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Tutorials</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#S.Tutorial.1A"><i class="fa fa-check"></i><b>1.1</b> Tutorial 1A: Installing R and R-studio</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#S.Tutorial.1A.1"><i class="fa fa-check"></i><b>1.1.1</b> Open R-studio</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#S.Tutorial.1A.2"><i class="fa fa-check"></i><b>1.1.2</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#S.Tutorial.1B"><i class="fa fa-check"></i><b>1.2</b> Tutorial 1B: Creating and loading R projects</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#S.Tutorial.1B.1"><i class="fa fa-check"></i><b>1.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#S.Tutorial.1C"><i class="fa fa-check"></i><b>1.3</b> Tutorial 1C: R coding basics</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#S.Tutorial.1C.1"><i class="fa fa-check"></i><b>1.3.1</b> Using R as a calculator</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#S.Tutorial.1C.2"><i class="fa fa-check"></i><b>1.3.2</b> Adding text</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#S.Tutorial.1C.3"><i class="fa fa-check"></i><b>1.3.3</b> Comparisons</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#S.Tutorial.1C.4"><i class="fa fa-check"></i><b>1.3.4</b> What if I press Enter too soon?</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#S.Tutorial.1C.5"><i class="fa fa-check"></i><b>1.3.5</b> Variables and assignment</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#S.Tutorial.1C.7"><i class="fa fa-check"></i><b>1.3.6</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#S.Tutorial.1D"><i class="fa fa-check"></i><b>1.4</b> Tutorial 1D: Packages</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#S.Tutorial.1E"><i class="fa fa-check"></i><b>1.5</b> Tutorial 1E: R Markdown basics</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#S.Tutorial.1E.1"><i class="fa fa-check"></i><b>1.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#S.Tutorial.1E.2"><i class="fa fa-check"></i><b>1.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#S.Tutorial.1E.3"><i class="fa fa-check"></i><b>1.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#S.Tutorial.2A"><i class="fa fa-check"></i><b>1.6</b> Tutorial 2A: Getting help in R</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#S.Tutorial.2A.1"><i class="fa fa-check"></i><b>1.6.1</b> Help on a specific command</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#S.Tutorial.2A.2"><i class="fa fa-check"></i><b>1.6.2</b> Finding a command name</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#S.Tutorial.2A.3"><i class="fa fa-check"></i><b>1.6.3</b> Asking the internet:</a></li>
+<li class="chapter" data-level="1.6.4" data-path="index.html"><a href="index.html#S.Tutorial.2A.4"><i class="fa fa-check"></i><b>1.6.4</b> General help &amp; cheatsheets</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#S.Tutorial.2B"><i class="fa fa-check"></i><b>1.7</b> Tutorial 2B: Markdown formats</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#S.Tutorial.2B.1"><i class="fa fa-check"></i><b>1.7.1</b> Editing YAML code</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#S.Tutorial.2B.2"><i class="fa fa-check"></i><b>1.7.2</b> Text formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#S.Tutorial.2C"><i class="fa fa-check"></i><b>1.8</b> Tutorial 2C: Selecting &amp; summarising data</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#S.Tutorial.2C.1"><i class="fa fa-check"></i><b>1.8.1</b> Data.frame introduction</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#S.Tutorial.2C.2"><i class="fa fa-check"></i><b>1.8.2</b> Selecting individual values</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#S.Tutorial.2C.3"><i class="fa fa-check"></i><b>1.8.3</b> Selecting a single column</a></li>
+<li class="chapter" data-level="1.8.4" data-path="index.html"><a href="index.html#S.Tutorial.2C.4"><i class="fa fa-check"></i><b>1.8.4</b> Selecting mulitple columns</a></li>
+<li class="chapter" data-level="1.8.5" data-path="index.html"><a href="index.html#S.Tutorial.2C.5"><i class="fa fa-check"></i><b>1.8.5</b> Selecting subsets of rows/observations</a></li>
+<li class="chapter" data-level="1.8.6" data-path="index.html"><a href="index.html#S.Tutorial.2C.6"><i class="fa fa-check"></i><b>1.8.6</b> Looking at summary tables</a></li>
+<li class="chapter" data-level="1.8.7" data-path="index.html"><a href="index.html#S.Tutorial.2C.7"><i class="fa fa-check"></i><b>1.8.7</b> Basic plots (one variable)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#S.Tutorial.2D"><i class="fa fa-check"></i><b>1.9</b> Tutorial 2D: Distributions and tests</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="index.html#S.Tutorial.2D.1"><i class="fa fa-check"></i><b>1.9.1</b> Normal distribution</a></li>
+<li class="chapter" data-level="1.9.2" data-path="index.html"><a href="index.html#S.Tutorial.2D.2"><i class="fa fa-check"></i><b>1.9.2</b> Student’s t-distribution</a></li>
+<li class="chapter" data-level="1.9.3" data-path="index.html"><a href="index.html#S.Tutorial.2D.3"><i class="fa fa-check"></i><b>1.9.3</b> Wilks Shapiro test for normality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#S.Tutorial.3A"><i class="fa fa-check"></i><b>1.10</b> Tutorial 3A - Editing code chunks</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#S.Tutorial.3B"><i class="fa fa-check"></i><b>1.11</b> Tutorial 3B - Regression Models</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="index.html"><a href="index.html#S.Tutorial.3B.1"><i class="fa fa-check"></i><b>1.11.1</b> “Standard” regression output</a></li>
+<li class="chapter" data-level="1.11.2" data-path="index.html"><a href="index.html#S.Tutorial.3B.2"><i class="fa fa-check"></i><b>1.11.2</b> “Fancy” OLSRR regression output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#S.Tutorial.4A"><i class="fa fa-check"></i><b>1.12</b> Tutorial 4A: Plotting in ggplot2</a></li>
+<li class="chapter" data-level="1.13" data-path="index.html"><a href="index.html#S.Tutorial.4B"><i class="fa fa-check"></i><b>1.13</b> Tutorial 4B: Identifying/removing outliers</a></li>
+<li class="chapter" data-level="1.14" data-path="index.html"><a href="index.html#S.Tutorial.4C"><i class="fa fa-check"></i><b>1.14</b> Tutorial 4C Writing equations in R-Studio</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="index.html"><a href="index.html#S.Tutorial.4C.1"><i class="fa fa-check"></i><b>1.14.1</b> In Markdown</a></li>
+<li class="chapter" data-level="1.14.2" data-path="index.html"><a href="index.html#S.Tutorial.4C.2"><i class="fa fa-check"></i><b>1.14.2</b> Using Equatiomatic</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="index.html"><a href="index.html#S.Tutorial.5A"><i class="fa fa-check"></i><b>1.15</b> Tutorial 5A ANOVA</a><ul>
+<li class="chapter" data-level="1.15.1" data-path="index.html"><a href="index.html#S.Tutorial.5A.1"><i class="fa fa-check"></i><b>1.15.1</b> Base R</a></li>
+<li class="chapter" data-level="1.15.2" data-path="index.html"><a href="index.html#S.Tutorial.5A.2"><i class="fa fa-check"></i><b>1.15.2</b> Using OLSRR</a></li>
+</ul></li>
+<li class="chapter" data-level="1.16" data-path="index.html"><a href="index.html#S.Tutorial.5B"><i class="fa fa-check"></i><b>1.16</b> Tutorial 5B Diagnostics part A</a><ul>
+<li class="chapter" data-level="1.16.1" data-path="index.html"><a href="index.html#S.Tutorial.5B.1"><i class="fa fa-check"></i><b>1.16.1</b> Residual plots</a></li>
+<li class="chapter" data-level="1.16.2" data-path="index.html"><a href="index.html#S.Tutorial.5B.2"><i class="fa fa-check"></i><b>1.16.2</b> Checking Linearity</a></li>
+<li class="chapter" data-level="1.16.3" data-path="index.html"><a href="index.html#S.Tutorial.5B.3"><i class="fa fa-check"></i><b>1.16.3</b> Checking Independence</a></li>
+<li class="chapter" data-level="1.16.4" data-path="index.html"><a href="index.html#S.Tutorial.5B.4"><i class="fa fa-check"></i><b>1.16.4</b> Checking Normality</a></li>
+<li class="chapter" data-level="1.16.5" data-path="index.html"><a href="index.html#S.Tutorial.5B.5"><i class="fa fa-check"></i><b>1.16.5</b> Checking Equal Variance/homoskadisity</a></li>
+</ul></li>
+<li class="chapter" data-level="1.17" data-path="index.html"><a href="index.html#S.Tutorial.5C"><i class="fa fa-check"></i><b>1.17</b> Tutorial 5C Confidence and Prediction Intervals</a></li>
+<li class="chapter" data-level="1.18" data-path="index.html"><a href="index.html#S.Tutorial.6A"><i class="fa fa-check"></i><b>1.18</b> Tutorial 6A Diagnostics part B: Outliers</a><ul>
+<li class="chapter" data-level="1.18.1" data-path="index.html"><a href="index.html#Tutorial.6A0"><i class="fa fa-check"></i><b>1.18.1</b> Visual inspection</a></li>
+<li class="chapter" data-level="1.18.2" data-path="index.html"><a href="index.html#Tutorial.6A1"><i class="fa fa-check"></i><b>1.18.2</b> Detecting leverage</a></li>
+<li class="chapter" data-level="1.18.3" data-path="index.html"><a href="index.html#Tutorial.6A2"><i class="fa fa-check"></i><b>1.18.3</b> Detecting outliers</a></li>
+<li class="chapter" data-level="1.18.4" data-path="index.html"><a href="index.html#Tutorial.6AC"><i class="fa fa-check"></i><b>1.18.4</b> Detecting influential points</a></li>
+</ul></li>
+<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#test"><i class="fa fa-check"></i><b>1.19</b> test</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
+<li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="lab-1.html"><a href="lab-1.html#why-is-this-class-in-r"><i class="fa fa-check"></i><b>2.1.1</b> Why is this class in R?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lab-1.html"><a href="lab-1.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>2.1.2</b> Installing R and R-studio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lab-1.html"><a href="lab-1.html#open-r-studio"><i class="fa fa-check"></i><b>2.1.3</b> Open R-studio</a></li>
+<li class="chapter" data-level="2.1.4" data-path="lab-1.html"><a href="lab-1.html#change-a-few-settings"><i class="fa fa-check"></i><b>2.1.4</b> Change a few settings</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-1"><i class="fa fa-check"></i><b>2.2</b> Lab challenge 1</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="lab-1.html"><a href="lab-1.html#what-are-projects"><i class="fa fa-check"></i><b>2.2.1</b> What are projects?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="lab-1.html"><a href="lab-1.html#r-coding-basics"><i class="fa fa-check"></i><b>2.3</b> R coding basics</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="lab-1.html"><a href="lab-1.html#variables-and-assignment"><i class="fa fa-check"></i><b>2.3.1</b> Variables and assignment</a></li>
+<li class="chapter" data-level="2.3.2" data-path="lab-1.html"><a href="lab-1.html#functions"><i class="fa fa-check"></i><b>2.3.2</b> Functions</a></li>
+<li class="chapter" data-level="2.3.3" data-path="lab-1.html"><a href="lab-1.html#packages"><i class="fa fa-check"></i><b>2.3.3</b> Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-2"><i class="fa fa-check"></i><b>2.4</b> Lab Challenge 2</a></li>
+<li class="chapter" data-level="2.5" data-path="lab-1.html"><a href="lab-1.html#markdown-exploratory-analysis"><i class="fa fa-check"></i><b>2.5</b> Markdown &amp; Exploratory Analysis</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="lab-1.html"><a href="lab-1.html#what-is-r-markdown"><i class="fa fa-check"></i><b>2.5.1</b> What is R-markdown?</a></li>
+<li class="chapter" data-level="2.5.2" data-path="lab-1.html"><a href="lab-1.html#creating-a-markdown-document"><i class="fa fa-check"></i><b>2.5.2</b> Creating a markdown document</a></li>
+<li class="chapter" data-level="2.5.3" data-path="lab-1.html"><a href="lab-1.html#friend"><i class="fa fa-check"></i><b>2.5.3</b> “Friendly text”</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="lab-1.html"><a href="lab-1.html#lab-challenge-3"><i class="fa fa-check"></i><b>2.6</b> Lab Challenge 3</a></li>
+<li class="chapter" data-level="2.7" data-path="lab-1.html"><a href="lab-1.html#submitting-lab-1-section.l1.7"><i class="fa fa-check"></i><b>2.7</b> Submitting Lab 1 {Section.L1.7}</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="lab-1.html"><a href="lab-1.html#lab-1-submission-check"><i class="fa fa-check"></i><b>2.7.1</b> Lab 1 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lab-2.html"><a href="lab-2.html"><i class="fa fa-check"></i><b>3</b> Lab 2</a><ul>
+<li class="chapter" data-level="3.1" data-path="lab-2.html"><a href="lab-2.html#general-information"><i class="fa fa-check"></i><b>3.1</b> General information</a></li>
+<li class="chapter" data-level="3.2" data-path="lab-2.html"><a href="lab-2.html#tutorials"><i class="fa fa-check"></i><b>3.2</b> Tutorials</a></li>
+<li class="chapter" data-level="3.3" data-path="lab-2.html"><a href="lab-2.html#setting-up-your-code"><i class="fa fa-check"></i><b>3.3</b> Setting up your code</a></li>
+<li class="chapter" data-level="3.4" data-path="lab-2.html"><a href="lab-2.html#markdown-formatting-and-yaml"><i class="fa fa-check"></i><b>3.4</b> Markdown formatting and YAML</a></li>
+<li class="chapter" data-level="3.5" data-path="lab-2.html"><a href="lab-2.html#confidence-intervals"><i class="fa fa-check"></i><b>3.5</b> Confidence intervals</a></li>
+<li class="chapter" data-level="3.6" data-path="lab-2.html"><a href="lab-2.html#hypothesis-testing"><i class="fa fa-check"></i><b>3.6</b> Hypothesis testing</a></li>
+<li class="chapter" data-level="3.7" data-path="lab-2.html"><a href="lab-2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.7</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="3.8" data-path="lab-2.html"><a href="lab-2.html#submitting-lab-2"><i class="fa fa-check"></i><b>3.8</b> Submitting Lab 2</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="lab-2.html"><a href="lab-2.html#lab-2-submission-check"><i class="fa fa-check"></i><b>3.8.1</b> Lab 2 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lab-3.html"><a href="lab-3.html"><i class="fa fa-check"></i><b>4</b> Lab 3</a><ul>
+<li class="chapter" data-level="4.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-general-information"><i class="fa fa-check"></i><b>4.1</b> Lab 3 General information</a></li>
+<li class="chapter" data-level="4.2" data-path="lab-3.html"><a href="lab-3.html#installing-new-packages"><i class="fa fa-check"></i><b>4.2</b> Installing new packages</a></li>
+<li class="chapter" data-level="4.3" data-path="lab-3.html"><a href="lab-3.html#lab-3-setup-markdown"><i class="fa fa-check"></i><b>4.3</b> Lab 3 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="4.4" data-path="lab-3.html"><a href="lab-3.html#regression-basics"><i class="fa fa-check"></i><b>4.4</b> Regression basics</a></li>
+<li class="chapter" data-level="4.5" data-path="lab-3.html"><a href="lab-3.html#taiwan-housing-challenge."><i class="fa fa-check"></i><b>4.5</b> Taiwan housing challenge.</a></li>
+<li class="chapter" data-level="4.6" data-path="lab-3.html"><a href="lab-3.html#submitting-lab-3"><i class="fa fa-check"></i><b>4.6</b> Submitting Lab 3</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="lab-3.html"><a href="lab-3.html#lab-3-submission-check"><i class="fa fa-check"></i><b>4.6.1</b> Lab 3 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lab-4.html"><a href="lab-4.html"><i class="fa fa-check"></i><b>5</b> Lab 4</a><ul>
+<li class="chapter" data-level="5.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-general-information"><i class="fa fa-check"></i><b>5.1</b> Lab 4 General information</a></li>
+<li class="chapter" data-level="5.2" data-path="lab-4.html"><a href="lab-4.html#lab-4-setup-markdown"><i class="fa fa-check"></i><b>5.2</b> Lab 4 Setup &amp; Markdown</a></li>
+<li class="chapter" data-level="5.3" data-path="lab-4.html"><a href="lab-4.html#public-safety-spending"><i class="fa fa-check"></i><b>5.3</b> Public safety spending</a><ul>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#checking-folder-names"><i class="fa fa-check"></i>Checking folder names</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#reading-in-the-data"><i class="fa fa-check"></i>Reading in the data</a></li>
+<li class="chapter" data-level="" data-path="lab-4.html"><a href="lab-4.html#analysis"><i class="fa fa-check"></i>Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lab-4.html"><a href="lab-4.html#submitting-lab-4"><i class="fa fa-check"></i><b>5.4</b> Submitting Lab 4</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="lab-4.html"><a href="lab-4.html#lab-4-submission-check"><i class="fa fa-check"></i><b>5.4.1</b> Lab 4 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lab-5.html"><a href="lab-5.html"><i class="fa fa-check"></i><b>6</b> Lab 5</a><ul>
+<li class="chapter" data-level="6.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-general-information"><i class="fa fa-check"></i><b>6.1</b> Lab 5 General information</a></li>
+<li class="chapter" data-level="6.2" data-path="lab-5.html"><a href="lab-5.html#lab-5-setup"><i class="fa fa-check"></i><b>6.2</b> Lab 5 Setup</a></li>
+<li class="chapter" data-level="6.3" data-path="lab-5.html"><a href="lab-5.html#advertising-challenge"><i class="fa fa-check"></i><b>6.3</b> Advertising challenge</a><ul>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-1-read-in-data"><i class="fa fa-check"></i>Question 1: Read in data</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-2-make-models"><i class="fa fa-check"></i>Question 2: Make models</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-3-favourite-model"><i class="fa fa-check"></i>Question 3: Favourite model</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-4-peace-lilies"><i class="fa fa-check"></i>Question 4: Peace lilies</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-5-tv-fears"><i class="fa fa-check"></i>Question 5: TV fears</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-6-best-day-ever"><i class="fa fa-check"></i>Question 6: Best day ever</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-7-testing-slr-assumptions"><i class="fa fa-check"></i>Question 7: Testing SLR Assumptions</a></li>
+<li class="chapter" data-level="" data-path="lab-5.html"><a href="lab-5.html#question-8-optional-bonus-2"><i class="fa fa-check"></i>Question 8 [OPTIONAL BONUS 2%] :</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="lab-5.html"><a href="lab-5.html#submitting-lab-5"><i class="fa fa-check"></i><b>6.4</b> Submitting Lab 5</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="lab-5.html"><a href="lab-5.html#lab-5-submission-check"><i class="fa fa-check"></i><b>6.4.1</b> Lab 5 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lab-6.html"><a href="lab-6.html"><i class="fa fa-check"></i><b>7</b> Lab 6</a><ul>
+<li class="chapter" data-level="7.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-general-information"><i class="fa fa-check"></i><b>7.1</b> Lab 6 General information</a></li>
+<li class="chapter" data-level="7.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-setup"><i class="fa fa-check"></i><b>7.2</b> Lab 6 Setup</a></li>
+<li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#diagnostic-summaries"><i class="fa fa-check"></i><b>7.3</b> Diagnostic summaries</a></li>
+<li class="chapter" data-level="7.4" data-path="lab-6.html"><a href="lab-6.html#florida-fish-challenge"><i class="fa fa-check"></i><b>7.4</b> Florida Fish Challenge</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="lab-6.html"><a href="lab-6.html#important-background"><i class="fa fa-check"></i><b>7.4.1</b> Important background</a></li>
+<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Access the data</a></li>
+<li class="chapter" data-level="" data-path="lab-6.html"><a href="lab-6.html#question-1-optional-bonus-2"><i class="fa fa-check"></i>Question 1 [OPTIONAL BONUS 2%] :</a></li>
+<li class="chapter" data-level="7.4.3" data-path="lab-4.html"><a href="lab-4.html#question-2"><i class="fa fa-check"></i><b>7.4.3</b> Question 2</a></li>
+<li class="chapter" data-level="7.4.4" data-path="lab-4.html"><a href="lab-4.html#question-3"><i class="fa fa-check"></i><b>7.4.4</b> Question 3</a></li>
+<li class="chapter" data-level="7.4.5" data-path="lab-4.html"><a href="lab-4.html#question-4"><i class="fa fa-check"></i><b>7.4.5</b> Question 4</a></li>
+<li class="chapter" data-level="7.4.6" data-path="lab-4.html"><a href="lab-4.html#question-5"><i class="fa fa-check"></i><b>7.4.6</b> Question 5</a></li>
+<li class="chapter" data-level="7.4.7" data-path="lab-4.html"><a href="lab-4.html#question-6"><i class="fa fa-check"></i><b>7.4.7</b> Question 6</a></li>
+<li class="chapter" data-level="7.4.8" data-path="lab-4.html"><a href="lab-4.html#question-7"><i class="fa fa-check"></i><b>7.4.8</b> Question 7</a></li>
+<li class="chapter" data-level="7.4.9" data-path="lab-4.html"><a href="lab-4.html#question-8"><i class="fa fa-check"></i><b>7.4.9</b> Question 8</a></li>
+<li class="chapter" data-level="7.4.10" data-path="lab-4.html"><a href="lab-4.html#question-9"><i class="fa fa-check"></i><b>7.4.10</b> Question 9</a></li>
+<li class="chapter" data-level="7.4.11" data-path="lab-4.html"><a href="lab-4.html#question-10"><i class="fa fa-check"></i><b>7.4.11</b> Question 10</a></li>
+<li class="chapter" data-level="7.4.12" data-path="lab-4.html"><a href="lab-4.html#question-11"><i class="fa fa-check"></i><b>7.4.12</b> Question 11</a></li>
+<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12"><i class="fa fa-check"></i><b>7.4.13</b> Question 12</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.5</b> Submitting Lab 6</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.5.1</b> Lab 6 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STAT-462 Lab book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lab-6" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Lab 6</h1>
+<div id="lab-6-general-information" class="section level2">
+<h2><span class="header-section-number">7.1</span> Lab 6 General information</h2>
+<p>Welcome to STAT-462 lab 6. The aim of this week is to:</p>
+<ul>
+<li>Be able to identify, assess and as necessary remove residuals</li>
+<li>To show how transforming data can allows you to overcome broken linear regression assumptions.</li>
+</ul>
+<p>This lab also provides less explicit instructions, but builds heavily on previous labs. So if you are not sure what to do, see what I was asking you to do in previous homeworks or in the lecture notes.</p>
+<div id="general-comments" class="section level5 unnumbered">
+<h5>General comments</h5>
+<ul>
+<li>You do not have to submit things you try from the tutorials, you will just be graded on the lab 6 assignment.<br />
+</li>
+<li>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706461" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706461</a></li>
+</ul>
+</div>
+<div id="lab-6-tutorials" class="section level5 unnumbered">
+<h5>Lab 6 Tutorials</h5>
+<p>It is worth reading the Lab 6 tutorials. <a href="index.html#S.Tutorial.6A">Tutorial 6A</a>) discusses Outlier diagnostics, which link with <a href="index.html#S.Tutorial.5B">Tutorial 5B</a>)</p>
+</div>
+</div>
+<div id="lab-6-setup" class="section level2">
+<h2><span class="header-section-number">7.2</span> Lab 6 Setup</h2>
+<ul>
+<li><p>Save all your work and if you haven’t already, create a Lab 6 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 6 that is linked to your Lab 6 folder (instructions in <a href="index.html#S.Tutorial.1B">Tutorial 1B</a>). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab6” (for me it will be hlg5155_Lab6)</p></li>
+<li><p>Remove the “friendly text” (see <a href="index.html#S.Tutorial.1E.3">Tutorial 1E</a> if you have no idea what I mean)</p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in <a href="index.html#S.Tutorial.2B.1">Tutorial 2B</a>. Choose any theme that you like.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
+<li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-6.html#cb1-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="lab-6.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="lab-6.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="lab-6.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb1-5"><a href="lab-6.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb1-6"><a href="lab-6.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb1-7"><a href="lab-6.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb1-8"><a href="lab-6.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb1-9"><a href="lab-6.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb1-10"><a href="lab-6.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb1-11"><a href="lab-6.html#cb1-11"></a><span class="kw">library</span>(plotly) </span>
+<span id="cb1-12"><a href="lab-6.html#cb1-12"></a><span class="kw">library</span>(nortest)</span>
+<span id="cb1-13"><a href="lab-6.html#cb1-13"></a></span>
+<span id="cb1-14"><a href="lab-6.html#cb1-14"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
+<ul>
+<li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
+</ul>
+</div>
+<div id="diagnostic-summaries" class="section level2">
+<h2><span class="header-section-number">7.3</span> Diagnostic summaries</h2>
+</div>
+<div id="florida-fish-challenge" class="section level2">
+<h2><span class="header-section-number">7.4</span> Florida Fish Challenge</h2>
+<div id="important-background" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Important background</h3>
+<p>Small amounts of the element mercury are present in many everyday foods. These do not normally affect your health, but too much mercury can be poisonous. Mercury itself is naturally occurring, but the amounts in the environment have been on the rise from industrialization. The metal can make its way into soil and water, and eventually build up in animals like fish, which are then eaten by people. More details here:</p>
+<ul>
+<li><a href="https://www.wearecognitive.com/project/extra-narrative/bbc-mercury" class="uri">https://www.wearecognitive.com/project/extra-narrative/bbc-mercury</a></li>
+<li><a href="https://medium.com/predict/mercury-pollution-reaches-the-deep-sea-f59a4938dc7c" class="uri">https://medium.com/predict/mercury-pollution-reaches-the-deep-sea-f59a4938dc7c</a></li>
+</ul>
+<p>In the late 1980s, there were widespread public safety concerns in Florida about high mercury concentrations in sport fish. In 1989, the State of Florida issued an advisory urging the public to limit consumption of “top level” predatory fish from Lake Tohopekaliga and connected waters: including largemouth bass (Micropterus salmoides), bowfin (Amia calva), and gar (Lepisosteus spp.). This severely impacted tourism and the economy in the area. Urgent research was required to inform public policy about which lakes needed to be closed.</p>
+<p>We are going to reproduce part of one study on the topic conducted by T.R. Lange in 1993. Dr Lange and their team took samples from 53 lakes in the Central Florida area. Using water samples collected from each of the lakes, the researchers measured the pH level, as well as the amount of chlorophyll, calcium and alkalinity. The Mercury concentration in the muscle tissue of lake fish was also recorded and standardized to take into account the different ages of fish caught in the lake.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/Fig06_2Fish.png" alt="a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/) c. (right). The location of the lakes in Florida (Google maps)" width="100%" />
+<p class="caption">
+Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (<a href="https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/" class="uri">https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/</a>) c. (right). The location of the lakes in Florida (Google maps)
+</p>
+</div>
+<p><strong>You have been asked to assess whether the alkalinity levels of a lake might impact Mercury levels in largemouth bass. You will be presenting your results to the Florida State Governor in order to set new fishing regulations. She has asked for a report to provide your full thinking and workflow in how you decide on your final model.</strong></p>
+<p>The units of the your dataset are:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Variable</strong></th>
+<th align="center"><strong>Unit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Chlorophyll</td>
+<td align="center">micrograms/Litre, <span class="math inline">\(\mu g/L\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Alkalinity</td>
+<td align="center">miligrams/Litre, <span class="math inline">\(mg/L\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">pH</td>
+<td align="center">Unitless</td>
+</tr>
+<tr class="even">
+<td align="center">Calcium</td>
+<td align="center">miligrams/Litre, <span class="math inline">\(mg/L\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Mercury</td>
+<td align="center">Micrograms, <span class="math inline">\(\mu g\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Age</td>
+<td align="center">Years</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="access-the-data" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Access the data</h3>
+<p>Optional Hint: If you have lots of different variables in your workspace/environment, you can clear them by clicking on the broom or by typing <code>rm(list=ls())</code> into the console.</p>
+<p>Download <strong>bassdata.csv</strong> from Canvas and read into R as a variable called bass.</p>
+</div>
+<div id="question-1-optional-bonus-2" class="section level3 unnumbered">
+<h3>Question 1 [OPTIONAL BONUS 2%] :</h3>
+<p>Within one of your answers, include a professional looking table using equations where relevant. For example this could be comparing model diagnostic outputs, talking about model parameters, writing up LINE results..</p>
+<ul>
+<li><em>Hint, here is the place I make all my tables, then copy them across: <a href="https://www.tablesgenerator.com/markdown_tables" class="uri">https://www.tablesgenerator.com/markdown_tables</a>.</em><br />
+</li>
+<li><em>Here is the place I create my equations: <a href="https://www.codecogs.com/latex/eqneditor.php" class="uri">https://www.codecogs.com/latex/eqneditor.php</a></em></li>
+</ul>
+</div>
+<div id="question-2" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Question 2</h3>
+<p>Explore and describe the data.</p>
+<p>If you are unsure what to do here, think about your credit analysis in lab 2. E.g. How much data is there?, how is that data distributed? What are some summary statistics? Any missing values? Is each variable normally distributed?</p>
+<p>Remember that you are writing this as a report for the Florida State Governor, so summarise any results you find in the text. Essentially your aim is to explore/describe the data so that the Florida State Governor is happy that the data is robust and you understand it.</p>
+</div>
+<div id="question-3" class="section level3">
+<h3><span class="header-section-number">7.4.4</span> Question 3</h3>
+<p>Identify your response and predictor variables. Create a professional looking scatterplot (including units, axis titles, good formatting etc) and fully describe the plot (in the way that you have done in Lecture 7).</p>
+<p>As part of your response, explain if Simple Linear Regression might/might not be appropriate in this case.</p>
+</div>
+<div id="question-4" class="section level3">
+<h3><span class="header-section-number">7.4.5</span> Question 4</h3>
+<p>Fit a Simple Linear Regression model for the problem. Re-plot your scatter plot with the line of best fit.</p>
+<p>Clearly interpret the estimated model parameters (slope &amp; intercept)/model summary-statistics in the the context of the problem, in a way that would be understandable to a policy maker. For example you could show the regression equation including the parameter values and units in the description. You could talk about the amount of variation explained by the model etc.</p>
+</div>
+<div id="question-5" class="section level3">
+<h3><span class="header-section-number">7.4.6</span> Question 5</h3>
+<p>Use regression diagnostics to assess whether the model is appropriate. For example, does it meet the LINE assumptions? (<a href="index.html#S.Tutorial.5B">Tutorial 5B</a>) Again, make sure to explain any plots or statistical tests that you use in words (e.g. what are you trying to test for, what did you find out, what did it mean).</p>
+<p>Assess if there are any outliers, high leverage points <a href="index.html#S.Tutorial.6A">Tutorial 6A</a>.</p>
+</div>
+<div id="question-6" class="section level3">
+<h3><span class="header-section-number">7.4.7</span> Question 6</h3>
+<p>Identify:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The name of the lake with highest residual mercury value [4 marks]</li>
+<li>The name of the lake with highest leverage [4 marks]</li>
+<li>The name of the lake with highest Cook’s distance [4 marks]</li>
+</ol>
+</div>
+<div id="question-7" class="section level3">
+<h3><span class="header-section-number">7.4.8</span> Question 7</h3>
+<p>Another policy maker suggested that there are TWO influential points in the data that should be investigated. From your analysis, do you agree with this comment? Explain your reasoning and provide evidence.</p>
+</div>
+<div id="question-8" class="section level3">
+<h3><span class="header-section-number">7.4.9</span> Question 8</h3>
+<p>After examining the data, the results were double-checked and it was decided to keep ALL of the data points. Another team member suggested that perhaps the observed residual diagnostics are because the there is a lack of linearity between the two variables of interest. They proposed you should apply a transformation and refit the data.</p>
+<p>Using the lecture notes/class discussions about possible starting points for transformations, how would you proceed? (i.e. would you transform the response variable, explanatory variable or both? What transformations could you use?) Clearly explain why you came to this conclusion.</p>
+<p><em>Note, we will be discussing this in the classes on Monday-15 March and Friday-19 March. (it’s a 2 week lab)</em></p>
+</div>
+<div id="question-9" class="section level3">
+<h3><span class="header-section-number">7.4.10</span> Question 9</h3>
+<p>After some research, two models were proposed that might fit the data:</p>
+<ol style="list-style-type: lower-alpha">
+<li>A log transformation on the explanatory variable (<code>log()</code> command)</li>
+<li>The square root of the explanatory variable (<code>sqrt()</code> command)</li>
+</ol>
+<p>Apply the two transformations to the data and choose which one is the best fit.</p>
+<p>Explain your reasoning referring to any goodness of fit measures that you used.</p>
+</div>
+<div id="question-10" class="section level3">
+<h3><span class="header-section-number">7.4.11</span> Question 10</h3>
+<p>After talking with some marine biologists, you decide to use the log transformation as it has more physical relevance.</p>
+<p>Summarise your new model. E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation.</p>
+<p>Examine the residual diagnostics for your new fit. Explain clearly whether the new model meets each of the assumptions needed for linear regression and assess if there are any influential outliers. Is this model a better fit to the data than the original one?</p>
+</div>
+<div id="question-11" class="section level3">
+<h3><span class="header-section-number">7.4.12</span> Question 11</h3>
+<p>The Governor recently had a question from a member if the public who went fishing in a new lake that was not part of the study. We know the alkalinity level of that lake was 40mg/L. The member of the public wants to be 99% sure that they won’t exceed the Florida Health Advisory level for Mercury levels in Fish, which is 1 <span class="math inline">\(\mu g\)</span> of Mercury.</p>
+<p>Should they eat the fish? Explain your answer and show your evidence for how you came to your conclusion.</p>
+</div>
+<div id="question-12" class="section level3">
+<h3><span class="header-section-number">7.4.13</span> Question 12</h3>
+<p><em>This question is designed to be more difficult and realistic. I will answer points of clarification, but I will not help anyone work through it before the labs are submitted. However I will award partial marks for workings and how far you get</em></p>
+<p>The Florida Health Advisory level for Mercury levels in Fish is 1 <span class="math inline">\(\mu g\)</span> of Mercury. The Governor has accepted your model and is requiring state-wide alkalinity tests.</p>
+<p>What is your safety cut-off value of alkalinity for new lakes? (You would like to be 95% sure that you aren’t just seeing this result by chance). Provide evidence of how you got to your answer</p>
+</div>
+</div>
+<div id="submitting-lab-6" class="section level2">
+<h2><span class="header-section-number">7.5</span> Submitting Lab 6</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 6 folder and have a .html ending.</p>
+<p>Check your html is complete by double clicking on to open it in your web-browser.</p>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 6. (See the end of Lab 1 for a screenshot)</p>
+<div id="lab-6-submission-check" class="section level3">
+<h3><span class="header-section-number">7.5.1</span> Lab 6 submission check</h3>
+<p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
+<p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
+<p><strong>MARKDOWN/CODE/WRITING STYLE - 10 MARKS</strong></p>
+<p>10/10 - your report is very professional. There are tables of contents, headings/subheadings, your plots look great, you answer in full sentences and have used the spell check. You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. It’s clear you put thought and effort into writing a good markdown document. I could use this as a class example. You would be comfortable showing it in a job interview.</p>
+<p>8/10 - your report is fine on the basics, but not quite as snazzy &amp; is clearly a homework.
+less - as your report becomes harder to read.</p>
+<p><strong>QUESTION 1 - 2 marks</strong> BONUS (capped at 100%)</p>
+<p>Your answer to question 1 was in professional table format.</p>
+<p><strong>QUESTION 2 - 5 marks</strong></p>
+<p>You have clearly summmarised the data</p>
+<p><strong>QUESTION 3 - 5 marks</strong></p>
+<p>Your response and predictor are identified. Your plot looks professional enough that you could give it to the Florida state governor (you can also use fig.cap in the chunk description if you want to add more information that way underneath the plot). You have explained if Simple Linear regression is appropriate.</p>
+<p><strong>QUESTION 4 - 10 marks</strong></p>
+<p>You have correctly fitted the simple linear model to the data and interpreted the model output clearly in the text in a way that would be understandable to a policy maker.</p>
+<p><strong>QUESTION 5 - 9 marks</strong></p>
+<p>You have correctly used model diagnostics to assess whether the model meets LINE assumptions. You have assessed whether there are outliers, influential points or points with high leverage</p>
+<p><strong>QUESTION 6 - 6 marks</strong></p>
+<p>The name of the lake with highest residual mercury value [2 marks]
+The name of the lake with highest leverage [2 marks]
+The name of the lake with highest Cook’s distance [2 marks]</p>
+<p><strong>QUESTION 7 - 5 marks</strong></p>
+<p>You have discussed whether there are two influential points or what might be going on</p>
+<p><strong>QUESTION 8 - 5 marks</strong></p>
+<p>You have discussed which transformations you might apply and why.</p>
+<p><strong>QUESTION 9 - 10 marks</strong></p>
+<p>You have transformed the data and compared the two models.</p>
+<p><strong>QUESTION 10 - 5 marks</strong></p>
+<p>You have fully summarised the new model and discussed if it is a better fit.</p>
+<p><strong>QUESTION 11 - 10 marks</strong></p>
+<p>You have assessed the question from the public about whether they should eat the fish and provided evidence for your answer.</p>
+<p><strong>QUESTION 12 - 10 marks</strong></p>
+<p>You have assessed the question about alkalinity safety levels (or as far as you get) &amp; explained your answer.</p>
+<p>[100 marks total]</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lab-5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

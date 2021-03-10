@@ -1938,11 +1938,76 @@ ols_plot_cooksd_bar(model4,type=3)
 
 ```
 
-## test
+### Making a table of your residual diagnostics {#Tutorial.6AD}
 
-| hasdsadlda | asdlsadlas | asdklasd | asdklasd | e23 |
-|:----------:|:----------:|:--------:|:--------:|:---:|
-|      s     |      s     |     d    |     2    |  1  |
-|            |     12     |     3    |          |  2  |
-|            |            |          |          |     |
+If your data is not huge, making a table of your residual diagnostics often makes it much easier to work out which points you are looking at.
+
+In fact we can do this very easily simply by making new columns in our table of data.  Let's try it with our influential dataset.
+
+```{r}
+testdata <- read.csv("influential.csv")
+mymodel <- lm(y~x,data=testdata)
+
+# Make a new column with the predicted y value
+testdata$y_predicted <- mymodel$fitted.values
+
+# Make a new column with the raw residuals
+testdata$residuals_raw <- mymodel$residuals
+
+# Make a new column with the standardisd/studentised residuals
+library(MASS)
+testdata$residuals_stud <- studres(mymodel)
+
+# Make a new column with the leverage
+testdata$x_leverage <- ols_leverage(mymodel)
+
+# Make a new column with the Cook's distance. OLSRR package
+testdata$cooks.distance <- cooks.distance(mymodel)
+
+# Print out the table
+head(testdata)
+```
+
+If you click on the NAME of the table (e.g. testdata in the environment tab) then it will open the table in a new tab which makes it easier to view things. 
+
+```{r,tablelookup, echo=FALSE, fig.cap = "How to sort the table in R-Studio. click the tiny arrows"}
+knitr::include_graphics('images/Fig06_3Table.png')
+```
+
+If you're sick of looking at things in R, you can save the table to a csv file and open it in excel.  If you are running your project, this should save into the folder where your project file is (you can add a different directory if required)
+
+```{r}
+write.csv(testdata,"Output.csv",quote=FALSE)
+```
+
+Finally, there might be too much data to look at things manually.  You can now use commands like filter on your new table to find which rows are of interest
+
+```{r}
+# Filter rows with high cooks distance
+dplyr::filter(testdata,  cooks.distance>1)
+```
+
+
+If you decide to remove an outlier, you can do it in excel! (save the file as something new first, then read that back in).  
+
+Or you can remove a specific row with the - symbol
+
+```{r}
+row_highcooks <- which(testdata$cooks.distance > 1)
+print(paste("Row number: ", row_highcooks))
+
+newdata <- testdata[-row_highcooks]
+
+## BE CAREFUL.  AS YOU REMOVE A DATA POINT ALL THE ROW NUMBERS WILL SHIFT AROUND, SO RUN THE WHICH COMMAND EACH TIME
+```
+
+
+Or you can simply use filter the other way around, but again be careful that you only remove the data you mean to
+
+```{r}
+# Filter rows with high cooks distance
+newdata <- dplyr::filter(testdata,  cooks.distance <= 1)
+```
+
+
 

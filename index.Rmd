@@ -2104,7 +2104,7 @@ We could look first at the coefficient of variation for each model in the model 
 
 ##### AIC {-}
 
-There is another measure called AIC (read more here: https://online.stat.psu.edu/stat501/lesson/10/10.5).  For now, know that the lower the AIC, the "better" the model.
+There is another measure called AIC (read more here: https://online.stat.psu.edu/stat501/lesson/10/10.5).  For now, know that the lower the AIC, the "better" the model.  This is a non parametric test that takes into account the number of predictors and the amount of data, so is often more robust to bad linear fits than $R^2$ (which needs LINE to be true)
 
 Let's compare two models now, using our transformed data:
 
@@ -2112,13 +2112,21 @@ Let's compare two models now, using our transformed data:
 model1 <- lm(y~x,data=data)
 model2 <- lm(y~sqrt(x),data=data)
 
-model1statistics <- ols_regress(model1)
-model2statistics <- ols_regress(model1)
+model1summary <- summary(model1)
+model2summary <- summary(model2)
 
+# Adjusted R2
+paste("Model 1:",round(model1summary$adj.r.squared,2) )
+paste("Model 2:",round(model2summary$adj.r.squared,2) )
+
+# AIC
+AIC(model1,model2)
 
 ```
 
+We can see here that although $adj-R^2$ is higher for model 2, the AIC suggests that model 1 does a better job.
 
+YOU SHOULD NEVER USE THESE NUMBERS IN ISOLATION.  Also look at the data and use your common sense.  Use them as guidelines.
 
 
 

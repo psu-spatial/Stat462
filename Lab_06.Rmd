@@ -41,7 +41,7 @@ This lab also provides less explicit instructions, but builds heavily on previou
 
 ##### Lab 6 Tutorials {-}
 
-It is worth reading the Lab 6 tutorials.  [Tutorial 6A](#S.Tutorial.6A)) discusses Outlier diagnostics, which link with [Tutorial 5B](#S.Tutorial.5B))
+It is worth reading the Lab 6 tutorials.  [Tutorial 6A](#S.Tutorial.6A)) discusses Outlier diagnostics, which link with [Tutorial 5B](#S.Tutorial.5B)). [Tutorial 6B](#S.Tutorial.6B)) discusses transformations and [Tutorial 6C](#S.Tutorial.6C)) discusses goodness of fit.
 
 ## Lab 6 Setup
 
@@ -190,7 +190,7 @@ Explain your reasoning referring to any goodness of fit measures that you used.
 
 After talking with some marine biologists, you decide to use the log transformation as it has more physical relevance.
 
-Summarise your new model.  E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation. 
+Summarise your new model.  E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation IN THE CONTEXT OF THE DATA (e.g. what are your coeffients now showing?)
 
 Examine the residual diagnostics for your new fit. Explain clearly whether the new model meets each of the assumptions needed for linear regression and assess if there are any influential outliers. Is this model a better fit to the data than the original one?
 

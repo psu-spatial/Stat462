@@ -208,8 +208,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.18.2" data-path="index.html"><a href="index.html#Tutorial.6A1"><i class="fa fa-check"></i><b>1.18.2</b> Detecting leverage</a></li>
 <li class="chapter" data-level="1.18.3" data-path="index.html"><a href="index.html#Tutorial.6A2"><i class="fa fa-check"></i><b>1.18.3</b> Detecting outliers</a></li>
 <li class="chapter" data-level="1.18.4" data-path="index.html"><a href="index.html#Tutorial.6AC"><i class="fa fa-check"></i><b>1.18.4</b> Detecting influential points</a></li>
+<li class="chapter" data-level="1.18.5" data-path="index.html"><a href="index.html#Tutorial.6AD"><i class="fa fa-check"></i><b>1.18.5</b> Making a table of your residual diagnostics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#test"><i class="fa fa-check"></i><b>1.19</b> test</a></li>
+<li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#S.Tutorial.6B"><i class="fa fa-check"></i><b>1.19</b> Tutorial 6B Transformations</a></li>
+<li class="chapter" data-level="1.20" data-path="index.html"><a href="index.html#S.Tutorial.6C"><i class="fa fa-check"></i><b>1.20</b> Tutorial 6C Basic model comparisons</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -352,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="lab-6-tutorials" class="section level5 unnumbered">
 <h5>Lab 6 Tutorials</h5>
-<p>It is worth reading the Lab 6 tutorials. <a href="index.html#S.Tutorial.6A">Tutorial 6A</a>) discusses Outlier diagnostics, which link with <a href="index.html#S.Tutorial.5B">Tutorial 5B</a>)</p>
+<p>It is worth reading the Lab 6 tutorials. <a href="index.html#S.Tutorial.6A">Tutorial 6A</a>) discusses Outlier diagnostics, which link with <a href="index.html#S.Tutorial.5B">Tutorial 5B</a>). <a href="index.html#S.Tutorial.6B">Tutorial 6B</a>) discusses transformations and <a href="index.html#S.Tutorial.6C">Tutorial 6C</a>) discusses goodness of fit.</p>
 </div>
 </div>
 <div id="lab-6-setup" class="section level2">
@@ -398,7 +400,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In the late 1980s, there were widespread public safety concerns in Florida about high mercury concentrations in sport fish. In 1989, the State of Florida issued an advisory urging the public to limit consumption of “top level” predatory fish from Lake Tohopekaliga and connected waters: including largemouth bass (Micropterus salmoides), bowfin (Amia calva), and gar (Lepisosteus spp.). This severely impacted tourism and the economy in the area. Urgent research was required to inform public policy about which lakes needed to be closed.</p>
 <p>We are going to reproduce part of one study on the topic conducted by T.R. Lange in 1993. Dr Lange and their team took samples from 53 lakes in the Central Florida area. Using water samples collected from each of the lakes, the researchers measured the pH level, as well as the amount of chlorophyll, calcium and alkalinity. The Mercury concentration in the muscle tissue of lake fish was also recorded and standardized to take into account the different ages of fish caught in the lake.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="images/Fig06_2Fish.png" alt="a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/) c. (right). The location of the lakes in Florida (Google maps)" width="100%" />
 <p class="caption">
 Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (<a href="https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/" class="uri">https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/</a>) c. (right). The location of the lakes in Florida (Google maps)
@@ -508,7 +510,7 @@ Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwo
 <div id="question-10" class="section level3">
 <h3><span class="header-section-number">7.4.11</span> Question 10</h3>
 <p>After talking with some marine biologists, you decide to use the log transformation as it has more physical relevance.</p>
-<p>Summarise your new model. E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation.</p>
+<p>Summarise your new model. E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation IN THE CONTEXT OF THE DATA (e.g. what are your coeffients now showing?)</p>
 <p>Examine the residual diagnostics for your new fit. Explain clearly whether the new model meets each of the assumptions needed for linear regression and assess if there are any influential outliers. Is this model a better fit to the data than the original one?</p>
 </div>
 <div id="question-11" class="section level3">

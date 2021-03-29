@@ -2129,10 +2129,150 @@ We can see here that although $adj-R^2$ is higher for model 2, the AIC suggests 
 YOU SHOULD NEVER USE THESE NUMBERS IN ISOLATION.  Also look at the data and use your common sense.  Use them as guidelines.
 
 
+## Tutorial 7A Covariance matrices {#S.Tutorial.7A}
+
+THIS TUTORIAL SUMMARISES EARLIER MATERIAL FROM TUTORIAL 5B (included here for convenience)
+
+Looking at correlations is a quick way to assess what is happening.  Essentially we can look at the correlation between each column of data.
+
+Importantly, remember back to this website - https://www.tylervigen.com/spurious-correlations.  Just because another variable is correlated with our response does not mean it HAS to be in the model.  It simply means that you might want to consider whether there is a reason for that correlation.
+
+There are two easy packages to look at this data.
+
+##### GGally package
+
+The GGally function allows us to see the histogram of each column we choose to plot - along with the correlation of any numeric pairs.  Let's look at this for our house dataset from a previous lab.
 
 
+```{r,message=FALSE,warning=FALSE}
+# Quick display of two capabilities of GGally, to assess the distribution and correlation of variables 
+house <- read_excel("Lab03_house.xlsx")
+
+# Choose column names - let's say I don't care about location
+colnames(house)
+
+# Create plot - note I have message=TRUE and warning=TRUE turned on at the top of my code chunk
+ggpairs(house[,c("House.Price" ,"House.Age","Distance.Station","Number.Shops" )])
+
+```
+
+##### Corrplot package
+
+You can simply look at the correlations of any NUMERIC columns using the corrplot code, as we did in Lab 3.
+
+```{r}
+library(corrplot)
+house.subset <- house[ , sapply(house,is.numeric)]
+corrplot(cor(house.subset),method="ellipse",type="lower")
+```
+
+##### Other packages
+
+There are LOADS of other ways to run correlation plots here: https://www.r-graph-gallery.com/correlogram.html.  Feel free to choose a favourite.
 
 
+## Tutorial 7B Mulitple Regression Models {#S.Tutorial.7B}
+
+Fitting a multiple regression model is just like fitting Simple Linear Regression.  We simply add in the other variables you want to look at.
+
+For example:
+
+Simple linear regression between our house price response variable and house age (predictor) is
+
+```{r}
+slr.model <- lm(House.Price ~ House.Age,data=house)
+slr.model
+```
+
+```{r}
+equatiomatic::extract_eq(slr.model,use_coefs=TRUE)
+```
+
+Multiple linear regression between our house price response variable and all our predictors is:
+
+```{r}
+mlr.model <- lm(House.Price ~ House.Age + Distance.Station + Number.Shops ,data=house)
+mlr.model
+```
+
+```{r}
+equatiomatic::extract_eq(mlr.model,use_coefs=TRUE)
+```
+
+## Tutorial 7C Residuals in MLR {#S.Tutorial.7C}
+
+Because all of our model assumtions centre around residuals, we can simply use the same code to assess LINE and outliers.  E.g.
+
+```{r}
+# Raw residuals
+ols_plot_resid_fit(mlr.model)
+
+# Studentized residuals
+ols_plot_resid_stud(mlr.model)
+
+# QQ plot, histogram and normality test of residuals
+ols_plot_resid_qq(mlr.model)
+ols_plot_resid_hist(mlr.model)
+ols_test_normality(mlr.model)
+
+# Cook's distance - you can change the thresholdfor "influential" using the type option
+# See ?ols_plot_cooksd_bar for what type=3 corresponds to
+ols_plot_cooksd_bar(mlr.model,type=3)
+
+# Influential points (not you can't change the threshold here for influential)
+ols_plot_resid_lev(mlr.model)
+```
+
+We can see that there are significant issues with this particular fit that we would need to explore!
+
+As before, we can add all the model diagnostics to our original table, to allow us to query them more efficiently. 
+
+```{r}
+# Make a new column with the predicted y value
+house$price_predicted <- mlr.model$fitted.values
+
+# Make a new column with the raw residuals
+house$residuals_raw <- mlr.model$residuals
+
+# Make a new column with the standardisd/studentised residuals
+house$residuals_stud <- studres(mlr.model)
+
+# Make a new column with the leverage
+house$x_leverage <- ols_leverage(mlr.model)
+
+# Make a new column with the Cook's distance. OLSRR package
+house$cooks.distance <- cooks.distance(mlr.model)
+
+```
+
+To view the table, type `View(house)` (or whatever the name of your table is) into the console, or click on its name in the environment tab.
+
+## Tutorial 7D Prediction and Confidence Intervals in MLR {#S.Tutorial.7D}
+
+These are again very similar, but we need to add in our other predictors in the new data.
+
+Importantly when you make your "newdata" data frame, it needs to have values for all the predictor columns in your model.
+
+e.g. let's look at the error bars on the average estimated price of a house with these parameter...
+
+
+```{r}
+newdata <- data.frame(House.Age=20, Distance.Station=500, Number.Shops=3)
+# See ?predict.lm for more options
+predict(mlr.model,newdata=newdata,interval="confidence",level=0.95)
+```
+
+So we are 95% sure that the AVERAGE price of a house with these features in the underlying population is between 37.87 and 40.37.  Unlike me, at this point you would also remember to add the units.
+
+To predict the range of prices of a house that was not in our sample, it's again very similar but now we need a prediction interval.
+
+```{r}
+newdata <- data.frame(House.Age=20, Distance.Station=500, Number.Shops=3)
+# See ?predict.lm for more options
+predict(mlr.model,newdata=newdata,interval="prediction",level=0.95)
+```
+
+So we are 95% sure that a house that is 20 years old, 500m from the station near 3 shops is between 20.89 and 57.83.
 
 
 

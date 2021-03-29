@@ -114,7 +114,7 @@ The units of the your dataset are:
 |      Age     |            Years            |
 
 
-### Access the data
+### Lab 6 Access the data
 
 Optional Hint: If you have lots of different variables in your workspace/environment, you can clear them by clicking on the broom or by typing `rm(list=ls())` into the console.
 
@@ -129,7 +129,7 @@ Within one of your answers, include a professional looking table using equations
  - *Here is the place I create my equations: https://www.codecogs.com/latex/eqneditor.php*
 
 
-### Question 2
+### Question 2 - explore data
 
 Explore and describe the data.  
 
@@ -137,25 +137,25 @@ If you are unsure what to do here, think about your credit analysis in lab 2.  E
 
 Remember that you are writing this as a report for the Florida State Governor, so summarise any results you find in the text.  Essentially your aim is to explore/describe the data so that the Florida State Governor is happy that the data is robust and you understand it.
 
-### Question 3
-
+### Question 3 - response and predictor
+ 
 Identify your response and predictor variables.  Create a professional looking scatterplot (including units, axis titles, good formatting etc) and fully describe the plot (in the way that you have done in Lecture 7).  
 
 As part of your response, explain if Simple Linear Regression might/might not be appropriate in this case.
 
-### Question 4
+### Question 4 - fit model
 
 Fit a Simple Linear Regression model for the problem.  Re-plot your scatter plot with the line of best fit. 
 
 Clearly interpret the estimated model parameters (slope & intercept)/model summary-statistics  in the the context of the problem, in a way that would be understandable to a policy maker. For example you could show the regression equation including the parameter values and units in the description.  You could talk about the amount of variation explained by the model etc.
 
-### Question 5
+### Question 5 - regression diagnostics
 
 Use regression diagnostics to assess whether the model is appropriate.  For example, does it meet the LINE assumptions?  ([Tutorial 5B](#S.Tutorial.5B)) Again, make sure to explain any plots or statistical tests that you use in words (e.g. what are you trying to test for, what did you find out, what did it mean).  
 
 Assess if there are any outliers, high leverage points [Tutorial 6A](#S.Tutorial.6A).
 
-### Question 6
+### Question 6 - indentify residuals
 
 Identify:
 
@@ -163,11 +163,11 @@ Identify:
   b. The name of the lake with highest leverage [4 marks]
   c. The name of the  lake with highest Cook's distance [4 marks]
 
-### Question 7
+### Question 7 - influential points
 
-Another policy maker suggested that there are TWO influential points in the data that should be investigated. From your analysis, do you agree with this comment? Explain your reasoning and provide evidence. 
+Another policy maker suggested that there are several influential points in the data that should be investigated. From your analysis, do you agree with this comment? Explain your reasoning and provide evidence. 
 
-### Question 8
+### Question 8 - transformation
 
 After examining the data, the results were double-checked and it was decided to keep ALL of the data points.  Another team member suggested that perhaps the observed residual diagnostics are because the there is a lack of linearity between the two variables of interest.  They proposed you should apply a transformation and refit the data.  
 
@@ -175,7 +175,7 @@ Using the lecture notes/class discussions about possible starting points for tra
 
 _Note, we will be discussing this in the classes on Monday-15 March and Friday-19 March. (it's a 2 week lab)_ 
 
-### Question 9
+### Question 9 - two models
 
 After some research, two models were proposed that might fit the data:
 
@@ -186,7 +186,7 @@ Apply the two transformations to the data and choose which one is the best fit.
 
 Explain your reasoning referring to any goodness of fit measures that you used. 
 
-### Question 10
+### Question 10 - log transform
 
 After talking with some marine biologists, you decide to use the log transformation as it has more physical relevance.
 
@@ -195,14 +195,14 @@ Summarise your new model.  E.g. make a scatterplot, plot your new line of best f
 Examine the residual diagnostics for your new fit. Explain clearly whether the new model meets each of the assumptions needed for linear regression and assess if there are any influential outliers. Is this model a better fit to the data than the original one?
 
 
-### Question 11
+### Question 11 - new lake
 
 The Governor recently had a question from a member if the public who went fishing in a new lake that was not part of the study.  We know the alkalinity level of that lake was 40mg/L.  The member of the public wants to be 99% sure that they won't exceed the Florida Health Advisory level for Mercury levels in Fish, which is 1 $\mu g$ of Mercury.
 
 Should they eat the fish?  Explain your answer and show your evidence for how you came to your conclusion.
 
 
-### Question 12
+### Question 12 - health check
 
 _This question is designed to be more difficult and realistic.  I will answer points of clarification, but I will not help anyone work through it before the labs are submitted. However I will award partial marks for workings and how far you get_
 

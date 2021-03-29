@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-10" />
+<meta name="date" content="2021-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="lab-5.html"/>
-
+<link rel="next" href="lab-7.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -212,6 +212,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.19" data-path="index.html"><a href="index.html#S.Tutorial.6B"><i class="fa fa-check"></i><b>1.19</b> Tutorial 6B Transformations</a></li>
 <li class="chapter" data-level="1.20" data-path="index.html"><a href="index.html#S.Tutorial.6C"><i class="fa fa-check"></i><b>1.20</b> Tutorial 6C Basic model comparisons</a></li>
+<li class="chapter" data-level="1.21" data-path="index.html"><a href="index.html#S.Tutorial.7A"><i class="fa fa-check"></i><b>1.21</b> Tutorial 7A Covariance matrices</a></li>
+<li class="chapter" data-level="1.22" data-path="index.html"><a href="index.html#S.Tutorial.7B"><i class="fa fa-check"></i><b>1.22</b> Tutorial 7B Mulitple Regression Models</a></li>
+<li class="chapter" data-level="1.23" data-path="index.html"><a href="index.html#S.Tutorial.7C"><i class="fa fa-check"></i><b>1.23</b> Tutorial 7C Residuals in MLR</a></li>
+<li class="chapter" data-level="1.24" data-path="index.html"><a href="index.html#S.Tutorial.7D"><i class="fa fa-check"></i><b>1.24</b> Tutorial 7D Prediction and Confidence Intervals in MLR</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -296,22 +300,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#diagnostic-summaries"><i class="fa fa-check"></i><b>7.3</b> Diagnostic summaries</a></li>
 <li class="chapter" data-level="7.4" data-path="lab-6.html"><a href="lab-6.html#florida-fish-challenge"><i class="fa fa-check"></i><b>7.4</b> Florida Fish Challenge</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="lab-6.html"><a href="lab-6.html#important-background"><i class="fa fa-check"></i><b>7.4.1</b> Important background</a></li>
-<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Access the data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Lab 6 Access the data</a></li>
 <li class="chapter" data-level="" data-path="lab-6.html"><a href="lab-6.html#question-1-optional-bonus-2"><i class="fa fa-check"></i>Question 1 [OPTIONAL BONUS 2%] :</a></li>
-<li class="chapter" data-level="7.4.3" data-path="lab-4.html"><a href="lab-4.html#question-2"><i class="fa fa-check"></i><b>7.4.3</b> Question 2</a></li>
-<li class="chapter" data-level="7.4.4" data-path="lab-4.html"><a href="lab-4.html#question-3"><i class="fa fa-check"></i><b>7.4.4</b> Question 3</a></li>
-<li class="chapter" data-level="7.4.5" data-path="lab-4.html"><a href="lab-4.html#question-4"><i class="fa fa-check"></i><b>7.4.5</b> Question 4</a></li>
-<li class="chapter" data-level="7.4.6" data-path="lab-4.html"><a href="lab-4.html#question-5"><i class="fa fa-check"></i><b>7.4.6</b> Question 5</a></li>
-<li class="chapter" data-level="7.4.7" data-path="lab-4.html"><a href="lab-4.html#question-6"><i class="fa fa-check"></i><b>7.4.7</b> Question 6</a></li>
-<li class="chapter" data-level="7.4.8" data-path="lab-4.html"><a href="lab-4.html#question-7"><i class="fa fa-check"></i><b>7.4.8</b> Question 7</a></li>
-<li class="chapter" data-level="7.4.9" data-path="lab-4.html"><a href="lab-4.html#question-8"><i class="fa fa-check"></i><b>7.4.9</b> Question 8</a></li>
-<li class="chapter" data-level="7.4.10" data-path="lab-4.html"><a href="lab-4.html#question-9"><i class="fa fa-check"></i><b>7.4.10</b> Question 9</a></li>
-<li class="chapter" data-level="7.4.11" data-path="lab-4.html"><a href="lab-4.html#question-10"><i class="fa fa-check"></i><b>7.4.11</b> Question 10</a></li>
-<li class="chapter" data-level="7.4.12" data-path="lab-4.html"><a href="lab-4.html#question-11"><i class="fa fa-check"></i><b>7.4.12</b> Question 11</a></li>
-<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12"><i class="fa fa-check"></i><b>7.4.13</b> Question 12</a></li>
+<li class="chapter" data-level="7.4.3" data-path="lab-6.html"><a href="lab-6.html#question-2---explore-data"><i class="fa fa-check"></i><b>7.4.3</b> Question 2 - explore data</a></li>
+<li class="chapter" data-level="7.4.4" data-path="lab-6.html"><a href="lab-6.html#question-3---response-and-predictor"><i class="fa fa-check"></i><b>7.4.4</b> Question 3 - response and predictor</a></li>
+<li class="chapter" data-level="7.4.5" data-path="lab-6.html"><a href="lab-6.html#question-4---fit-model"><i class="fa fa-check"></i><b>7.4.5</b> Question 4 - fit model</a></li>
+<li class="chapter" data-level="7.4.6" data-path="lab-6.html"><a href="lab-6.html#question-5---regression-diagnostics"><i class="fa fa-check"></i><b>7.4.6</b> Question 5 - regression diagnostics</a></li>
+<li class="chapter" data-level="7.4.7" data-path="lab-6.html"><a href="lab-6.html#question-6---indentify-residuals"><i class="fa fa-check"></i><b>7.4.7</b> Question 6 - indentify residuals</a></li>
+<li class="chapter" data-level="7.4.8" data-path="lab-6.html"><a href="lab-6.html#question-7---influential-points"><i class="fa fa-check"></i><b>7.4.8</b> Question 7 - influential points</a></li>
+<li class="chapter" data-level="7.4.9" data-path="lab-6.html"><a href="lab-6.html#question-8---transformation"><i class="fa fa-check"></i><b>7.4.9</b> Question 8 - transformation</a></li>
+<li class="chapter" data-level="7.4.10" data-path="lab-6.html"><a href="lab-6.html#question-9---two-models"><i class="fa fa-check"></i><b>7.4.10</b> Question 9 - two models</a></li>
+<li class="chapter" data-level="7.4.11" data-path="lab-6.html"><a href="lab-6.html#question-10---log-transform"><i class="fa fa-check"></i><b>7.4.11</b> Question 10 - log transform</a></li>
+<li class="chapter" data-level="7.4.12" data-path="lab-6.html"><a href="lab-6.html#question-11---new-lake"><i class="fa fa-check"></i><b>7.4.12</b> Question 11 - new lake</a></li>
+<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12---health-check"><i class="fa fa-check"></i><b>7.4.13</b> Question 12 - health check</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.5</b> Submitting Lab 6</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.5.1</b> Lab 6 submission check</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lab-7.html"><a href="lab-7.html"><i class="fa fa-check"></i><b>8</b> Lab 7</a><ul>
+<li class="chapter" data-level="8.1" data-path="lab-7.html"><a href="lab-7.html#lab-7-general-information"><i class="fa fa-check"></i><b>8.1</b> Lab 7 General information</a></li>
+<li class="chapter" data-level="8.2" data-path="lab-7.html"><a href="lab-7.html#lab-7-setup"><i class="fa fa-check"></i><b>8.2</b> Lab 7 Setup</a></li>
+<li class="chapter" data-level="8.3" data-path="lab-7.html"><a href="lab-7.html#movie-ratings"><i class="fa fa-check"></i><b>8.3</b> Movie ratings</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="lab-7.html"><a href="lab-7.html#introduction-problem-statement"><i class="fa fa-check"></i><b>8.3.1</b> Introduction &amp; problem statement</a></li>
+<li class="chapter" data-level="8.3.2" data-path="lab-7.html"><a href="lab-7.html#question-1-explanation-and-guide"><i class="fa fa-check"></i><b>8.3.2</b> Question 1 Explanation and guide</a></li>
+<li class="chapter" data-level="8.3.3" data-path="lab-7.html"><a href="lab-7.html#question-1---eda"><i class="fa fa-check"></i><b>8.3.3</b> Question 1 - EDA</a></li>
+<li class="chapter" data-level="8.3.4" data-path="lab-7.html"><a href="lab-7.html#question-2---correlation-plots"><i class="fa fa-check"></i><b>8.3.4</b> Question 2 - Correlation plots</a></li>
+<li class="chapter" data-level="8.3.5" data-path="lab-7.html"><a href="lab-7.html#question-2b-optional-bonus-2---corrplots"><i class="fa fa-check"></i><b>8.3.5</b> Question 2B [OPTIONAL BONUS 2%] - corrplots</a></li>
+<li class="chapter" data-level="8.3.6" data-path="lab-7.html"><a href="lab-7.html#question-3---mlr"><i class="fa fa-check"></i><b>8.3.6</b> Question 3 - MLR</a></li>
+<li class="chapter" data-level="8.3.7" data-path="lab-7.html"><a href="lab-7.html#question-4-model-assumptions"><i class="fa fa-check"></i><b>8.3.7</b> Question 4: Model assumptions</a></li>
+<li class="chapter" data-level="8.3.8" data-path="lab-7.html"><a href="lab-7.html#question-5-outliers"><i class="fa fa-check"></i><b>8.3.8</b> Question 5: Outliers</a></li>
+<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-5---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 5 - Assessing overall model fit</a></li>
+<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-6---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 6 - Partial Slopes</a></li>
+<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-7-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 7: Re-fit Model</a></li>
+<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-8-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 8: Compare the models</a></li>
+<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-9-predict-a-new-movies-score"><i class="fa fa-check"></i><b>8.3.13</b> Question 9: Predict a new movie’s score</a></li>
+<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-7-find-the-best-model"><i class="fa fa-check"></i><b>8.3.14</b> Question 7: Find the “best” model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="lab-7.html"><a href="lab-7.html#submitting-lab-7"><i class="fa fa-check"></i><b>8.4</b> Submitting Lab 7</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="lab-7.html"><a href="lab-7.html#lab-7-submission-check"><i class="fa fa-check"></i><b>8.4.1</b> Lab 7 submission check</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -400,7 +427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In the late 1980s, there were widespread public safety concerns in Florida about high mercury concentrations in sport fish. In 1989, the State of Florida issued an advisory urging the public to limit consumption of “top level” predatory fish from Lake Tohopekaliga and connected waters: including largemouth bass (Micropterus salmoides), bowfin (Amia calva), and gar (Lepisosteus spp.). This severely impacted tourism and the economy in the area. Urgent research was required to inform public policy about which lakes needed to be closed.</p>
 <p>We are going to reproduce part of one study on the topic conducted by T.R. Lange in 1993. Dr Lange and their team took samples from 53 lakes in the Central Florida area. Using water samples collected from each of the lakes, the researchers measured the pH level, as well as the amount of chlorophyll, calcium and alkalinity. The Mercury concentration in the muscle tissue of lake fish was also recorded and standardized to take into account the different ages of fish caught in the lake.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/Fig06_2Fish.png" alt="a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/) c. (right). The location of the lakes in Florida (Google maps)" width="100%" />
 <p class="caption">
 Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (<a href="https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/" class="uri">https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/</a>) c. (right). The location of the lakes in Florida (Google maps)
@@ -443,8 +470,8 @@ Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwo
 </tbody>
 </table>
 </div>
-<div id="access-the-data" class="section level3">
-<h3><span class="header-section-number">7.4.2</span> Access the data</h3>
+<div id="lab-6-access-the-data" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Lab 6 Access the data</h3>
 <p>Optional Hint: If you have lots of different variables in your workspace/environment, you can clear them by clicking on the broom or by typing <code>rm(list=ls())</code> into the console.</p>
 <p>Download <strong>bassdata.csv</strong> from Canvas and read into R as a variable called bass.</p>
 </div>
@@ -457,29 +484,29 @@ Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwo
 <li><em>Here is the place I create my equations: <a href="https://www.codecogs.com/latex/eqneditor.php" class="uri">https://www.codecogs.com/latex/eqneditor.php</a></em></li>
 </ul>
 </div>
-<div id="question-2" class="section level3">
-<h3><span class="header-section-number">7.4.3</span> Question 2</h3>
+<div id="question-2---explore-data" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Question 2 - explore data</h3>
 <p>Explore and describe the data.</p>
 <p>If you are unsure what to do here, think about your credit analysis in lab 2. E.g. How much data is there?, how is that data distributed? What are some summary statistics? Any missing values? Is each variable normally distributed?</p>
 <p>Remember that you are writing this as a report for the Florida State Governor, so summarise any results you find in the text. Essentially your aim is to explore/describe the data so that the Florida State Governor is happy that the data is robust and you understand it.</p>
 </div>
-<div id="question-3" class="section level3">
-<h3><span class="header-section-number">7.4.4</span> Question 3</h3>
+<div id="question-3---response-and-predictor" class="section level3">
+<h3><span class="header-section-number">7.4.4</span> Question 3 - response and predictor</h3>
 <p>Identify your response and predictor variables. Create a professional looking scatterplot (including units, axis titles, good formatting etc) and fully describe the plot (in the way that you have done in Lecture 7).</p>
 <p>As part of your response, explain if Simple Linear Regression might/might not be appropriate in this case.</p>
 </div>
-<div id="question-4" class="section level3">
-<h3><span class="header-section-number">7.4.5</span> Question 4</h3>
+<div id="question-4---fit-model" class="section level3">
+<h3><span class="header-section-number">7.4.5</span> Question 4 - fit model</h3>
 <p>Fit a Simple Linear Regression model for the problem. Re-plot your scatter plot with the line of best fit.</p>
 <p>Clearly interpret the estimated model parameters (slope &amp; intercept)/model summary-statistics in the the context of the problem, in a way that would be understandable to a policy maker. For example you could show the regression equation including the parameter values and units in the description. You could talk about the amount of variation explained by the model etc.</p>
 </div>
-<div id="question-5" class="section level3">
-<h3><span class="header-section-number">7.4.6</span> Question 5</h3>
+<div id="question-5---regression-diagnostics" class="section level3">
+<h3><span class="header-section-number">7.4.6</span> Question 5 - regression diagnostics</h3>
 <p>Use regression diagnostics to assess whether the model is appropriate. For example, does it meet the LINE assumptions? (<a href="index.html#S.Tutorial.5B">Tutorial 5B</a>) Again, make sure to explain any plots or statistical tests that you use in words (e.g. what are you trying to test for, what did you find out, what did it mean).</p>
 <p>Assess if there are any outliers, high leverage points <a href="index.html#S.Tutorial.6A">Tutorial 6A</a>.</p>
 </div>
-<div id="question-6" class="section level3">
-<h3><span class="header-section-number">7.4.7</span> Question 6</h3>
+<div id="question-6---indentify-residuals" class="section level3">
+<h3><span class="header-section-number">7.4.7</span> Question 6 - indentify residuals</h3>
 <p>Identify:</p>
 <ol style="list-style-type: lower-alpha">
 <li>The name of the lake with highest residual mercury value [4 marks]</li>
@@ -487,18 +514,18 @@ Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwo
 <li>The name of the lake with highest Cook’s distance [4 marks]</li>
 </ol>
 </div>
-<div id="question-7" class="section level3">
-<h3><span class="header-section-number">7.4.8</span> Question 7</h3>
-<p>Another policy maker suggested that there are TWO influential points in the data that should be investigated. From your analysis, do you agree with this comment? Explain your reasoning and provide evidence.</p>
+<div id="question-7---influential-points" class="section level3">
+<h3><span class="header-section-number">7.4.8</span> Question 7 - influential points</h3>
+<p>Another policy maker suggested that there are several influential points in the data that should be investigated. From your analysis, do you agree with this comment? Explain your reasoning and provide evidence.</p>
 </div>
-<div id="question-8" class="section level3">
-<h3><span class="header-section-number">7.4.9</span> Question 8</h3>
+<div id="question-8---transformation" class="section level3">
+<h3><span class="header-section-number">7.4.9</span> Question 8 - transformation</h3>
 <p>After examining the data, the results were double-checked and it was decided to keep ALL of the data points. Another team member suggested that perhaps the observed residual diagnostics are because the there is a lack of linearity between the two variables of interest. They proposed you should apply a transformation and refit the data.</p>
 <p>Using the lecture notes/class discussions about possible starting points for transformations, how would you proceed? (i.e. would you transform the response variable, explanatory variable or both? What transformations could you use?) Clearly explain why you came to this conclusion.</p>
 <p><em>Note, we will be discussing this in the classes on Monday-15 March and Friday-19 March. (it’s a 2 week lab)</em></p>
 </div>
-<div id="question-9" class="section level3">
-<h3><span class="header-section-number">7.4.10</span> Question 9</h3>
+<div id="question-9---two-models" class="section level3">
+<h3><span class="header-section-number">7.4.10</span> Question 9 - two models</h3>
 <p>After some research, two models were proposed that might fit the data:</p>
 <ol style="list-style-type: lower-alpha">
 <li>A log transformation on the explanatory variable (<code>log()</code> command)</li>
@@ -507,19 +534,19 @@ Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwo
 <p>Apply the two transformations to the data and choose which one is the best fit.</p>
 <p>Explain your reasoning referring to any goodness of fit measures that you used.</p>
 </div>
-<div id="question-10" class="section level3">
-<h3><span class="header-section-number">7.4.11</span> Question 10</h3>
+<div id="question-10---log-transform" class="section level3">
+<h3><span class="header-section-number">7.4.11</span> Question 10 - log transform</h3>
 <p>After talking with some marine biologists, you decide to use the log transformation as it has more physical relevance.</p>
 <p>Summarise your new model. E.g. make a scatterplot, plot your new line of best fit and summarise the model itself, including the new model equation IN THE CONTEXT OF THE DATA (e.g. what are your coeffients now showing?)</p>
 <p>Examine the residual diagnostics for your new fit. Explain clearly whether the new model meets each of the assumptions needed for linear regression and assess if there are any influential outliers. Is this model a better fit to the data than the original one?</p>
 </div>
-<div id="question-11" class="section level3">
-<h3><span class="header-section-number">7.4.12</span> Question 11</h3>
+<div id="question-11---new-lake" class="section level3">
+<h3><span class="header-section-number">7.4.12</span> Question 11 - new lake</h3>
 <p>The Governor recently had a question from a member if the public who went fishing in a new lake that was not part of the study. We know the alkalinity level of that lake was 40mg/L. The member of the public wants to be 99% sure that they won’t exceed the Florida Health Advisory level for Mercury levels in Fish, which is 1 <span class="math inline">\(\mu g\)</span> of Mercury.</p>
 <p>Should they eat the fish? Explain your answer and show your evidence for how you came to your conclusion.</p>
 </div>
-<div id="question-12" class="section level3">
-<h3><span class="header-section-number">7.4.13</span> Question 12</h3>
+<div id="question-12---health-check" class="section level3">
+<h3><span class="header-section-number">7.4.13</span> Question 12 - health check</h3>
 <p><em>This question is designed to be more difficult and realistic. I will answer points of clarification, but I will not help anyone work through it before the labs are submitted. However I will award partial marks for workings and how far you get</em></p>
 <p>The Florida Health Advisory level for Mercury levels in Fish is 1 <span class="math inline">\(\mu g\)</span> of Mercury. The Governor has accepted your model and is requiring state-wide alkalinity tests.</p>
 <p>What is your safety cut-off value of alkalinity for new lakes? (You would like to be 95% sure that you aren’t just seeing this result by chance). Provide evidence of how you got to your answer</p>
@@ -574,8 +601,8 @@ The name of the lake with highest Cook’s distance [2 marks]</p>
           </div>
         </div>
       </div>
-<a href="lab-5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lab-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

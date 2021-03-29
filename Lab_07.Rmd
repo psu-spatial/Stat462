@@ -1,0 +1,402 @@
+# Lab 7
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+
+library("tidyverse") # Lots of data processing commands
+library("knitr")     # Helps make good output files
+library("rmarkdown") # Helps make good output files
+library("lattice")   # Makes nice plots
+library("RColorBrewer") # Makes nice color-scales
+library("ISLR")      # contains a credit dataset
+library("yarrr")     # contains a toy dataset about pirates
+library("skimr")     # Summary statistics
+library("Stat2Data") # Regression specific commands
+library("nortest")   # Regression specific commands
+library("lmtest")    # Regression specific commands
+library("IMTest")    # Regression specific commands 
+library("MASS")      # Regression specific commands
+#library("moderndive")# Regression specific commands
+library("corrplot")  # correlation plots
+library("car")       # this one sometimes has problems, don't panic if you get errors
+library("ggpubr")    # QQplots
+library("olsrr")     # Regression specific commands
+library("plotly")
+
+```
+
+## Lab 7 General information
+
+Welcome to STAT-462 lab 7.  The aim of this week is to:
+
+ - Carry out multiple regression
+ - Compare models using stepwise regression
+
+This lab also provides less explicit instructions, but builds heavily on previous labs.  So if you are not sure what to do, see what I was asking you to do in previous homeworks or in the lecture notes.  Each lab builds on the last one.
+
+
+##### General comments {-}
+
+ - You do not have to submit things you try from the tutorials, you will just be graded on the lab 7 assignment.  
+ - There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706461  
+
+
+## Lab 7 Setup
+
+ - Save all your work and if you haven't already, create a Lab 7 folder in your STAT-462 folder
+
+ - Create a new R-project called Lab 7 that is linked to your Lab 6 folder (instructions in [Tutorial 1B](#S.Tutorial.1B)). It will probably open a new version of R-Studio.
+
+ - Create a new Markdown file called "username_Lab7" (for me it will be hlg5155_Lab7)
+
+ - Remove the "friendly text" (see [Tutorial 1E](#S.Tutorial.1E.3) if you have no idea what I mean)
+
+ - Follow the instructions to edit your YAML code to look like my example in [Tutorial 2B](#S.Tutorial.2B.1).  Choose any theme that you like.
+
+ - Leave a blank line under your YAML code, then create a level-1 Heading called "Markdown". Save and make sure that it will preview/knit.
+
+ - Make a new code chunk.  Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.
+ 
+
+```{r, message=FALSE,warning=FALSE}
+# Load libraries
+library(tidyverse)
+library(dplyr)
+library(ggpubr)
+library(Stat2Data)
+library(corrplot)
+library(olsrr)
+library(sf)    
+library(tmap)  
+library(readxl) 
+library(plotly) 
+library(nortest)
+
+## you may need additional libraries.  Just add them to the list as you use them.
+
+```
+
+ - Edit the "code chunk code" at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).
+
+## Movie ratings
+
+### Introduction & problem statement
+
+Here we will focus on Multiple Linear Regression where there is more than one predictor. 
+
+You are an analyst for a Hollywood studio.  The studio wants to understand how well a movie will perform on the review website Rotten Tomatoes.   They have paid you to build a model to predict the movie's Rotten Tomatoes score.  
+
+Download the two files from Canvas which contain the data.
+
+ - The file _HollywoodMovies2011.csv_ is the data itself. includes information on movies that came out of your Hollywood Studio in 2011. The dataset contains the Rotten Tomatoes score plus five predictor variables. Download it from Canvas and read it into R as a variable called movies.
+ - The meta data (the data explaining what the spreadsheet shows), is stored in _HollywoodMovies2011MetaData.txt_.  Download it from Canvas. You do not need to read it into R, but take a look as it provides vital information about what the data is showing.
+
+
+### Question 1 Explanation and guide
+
+I want to clear up some misconceptions about the first question I ask in every lab. Some people have asked me why are they bothering to do this because we don't seem to use the results later on (for example about testing for normality).  
+
+The answer is that this isn't a series of tests we are applying to this, instead this question every lab is a chance to explore the data itself.
+
+Let's split the guide into what you need to _do_ vs what you need to _write up_.
+
+#### What you need to do
+
+__First__, "Question 1" is about deciding whether this dataset is going to help you answer your research question. You also need to understand as much as possible where the data comes from and who collected it.
+
+Think about the topic and consider your population.  
+ - Will this dataset be representative of your population?  
+ - If not, do you need to narrow the question  or find more data? #
+ 
+For example, if your problem and population are measuring the height of Penn State students - and your sample only contains people on the sports teams, you might not have a representative sample. 
+
+__Second__, "Question 1" is about is understanding and exploring the data yourself. This is known as Quality Control, or Exploratory Data Analysis (EDA).  
+
+For example you could check
+
+ - Are all your numeric variables numeric?  Are there columns reading as character that _should_ be numeric? Sometime people enter the number 0 as the letter O by accident, which will completely confuse R.
+ - If your data includes categories, are the spellings/capitalization consistent (e.g. _Red_ and _red_ would read as different categories)
+ - Are there missing values?  
+ - Are there "stupid" values? (a height of -7m.. or 700m..) which might want to be replaced with NA (missing)
+ - Are any entire rows of data which are clearly wrong and should be removed?
+ - Do things have the means and range you might expect?  Are the units right?  
+ 
+__Third__, we want to know if the data is suitable for use in a multiple regression model.  Explore your variables in more detail, with a focus on your response. 
+
+ - Is the data normally/symmetrically distributed?   Or skewed? If the response is not normally distributed, that is a red flag that the regression might not meet LINE later on.
+ - Are there outliers? Are there clusters?  
+ - Does the mean and range make sense for the units and your understanding of the problem?
+ - Is there _anything_ that will affect your analysis later on?  
+ - If you only have a few predictors (especially if just x vs y), consider exploring the distribution of all variables in detail.  If you have many predictors (like this lab!), describe the response variable in detail, then use the correlation plot etc to describe predictors - see question 2.  When I say describe, I mean, examine the average value, some idea of spread (IQR, standard deviation), note any unusual values and the data distribution (normality/skew/clusters).
+ - If your data is spatial, map it!
+
+To do much of this you could use either the `summary` function or the skim command in the skimr package (remember you might need to install it using `install.packages(skimr)` and then load it using `library(skimr)`). 
+
+For example, in this dataset, there is a row which is clearly incorrect.  This stage of "explore the data" will help you find it. 
+
+For the sake of the lab grades, please leave the code you use to create your results.  In a professional report you might want to remove some/all of it and just report your summary of the final dataset ready for use.
+ 
+#### What you need to write up
+ 
+ OK, so above are activities I commonly do to understand the data.  To write up my answer to this analysis, I would normally do something like this. 
+ 
+ 1. Re-iterate the problem statement.  Use that to describe the population under study.
+ 
+ 2. Describe the meta-data of the sampled dataset:
+     - What variables are there? (and units!). How many observations are there?
+     - Summarise the meta data in a neat table in R e.g. what is your response variable (and units!), what are your predictor/explanatory variables (and units!)
+     - If the units are ambiguous, remember to include more details.  E.g. in your case, several columns are percentages. Are they recorded as numbers from 0-1 or numbers from 0-100?
+     - If available, how was the data collected and by whom?
+     - If available, what is the reference for the dataset?  How did you access it?
+     - Is the dataset representative of your population?  E.g. data on chickens collected in the year 1980 might (or might not!) be representative of conditions now.
+   
+ 3. Describe the quality control you performed. 
+ 
+ 4. If you only have a few predictors (especially if just x vs y), consider exploring the distribution of all variables in detail.  If you have many, describe the response in detail, then use the correlation plot etc to describe predictors.  When I say describe, I mean, the average value, some idea of spread (IQR, standard deviation), any or unusual values and the data distribution (normality/skew/clusters)
+ 
+Essentially, your job is to convince the customer that the data is fit for use and to describe the process from data collection (or when you accessed it), to the point where you start the analysis.
+
+### Question 1 - EDA
+ 
+Conduct any relevant quality control on the dataset as described in the guide.  If you have reason to remove data, then you are allowed to do this with justification.
+
+Then, as described in the guide above, describe the problem and the data you have to solve it. Describe the response variable in detail.
+
+### Question 2 - Correlation plots
+
+As described above, it can be difficult to examine many predictors in a large dataset.  One tool we have to do this is the correlation plot.
+
+You can see how to create one in [Tutorial 7A](#S.Tutorial.7A))
+
+Use the correlation plot to describe the relationship between your response variable and each of your predictors.  Which predictors do you think will have the strongest impact on a movie's Rotten Tomatoes score.
+
+### Question 2B [OPTIONAL BONUS 2%] - corrplots
+
+Instead of the correlation plots given in [Tutorial 7A](#S.Tutorial.7A), choose a new format one from https://www.r-graph-gallery.com/correlogram.html and get it up and working with your data.
+
+### Question 3 - MLR
+
+Use [Tutorial 7B](#S.Tutorial.7B) to answer this question.
+
+HINT, BEFORE YOU RUN THIS - IF YOU HAVEN'T ALREADY DONE THIS, GO INTO THE CSV FILE IN EXCEL AND REMOVE THE "TEST TEST" ROW. SAVE THE EXCEL FILE AS SOMETHING NEW, THEN READ THE NEW EXCEL FILE INTO R AND CARRY ON.
+
+Fit a full first order regression model to the data, with RottenTomatoes as your response and your predictors are all the other variables.  
+
+ - Summarise the model in your write up and write out the model equation (including the coefficients as numbers) & summarising units afterwards
+ - Look at the model summary and write how much variability in the Rotten Tomatoes score is explained by your model.
+
+```{r, include=FALSE}
+movies <- read.csv("HollywoodMovies2011b.csv")
+summary(movies)
+
+fit.1 <- lm(RottenTomatoes~AudienceScore+Profitability+TheatersOpenWeek+BOAverageOpenWeek+DomesticGross,data=movies)
+summary(fit.1)
+```
+
+Note, 1st order means that we don't include polynomials in our predictors 
+
+ - e.g.This is a first order model: $y = \beta_0 + \beta_{1}x_1 + \beta_{2}x_2$.  
+ - e.g.This is a second order model: $y = \beta_0 + \beta_{1}x_1  + \beta_{3}{x_1}^2 + \beta_{2}x_2$
+
+### Question 4: Model assumptions
+
+Use [Tutorial 7C](#S.Tutorial.7C) and [Tutorial 5B](#S.Tutorial.5B) (or lecture 19) to assess if your model residuals meet LINE assumptions.  
+
+### Question 5: Outliers
+
+Use [Tutorial 7C](#S.Tutorial.7C) and [Tutorial 6A](#Tutorial.6A) to assess if any movie appears to be an influential outlier.
+
+If a movie does fit the criteria of influential outlier, do not remove anything from the dataset.  Instead, in your write-up, please provide its name and justify why you think it is influential.  
+
+```{r, include=FALSE}
+ols_plot_resid_fit(fit.1)
+ols_plot_resid_qq(fit.1)
+ols_plot_resid_hist(fit.1)
+ols_test_normality(fit.1)
+# residuals
+ols_plot_resid_stud(fit.1)
+
+# Cook's distance - you can change the threshold using type
+ols_plot_cooksd_bar(fit.1,type=3)
+
+# influential piints
+ols_plot_resid_lev(fit.1)
+
+# Make a new column with the predicted y value
+movies$price_predicted <- fit.1$fitted.values
+
+# Make a new column with the raw residuals
+movies$residuals_raw <- fit.1$residuals
+
+# Make a new column with the standardisd/studentised residuals
+movies$residuals_stud <- studres(fit.1)
+
+# Make a new column with the leverage
+movies$x_leverage <- ols_leverage(fit.1)
+
+# Make a new column with the Cook's distance. OLSRR package
+movies$cooks.distance <- cooks.distance(fit.1)
+```
+
+### Question 6 - Assessing overall model fit
+
+Write a hypothesis test using the F-Statistic/ANOVA to test whether our model contains at least one predictor useful in predicting Rotten Tomatoes score.
+
+Hint, we will cover this in lectures, but also read this: https://online.stat.psu.edu/stat462/node/137/
+
+
+### Question 7 - Partial Slopes
+
+_"The test-results for partial slopes" is a fancy way of saying "look at the T-test result and corresponding p-value of each variable in the model summary".  Essentially, they are the likelihood of that variable being an important part of the model IF EVERYTHING ELSE WAS HELD CONSTANT._
+  
+By looking at the test results for the partial slopes (at a 10% level of significance), identify any variable/s you would like to drop from your model fit Provide reasons for your choice(s). Does this meet your expectations from the correlation matrix? 
+
+You do not have to write down any steps for hypothesis testing here, but you do need to justify your decision.
+
+### Question 8: Re-fit Model
+
+ - Fit a new model by eliminating the variables you decided to drop in the previous question. 
+ - Write down the estimated regression line for your new model. 
+
+```{r, include=FALSE}
+fit.2 <- lm(RottenTomatoes~AudienceScore+BOAverageOpenWeek+DomesticGross+Profitability,data=movies)
+summary(fit.2)
+```
+
+### Question 9: Compare the models
+
+Compare your two models using $AdjR^2$ and AIC.  Which model do you consider to be a better fit and why?  Why did I ask you to choose adjusted $R^2$ not standard $R^2$?
+
+```{r, include=FALSE}
+summaryfit1 <- ols_regress(fit.1)
+summaryfit2 <- ols_regress(fit.2)
+summaryfit1$adjr
+summaryfit2$adjr
+
+print(AIC(fit.1,fit.2))
+```
+
+
+### Question 10: Predict a new movie's score
+
+The studio has just trialed a new movie with details:
+
+| Variable Name       | Value                                     |
+|---------------------|-------------------------------------------|
+| _Name_              | "Hunt of the Killer Cactus"               |
+| _AudienceScore_     | 59%                                       |
+| _TheatersOpenWeek_  | 5 cinemas                                 |
+| _BOAverageOpenWeek_ | $147262                                   |
+| _DomesticGross_     | 16.38 million USD                         |
+| _Profitability_     | 88.31% of the budget recovered in profits |
+
+What is your estimate of this new movie's Rotten Tomatoes score?
+
+What is your 95% range of uncertainty on this estimate?   [Tutorial 7D](#S.Tutorial.7D) might be useful in this question.
+
+
+```{r,include=FALSE}
+newdata <- data.frame(Name="Hunt of the Killer Cactus", AudienceScore=59, TheatersOpenWeek=5, BOAverageOpenWeek=147262,
+                      DomesticGross=16.38,Profitability=88.31)
+# See ?predict.lm for more options
+predict(fit.2,newdata=newdata,interval="prediction",level=0.99)
+```
+
+Hint, remember when you write up your answer to make your answer realistic.  For example, what is the maximum value your response could be?
+
+### Question 11: Find the "best" model
+
+Finally, there are many combinations of predictors that we could use to predict our response.  We want to find the best model possible but we also don't want to overfit.  
+
+So far, we manually compared two models.  In fact there is a way to compare all the combinations of predictors. 
+
+This is using the `ols_step_best_subset()` command.  Run this on your original linear model fit (the one including all the variables).  e.g. `ols_step_best_subset(mymodel)`.
+
+Describe what the "best subset" method is doing. Hint, we will go over this in lectures, but also https://online.stat.psu.edu/stat501/lesson/10/10.3 
+
+Use the subset method to assess the optimal fit using at least 3 goodness of fit measures.  What is your final conclusion?
+
+```{r, include=FALSE}
+ols_step_best_subset(fit.1)
+```
+
+
+## Submitting Lab 7
+
+Remember to save your work throughout and to spell check your writing (next to the save button).  Now, press the knit button again.  If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 7 folder and have a .html ending.
+
+Check your html is complete by double clicking on to open it in your web-browser.
+
+Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 7. (See the end of Lab 1 for a screenshot)
+
+
+### Lab 7 submission check
+
+**HTML FILE SUBMISSION - 5 marks**
+
+**RMD CODE SUBMISSION - 5 marks**
+
+**MARKDOWN/CODE/WRITING STYLE - 10 MARKS**
+
+10/10 - your report is very professional.  There are tables of contents, headings/subheadings, your plots look great, you answer in full sentences and have used the spell check. You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade.  It's clear you put thought and effort into writing a good markdown document.  I could use this as a class example. You would be comfortable showing it in a job interview.
+
+8/10 - your report is fine on the basics, but not quite as snazzy & is clearly a homework.
+less - as your report becomes harder to read.
+
+
+**QUESTION 1 - 10 marks** BONUS (capped at 100%)
+
+You have explored the data using the guide, conducted quality control where you removed the observation that was clearly wrong and written up your results clearly. 
+
+
+**QUESTION 2 - 5 marks**
+
+You have created the correlation matrix plot and sensitively described the relationship between your response and your predictors.
+
+
+**QUESTION 2B - 2 marks - OPTIONAL**
+
+You found a new way of making the correlation plot not shown in the tutorial.
+
+
+**QUESTION 3 - 10 marks**
+
+You created the model correctly.  In your write up you have summarised the model equation  (including the coefficients as numbers) & summarising units afterwards. You have produced a model summary and written how much variability in the Rotten Tomatoes score is explained by your model.
+
+**QUESTION 4 - 8 marks**
+
+You have assessed whether the model meets LINE assumptions (2 for each)
+
+**QUESTION 5 - 7 marks**
+
+You have assessed whether there are outliers and whether they are influential. You have identified any movies which are influential.
+
+**QUESTION 6 - 10 marks**
+
+You have correctly conducted a hypothesis test to assess model fit.
+
+**QUESTION 7 - 5 marks**
+
+You have assessed which variables do not add to the model using partial slopes.
+
+**QUESTION 8 - 5 marks**
+
+You have correctly refitted and interpreted the model.
+
+**QUESTION 9 - 5 marks**
+
+You have compared the models using 3 goodness of fit tests.
+
+**QUESTION 10 - 7 marks**
+
+You have correctly predicted the rotten tomatoes score of Hunt of the killer cactus.
+
+**QUESTION 11 - 8 marks**
+
+You have found the "optimal model" and commented on what the best subset command is doing,.
+
+
+
+
+[100 marks total]
+
+

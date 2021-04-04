@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +51,79 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -151,6 +222,7 @@
 <li class="chapter" data-level="1.21" data-path="index.html"><a href="index.html#S.Tutorial.7A"><i class="fa fa-check"></i><b>1.21</b> Tutorial 7A Covariance matrices</a></li>
 <li class="chapter" data-level="1.22" data-path="index.html"><a href="index.html#S.Tutorial.7B"><i class="fa fa-check"></i><b>1.22</b> Tutorial 7B Mulitple Regression Models</a></li>
 <li class="chapter" data-level="1.23" data-path="index.html"><a href="index.html#S.Tutorial.7C"><i class="fa fa-check"></i><b>1.23</b> Tutorial 7C Residuals in MLR</a></li>
+<li class="chapter" data-level="1.24" data-path="index.html"><a href="index.html#S.Tutorial.7D"><i class="fa fa-check"></i><b>1.24</b> Tutorial 7D Prediction and Confidence Intervals in MLR</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -235,19 +307,19 @@
 <li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#diagnostic-summaries"><i class="fa fa-check"></i><b>7.3</b> Diagnostic summaries</a></li>
 <li class="chapter" data-level="7.4" data-path="lab-6.html"><a href="lab-6.html#florida-fish-challenge"><i class="fa fa-check"></i><b>7.4</b> Florida Fish Challenge</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="lab-6.html"><a href="lab-6.html#important-background"><i class="fa fa-check"></i><b>7.4.1</b> Important background</a></li>
-<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Access the data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Lab 6 Access the data</a></li>
 <li class="chapter" data-level="" data-path="lab-6.html"><a href="lab-6.html#question-1-optional-bonus-2"><i class="fa fa-check"></i>Question 1 [OPTIONAL BONUS 2%] :</a></li>
-<li class="chapter" data-level="7.4.3" data-path="lab-4.html"><a href="lab-4.html#question-2"><i class="fa fa-check"></i><b>7.4.3</b> Question 2</a></li>
-<li class="chapter" data-level="7.4.4" data-path="lab-4.html"><a href="lab-4.html#question-3"><i class="fa fa-check"></i><b>7.4.4</b> Question 3</a></li>
-<li class="chapter" data-level="7.4.5" data-path="lab-4.html"><a href="lab-4.html#question-4"><i class="fa fa-check"></i><b>7.4.5</b> Question 4</a></li>
-<li class="chapter" data-level="7.4.6" data-path="lab-4.html"><a href="lab-4.html#question-5"><i class="fa fa-check"></i><b>7.4.6</b> Question 5</a></li>
-<li class="chapter" data-level="7.4.7" data-path="lab-4.html"><a href="lab-4.html#question-6"><i class="fa fa-check"></i><b>7.4.7</b> Question 6</a></li>
-<li class="chapter" data-level="7.4.8" data-path="lab-4.html"><a href="lab-4.html#question-7"><i class="fa fa-check"></i><b>7.4.8</b> Question 7</a></li>
-<li class="chapter" data-level="7.4.9" data-path="lab-4.html"><a href="lab-4.html#question-8"><i class="fa fa-check"></i><b>7.4.9</b> Question 8</a></li>
-<li class="chapter" data-level="7.4.10" data-path="lab-4.html"><a href="lab-4.html#question-9"><i class="fa fa-check"></i><b>7.4.10</b> Question 9</a></li>
-<li class="chapter" data-level="7.4.11" data-path="lab-4.html"><a href="lab-4.html#question-10"><i class="fa fa-check"></i><b>7.4.11</b> Question 10</a></li>
-<li class="chapter" data-level="7.4.12" data-path="lab-4.html"><a href="lab-4.html#question-11"><i class="fa fa-check"></i><b>7.4.12</b> Question 11</a></li>
-<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12"><i class="fa fa-check"></i><b>7.4.13</b> Question 12</a></li>
+<li class="chapter" data-level="7.4.3" data-path="lab-6.html"><a href="lab-6.html#question-2---explore-data"><i class="fa fa-check"></i><b>7.4.3</b> Question 2 - explore data</a></li>
+<li class="chapter" data-level="7.4.4" data-path="lab-6.html"><a href="lab-6.html#question-3---response-and-predictor"><i class="fa fa-check"></i><b>7.4.4</b> Question 3 - response and predictor</a></li>
+<li class="chapter" data-level="7.4.5" data-path="lab-6.html"><a href="lab-6.html#question-4---fit-model"><i class="fa fa-check"></i><b>7.4.5</b> Question 4 - fit model</a></li>
+<li class="chapter" data-level="7.4.6" data-path="lab-6.html"><a href="lab-6.html#question-5---regression-diagnostics"><i class="fa fa-check"></i><b>7.4.6</b> Question 5 - regression diagnostics</a></li>
+<li class="chapter" data-level="7.4.7" data-path="lab-6.html"><a href="lab-6.html#question-6---indentify-residuals"><i class="fa fa-check"></i><b>7.4.7</b> Question 6 - indentify residuals</a></li>
+<li class="chapter" data-level="7.4.8" data-path="lab-6.html"><a href="lab-6.html#question-7---influential-points"><i class="fa fa-check"></i><b>7.4.8</b> Question 7 - influential points</a></li>
+<li class="chapter" data-level="7.4.9" data-path="lab-6.html"><a href="lab-6.html#question-8---transformation"><i class="fa fa-check"></i><b>7.4.9</b> Question 8 - transformation</a></li>
+<li class="chapter" data-level="7.4.10" data-path="lab-6.html"><a href="lab-6.html#question-9---two-models"><i class="fa fa-check"></i><b>7.4.10</b> Question 9 - two models</a></li>
+<li class="chapter" data-level="7.4.11" data-path="lab-6.html"><a href="lab-6.html#question-10---log-transform"><i class="fa fa-check"></i><b>7.4.11</b> Question 10 - log transform</a></li>
+<li class="chapter" data-level="7.4.12" data-path="lab-6.html"><a href="lab-6.html#question-11---new-lake"><i class="fa fa-check"></i><b>7.4.12</b> Question 11 - new lake</a></li>
+<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12---health-check"><i class="fa fa-check"></i><b>7.4.13</b> Question 12 - health check</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.5</b> Submitting Lab 6</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.5.1</b> Lab 6 submission check</a></li>
@@ -265,12 +337,12 @@
 <li class="chapter" data-level="8.3.6" data-path="lab-7.html"><a href="lab-7.html#question-3---mlr"><i class="fa fa-check"></i><b>8.3.6</b> Question 3 - MLR</a></li>
 <li class="chapter" data-level="8.3.7" data-path="lab-7.html"><a href="lab-7.html#question-4-model-assumptions"><i class="fa fa-check"></i><b>8.3.7</b> Question 4: Model assumptions</a></li>
 <li class="chapter" data-level="8.3.8" data-path="lab-7.html"><a href="lab-7.html#question-5-outliers"><i class="fa fa-check"></i><b>8.3.8</b> Question 5: Outliers</a></li>
-<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-5---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 5 - Assessing overall model fit</a></li>
-<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-6---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 6 - Partial Slopes</a></li>
-<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-7-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 7: Re-fit Model</a></li>
-<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-8-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 8: Compare the models</a></li>
-<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-9-predict-a-new-movie"><i class="fa fa-check"></i><b>8.3.13</b> Question 9: Predict a new movie</a></li>
-<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-7-compare-the-models"><i class="fa fa-check"></i><b>8.3.14</b> Question 7: Compare the models</a></li>
+<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-6---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 6 - Assessing overall model fit</a></li>
+<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-7---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 7 - Partial Slopes</a></li>
+<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-8-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 8: Re-fit Model</a></li>
+<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-9-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 9: Compare the models</a></li>
+<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-10-predict-a-new-movies-score"><i class="fa fa-check"></i><b>8.3.13</b> Question 10: Predict a new movie’s score</a></li>
+<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-11-find-the-best-model"><i class="fa fa-check"></i><b>8.3.14</b> Question 11: Find the “best” model</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="lab-7.html"><a href="lab-7.html#submitting-lab-7"><i class="fa fa-check"></i><b>8.4</b> Submitting Lab 7</a><ul>
 <li class="chapter" data-level="8.4.1" data-path="lab-7.html"><a href="lab-7.html#lab-7-submission-check"><i class="fa fa-check"></i><b>8.4.1</b> Lab 7 submission check</a></li>
@@ -298,35 +370,155 @@
             <section class="normal" id="section-">
 <div id="lab-2" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Lab 2</h1>
-<p>Placeholder</p>
 <div id="general-information" class="section level2">
 <h2><span class="header-section-number">3.1</span> General information</h2>
+<p>Welcome to STAT-462 lab 2. The aim of this week is to:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Learn how to get help</li>
+<li>Create more professional markdown files</li>
+<li>Run some more statistical tests</li>
+<li>Conduct a more free ranging exploratory data analysis</li>
+</ol>
+<p><em>The support you need to understand Lab 2 is in the Tutorials - READ THE TUTORIALS 2A,2B,2C,2D.</em></p>
 <div id="general-comments" class="section level5 unnumbered">
 <h5>General comments</h5>
+<ul>
+<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab 2 assignment.</p></li>
+<li><p>Future labs will be less prescriptive about the formatting - but this is a detailed tutorial so that you learn how to set it all up well. Note, your answers should be written up in full sentences.</p></li>
+<li><p>If running the labs is causing major problems for your computer or you have any other computer issue, talk to Dr Greatrex. We can fix this and there are other options for you to access R online. In general, please reach out to Dr Greatrex if you have any issue at all - we have likely see the errors hundreds of times before and we are happy to help.</p></li>
+<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706472" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706472</a></p></li>
+</ul>
 </div>
 </div>
 <div id="tutorials" class="section level2">
 <h2><span class="header-section-number">3.2</span> Tutorials</h2>
+<p>This lab contains questions on markdown formats, hypothesis test and on exploratory data analysis. I encourage you to go and look at Tutorial 2A, 2B, 2C and 2D. All the answers are in there (for a different dataset).</p>
 </div>
 <div id="setting-up-your-code" class="section level2">
 <h2><span class="header-section-number">3.3</span> Setting up your code</h2>
+<ul>
+<li><p>Save all your work and if you haven’t already, create a Lab 2 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 2 that is linked to your Lab 2 folder (instructions in section 1.2, “Lab Challenge 1”). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab2” (for me it will be hlg5155_Lab2)</p></li>
+<li><p>Remove the “friendly text” (see Tutorial 1E, section 1.5.3 if you have no idea what I mean)</p></li>
+</ul>
 </div>
 <div id="markdown-formatting-and-yaml" class="section level2">
 <h2><span class="header-section-number">3.4</span> Markdown formatting and YAML</h2>
+<ul>
+<li><p>Read through tutorial 2B</p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in Section 1.7.1.</p></li>
+<li><p>Choose a new theme for your lab script! Section 1.7.1 includes a link to different themes.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Introduction”. Save and make sure that it will preview/knit.</p></li>
+<li><p><span style="color: navy;"><em>Leave a blank line under that then write something new you learned about R or statistics this week. Use bold and italic fonts in your answers.</em></p></li>
+<li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
+</ul>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="lab-2.html#cb278-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb278-2"><a href="lab-2.html#cb278-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb278-3"><a href="lab-2.html#cb278-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb278-4"><a href="lab-2.html#cb278-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb278-5"><a href="lab-2.html#cb278-5"></a><span class="kw">library</span>(ISLR)</span></code></pre></div>
 </div>
 <div id="confidence-intervals" class="section level2">
 <h2><span class="header-section-number">3.5</span> Confidence intervals</h2>
+<ul>
+<li><p>Tutorial 2D will be helpful here &amp; your lecture notes. Along with the tutorial, this is a good example using R to calculate confidence intervals: <a href="https://www.cyclismo.org/tutorial/R/confidence.html" class="uri">https://www.cyclismo.org/tutorial/R/confidence.html</a></p></li>
+<li><p>Leave a blank line after the code chunk, then make a new level-1 heading called “Confidence Intervals”.</p></li>
+<li><p>Leave a blank space (I’ll stop now but you get the idea), and make a Level 2 heading called “Question A”.</p></li>
+<li><p>Answer question A below, making sure to use full sentences in your conclusions. If it helps to make your report easier to read, feel free to include the question text.</p></li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question A:</em></strong> <em>A sample of 36 obese rock-hopper penguins in a zoo were put on a special diet for a year. The average weight loss was 11oz and the standard deviation of the weight loss was 19oz. (note, that a positive weight loss implies reduced weight over time).</em><span></p>
+<p><span style="color: navy;"><em>Either by hand or in R, calculate the 99% confidence interval for the true mean weight reduction. Make sure to show your workings or R code.</em><span></p>
+<ul>
+<li>Make a Level-2 heading called Question B and answer question B below.</li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question B:</em></strong> <em>Based on the interval you calculate above, do you have sufficient evidence at your 99% level of significance to believe that the weight-loss programme is working and the penguins are losing weight? The average penguin actually weighs about 3Kg. Is this diet something you would recommend for meaningful weight loss?</em><span></p>
 </div>
 <div id="hypothesis-testing" class="section level2">
 <h2><span class="header-section-number">3.6</span> Hypothesis testing</h2>
+<ul>
+<li><p>Tutorial 2D will be helpful here along with your lecture notes.</p></li>
+<li><p>Make a new level-1 heading called Hypothesis Testing, then make a Level 2 heading called Question C - and answer:</p></li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question C:</em></strong> <em>Tests are being carried out on a new drug designed to relieve the symptoms of the flu, specifically on the number of hours people can sleep. The new drug is given in tablet form one evening to a random sample of 16 people who have colds. The number of hours they sleep may be assumed to be Normally distributed and is recorded below.</em></span></p>
+<p><span style="color: navy;"><em>There is also a very large control group of people who have colds but are not given the drug. The mean number of hours they sleep is 6.6 hrs.</em></span></p>
+<pre><code>## [1] Hours slept by people given the new drug</code></pre>
+<pre><code>## [1] 2.3
+## [1] 5
+## [1] 6
+## [1] 6.4
+## [1] 6.7
+## [1] 6.7
+## [1] 6.9
+## [1] 7.2
+## [1] 7.2
+## [1] 7.4
+## [1] 7.6
+## [1] 7.8
+## [1] 7.9
+## [1] 8.1
+## [1] 8.1
+## [1] 9.7</code></pre>
+<p><span style="color: navy;"><em>You can enter the sleep data into R using this code.</em></span></p>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="lab-2.html#cb281-1"></a>sleep &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.1</span>,<span class="fl">6.7</span>,<span class="fl">2.3</span>,<span class="fl">7.2</span>,<span class="fl">8.1</span>,<span class="fl">9.7</span>,<span class="fl">6.0</span>,<span class="fl">7.4</span>,<span class="fl">6.4</span>,<span class="fl">6.9</span>,<span class="fl">5.0</span>,<span class="fl">7.8</span>,<span class="fl">6.7</span>,<span class="fl">7.2</span>,<span class="fl">7.6</span>,<span class="fl">7.9</span>)</span></code></pre></div>
+<p><span style="color: navy;"><em>By hand, carry out a hypothesis test at the 1% significance level that the drug has any impact on the length of time people sleep. You can use R as a calculator to get things like the mean. Make sure to include:</em></span></p>
+<ol style="list-style-type: lower-alpha">
+<li><span style="color: navy;"><em>Your H<sub>0</sub> and H<sub>1</sub></em></span></li>
+<li><span style="color: navy;"><em>The critical threshold</em></span></li>
+<li><span style="color: navy;"><em>Whether it is one sided or two sided</em></span></li>
+<li><span style="color: navy;"><em>Whether you choose to use the normal or t-distribution</em></span></li>
+<li><span style="color: navy;"><em>A diagram of the distribution split into the acceptance and critical/rejection zones</em></span></li>
+<li><span style="color: navy;"><em>The calculated test statistic</em></span></li>
+<li><span style="color: navy;"><em>and your conclusions</em></span></li>
+</ol>
+<p><span style="color: navy;"><strong><em>Include a screenshot of your [neat] workings in this report.</em></strong> <em>If you can’t remember how to do this, see step 10 in section 2.6 (Lab-1 Challege 3)</em></span></p>
+<ul>
+<li>Make a Level 2 heading called Question D and answer question B below</li>
+</ul>
+<p><span style="color: navy;"><strong><em>Question D: Use R and the t.test command to calculate the t-test for the data above. Comment on whether your two results agree (e.g. did you make a mistake anywhere)</em></strong>.</span></p>
 </div>
 <div id="exploratory-data-analysis" class="section level2">
 <h2><span class="header-section-number">3.7</span> Exploratory data analysis</h2>
+<ul>
+<li><p>Tutorial 2C will be useful here.</p></li>
+<li><p>Make a new level-1 heading called Exploratory Data Analysis. You are now going to explore the Credit dataset, which is a simulated dataset used for educational purposes. To start out, make a new code chunk and include following commands.</p></li>
+</ul>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="lab-2.html#cb282-1"></a>dataset &lt;-<span class="st"> </span>ISLR<span class="op">::</span>Credit</span>
+<span id="cb282-2"><a href="lab-2.html#cb282-2"></a>?Credit</span></code></pre></div>
+<p><span style="color: navy;"><strong><em>Question E:</em></strong> <em>Use &amp; interpret the output of R to describe the dataset to me. How much data is there and what does the dataset show? What variable names are there?</em></p>
+<p><em>Note, the help file is incorrect for this dataset. There are not 10,000 rows of data so you’ll need to work out how big the dataset really is</em>.</span></p>
+<p><span style="color: navy;"><strong><em>Question F:</em></strong> <em>Create a table of the number of students vs not students (e.g. a table of the Student column - Section 2.3.6) </em>**.</span></p>
+<p><span style="color: navy;"><strong><em>Question G:</em></strong> <em>Choose a single numeric variable/column in the dataset (your choice). Tell me its summary statistics &amp; units and include a professional looking plot of its distribution. Via this and via a Wilks Shapiro test (including your H0,H1, conclusions etc) assess whether that variable is normally distributed</em>.</span></p>
+<p><span style="color: navy;"><strong><em>Question H (OPTIONAL):[BONUS 2%, lab capped at 100%]</em></strong> <em>Subset/filter the data to select only rows containing students. (Section 2.3.5). Find how the mean of your variable has changed</em>.</span></p>
 </div>
 <div id="submitting-lab-2" class="section level2">
 <h2><span class="header-section-number">3.8</span> Submitting Lab 2</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 2 folder (see Section 1.7 for where)</p>
+<p>Check your html is complete by double clicking on to open it in your web-browser.</p>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 2.</p>
 <div id="lab-2-submission-check" class="section level3">
 <h3><span class="header-section-number">3.8.1</span> Lab 2 submission check</h3>
+<p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
+<p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
+<p><strong>MARKDOWN/CODE STYLE - 5 MARKS</strong></p>
+<p>LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT. You included the headings/sub-headings as requested. Your code and document is neat and easy to read. There is also a spell check next to the save button.</p>
+<p><strong>WRITING STYLE - 5 MARKS</strong></p>
+<p>You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You included the bold/italic R fact.</p>
+<p><strong>QUESTION A - 10 MARKS</strong> <em>Penguin confidence interval</em></p>
+<p>You answered the questions correctly either by hand or in R, but you also showed your workings/code</p>
+<p><strong>QUESTION B - 10 MARKS</strong> <em>Penguin confidence interval interpretation</em></p>
+<p>You interpreted the questions correctly</p>
+<p><strong>QUESTION C - 20 MARKS</strong></p>
+<p>You accurately conducted the hypothesis test with all the requested steps included and managed to upload the screenshot.</p>
+<p><strong>QUESTION D - 5 MARKS</strong></p>
+<p>You reproduced your t-statistic, p-value &amp; conclusion in R.</p>
+<p><strong>QUESTION E - 5 MARKS</strong></p>
+<p>You described the data in a way that someone who had never seen the data before would be able to understand what it shows and how big it is</p>
+<p><strong>QUESTION F - 5 MARKS</strong></p>
+<p>You created the summary table and interpreted the output</p>
+<p><strong>QUESTION G - 20 MARKS</strong></p>
+<p>You summarised a variable of your choice and included all the requested statistics/plots.</p>
+<p>[100 marks total]</p>
 
 </div>
 </div>
@@ -382,8 +574,7 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "section"
-},
-"search": false
+}
 });
 });
 </script>

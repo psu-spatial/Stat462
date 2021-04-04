@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -330,12 +337,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.6" data-path="lab-7.html"><a href="lab-7.html#question-3---mlr"><i class="fa fa-check"></i><b>8.3.6</b> Question 3 - MLR</a></li>
 <li class="chapter" data-level="8.3.7" data-path="lab-7.html"><a href="lab-7.html#question-4-model-assumptions"><i class="fa fa-check"></i><b>8.3.7</b> Question 4: Model assumptions</a></li>
 <li class="chapter" data-level="8.3.8" data-path="lab-7.html"><a href="lab-7.html#question-5-outliers"><i class="fa fa-check"></i><b>8.3.8</b> Question 5: Outliers</a></li>
-<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-5---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 5 - Assessing overall model fit</a></li>
-<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-6---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 6 - Partial Slopes</a></li>
-<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-7-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 7: Re-fit Model</a></li>
-<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-8-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 8: Compare the models</a></li>
-<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-9-predict-a-new-movies-score"><i class="fa fa-check"></i><b>8.3.13</b> Question 9: Predict a new movie’s score</a></li>
-<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-7-find-the-best-model"><i class="fa fa-check"></i><b>8.3.14</b> Question 7: Find the “best” model</a></li>
+<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-6---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 6 - Assessing overall model fit</a></li>
+<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-7---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 7 - Partial Slopes</a></li>
+<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-8-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 8: Re-fit Model</a></li>
+<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-9-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 9: Compare the models</a></li>
+<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-10-predict-a-new-movies-score"><i class="fa fa-check"></i><b>8.3.13</b> Question 10: Predict a new movie’s score</a></li>
+<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-11-find-the-best-model"><i class="fa fa-check"></i><b>8.3.14</b> Question 11: Find the “best” model</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="lab-7.html"><a href="lab-7.html#submitting-lab-7"><i class="fa fa-check"></i><b>8.4</b> Submitting Lab 7</a><ul>
 <li class="chapter" data-level="8.4.1" data-path="lab-7.html"><a href="lab-7.html#lab-7-submission-check"><i class="fa fa-check"></i><b>8.4.1</b> Lab 7 submission check</a></li>
@@ -395,20 +402,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-6.html#cb1-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="lab-6.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="lab-6.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="lab-6.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb1-5"><a href="lab-6.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
-<span id="cb1-6"><a href="lab-6.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
-<span id="cb1-7"><a href="lab-6.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
-<span id="cb1-8"><a href="lab-6.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
-<span id="cb1-9"><a href="lab-6.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
-<span id="cb1-10"><a href="lab-6.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
-<span id="cb1-11"><a href="lab-6.html#cb1-11"></a><span class="kw">library</span>(plotly) </span>
-<span id="cb1-12"><a href="lab-6.html#cb1-12"></a><span class="kw">library</span>(nortest)</span>
-<span id="cb1-13"><a href="lab-6.html#cb1-13"></a></span>
-<span id="cb1-14"><a href="lab-6.html#cb1-14"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="lab-6.html#cb295-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb295-2"><a href="lab-6.html#cb295-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb295-3"><a href="lab-6.html#cb295-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb295-4"><a href="lab-6.html#cb295-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb295-5"><a href="lab-6.html#cb295-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb295-6"><a href="lab-6.html#cb295-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb295-7"><a href="lab-6.html#cb295-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb295-8"><a href="lab-6.html#cb295-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb295-9"><a href="lab-6.html#cb295-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb295-10"><a href="lab-6.html#cb295-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb295-11"><a href="lab-6.html#cb295-11"></a><span class="kw">library</span>(plotly) </span>
+<span id="cb295-12"><a href="lab-6.html#cb295-12"></a><span class="kw">library</span>(nortest)</span>
+<span id="cb295-13"><a href="lab-6.html#cb295-13"></a></span>
+<span id="cb295-14"><a href="lab-6.html#cb295-14"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
 <ul>
 <li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
 </ul>
@@ -427,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>In the late 1980s, there were widespread public safety concerns in Florida about high mercury concentrations in sport fish. In 1989, the State of Florida issued an advisory urging the public to limit consumption of “top level” predatory fish from Lake Tohopekaliga and connected waters: including largemouth bass (Micropterus salmoides), bowfin (Amia calva), and gar (Lepisosteus spp.). This severely impacted tourism and the economy in the area. Urgent research was required to inform public policy about which lakes needed to be closed.</p>
 <p>We are going to reproduce part of one study on the topic conducted by T.R. Lange in 1993. Dr Lange and their team took samples from 53 lakes in the Central Florida area. Using water samples collected from each of the lakes, the researchers measured the pH level, as well as the amount of chlorophyll, calcium and alkalinity. The Mercury concentration in the muscle tissue of lake fish was also recorded and standardized to take into account the different ages of fish caught in the lake.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-181"></span>
 <img src="images/Fig06_2Fish.png" alt="a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/) c. (right). The location of the lakes in Florida (Google maps)" width="100%" />
 <p class="caption">
 Figure 7.1: a. (Left): The mercury food chain in fish.(Wikimedia commons, Bretwood Higman, Ground Truth Trekking) b. (middle) A large bass caught and released in a central Florida lake (<a href="https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/" class="uri">https://www.wired2fish.com/news/young-man-catches-releases-huge-bass-from-bank/</a>) c. (right). The location of the lakes in Florida (Google maps)

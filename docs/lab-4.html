@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-28" />
+<meta name="date" content="2021-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +51,79 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -151,6 +222,7 @@
 <li class="chapter" data-level="1.21" data-path="index.html"><a href="index.html#S.Tutorial.7A"><i class="fa fa-check"></i><b>1.21</b> Tutorial 7A Covariance matrices</a></li>
 <li class="chapter" data-level="1.22" data-path="index.html"><a href="index.html#S.Tutorial.7B"><i class="fa fa-check"></i><b>1.22</b> Tutorial 7B Mulitple Regression Models</a></li>
 <li class="chapter" data-level="1.23" data-path="index.html"><a href="index.html#S.Tutorial.7C"><i class="fa fa-check"></i><b>1.23</b> Tutorial 7C Residuals in MLR</a></li>
+<li class="chapter" data-level="1.24" data-path="index.html"><a href="index.html#S.Tutorial.7D"><i class="fa fa-check"></i><b>1.24</b> Tutorial 7D Prediction and Confidence Intervals in MLR</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lab-1.html"><a href="lab-1.html"><i class="fa fa-check"></i><b>2</b> Lab 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="lab-1.html"><a href="lab-1.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting started</a><ul>
@@ -235,19 +307,19 @@
 <li class="chapter" data-level="7.3" data-path="lab-6.html"><a href="lab-6.html#diagnostic-summaries"><i class="fa fa-check"></i><b>7.3</b> Diagnostic summaries</a></li>
 <li class="chapter" data-level="7.4" data-path="lab-6.html"><a href="lab-6.html#florida-fish-challenge"><i class="fa fa-check"></i><b>7.4</b> Florida Fish Challenge</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="lab-6.html"><a href="lab-6.html#important-background"><i class="fa fa-check"></i><b>7.4.1</b> Important background</a></li>
-<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Access the data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="lab-6.html"><a href="lab-6.html#lab-6-access-the-data"><i class="fa fa-check"></i><b>7.4.2</b> Lab 6 Access the data</a></li>
 <li class="chapter" data-level="" data-path="lab-6.html"><a href="lab-6.html#question-1-optional-bonus-2"><i class="fa fa-check"></i>Question 1 [OPTIONAL BONUS 2%] :</a></li>
-<li class="chapter" data-level="7.4.3" data-path="lab-4.html"><a href="lab-4.html#question-2"><i class="fa fa-check"></i><b>7.4.3</b> Question 2</a></li>
-<li class="chapter" data-level="7.4.4" data-path="lab-4.html"><a href="lab-4.html#question-3"><i class="fa fa-check"></i><b>7.4.4</b> Question 3</a></li>
-<li class="chapter" data-level="7.4.5" data-path="lab-4.html"><a href="lab-4.html#question-4"><i class="fa fa-check"></i><b>7.4.5</b> Question 4</a></li>
-<li class="chapter" data-level="7.4.6" data-path="lab-4.html"><a href="lab-4.html#question-5"><i class="fa fa-check"></i><b>7.4.6</b> Question 5</a></li>
-<li class="chapter" data-level="7.4.7" data-path="lab-4.html"><a href="lab-4.html#question-6"><i class="fa fa-check"></i><b>7.4.7</b> Question 6</a></li>
-<li class="chapter" data-level="7.4.8" data-path="lab-4.html"><a href="lab-4.html#question-7"><i class="fa fa-check"></i><b>7.4.8</b> Question 7</a></li>
-<li class="chapter" data-level="7.4.9" data-path="lab-4.html"><a href="lab-4.html#question-8"><i class="fa fa-check"></i><b>7.4.9</b> Question 8</a></li>
-<li class="chapter" data-level="7.4.10" data-path="lab-4.html"><a href="lab-4.html#question-9"><i class="fa fa-check"></i><b>7.4.10</b> Question 9</a></li>
-<li class="chapter" data-level="7.4.11" data-path="lab-4.html"><a href="lab-4.html#question-10"><i class="fa fa-check"></i><b>7.4.11</b> Question 10</a></li>
-<li class="chapter" data-level="7.4.12" data-path="lab-4.html"><a href="lab-4.html#question-11"><i class="fa fa-check"></i><b>7.4.12</b> Question 11</a></li>
-<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12"><i class="fa fa-check"></i><b>7.4.13</b> Question 12</a></li>
+<li class="chapter" data-level="7.4.3" data-path="lab-6.html"><a href="lab-6.html#question-2---explore-data"><i class="fa fa-check"></i><b>7.4.3</b> Question 2 - explore data</a></li>
+<li class="chapter" data-level="7.4.4" data-path="lab-6.html"><a href="lab-6.html#question-3---response-and-predictor"><i class="fa fa-check"></i><b>7.4.4</b> Question 3 - response and predictor</a></li>
+<li class="chapter" data-level="7.4.5" data-path="lab-6.html"><a href="lab-6.html#question-4---fit-model"><i class="fa fa-check"></i><b>7.4.5</b> Question 4 - fit model</a></li>
+<li class="chapter" data-level="7.4.6" data-path="lab-6.html"><a href="lab-6.html#question-5---regression-diagnostics"><i class="fa fa-check"></i><b>7.4.6</b> Question 5 - regression diagnostics</a></li>
+<li class="chapter" data-level="7.4.7" data-path="lab-6.html"><a href="lab-6.html#question-6---indentify-residuals"><i class="fa fa-check"></i><b>7.4.7</b> Question 6 - indentify residuals</a></li>
+<li class="chapter" data-level="7.4.8" data-path="lab-6.html"><a href="lab-6.html#question-7---influential-points"><i class="fa fa-check"></i><b>7.4.8</b> Question 7 - influential points</a></li>
+<li class="chapter" data-level="7.4.9" data-path="lab-6.html"><a href="lab-6.html#question-8---transformation"><i class="fa fa-check"></i><b>7.4.9</b> Question 8 - transformation</a></li>
+<li class="chapter" data-level="7.4.10" data-path="lab-6.html"><a href="lab-6.html#question-9---two-models"><i class="fa fa-check"></i><b>7.4.10</b> Question 9 - two models</a></li>
+<li class="chapter" data-level="7.4.11" data-path="lab-6.html"><a href="lab-6.html#question-10---log-transform"><i class="fa fa-check"></i><b>7.4.11</b> Question 10 - log transform</a></li>
+<li class="chapter" data-level="7.4.12" data-path="lab-6.html"><a href="lab-6.html#question-11---new-lake"><i class="fa fa-check"></i><b>7.4.12</b> Question 11 - new lake</a></li>
+<li class="chapter" data-level="7.4.13" data-path="lab-6.html"><a href="lab-6.html#question-12---health-check"><i class="fa fa-check"></i><b>7.4.13</b> Question 12 - health check</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="lab-6.html"><a href="lab-6.html#submitting-lab-6"><i class="fa fa-check"></i><b>7.5</b> Submitting Lab 6</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="lab-6.html"><a href="lab-6.html#lab-6-submission-check"><i class="fa fa-check"></i><b>7.5.1</b> Lab 6 submission check</a></li>
@@ -265,12 +337,12 @@
 <li class="chapter" data-level="8.3.6" data-path="lab-7.html"><a href="lab-7.html#question-3---mlr"><i class="fa fa-check"></i><b>8.3.6</b> Question 3 - MLR</a></li>
 <li class="chapter" data-level="8.3.7" data-path="lab-7.html"><a href="lab-7.html#question-4-model-assumptions"><i class="fa fa-check"></i><b>8.3.7</b> Question 4: Model assumptions</a></li>
 <li class="chapter" data-level="8.3.8" data-path="lab-7.html"><a href="lab-7.html#question-5-outliers"><i class="fa fa-check"></i><b>8.3.8</b> Question 5: Outliers</a></li>
-<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-5---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 5 - Assessing overall model fit</a></li>
-<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-6---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 6 - Partial Slopes</a></li>
-<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-7-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 7: Re-fit Model</a></li>
-<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-8-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 8: Compare the models</a></li>
-<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-9-predict-a-new-movie"><i class="fa fa-check"></i><b>8.3.13</b> Question 9: Predict a new movie</a></li>
-<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-7-compare-the-models"><i class="fa fa-check"></i><b>8.3.14</b> Question 7: Compare the models</a></li>
+<li class="chapter" data-level="8.3.9" data-path="lab-7.html"><a href="lab-7.html#question-6---assessing-overall-model-fit"><i class="fa fa-check"></i><b>8.3.9</b> Question 6 - Assessing overall model fit</a></li>
+<li class="chapter" data-level="8.3.10" data-path="lab-7.html"><a href="lab-7.html#question-7---partial-slopes"><i class="fa fa-check"></i><b>8.3.10</b> Question 7 - Partial Slopes</a></li>
+<li class="chapter" data-level="8.3.11" data-path="lab-7.html"><a href="lab-7.html#question-8-re-fit-model"><i class="fa fa-check"></i><b>8.3.11</b> Question 8: Re-fit Model</a></li>
+<li class="chapter" data-level="8.3.12" data-path="lab-7.html"><a href="lab-7.html#question-9-compare-the-models"><i class="fa fa-check"></i><b>8.3.12</b> Question 9: Compare the models</a></li>
+<li class="chapter" data-level="8.3.13" data-path="lab-7.html"><a href="lab-7.html#question-10-predict-a-new-movies-score"><i class="fa fa-check"></i><b>8.3.13</b> Question 10: Predict a new movie’s score</a></li>
+<li class="chapter" data-level="8.3.14" data-path="lab-7.html"><a href="lab-7.html#question-11-find-the-best-model"><i class="fa fa-check"></i><b>8.3.14</b> Question 11: Find the “best” model</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="lab-7.html"><a href="lab-7.html#submitting-lab-7"><i class="fa fa-check"></i><b>8.4</b> Submitting Lab 7</a><ul>
 <li class="chapter" data-level="8.4.1" data-path="lab-7.html"><a href="lab-7.html#lab-7-submission-check"><i class="fa fa-check"></i><b>8.4.1</b> Lab 7 submission check</a></li>
@@ -298,71 +370,176 @@
             <section class="normal" id="section-">
 <div id="lab-4" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Lab 4</h1>
-<p>Placeholder</p>
 <div id="lab-4-general-information" class="section level2">
 <h2><span class="header-section-number">5.1</span> Lab 4 General information</h2>
+<p>Welcome to STAT-462 lab 4. The aim of this week is to:</p>
+<ul>
+<li>Finalise the basic R markdown tools (ggplot2, equations)</li>
+<li>Interpret some regression output</li>
+<li>Identify and remove outliers.</li>
+</ul>
 <div id="general-comments" class="section level5 unnumbered">
 <h5>General comments</h5>
+<ul>
+<li><p>You do not have to submit things you try from the tutorials, you will just be graded on the lab4 assignment.</p></li>
+<li><p>There is also a canvas discussion board for this lab which will be the fastest place to get an answer. <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706463" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706463</a></p></li>
+</ul>
 </div>
 <div id="lab-4-tutorials" class="section level5 unnumbered">
 <h5>Lab 4 Tutorials</h5>
+<p>There are three new tutorials, 4A - 4C. <a href="index.html#S.Tutorial.4A">Tutorial 4A</a> covers how to plot things in ggplot2. <a href="index.html#S.Tutorial.4B">Tutorial 4B</a> covers finding, selecting and potentially removing outliers. <a href="index.html#S.Tutorial.4C">Tutorial 4C</a> covers including equations.</p>
 </div>
 </div>
 <div id="lab-4-setup-markdown" class="section level2">
 <h2><span class="header-section-number">5.2</span> Lab 4 Setup &amp; Markdown</h2>
+<ul>
+<li><p>Save all your work and if you haven’t already, create a Lab 4 folder in your STAT-462 folder</p></li>
+<li><p>Create a new R-project called Lab 4 that is linked to your Lab 4 folder (instructions in <a href="index.html#S.Tutorial.1B">Tutorial 1B</a>). It will probably open a new version of R-Studio.</p></li>
+<li><p>Create a new Markdown file called “username_Lab4” (for me it will be hlg5155_Lab3)</p></li>
+<li><p>Remove the “friendly text” (see <a href="index.html#S.Tutorial.1E.3">Tutorial 1E</a> if you have no idea what I mean)</p></li>
+<li><p>Follow the instructions to edit your YAML code to look like my example in <a href="index.html#S.Tutorial.2B.1">Tutorial 2B</a>. Choose any theme that you like.</p></li>
+<li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
+<li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
+</ul>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="lab-4.html#cb290-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb290-2"><a href="lab-4.html#cb290-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb290-3"><a href="lab-4.html#cb290-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb290-4"><a href="lab-4.html#cb290-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb290-5"><a href="lab-4.html#cb290-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb290-6"><a href="lab-4.html#cb290-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb290-7"><a href="lab-4.html#cb290-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb290-8"><a href="lab-4.html#cb290-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb290-9"><a href="lab-4.html#cb290-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb290-10"><a href="lab-4.html#cb290-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb290-11"><a href="lab-4.html#cb290-11"></a><span class="kw">library</span>(plotly) </span></code></pre></div>
+<ul>
+<li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
+</ul>
+<p>Throughout your lab, please make sure that you use headings and sub-headings to make your lab easier to follow and grade.</p>
 </div>
 <div id="public-safety-spending" class="section level2">
 <h2><span class="header-section-number">5.3</span> Public safety spending</h2>
+<p>Suburban towns often spend a large fraction of their municipal budgets on public safety services (police, fire, and ambulance). A taxpayers’ group felt that tiny towns were likely to spend large amounts per person because they have such small financial bases. The group obtained data on the per-capita spending on public safety for 29 suburban towns in a metropolitan area, as well as the population of each town in units of 10,000 people.</p>
+<p>The data are given in the file <code>expenditure.xslx</code>. Download this from the lab page and put it into your lab 4 folder.</p>
 <div id="checking-folder-names" class="section level3 unnumbered">
 <h3>Checking folder names</h3>
+<p>One of the most frustrating things in R is when the headings of your data tables have spaces, special characters or anything else that is difficult to type. It makes it very hard to refer to a column/variable by name, so it’s always something we want to check for and fix.</p>
+<p>We can check this without doing anything fancy in R (you can if you want, it’s the <code>names()</code> command). Instead, simply open <code>expenditure.xlsx</code> in Excel and take a look!.</p>
+<p>Rename the column titles so that any given column name contains no spaces &amp; check you are happy with the data. Save and close.</p>
+<p>[THIS IS A TOP HINT FOR WORKING WITH YOUR OWN DATA - I check every file that’s small enough to be opened into excel].</p>
 </div>
 <div id="reading-in-the-data" class="section level3 unnumbered">
 <h3>Reading in the data</h3>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="lab-4.html#cb291-1"></a>spending &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;expenditure.xlsx&quot;</span>)</span></code></pre></div>
+<p>[Step 5]. The <code>paste()</code> command allows you to stick together R output like text or the output of code. For example, rather than just printing out the number of rows, I can put the output into a sentence:</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="lab-4.html#cb292-1"></a><span class="co">## So this command says</span></span>
+<span id="cb292-2"><a href="lab-4.html#cb292-2"></a><span class="co"># [1] I am going to print something</span></span>
+<span id="cb292-3"><a href="lab-4.html#cb292-3"></a><span class="co"># [2] The thing I am going to print is the output of the paste command</span></span>
+<span id="cb292-4"><a href="lab-4.html#cb292-4"></a><span class="co"># [3] The things I am pasting together are the sentence &quot;Number of Rows:&quot; and the output of the</span></span>
+<span id="cb292-5"><a href="lab-4.html#cb292-5"></a><span class="co">#     nrow(mlb) command</span></span>
+<span id="cb292-6"><a href="lab-4.html#cb292-6"></a><span class="co"># [4] The output of the nrow(mlb) command is 150 e.g. there are 150 rows</span></span>
+<span id="cb292-7"><a href="lab-4.html#cb292-7"></a></span>
+<span id="cb292-8"><a href="lab-4.html#cb292-8"></a><span class="kw">print</span>( <span class="kw">paste</span>(<span class="st">&quot;Number of Rows:&quot;</span>,<span class="kw">nrow</span>(spending))  )</span></code></pre></div>
+<pre><code>## [1] &quot;Number of Rows: 29&quot;</code></pre>
+<p>Now it’s your turn. Create a sentence which says “Number of Columns:” and then tells me how many columns the data has. Hint, see eariler labs, use google or read <code>?base::nrow</code> for to hunt for the command itself.</p>
 </div>
 <div id="analysis" class="section level3 unnumbered">
 <h3>Analysis</h3>
 <div id="question-1" class="section level4 unnumbered">
 <h4>Question 1:</h4>
+<p>Use the tools you learned in previous labs to explore the data. Identify the explanatory and response variable in the problem.</p>
 </div>
 <div id="question-2" class="section level4 unnumbered">
 <h4>Question 2:</h4>
+<p>If the taxpayer’s group is correct, what sign should the slope of the regression model have?</p>
 </div>
 <div id="question-3" class="section level4 unnumbered">
 <h4>Question 3:</h4>
+<p>Use <a href="index.html#S.Tutorial.3B">Tutorial 3B</a> to fit a regession model to the data and save it as a variable called <code>model1</code>. Examine the coefficients and the summary of the model fit.</p>
+<p>Does the slope in the output confirms the opinion of the community group? Explain.</p>
 </div>
 <div id="question-4" class="section level4 unnumbered">
 <h4>Question 4:</h4>
+<p>Last week we used “base R code” to visualise data (eg commands like plot that just come with the R installation). We are now going to use a specifics graphics package from the tidyverse, ggplot2, to create a scatterplot of the data.</p>
+<p>Use <a href="index.html#S.Tutorial.4A">Tutorial 4A</a> to create a scatterplot of the data using ggplot2 and to add a regression line.</p>
+<ul>
+<li><a href="http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-scatter-plots-quick-start-guide-r-software-and-data-visualization</a> [recommended]</li>
+<li><a href="https://www.r-graph-gallery.com/50-51-52-scatter-plot-with-ggplot2.html" class="uri">https://www.r-graph-gallery.com/50-51-52-scatter-plot-with-ggplot2.html</a></li>
+<li><a href="https://r4ds.had.co.nz/data-visualisation.html" class="uri">https://r4ds.had.co.nz/data-visualisation.html</a></li>
+</ul>
+<p>You can make it as fancy as you like</p>
 </div>
 <div id="question-5" class="section level4 unnumbered">
 <h4>Question 5:</h4>
+<p>Does the scatter plot in part (d) suggest that the regression line estimated in part (c) is misleading? Explain.</p>
 </div>
 <div id="question-6" class="section level4 unnumbered">
 <h4>Question 6:</h4>
+<p>Use <a href="index.html#S.Tutorial.4B">Tutorial 4B</a> to find and remove the unusual point from the dataset. (<em>For a full study, we will be much more careful about whether to remove an outlier or not as discussed later in the semester</em>)</p>
+<p>Repeat the linear regression and scatterplot with the new data and save it as a variable called <code>model2</code>. Explain how this has changed your assessment of the relationship between the variables.</p>
 </div>
 <div id="question-7" class="section level4 unnumbered">
 <h4>Question 7:</h4>
+<p>Normally, to calculate the correlation coefficient between two variables, we use the <code>cor()</code> command or we could look at the output from <code>ols_regress()</code>. Let’s imagine that these have mysteriously broken</p>
+<p>From the command <code>summary(model2)</code>, how could you quickly calculate the correlation coefficient? What is it?</p>
 </div>
 <div id="question-8" class="section level4 unnumbered">
 <h4>Question 8:</h4>
+<p>We often want to write the equations for our regression lines more professionally. Use <a href="index.html#S.Tutorial.4C">Tutorial 4C</a> to create a professional equation showing the linear model, hiding any code chunk you (might) have used to do it.</p>
+<p>Make sure to define any terms &amp; units you might have used.</p>
 </div>
 <div id="question-9" class="section level4 unnumbered">
 <h4>Question 9:</h4>
+<p>Interpret the slope of the regression line in part 9 in the context of the problem.</p>
 </div>
 <div id="question-10" class="section level4 unnumbered">
 <h4>Question 10:</h4>
+<p>What is the Mean Squared Error of the new model? Why is this not a good measure to compare two models with?</p>
 </div>
 <div id="question-11" class="section level4 unnumbered">
 <h4>Question 11:</h4>
+<p>Test if the slope is significantly differnet to 1. Show all your workings and ideally use the equation editor for any equations.</p>
 </div>
 <div id="question-12-optional-bonus-2" class="section level4 unnumbered">
 <h4>Question 12 [OPTIONAL BONUS 2%] :</h4>
+<p>Bonus. We are starting an interesting discussion about degrees of freedom.<br />
+- Read this blog article: <a href="https://statisticsbyjim.com/hypothesis-testing/degrees-freedom-statistics/" class="uri">https://statisticsbyjim.com/hypothesis-testing/degrees-freedom-statistics/</a>
+- and this summary of Monday’s class. <a href="https://online.stat.psu.edu/stat501/lesson/1/1.4" class="uri">https://online.stat.psu.edu/stat501/lesson/1/1.4</a></p>
+<p>Now go to this discussion board - <a href="https://psu.instructure.com/courses/2115020/discussion_topics/13706478" class="uri">https://psu.instructure.com/courses/2115020/discussion_topics/13706478</a> and try to either explain what you have learned or try to clarify some of the confusion that many many students feel when they discuss degrees of freedom. You get the 2% for a meaningful comment (more than 1 sentence).</p>
+<p>Essentially, I think you might be able to find better words than I can!</p>
 </div>
 </div>
 </div>
 <div id="submitting-lab-4" class="section level2">
 <h2><span class="header-section-number">5.4</span> Submitting Lab 4</h2>
+<p>Remember to save your work throughout and to spell check your writing (next to the save button). Now, press the knit button again. If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 4 folder and have a .html ending.</p>
+<p>Check your html is complete by double clicking on to open it in your web-browser.</p>
+<p>Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 4. (see the end of lab 1 for a screenshot)</p>
 <div id="lab-4-submission-check" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Lab 4 submission check</h3>
+<p><strong>HTML FILE SUBMISSION - 5 marks</strong></p>
+<p><strong>RMD CODE SUBMISSION - 5 marks</strong></p>
+<p><strong>MARKDOWN/CODE STYLE - 5 MARKS</strong></p>
+<p>LOOK AT YOUR HTML FILE IN YOUR WEB-BROWSER BEFORE YOU SUBMIT. You included the headings/sub-headings as requested. Your code and document is neat and easy to read. There is also a spell check next to the save button.</p>
+<p><strong>WRITING STYLE - 5 marks</strong></p>
+<p>You have written your answers below the relevant code chunk in full sentences in a way that is easy to find and grade. You correctly used print/paste</p>
+<p><strong>QUESTIONS 1-3 - 15 marks </strong></p>
+<p>You have clearly explored the data and understand its properties and what it is showing. You have correctly identified the explanatory &amp; response variables &amp; the sign that the slope should have. You have correctly fitted an R model to the data</p>
+<p><strong>QUESTIONS 4 - 10 marks </strong></p>
+<p>You have used ggplot2 to make a professional looking plot of the data.</p>
+<p><strong>QUESTIONS 5&amp;6 - 10 marks </strong></p>
+<p>You have correctly identified the unusual feature and successfully removed the point from the dataset.</p>
+<p><strong>QUESTIONS 7 - 5 marks </strong></p>
+<p>You have calculated the correlation coefficient AND SHOWED HOW YOU DID IT.</p>
+<p><strong>QUESTIONS 8&amp;9 - 10 marks </strong></p>
+<p>You have made a professional looking equation using an equation editor in <a href="index.html#S.Tutorial.4C">Tutorial 4C</a>. You have defined all terms and units. You have interpreted the slope within the context of the graph.</p>
+<p><strong>QUESTION 10 - 10 marks </strong></p>
+<p>You have found the Mean Squared Error and explained why it is not great for comparing models.</p>
+<p><strong>QUESTION 11 - 20 marks </strong></p>
+<p>You have conducted a full hypothesis test showing your workings.</p>
+<p><strong>QUESTION 12 - 2 marks </strong>
+BONUS - meaningful comment on degrees of freedom,</p>
+<p>[100 marks total]</p>
 
 </div>
 </div>
@@ -418,8 +595,7 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "section"
-},
-"search": false
+}
 });
 });
 </script>

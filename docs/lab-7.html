@@ -24,7 +24,7 @@
 <meta name="author" content="Helen Greatrex" />
 
 
-<meta name="date" content="2021-03-29" />
+<meta name="date" content="2021-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -391,20 +398,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Leave a blank line under your YAML code, then create a level-1 Heading called “Markdown”. Save and make sure that it will preview/knit.</p></li>
 <li><p>Make a new code chunk. Inside here, you can add all the libraries you need (if you do not have them, you can install them using the tutorial from last week). Start by entering these, but if you need any more packages you can add them here and rerun the code chunk. Run the code chunk a few times to make sure they load with no errors.</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="lab-7.html#cb1-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb1-2"><a href="lab-7.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="lab-7.html#cb1-3"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="lab-7.html#cb1-4"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb1-5"><a href="lab-7.html#cb1-5"></a><span class="kw">library</span>(Stat2Data)</span>
-<span id="cb1-6"><a href="lab-7.html#cb1-6"></a><span class="kw">library</span>(corrplot)</span>
-<span id="cb1-7"><a href="lab-7.html#cb1-7"></a><span class="kw">library</span>(olsrr)</span>
-<span id="cb1-8"><a href="lab-7.html#cb1-8"></a><span class="kw">library</span>(sf)    </span>
-<span id="cb1-9"><a href="lab-7.html#cb1-9"></a><span class="kw">library</span>(tmap)  </span>
-<span id="cb1-10"><a href="lab-7.html#cb1-10"></a><span class="kw">library</span>(readxl) </span>
-<span id="cb1-11"><a href="lab-7.html#cb1-11"></a><span class="kw">library</span>(plotly) </span>
-<span id="cb1-12"><a href="lab-7.html#cb1-12"></a><span class="kw">library</span>(nortest)</span>
-<span id="cb1-13"><a href="lab-7.html#cb1-13"></a></span>
-<span id="cb1-14"><a href="lab-7.html#cb1-14"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="lab-7.html#cb296-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb296-2"><a href="lab-7.html#cb296-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb296-3"><a href="lab-7.html#cb296-3"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb296-4"><a href="lab-7.html#cb296-4"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb296-5"><a href="lab-7.html#cb296-5"></a><span class="kw">library</span>(Stat2Data)</span>
+<span id="cb296-6"><a href="lab-7.html#cb296-6"></a><span class="kw">library</span>(corrplot)</span>
+<span id="cb296-7"><a href="lab-7.html#cb296-7"></a><span class="kw">library</span>(olsrr)</span>
+<span id="cb296-8"><a href="lab-7.html#cb296-8"></a><span class="kw">library</span>(sf)    </span>
+<span id="cb296-9"><a href="lab-7.html#cb296-9"></a><span class="kw">library</span>(tmap)  </span>
+<span id="cb296-10"><a href="lab-7.html#cb296-10"></a><span class="kw">library</span>(readxl) </span>
+<span id="cb296-11"><a href="lab-7.html#cb296-11"></a><span class="kw">library</span>(plotly) </span>
+<span id="cb296-12"><a href="lab-7.html#cb296-12"></a><span class="kw">library</span>(nortest)</span>
+<span id="cb296-13"><a href="lab-7.html#cb296-13"></a></span>
+<span id="cb296-14"><a href="lab-7.html#cb296-14"></a><span class="co">## you may need additional libraries.  Just add them to the list as you use them.</span></span></code></pre></div>
 <ul>
 <li>Edit the “code chunk code” at the top of the code chunk so that the code is run and it is shown, but none of the warnings or messages show up (e.g. none of the the friendly text is shown).</li>
 </ul>

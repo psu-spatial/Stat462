@@ -158,7 +158,7 @@ All the methods to answer these questions are either things you have done in pre
 ### Question 8 [OPTIONAL BONUS 2%] :  {-}
 
 How can multiple regression help us do a better job in answering this week's lab?
-
+ 
 
 ## Submitting Lab 5
 

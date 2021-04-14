@@ -1,0 +1,163 @@
+# Lab 8
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+
+library("tidyverse") # Lots of data processing commands
+library("knitr")     # Helps make good output files
+library("rmarkdown") # Helps make good output files
+library("lattice")   # Makes nice plots
+library("RColorBrewer") # Makes nice color-scales
+library("ISLR")      # contains a credit dataset
+library("yarrr")     # contains a toy dataset about pirates
+library("skimr")     # Summary statistics
+library("Stat2Data") # Regression specific commands
+library("nortest")   # Regression specific commands
+library("lmtest")    # Regression specific commands
+library("IMTest")    # Regression specific commands 
+library("MASS")      # Regression specific commands
+#library("moderndive")# Regression specific commands
+library("corrplot")  # correlation plots
+library("car")       # this one sometimes has problems, don't panic if you get errors
+library("ggpubr")    # QQplots
+library("olsrr")     # Regression specific commands
+library("plotly")
+
+```
+
+## Lab 8 General information
+
+Welcome to STAT-462 lab 8.  The aim of this week is to:
+
+ - To create a summary of what you have learned so based on your own data.
+ - Use categorical regression and or logistic regression as appropriate
+ - To show you can analyse a real dataset (and work through the challenges associated with that)
+ - To create a personal reference guide for these R commands.
+
+This lab also provides less explicit instructions, but builds heavily on previous labs.  So if you are not sure what to do, see what I was asking you to do in previous homeworks or in the lecture notes.  Each lab builds on the last one.
+
+
+##### General comments {-}
+
+ - You do not have to submit things you try from the tutorials, you will just be graded on the lab 8 assignment.  
+ - There is also a canvas discussion board for this lab which will be the fastest place to get an answer. https://psu.instructure.com/courses/2115020/discussion_topics/13706460 
+
+
+## Lab 8 Setup
+
+ - Save all your work and if you haven't already, create a Lab 8 folder in your STAT-462 folder
+
+ - Create a new R-project called Lab 8 that is linked to your Lab 8 folder (instructions in [Tutorial 1B](#S.Tutorial.1B)). It will probably open a new version of R-Studio.
+
+ - Create a new Markdown file called "username_Lab8" (for me it will be hlg5155_Lab8)
+ 
+## Important
+
+Working with your own data will be messy and there will be meaningful amounts of quality control.  The aim of this lab is for you to showcase what you can do in a few weeks, so for the case of this lab I advise against using categorical predictors with many categories (more than 3 or 4) - e.g. remove them from the dataset before you begin.
+
+Also, if you run into problems, feel free to post on the discussion or reach out to me. 
+ 
+I strongly suggest starting with one of your older labs and tweaking the code you need as we discussed in the last lab. 
+ 
+## Format of your report
+
+As professional as you can make it!  Show off - this could be the piece of work you use in job interviews to show what you can do, so imagine something on your LinkedIn page. 
+
+Formatting ideas include headings, tables of contents, themes, pictures/photos, properly formatted equations, "hidden code" (you are allowed to hide code-chunks like library loading using the echo=FALSE command), tables, references, beautiful plots and graphics, interactive plots, maps....  use your imagination.
+
+## You should provide
+
+### Problem statement 
+
+*See lab 7 Q1*
+
+1. A description of the problem you are trying to solve and your population 
+2. A description of your data, e.g. what is the unit of observation, what is the response variable, what are the predictors, how was the data collected, reference etc. 
+3. Comment whether this sample of data is suitable to assess your population.
+
+### Data description
+
+*See lab 7 Q1*
+
+4. A summary and description of the data itself, using all the "question 1" advice.  Summarise any quality control that you performed
+5. A correlation matrix plot and any relevant summary statistics
+
+### Simple Linear Regression
+
+6. From your summary analysis, select a single numeric predictor likely to influence your response
+7. Make a professional looking scatterplot, describe it and fit a simple linear regression model  
+8. Discuss the model parameters (e.g. include the equation & discuss what parameters mean) and the goodness of fit _([Tutorial 6C](#S.Tutorial.6C))_
+9. Assess for LINE and outliers/influential points _([Tutorial 6A](#S.Tutorial.6A) and [Tutorial 5B](#S.Tutorial.5B))_
+10. If necessary, you might want to apply a transformation to your data and refit _([Tutorial 6B](#S.Tutorial.6B))_
+
+### Mulitple regression
+
+11. Use subset regression to select an 'optimal' multiple regression model and discuss why you made your final choice _(Lecture 24)_
+12. Manually create your chosen model in R e.g. `newmodel <- lm(response~chosenpredictor1 + chosenpredictor2 + ..)`. If you can't work out how to do subset regression, just choose the predictors you think most impact your response. _([Tutorial 7B](#S.Tutorial.7B))_
+13. Assess for LINE and outliers/influential points _([Tutorial 7C](#S.Tutorial.7C))_
+14. Formally compare this model against your simple linear model using a general F test (note if you transformed your data, then conduct the F test against the original one) _(Lecture 24)_
+
+### Hypothesis test
+
+15. For your best model, conduct a relevant hypothesis test of your choice and write up appropriately (e.g. choose a test that makes sense for your problem)
+
+### Summary and Reflection
+
+16. Given what you know about regression, have you done a good job with your model?  Are there things you would want to improve?
+17. What can you summarise about your research question and your population?
+
+
+### Bonus stuff
+There are some R techniques either still to be covered (logistic regression, where your _response_ is binary), or beyond the scope of this course (time-series analysis, where time is a predictor; spatial regression where the data is spatially dependent).  If you want a challenge and your data fits one of these boxes, let me know and we can work through that.  Or you can show off your regression/R skills in another way not covered here, for example if your data needs to be transformed. Bonus marks are at my discretion for this lab - show me something new and exciting.
+
+This is the last lab!  Congratulations!
+
+
+
+## Submitting Lab 8
+
+Remember to save your work throughout and to spell check your writing (next to the save button).  Now, press the knit button again.  If you have not made any mistakes in the code then R should create a new html file which includes your answers. This can be found in your Lab 8 folder and have a .html ending. Check your html is complete by double clicking on to open it in your web-browser. Now go to Canvas and submit BOTH your html and your .Rmd file in Lab 8. (See the end of Lab 1 for a screenshot)
+
+
+### Lab 8 submission check
+
+In general, 
+
+ - A report deserving of an A grade is going to be very comfortable with all the material and is able to draw everything together with their own data - a high A would be exceptional, going above and beyond to show me something special or new.  
+ - An A- or B+ might be almost there, but struggle on an element or two. 
+ - A B grade  shows solid understanding of the material but some gaps.  
+ - This then slides down through B- and C+ to a C, which would show some understanding but perhaps a fundamental error.  
+ - A D or below suggests that large parts of the lab were left incomplete.
+
+Specifically your rubric is
+
+**HTML FILE SUBMISSION - 5 marks**
+
+**RMD CODE SUBMISSION - 5 marks**
+
+**PROBLEM STATEMENT & DATA DESCRIPTION - 5 marks** BONUS 
+
+**DATA DESCRIPTION & EXPLORATORY ANALYSIS - 15 marks**
+ 
+**SIMPLE LINEAR REGRESSION  - 20**
+
+**MULITPLE LINEAR REGRESSION - 20 **
+
+**HYPOTHESIS TEST - 10 **
+
+**REFELECTION - 5 marks**
+
+**MARKDOWN/CODE/WRITING STYLE - 15 MARKS**
+
+The exact style-mark below depends on where you fall in each range.
+
+ - 13-15: Your report is exceptional. It is hard to find a flaw and I would be happy receiving it professionally. You have made sure to explain all of your results in the text in clear language.
+ - 10-12: Your report is high quality and it is clear you have put in a lot of effort to showcase what you have learned in markdown. I could use it as a lab example in class
+ - 7-11: You have put effort into the formatting. Your report is fine on the basics, but not quite as snazzy & is clearly a homework.
+ - Less as your report becomes harder to read
+ 
+For each statement below, you get the marks for completing all the requested elements thoughtfully and writing up your results in the text. 
+
+
+[100 marks total]
+
+

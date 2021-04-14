@@ -134,7 +134,7 @@ Specifically your rubric is
 
 **RMD CODE SUBMISSION - 5 marks**
 
-**PROBLEM STATEMENT & DATA DESCRIPTION - 5 marks** BONUS 
+**PROBLEM STATEMENT - 5 marks** BONUS 
 
 **DATA DESCRIPTION & EXPLORATORY ANALYSIS - 15 marks**
  

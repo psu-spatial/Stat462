@@ -89,7 +89,7 @@ Formatting ideas include headings, tables of contents, themes, pictures/photos, 
 9. Assess for LINE and outliers/influential points _([Tutorial 6A](#S.Tutorial.6A) and [Tutorial 5B](#S.Tutorial.5B))_
 10. If necessary, you might want to apply a transformation to your data and refit _([Tutorial 6B](#S.Tutorial.6B))_
 
-### Mulitple regression
+### Multiple regression
 
 11. Use subset regression to select an 'optimal' multiple regression model and discuss why you made your final choice _(Lecture 24)_
 12. Manually create your chosen model in R e.g. `newmodel <- lm(response~chosenpredictor1 + chosenpredictor2 + ..)`. If you can't work out how to do subset regression, just choose the predictors you think most impact your response. _([Tutorial 7B](#S.Tutorial.7B))_
@@ -140,7 +140,7 @@ Specifically your rubric is
  
 **SIMPLE LINEAR REGRESSION  - 20**
 
-**MULITPLE LINEAR REGRESSION - 20 **
+**MULTIPLE LINEAR REGRESSION - 20 **
 
 **HYPOTHESIS TEST - 10 **
 

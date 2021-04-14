@@ -207,7 +207,7 @@ Use [Tutorial 7C](#S.Tutorial.7C) and [Tutorial 6A](#Tutorial.6A) to assess if a
 
 If a movie does fit the criteria of influential outlier, do not remove anything from the dataset.  Instead, in your write-up, please provide its name and justify why you think it is influential.  
 
-```{r}
+```{r, include=FALSE}
 ols_plot_resid_fit(fit.1)
 ols_plot_resid_qq(fit.1)
 ols_plot_resid_hist(fit.1)
@@ -243,7 +243,7 @@ Write a hypothesis test using the F-Statistic/ANOVA to test whether our model co
 
 Hint, we will cover this in lectures, but also read this: https://online.stat.psu.edu/stat462/node/137/
 
-```{r}
+```{r, include=FALSE}
 ols_regress(fit.1)
 ```
 
@@ -255,7 +255,7 @@ By looking at the test results for the partial slopes (at a 10% level of signifi
 
 You do not have to write down any steps for hypothesis testing here, but you do need to justify your decision.
 
-```{r}
+```{r, include=FALSE}
 summary(fit.1)
 ```
 
@@ -274,7 +274,7 @@ summary(fit.2)
 
 Compare your two models using $AdjR^2$ and AIC.  Which model do you consider to be a better fit and why?  Why did I ask you to choose adjusted $R^2$ not standard $R^2$?
 
-```{r}
+```{r, include=FALSE}
 summaryfit1 <- ols_regress(fit.1)
 summaryfit2 <- ols_regress(fit.2)
 summaryfit1$adjr

@@ -51,8 +51,79 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -286,7 +357,7 @@
 <li class="chapter" data-level="9.5.1" data-path="lab-8.html"><a href="lab-8.html#problem-statement"><i class="fa fa-check"></i><b>9.5.1</b> Problem statement</a></li>
 <li class="chapter" data-level="9.5.2" data-path="lab-8.html"><a href="lab-8.html#data-description"><i class="fa fa-check"></i><b>9.5.2</b> Data description</a></li>
 <li class="chapter" data-level="9.5.3" data-path="lab-8.html"><a href="lab-8.html#simple-linear-regression"><i class="fa fa-check"></i><b>9.5.3</b> Simple Linear Regression</a></li>
-<li class="chapter" data-level="9.5.4" data-path="lab-8.html"><a href="lab-8.html#mulitple-regression"><i class="fa fa-check"></i><b>9.5.4</b> Mulitple regression</a></li>
+<li class="chapter" data-level="9.5.4" data-path="lab-8.html"><a href="lab-8.html#multiple-regression"><i class="fa fa-check"></i><b>9.5.4</b> Multiple regression</a></li>
 <li class="chapter" data-level="9.5.5" data-path="lab-8.html"><a href="lab-8.html#hypothesis-test"><i class="fa fa-check"></i><b>9.5.5</b> Hypothesis test</a></li>
 <li class="chapter" data-level="9.5.6" data-path="lab-8.html"><a href="lab-8.html#summary-and-reflection"><i class="fa fa-check"></i><b>9.5.6</b> Summary and Reflection</a></li>
 <li class="chapter" data-level="9.5.7" data-path="lab-8.html"><a href="lab-8.html#bonus-stuff"><i class="fa fa-check"></i><b>9.5.7</b> Bonus stuff</a></li>
@@ -385,8 +456,8 @@
 <li>If necessary, you might want to apply a transformation to your data and refit <em>(<a href="index.html#S.Tutorial.6B">Tutorial 6B</a>)</em></li>
 </ol>
 </div>
-<div id="mulitple-regression" class="section level3">
-<h3><span class="header-section-number">9.5.4</span> Mulitple regression</h3>
+<div id="multiple-regression" class="section level3">
+<h3><span class="header-section-number">9.5.4</span> Multiple regression</h3>
 <ol start="11" style="list-style-type: decimal">
 <li>Use subset regression to select an ‘optimal’ multiple regression model and discuss why you made your final choice <em>(Lecture 24)</em></li>
 <li>Manually create your chosen model in R e.g. <code>newmodel &lt;- lm(response~chosenpredictor1 + chosenpredictor2 + ..)</code>. If you can’t work out how to do subset regression, just choose the predictors you think most impact your response. <em>(<a href="index.html#S.Tutorial.7B">Tutorial 7B</a>)</em></li>
@@ -435,7 +506,7 @@
 <p><strong>PROBLEM STATEMENT &amp; DATA DESCRIPTION - 5 marks</strong> BONUS</p>
 <p><strong>DATA DESCRIPTION &amp; EXPLORATORY ANALYSIS - 15 marks</strong></p>
 <p><strong>SIMPLE LINEAR REGRESSION - 20</strong></p>
-<p><strong>MULITPLE LINEAR REGRESSION - 20 </strong></p>
+<p><strong>MULTIPLE LINEAR REGRESSION - 20 </strong></p>
 <p><strong>HYPOTHESIS TEST - 10 </strong></p>
 <p><strong>REFELECTION - 5 marks</strong></p>
 <p><strong>MARKDOWN/CODE/WRITING STYLE - 15 MARKS</strong></p>

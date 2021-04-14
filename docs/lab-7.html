@@ -354,12 +354,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="lab-8.html"><a href="lab-8.html#important"><i class="fa fa-check"></i><b>9.3</b> Important</a></li>
 <li class="chapter" data-level="9.4" data-path="lab-8.html"><a href="lab-8.html#format-of-your-report"><i class="fa fa-check"></i><b>9.4</b> Format of your report</a></li>
 <li class="chapter" data-level="9.5" data-path="lab-8.html"><a href="lab-8.html#you-should-provide"><i class="fa fa-check"></i><b>9.5</b> You should provide</a><ul>
-<li class="chapter" data-level="9.5.1" data-path="lab-8.html"><a href="lab-8.html#problem-statement-see-lab-7-q1"><i class="fa fa-check"></i><b>9.5.1</b> Problem statement (see lab 7 Q1)</a></li>
-<li class="chapter" data-level="9.5.2" data-path="lab-8.html"><a href="lab-8.html#data-description-see-lab-7-q1"><i class="fa fa-check"></i><b>9.5.2</b> Data description (see lab 7 Q1)</a></li>
-<li class="chapter" data-level="9.5.3" data-path="lab-8.html"><a href="lab-8.html#simple-linear-model"><i class="fa fa-check"></i><b>9.5.3</b> Simple Linear Model</a></li>
-<li class="chapter" data-level="9.5.4" data-path="lab-8.html"><a href="lab-8.html#mulitple-regression"><i class="fa fa-check"></i><b>9.5.4</b> Mulitple regression</a></li>
-<li class="chapter" data-level="9.5.5" data-path="lab-8.html"><a href="lab-8.html#bonus-stuff"><i class="fa fa-check"></i><b>9.5.5</b> Bonus stuff</a></li>
-<li class="chapter" data-level="9.5.6" data-path="lab-8.html"><a href="lab-8.html#reflection"><i class="fa fa-check"></i><b>9.5.6</b> Reflection</a></li>
+<li class="chapter" data-level="9.5.1" data-path="lab-8.html"><a href="lab-8.html#problem-statement"><i class="fa fa-check"></i><b>9.5.1</b> Problem statement</a></li>
+<li class="chapter" data-level="9.5.2" data-path="lab-8.html"><a href="lab-8.html#data-description"><i class="fa fa-check"></i><b>9.5.2</b> Data description</a></li>
+<li class="chapter" data-level="9.5.3" data-path="lab-8.html"><a href="lab-8.html#simple-linear-regression"><i class="fa fa-check"></i><b>9.5.3</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="9.5.4" data-path="lab-8.html"><a href="lab-8.html#multiple-regression"><i class="fa fa-check"></i><b>9.5.4</b> Multiple regression</a></li>
+<li class="chapter" data-level="9.5.5" data-path="lab-8.html"><a href="lab-8.html#hypothesis-test"><i class="fa fa-check"></i><b>9.5.5</b> Hypothesis test</a></li>
+<li class="chapter" data-level="9.5.6" data-path="lab-8.html"><a href="lab-8.html#summary-and-reflection"><i class="fa fa-check"></i><b>9.5.6</b> Summary and Reflection</a></li>
+<li class="chapter" data-level="9.5.7" data-path="lab-8.html"><a href="lab-8.html#bonus-stuff"><i class="fa fa-check"></i><b>9.5.7</b> Bonus stuff</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="lab-8.html"><a href="lab-8.html#submitting-lab-8"><i class="fa fa-check"></i><b>9.6</b> Submitting Lab 8</a><ul>
 <li class="chapter" data-level="9.6.1" data-path="lab-8.html"><a href="lab-8.html#lab-8-submission-check"><i class="fa fa-check"></i><b>9.6.1</b> Lab 8 submission check</a></li>
@@ -542,112 +543,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.3.8</span> Question 5: Outliers</h3>
 <p>Use <a href="index.html#S.Tutorial.7C">Tutorial 7C</a> and <a href="#Tutorial.6A">Tutorial 6A</a> to assess if any movie appears to be an influential outlier.</p>
 <p>If a movie does fit the criteria of influential outlier, do not remove anything from the dataset. Instead, in your write-up, please provide its name and justify why you think it is influential.</p>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="lab-7.html#cb297-1"></a><span class="kw">ols_plot_resid_fit</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-1.png" width="672" /></p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="lab-7.html#cb298-1"></a><span class="kw">ols_plot_resid_qq</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-2.png" width="672" /></p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="lab-7.html#cb299-1"></a><span class="kw">ols_plot_resid_hist</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-3.png" width="672" /></p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="lab-7.html#cb300-1"></a><span class="kw">ols_test_normality</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## -----------------------------------------------
-##        Test             Statistic       pvalue  
-## -----------------------------------------------
-## Shapiro-Wilk              0.9767         0.0379 
-## Kolmogorov-Smirnov        0.0735         0.5471 
-## Cramer-von Mises          9.083          0.0000 
-## Anderson-Darling          0.8668         0.0254 
-## -----------------------------------------------</code></pre>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="lab-7.html#cb302-1"></a><span class="co"># residuals</span></span>
-<span id="cb302-2"><a href="lab-7.html#cb302-2"></a><span class="kw">ols_plot_resid_stud</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-4.png" width="672" /></p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="lab-7.html#cb303-1"></a><span class="co"># Cook&#39;s distance - you can change the threshold using type</span></span>
-<span id="cb303-2"><a href="lab-7.html#cb303-2"></a><span class="kw">ols_plot_cooksd_bar</span>(fit<span class="fl">.1</span>,<span class="dt">type=</span><span class="dv">3</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-5.png" width="672" /></p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="lab-7.html#cb304-1"></a><span class="co"># influential piints</span></span>
-<span id="cb304-2"><a href="lab-7.html#cb304-2"></a><span class="kw">ols_plot_resid_lev</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="Stat462_files/figure-html/unnamed-chunk-185-6.png" width="672" /></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="lab-7.html#cb305-1"></a><span class="co"># Make a new column with the predicted y value</span></span>
-<span id="cb305-2"><a href="lab-7.html#cb305-2"></a>movies<span class="op">$</span>price_predicted &lt;-<span class="st"> </span>fit<span class="fl">.1</span><span class="op">$</span>fitted.values</span>
-<span id="cb305-3"><a href="lab-7.html#cb305-3"></a></span>
-<span id="cb305-4"><a href="lab-7.html#cb305-4"></a><span class="co"># Make a new column with the raw residuals</span></span>
-<span id="cb305-5"><a href="lab-7.html#cb305-5"></a>movies<span class="op">$</span>residuals_raw &lt;-<span class="st"> </span>fit<span class="fl">.1</span><span class="op">$</span>residuals</span>
-<span id="cb305-6"><a href="lab-7.html#cb305-6"></a></span>
-<span id="cb305-7"><a href="lab-7.html#cb305-7"></a><span class="co"># Make a new column with the standardisd/studentised residuals</span></span>
-<span id="cb305-8"><a href="lab-7.html#cb305-8"></a>movies<span class="op">$</span>residuals_stud &lt;-<span class="st"> </span><span class="kw">studres</span>(fit<span class="fl">.1</span>)</span>
-<span id="cb305-9"><a href="lab-7.html#cb305-9"></a></span>
-<span id="cb305-10"><a href="lab-7.html#cb305-10"></a><span class="co"># Make a new column with the leverage</span></span>
-<span id="cb305-11"><a href="lab-7.html#cb305-11"></a>movies<span class="op">$</span>x_leverage &lt;-<span class="st"> </span><span class="kw">ols_leverage</span>(fit<span class="fl">.1</span>)</span>
-<span id="cb305-12"><a href="lab-7.html#cb305-12"></a></span>
-<span id="cb305-13"><a href="lab-7.html#cb305-13"></a><span class="co"># Make a new column with the Cook&#39;s distance. OLSRR package</span></span>
-<span id="cb305-14"><a href="lab-7.html#cb305-14"></a>movies<span class="op">$</span>cooks.distance &lt;-<span class="st"> </span><span class="kw">cooks.distance</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
 </div>
 <div id="question-6---assessing-overall-model-fit" class="section level3">
 <h3><span class="header-section-number">8.3.9</span> Question 6 - Assessing overall model fit</h3>
 <p>Write a hypothesis test using the F-Statistic/ANOVA to test whether our model contains at least one predictor useful in predicting Rotten Tomatoes score.</p>
 <p>Hint, we will cover this in lectures, but also read this: <a href="https://online.stat.psu.edu/stat462/node/137/" class="uri">https://online.stat.psu.edu/stat462/node/137/</a></p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="lab-7.html#cb306-1"></a><span class="kw">ols_regress</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>##                          Model Summary                          
-## ---------------------------------------------------------------
-## R                       0.840       RMSE                14.364 
-## R-Squared               0.705       Coef. Var           28.247 
-## Adj. R-Squared          0.692       MSE                217.363 
-## Pred R-Squared          0.645       MAE                 11.399 
-## ---------------------------------------------------------------
-##  RMSE: Root Mean Square Error 
-##  MSE: Mean Square Error 
-##  MAE: Mean Absolute Error 
-## 
-##                                 ANOVA                                  
-## ----------------------------------------------------------------------
-##                  Sum of                                               
-##                 Squares         DF    Mean Square      F         Sig. 
-## ----------------------------------------------------------------------
-## Regression    58137.811          5      11627.562    53.494    0.0000 
-## Residual      24344.706        112        217.363                     
-## Total         82482.517        117                                    
-## ----------------------------------------------------------------------
-## 
-##                                        Parameter Estimates                                        
-## -------------------------------------------------------------------------------------------------
-##             model       Beta    Std. Error    Std. Beta      t        Sig       lower      upper 
-## -------------------------------------------------------------------------------------------------
-##       (Intercept)    -36.350         8.392                 -4.331    0.000    -52.979    -19.722 
-##     AudienceScore      1.363         0.091        0.868    14.977    0.000      1.182      1.543 
-##     Profitability      0.350         0.199        0.092     1.752    0.082     -0.046      0.745 
-##  TheatersOpenWeek      0.002         0.002        0.086     1.161    0.248     -0.002      0.007 
-## BOAverageOpenWeek      0.000         0.000        0.126     1.965    0.052      0.000      0.001 
-##     DomesticGross     -0.083         0.033       -0.221    -2.504    0.014     -0.149     -0.017 
-## -------------------------------------------------------------------------------------------------</code></pre>
 </div>
 <div id="question-7---partial-slopes" class="section level3">
 <h3><span class="header-section-number">8.3.10</span> Question 7 - Partial Slopes</h3>
 <p><em>“The test-results for partial slopes” is a fancy way of saying “look at the T-test result and corresponding p-value of each variable in the model summary”. Essentially, they are the likelihood of that variable being an important part of the model IF EVERYTHING ELSE WAS HELD CONSTANT.</em></p>
 <p>By looking at the test results for the partial slopes (at a 10% level of significance), identify any variable/s you would like to drop from your model fit Provide reasons for your choice(s). Does this meet your expectations from the correlation matrix?</p>
 <p>You do not have to write down any steps for hypothesis testing here, but you do need to justify your decision.</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="lab-7.html#cb308-1"></a><span class="kw">summary</span>(fit<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = RottenTomatoes ~ AudienceScore + Profitability + 
-##     TheatersOpenWeek + BOAverageOpenWeek + DomesticGross, data = movies)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -45.494 -10.113   1.328   9.588  38.695 
-## 
-## Coefficients:
-##                     Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)       -3.635e+01  8.392e+00  -4.331 3.24e-05 ***
-## AudienceScore      1.363e+00  9.099e-02  14.977  &lt; 2e-16 ***
-## Profitability      3.496e-01  1.995e-01   1.752   0.0825 .  
-## TheatersOpenWeek   2.465e-03  2.123e-03   1.161   0.2480    
-## BOAverageOpenWeek  3.217e-04  1.637e-04   1.965   0.0519 .  
-## DomesticGross     -8.334e-02  3.328e-02  -2.504   0.0137 *  
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 14.74 on 112 degrees of freedom
-## Multiple R-squared:  0.7049,	Adjusted R-squared:  0.6917 
-## F-statistic: 53.49 on 5 and 112 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <div id="question-8-re-fit-model" class="section level3">
 <h3><span class="header-section-number">8.3.11</span> Question 8: Re-fit Model</h3>
@@ -659,16 +565,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="question-9-compare-the-models" class="section level3">
 <h3><span class="header-section-number">8.3.12</span> Question 9: Compare the models</h3>
 <p>Compare your two models using <span class="math inline">\(AdjR^2\)</span> and AIC. Which model do you consider to be a better fit and why? Why did I ask you to choose adjusted <span class="math inline">\(R^2\)</span> not standard <span class="math inline">\(R^2\)</span>?</p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="lab-7.html#cb310-1"></a>summaryfit1 &lt;-<span class="st"> </span><span class="kw">ols_regress</span>(fit<span class="fl">.1</span>)</span>
-<span id="cb310-2"><a href="lab-7.html#cb310-2"></a>summaryfit2 &lt;-<span class="st"> </span><span class="kw">ols_regress</span>(fit<span class="fl">.2</span>)</span>
-<span id="cb310-3"><a href="lab-7.html#cb310-3"></a>summaryfit1<span class="op">$</span>adjr</span></code></pre></div>
-<pre><code>## [1] 0.6916738</code></pre>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="lab-7.html#cb312-1"></a>summaryfit2<span class="op">$</span>adjr</span></code></pre></div>
-<pre><code>## [1] 0.6907225</code></pre>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="lab-7.html#cb314-1"></a><span class="kw">print</span>(<span class="kw">AIC</span>(fit<span class="fl">.1</span>,fit<span class="fl">.2</span>))</span></code></pre></div>
-<pre><code>##       df      AIC
-## fit.1  7 977.7369
-## fit.2  6 977.1493</code></pre>
 </div>
 <div id="question-10-predict-a-new-movies-score" class="section level3">
 <h3><span class="header-section-number">8.3.13</span> Question 10: Predict a new movie’s score</h3>
